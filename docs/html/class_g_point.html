@@ -1,0 +1,838 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GPoint类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_g_point-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GPoint类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_g_point.html" title="GPoint 代表二维平面中的一个点。对二维平面上的一个点进行各种数学运算。 ">GPoint</a> 代表二维平面中的一个点。对二维平面上的一个点进行各种数学运算。  
+ <a href="class_g_point.html#details">更多...</a></p>
+
+<p><code>#include &lt;gPoint.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8454b1fc2b2094d4cf5fd8d57a9114d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a8454b1fc2b2094d4cf5fd8d57a9114d9">GPoint</a> ()</td></tr>
+<tr class="separator:a8454b1fc2b2094d4cf5fd8d57a9114d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281474da474706ede5f37503f9cabf63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a281474da474706ede5f37503f9cabf63">GPoint</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> <a class="el" href="class_g_point.html#a7e7c016bbcd0475b13b9ed3ede19d9b4">x</a>, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> <a class="el" href="class_g_point.html#a1f7121f9944127ac8974a6ad2369c0ef">y</a>)</td></tr>
+<tr class="separator:a281474da474706ede5f37503f9cabf63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2368c8ab7916f8d827e246d64e34b3f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a2368c8ab7916f8d827e246d64e34b3f8">GPoint</a> (const <a class="el" href="struct_t___p_o_i_n_t.html">T_POINT</a> &amp;tp)</td></tr>
+<tr class="separator:a2368c8ab7916f8d827e246d64e34b3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc7b8a52e2a170af7ea10b95a1af01c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#acbc7b8a52e2a170af7ea10b95a1af01c">isNull</a> () const </td></tr>
+<tr class="separator:acbc7b8a52e2a170af7ea10b95a1af01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7c016bbcd0475b13b9ed3ede19d9b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a7e7c016bbcd0475b13b9ed3ede19d9b4">x</a> () const </td></tr>
+<tr class="separator:a7e7c016bbcd0475b13b9ed3ede19d9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7121f9944127ac8974a6ad2369c0ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a1f7121f9944127ac8974a6ad2369c0ef">y</a> () const </td></tr>
+<tr class="separator:a1f7121f9944127ac8974a6ad2369c0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add063cadeb696c509a812288cd47b33c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#add063cadeb696c509a812288cd47b33c">setX</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> <a class="el" href="class_g_point.html#a7e7c016bbcd0475b13b9ed3ede19d9b4">x</a>)</td></tr>
+<tr class="separator:add063cadeb696c509a812288cd47b33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd97c5e808041b18abadef6899c14938"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#afd97c5e808041b18abadef6899c14938">setY</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> <a class="el" href="class_g_point.html#a1f7121f9944127ac8974a6ad2369c0ef">y</a>)</td></tr>
+<tr class="separator:afd97c5e808041b18abadef6899c14938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed46da1fac1fa43d7eef0f5cd6258fbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#aed46da1fac1fa43d7eef0f5cd6258fbe">rx</a> ()</td></tr>
+<tr class="separator:aed46da1fac1fa43d7eef0f5cd6258fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14245f328ca628d6cd7e072fdf8dbf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#ad14245f328ca628d6cd7e072fdf8dbf2">ry</a> ()</td></tr>
+<tr class="separator:ad14245f328ca628d6cd7e072fdf8dbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af922c38408481416273aa9fd4ff99b61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#af922c38408481416273aa9fd4ff99b61">operator+=</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;p)</td></tr>
+<tr class="separator:af922c38408481416273aa9fd4ff99b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a0777a0db6c509865a9023c345b545"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a33a0777a0db6c509865a9023c345b545">operator-=</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;p)</td></tr>
+<tr class="separator:a33a0777a0db6c509865a9023c345b545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b7c3b93878e4421c9f08066da2d94e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a2b7c3b93878e4421c9f08066da2d94e6">operator*=</a> (float c)</td></tr>
+<tr class="separator:a2b7c3b93878e4421c9f08066da2d94e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385ec598f143a030437e4bfb45d64c33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a385ec598f143a030437e4bfb45d64c33">operator*=</a> (double c)</td></tr>
+<tr class="separator:a385ec598f143a030437e4bfb45d64c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f1d04e70d92011fd3447635c0b4dbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#ab8f1d04e70d92011fd3447635c0b4dbe">operator*=</a> (int c)</td></tr>
+<tr class="separator:ab8f1d04e70d92011fd3447635c0b4dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2173bb8914e67fdc77ba73670a7951a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#ad2173bb8914e67fdc77ba73670a7951a">operator/=</a> (double c)</td></tr>
+<tr class="separator:ad2173bb8914e67fdc77ba73670a7951a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a659072cd72e0f69e5cea9b4a427d1772"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a659072cd72e0f69e5cea9b4a427d1772">operator==</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:a659072cd72e0f69e5cea9b4a427d1772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8e30f84a6825592b82487958eb6597"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a3e8e30f84a6825592b82487958eb6597">operator!=</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:a3e8e30f84a6825592b82487958eb6597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedeb36ab03dc86b02045a717c1b34d67"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#aedeb36ab03dc86b02045a717c1b34d67">operator+</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:aedeb36ab03dc86b02045a717c1b34d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b9e566ba8edb9ce71ff1227499cb2a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a44b9e566ba8edb9ce71ff1227499cb2a">operator-</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:a44b9e566ba8edb9ce71ff1227499cb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80666e901ee267a9b70b21c21a3f6d65"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a80666e901ee267a9b70b21c21a3f6d65">operator-</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:a80666e901ee267a9b70b21c21a3f6d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6190456c6d9099e2a1ba40e54f19d0a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#ae6190456c6d9099e2a1ba40e54f19d0a">operator*</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, float)</td></tr>
+<tr class="separator:ae6190456c6d9099e2a1ba40e54f19d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89cb9b4a6e33a14bfd67e44232efc98d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a89cb9b4a6e33a14bfd67e44232efc98d">operator*</a> (float, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:a89cb9b4a6e33a14bfd67e44232efc98d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2861939318d1d3c9fa3979d8d147f4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#ade2861939318d1d3c9fa3979d8d147f4">operator*</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, double)</td></tr>
+<tr class="separator:ade2861939318d1d3c9fa3979d8d147f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b52fd87df0cedd68c49799d074a0c9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#aa9b52fd87df0cedd68c49799d074a0c9">operator*</a> (double, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:aa9b52fd87df0cedd68c49799d074a0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326a3fe77a6a4b14960fc58d5195585e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a326a3fe77a6a4b14960fc58d5195585e">operator*</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, int)</td></tr>
+<tr class="separator:a326a3fe77a6a4b14960fc58d5195585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc817303b04a362b00ab39b43d9d9c42"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#afc817303b04a362b00ab39b43d9d9c42">operator*</a> (int, const <a class="el" href="class_g_point.html">GPoint</a> &amp;)</td></tr>
+<tr class="separator:afc817303b04a362b00ab39b43d9d9c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37cb9d549ea3939889b1426620e46f57"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_point.html">GPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_point.html#a37cb9d549ea3939889b1426620e46f57">operator/</a> (const <a class="el" href="class_g_point.html">GPoint</a> &amp;, double)</td></tr>
+<tr class="separator:a37cb9d549ea3939889b1426620e46f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_g_point.html" title="GPoint 代表二维平面中的一个点。对二维平面上的一个点进行各种数学运算。 ">GPoint</a> 代表二维平面中的一个点。对二维平面上的一个点进行各种数学运算。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="a8454b1fc2b2094d4cf5fd8d57a9114d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPoint::GPoint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a281474da474706ede5f37503f9cabf63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPoint::GPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2368c8ab7916f8d827e246d64e34b3f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPoint::GPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_t___p_o_i_n_t.html">T_POINT</a> &amp;&#160;</td>
+          <td class="paramname"><em>tp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="acbc7b8a52e2a170af7ea10b95a1af01c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GPoint::isNull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2b7c3b93878e4421c9f08066da2d94e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_point.html">GPoint</a>&amp; GPoint::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a385ec598f143a030437e4bfb45d64c33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_point.html">GPoint</a>&amp; GPoint::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab8f1d04e70d92011fd3447635c0b4dbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_point.html">GPoint</a>&amp; GPoint::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af922c38408481416273aa9fd4ff99b61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_point.html">GPoint</a>&amp; GPoint::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a33a0777a0db6c509865a9023c345b545"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_point.html">GPoint</a>&amp; GPoint::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad2173bb8914e67fdc77ba73670a7951a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_point.html">GPoint</a>&amp; GPoint::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed46da1fac1fa43d7eef0f5cd6258fbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&amp; GPoint::rx </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad14245f328ca628d6cd7e072fdf8dbf2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&amp; GPoint::ry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="add063cadeb696c509a812288cd47b33c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GPoint::setX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd97c5e808041b18abadef6899c14938"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GPoint::setY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7e7c016bbcd0475b13b9ed3ede19d9b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> GPoint::x </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1f7121f9944127ac8974a6ad2369c0ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> GPoint::y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a class="anchor" id="a3e8e30f84a6825592b82487958eb6597"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6190456c6d9099e2a1ba40e54f19d0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89cb9b4a6e33a14bfd67e44232efc98d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ade2861939318d1d3c9fa3979d8d147f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9b52fd87df0cedd68c49799d074a0c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a326a3fe77a6a4b14960fc58d5195585e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afc817303b04a362b00ab39b43d9d9c42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aedeb36ab03dc86b02045a717c1b34d67"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44b9e566ba8edb9ce71ff1227499cb2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80666e901ee267a9b70b21c21a3f6d65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37cb9d549ea3939889b1426620e46f57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_point.html">GPoint</a> operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a659072cd72e0f69e5cea9b4a427d1772"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_point.html">GPoint</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_point_8h.html">gPoint.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

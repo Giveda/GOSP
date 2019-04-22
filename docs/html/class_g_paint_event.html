@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GPaintEvent类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_g_paint_event-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GPaintEvent类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_g_paint_event.html" title="GPaintEvent 绘制事件 ">GPaintEvent</a> 绘制事件  
+ <a href="class_g_paint_event.html#details">更多...</a></p>
+
+<p><code>#include &lt;gUIEvent.h&gt;</code></p>
+
+<p>继承自 <a class="el" href="class_g_event.html">GEvent</a> .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:aecec4f30b0005354b00792120d06bac8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8">EVT_TYPE</a> { <br/>
+&#160;&#160;<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a2b3711012e188d19a189943626ce7c3d">KEYPRESS_EVT</a> =0, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8aa05f13ee0bc65b4d0707d88ffdfacf34">KEYRELEASE_EVT</a>, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a1f8fa0db409289da8ec57ca2ece9a692">PAINT_EVT</a>, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a5cf3316696d7fd353736ee3d626db3b3">TIMER_EVT</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a98bc565ba80eaccc7edb0eca88220dc3">BACKEND_NOTIFY_IO_EVT</a>, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a6d09f9d6c54682904bb6d81f1c9f6b51">MOUSEPRESS_EVT</a>, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a3d846e5d3fede47ce87871a8fd5e05c1">SWIPE_EVT</a>, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8aed66717ef65c077c729bf00582254e86">GESTURE_SCROLL_EVT</a>, 
+<br/>
+&#160;&#160;<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a87f4686c2bdc64f504a96209413e5a6e">TAP_EVT</a>, 
+<a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8a6470e6f74e2c94a066fd34982c047514">USR_EVT_START</a> =0x20001
+<br/>
+ }</td></tr>
+<tr class="separator:aecec4f30b0005354b00792120d06bac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae271426650bade7ad4aa6b07f170285e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#ae271426650bade7ad4aa6b07f170285e">GPaintEvent</a> (const <a class="el" href="class_g_rect.html">GRect</a> &amp;paintRect, int8_t <a class="el" href="class_g_paint_event.html#ae790c595faf1aad7ee483bf35c02726e">screen</a>=<a class="el" href="g_u_i_event_8h.html#a173ded22956fbe6c3b1be3daa4cd6822">ALL_SCREEN</a>, bool <a class="el" href="class_g_paint_event.html#a46edcc0af8fa83dd51340181a33edf7e">erased</a>=true)</td></tr>
+<tr class="memdesc:ae271426650bade7ad4aa6b07f170285e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个绘制事件  <a href="#ae271426650bade7ad4aa6b07f170285e">更多...</a><br/></td></tr>
+<tr class="separator:ae271426650bade7ad4aa6b07f170285e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56aacc42ab84149a591dc41a8b32e265"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_rect.html">GRect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#a56aacc42ab84149a591dc41a8b32e265">rect</a> () const </td></tr>
+<tr class="memdesc:a56aacc42ab84149a591dc41a8b32e265"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取绘制区域  <a href="#a56aacc42ab84149a591dc41a8b32e265">更多...</a><br/></td></tr>
+<tr class="separator:a56aacc42ab84149a591dc41a8b32e265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47f8075dc7192ad8c10292e1a446192"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_region.html">GRegion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#ad47f8075dc7192ad8c10292e1a446192">region</a> () const </td></tr>
+<tr class="memdesc:ad47f8075dc7192ad8c10292e1a446192"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取绘制区域  <a href="#ad47f8075dc7192ad8c10292e1a446192">更多...</a><br/></td></tr>
+<tr class="separator:ad47f8075dc7192ad8c10292e1a446192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46edcc0af8fa83dd51340181a33edf7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#a46edcc0af8fa83dd51340181a33edf7e">erased</a> () const </td></tr>
+<tr class="memdesc:a46edcc0af8fa83dd51340181a33edf7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否已经擦除  <a href="#a46edcc0af8fa83dd51340181a33edf7e">更多...</a><br/></td></tr>
+<tr class="separator:a46edcc0af8fa83dd51340181a33edf7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae790c595faf1aad7ee483bf35c02726e"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#ae790c595faf1aad7ee483bf35c02726e">screen</a> ()</td></tr>
+<tr class="memdesc:ae790c595faf1aad7ee483bf35c02726e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取屏幕索引  <a href="#ae790c595faf1aad7ee483bf35c02726e">更多...</a><br/></td></tr>
+<tr class="separator:ae790c595faf1aad7ee483bf35c02726e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da68c6c6b2ba0ff572a6fbcf8de3b27"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#a8da68c6c6b2ba0ff572a6fbcf8de3b27">canComposite</a> ()</td></tr>
+<tr class="memdesc:a8da68c6c6b2ba0ff572a6fbcf8de3b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">能否合并  <a href="#a8da68c6c6b2ba0ff572a6fbcf8de3b27">更多...</a><br/></td></tr>
+<tr class="separator:a8da68c6c6b2ba0ff572a6fbcf8de3b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c90b186d8cb28c095641a47e4c6a560"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#a8c90b186d8cb28c095641a47e4c6a560">composite</a> (<a class="el" href="class_g_event.html">GEvent</a> *e)</td></tr>
+<tr class="memdesc:a8c90b186d8cb28c095641a47e4c6a560"><td class="mdescLeft">&#160;</td><td class="mdescRight">合并事件  <a href="#a8c90b186d8cb28c095641a47e4c6a560">更多...</a><br/></td></tr>
+<tr class="separator:a8c90b186d8cb28c095641a47e4c6a560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a574fa3f60ce473be8726f3764848604a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#a574fa3f60ce473be8726f3764848604a">type</a> () const </td></tr>
+<tr class="memdesc:a574fa3f60ce473be8726f3764848604a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回事件的类型  <a href="#a574fa3f60ce473be8726f3764848604a">更多...</a><br/></td></tr>
+<tr class="separator:a574fa3f60ce473be8726f3764848604a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f17a4580a64d4f58d1accb47a9841fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#a7f17a4580a64d4f58d1accb47a9841fa">dispatchAgain</a> ()</td></tr>
+<tr class="memdesc:a7f17a4580a64d4f58d1accb47a9841fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否需要再次分发  <a href="#a7f17a4580a64d4f58d1accb47a9841fa">更多...</a><br/></td></tr>
+<tr class="separator:a7f17a4580a64d4f58d1accb47a9841fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1391dc2e542ae684bf786bfd6b3c0822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#a1391dc2e542ae684bf786bfd6b3c0822">setDispatchAgain</a> ()</td></tr>
+<tr class="memdesc:a1391dc2e542ae684bf786bfd6b3c0822"><td class="mdescLeft">&#160;</td><td class="mdescRight">再次分发此事件  <a href="#a1391dc2e542ae684bf786bfd6b3c0822">更多...</a><br/></td></tr>
+<tr class="separator:a1391dc2e542ae684bf786bfd6b3c0822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0729fbf84290a0a71e137f7710ae2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#a5d0729fbf84290a0a71e137f7710ae2c">resetDispatchAgain</a> ()</td></tr>
+<tr class="memdesc:a5d0729fbf84290a0a71e137f7710ae2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">不再分发此事件  <a href="#a5d0729fbf84290a0a71e137f7710ae2c">更多...</a><br/></td></tr>
+<tr class="separator:a5d0729fbf84290a0a71e137f7710ae2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3bf21f1dd17e20292dee4dac9bc0d3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#aee3bf21f1dd17e20292dee4dac9bc0d3">isEqual2</a> (<a class="el" href="class_g_event.html">GEvent</a> *evt)</td></tr>
+<tr class="memdesc:aee3bf21f1dd17e20292dee4dac9bc0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断本事件与 evt 是否是相同事件  <a href="#aee3bf21f1dd17e20292dee4dac9bc0d3">更多...</a><br/></td></tr>
+<tr class="separator:aee3bf21f1dd17e20292dee4dac9bc0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a694ad8548f96a03a7b7a0108a3f2be8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_rect.html">GRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#a694ad8548f96a03a7b7a0108a3f2be8e">rec</a></td></tr>
+<tr class="separator:a694ad8548f96a03a7b7a0108a3f2be8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfee0c0fa0d59d575042138537996a87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_region.html">GRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#acfee0c0fa0d59d575042138537996a87">reg</a></td></tr>
+<tr class="separator:acfee0c0fa0d59d575042138537996a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d49e1f0d13f53a327d9563779a4fa38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#a1d49e1f0d13f53a327d9563779a4fa38">erase</a></td></tr>
+<tr class="separator:a1d49e1f0d13f53a327d9563779a4fa38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68f1db27b77d801b444c5d48ec9afa8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_event.html#aa68f1db27b77d801b444c5d48ec9afa8">screenIdx</a></td></tr>
+<tr class="separator:aa68f1db27b77d801b444c5d48ec9afa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4b1c61abc7631bbfb11bc632fb4862"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#a2f4b1c61abc7631bbfb11bc632fb4862">m_type</a></td></tr>
+<tr class="separator:a2f4b1c61abc7631bbfb11bc632fb4862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0929c1e4b3707fb2c582ed52f88ced5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_event.html#aa0929c1e4b3707fb2c582ed52f88ced5">m_dispatchAgain</a></td></tr>
+<tr class="separator:aa0929c1e4b3707fb2c582ed52f88ced5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_g_paint_event.html" title="GPaintEvent 绘制事件 ">GPaintEvent</a> 绘制事件 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a class="anchor" id="aecec4f30b0005354b00792120d06bac8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_g_event.html#aecec4f30b0005354b00792120d06bac8">GEvent::EVT_TYPE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a2b3711012e188d19a189943626ce7c3d"></a>KEYPRESS_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8aa05f13ee0bc65b4d0707d88ffdfacf34"></a>KEYRELEASE_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a1f8fa0db409289da8ec57ca2ece9a692"></a>PAINT_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a5cf3316696d7fd353736ee3d626db3b3"></a>TIMER_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a98bc565ba80eaccc7edb0eca88220dc3"></a>BACKEND_NOTIFY_IO_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a6d09f9d6c54682904bb6d81f1c9f6b51"></a>MOUSEPRESS_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a3d846e5d3fede47ce87871a8fd5e05c1"></a>SWIPE_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8aed66717ef65c077c729bf00582254e86"></a>GESTURE_SCROLL_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a87f4686c2bdc64f504a96209413e5a6e"></a>TAP_EVT</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aecec4f30b0005354b00792120d06bac8a6470e6f74e2c94a066fd34982c047514"></a>USR_EVT_START</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="ae271426650bade7ad4aa6b07f170285e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPaintEvent::GPaintEvent </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_rect.html">GRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>paintRect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>screen</em> = <code><a class="el" href="g_u_i_event_8h.html#a173ded22956fbe6c3b1be3daa4cd6822">ALL_SCREEN</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>erased</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造一个绘制事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paintRect</td><td>绘制区域 </td></tr>
+    <tr><td class="paramname">screen</td><td>哪个屏幕 </td></tr>
+    <tr><td class="paramname">erased</td><td>是否擦除 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a8da68c6c6b2ba0ff572a6fbcf8de3b27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GPaintEvent::canComposite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>能否合并 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>重载 <a class="el" href="class_g_event.html#ade94e85f3f94744573025d037489bfd2">GEvent</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c90b186d8cb28c095641a47e4c6a560"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPaintEvent::composite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>合并事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+<p>重载 <a class="el" href="class_g_event.html#ab170a46831cf0c918bbba7f712849448">GEvent</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a7f17a4580a64d4f58d1accb47a9841fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GEvent::dispatchAgain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否需要再次分发 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a46edcc0af8fa83dd51340181a33edf7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GPaintEvent::erased </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否已经擦除 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aee3bf21f1dd17e20292dee4dac9bc0d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GEvent::isEqual2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"><em>evt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断本事件与 evt 是否是相同事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evt</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>被 <a class="el" href="class_g_key_event.html#a052fdc5258018973e9654758eccdea59">GKeyEvent</a> 重载.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56aacc42ab84149a591dc41a8b32e265"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_rect.html">GRect</a>&amp; GPaintEvent::rect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取绘制区域 </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="class_g_rect.html" title="GRect 代表二维平面中的一个矩形区域。对二维平面上的一个矩形区域进行各种数学运算。 ">GRect</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad47f8075dc7192ad8c10292e1a446192"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_region.html">GRegion</a>&amp; GPaintEvent::region </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取绘制区域 </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="class_g_region.html" title="GRegion 代表二维平面中的一个区域（由若干个矩形区域组成）。对二维平面上的区域进行各种数学运算。 ">GRegion</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5d0729fbf84290a0a71e137f7710ae2c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GEvent::resetDispatchAgain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>不再分发此事件 </p>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae790c595faf1aad7ee483bf35c02726e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t GPaintEvent::screen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取屏幕索引 </p>
+<dl class="section return"><dt>返回</dt><dd>int8_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1391dc2e542ae684bf786bfd6b3c0822"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GEvent::setDispatchAgain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>再次分发此事件 </p>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a574fa3f60ce473be8726f3764848604a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t GEvent::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回事件的类型 </p>
+<dl class="section return"><dt>返回</dt><dd>uint32_t </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="a1d49e1f0d13f53a327d9563779a4fa38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GPaintEvent::erase</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa0929c1e4b3707fb2c582ed52f88ced5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GEvent::m_dispatchAgain</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2f4b1c61abc7631bbfb11bc632fb4862"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t GEvent::m_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a694ad8548f96a03a7b7a0108a3f2be8e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_rect.html">GRect</a> GPaintEvent::rec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acfee0c0fa0d59d575042138537996a87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_region.html">GRegion</a> GPaintEvent::reg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa68f1db27b77d801b444c5d48ec9afa8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t GPaintEvent::screenIdx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_u_i_event_8h.html">gUIEvent.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

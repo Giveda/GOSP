@@ -1,0 +1,3245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GCtrlListBox类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_g_ctrl_list_box-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GCtrlListBox类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_g_ctrl_list_box.html" title="GCtrlListBox 类提供了类似windows资源管理器中的列表视图；列表视图可以包含任意数目的列表项 GCtrlListBoxItem ；如果没有列表视图，列表项将无法显示。 ...">GCtrlListBox</a> 类提供了类似windows资源管理器中的列表视图；列表视图可以包含任意数目的列表项 <a class="el" href="class_g_ctrl_list_box_item.html" title="列表视图中可以包含任意数目的列表项， GCtrlListBoxItem 类代表只有一个文字标题的所述列表项； ">GCtrlListBoxItem</a> ；如果没有列表视图，列表项将无法显示。  
+ <a href="class_g_ctrl_list_box.html#details">更多...</a></p>
+
+<p><code>#include &lt;gCtrlListBox.h&gt;</code></p>
+
+<p>继承自 <a class="el" href="class_g_m_container_item.html">GMContainerItem</a> .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a963110edd99a9b5cc2a09be732a7c23d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">E_ITEMS_LAYOUT_MODE</a> { <a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23da69c038302feb5bba5f72c0b6c2d95191">E_ITEMS_LAYOUT_TOP_2_BOTTOM</a> =0, 
+<a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23daa36d607fc3ea8c512f5aa1d81890150f">E_ITEMS_LAYOUT_LEFT_2_RIGHT</a>
+ }</td></tr>
+<tr class="memdesc:a963110edd99a9b5cc2a09be732a7c23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">列表如何排版其中的列表项  <a href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">更多...</a><br/></td></tr>
+<tr class="separator:a963110edd99a9b5cc2a09be732a7c23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ab7aafec88d1aab660d1232c36ce33613"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#ab7aafec88d1aab660d1232c36ce33613">GCtrlListBox</a> (<a class="el" href="class_g_ctrl_form.html">GCtrlForm</a> *frm, <a class="el" href="class_g_m_item.html">GMItem</a> *<a class="el" href="class_g_object.html#a7ef28ababe03e654cd4edcebffd7950c">parent</a>=0, const char *<a class="el" href="class_g_object.html#afa1b539842f0d5fbc09ad52163b7323b">name</a>=0, const bool showSingleTitle=false)</td></tr>
+<tr class="memdesc:ab7aafec88d1aab660d1232c36ce33613"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个列表视图。一个列表视图可以包含任意数目的列表项 <a class="el" href="class_g_ctrl_list_box_item.html" title="列表视图中可以包含任意数目的列表项， GCtrlListBoxItem 类代表只有一个文字标题的所述列表项； ">GCtrlListBoxItem</a> 。默认情况下，列表视图会按照列表项被添加进来的先后顺序，为所有列表项建立索引。用户可以使用索引值来访问、操作任一列表项。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项。  <a href="#ab7aafec88d1aab660d1232c36ce33613">更多...</a><br/></td></tr>
+<tr class="separator:ab7aafec88d1aab660d1232c36ce33613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed13463ac05fa7dc683cd8b9403edf0d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aed13463ac05fa7dc683cd8b9403edf0d">~GCtrlListBox</a> ()</td></tr>
+<tr class="separator:aed13463ac05fa7dc683cd8b9403edf0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5449e2871700a2e7ee2326d813e664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a1b5449e2871700a2e7ee2326d813e664">insertItem</a> (<a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *p, int index=-1)</td></tr>
+<tr class="memdesc:a1b5449e2871700a2e7ee2326d813e664"><td class="mdescLeft">&#160;</td><td class="mdescRight">向列表视图中添加列表项。列表视图会按照列表项被添加进来的先后顺序，为所有列表项建立索引。  <a href="#a1b5449e2871700a2e7ee2326d813e664">更多...</a><br/></td></tr>
+<tr class="separator:a1b5449e2871700a2e7ee2326d813e664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc8eb72e5005e5a86f59d16b5c98357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a3cc8eb72e5005e5a86f59d16b5c98357">removeItem</a> (int index=-1)</td></tr>
+<tr class="memdesc:a3cc8eb72e5005e5a86f59d16b5c98357"><td class="mdescLeft">&#160;</td><td class="mdescRight">从列表视图中删除一个列表项。如果 index 等于-1，会删除当前处于焦点状态的列表项；否则，删除第 index 个列表项。系统将自动回收被删除掉的列表项所占用的内存。  <a href="#a3cc8eb72e5005e5a86f59d16b5c98357">更多...</a><br/></td></tr>
+<tr class="separator:a3cc8eb72e5005e5a86f59d16b5c98357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db4edd6dddf961f84040152d5d819e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a1db4edd6dddf961f84040152d5d819e7">removeItem</a> (<a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *)</td></tr>
+<tr class="memdesc:a1db4edd6dddf961f84040152d5d819e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">从列表视图中删除指定的列表项。系统将自动回收被删除掉的列表项所占用的内存。  <a href="#a1db4edd6dddf961f84040152d5d819e7">更多...</a><br/></td></tr>
+<tr class="separator:a1db4edd6dddf961f84040152d5d819e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa476c4a557c027e1a9c436ce0b57d4fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aa476c4a557c027e1a9c436ce0b57d4fb">changeItem</a> (<a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *, int index=-1)</td></tr>
+<tr class="memdesc:aa476c4a557c027e1a9c436ce0b57d4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">更换第 index 个列表项；系统将自动回收被替换掉的列表项所占用的内存；如果 index 等于-1，会替换掉当前处于焦点状态的列表项；  <a href="#aa476c4a557c027e1a9c436ce0b57d4fb">更多...</a><br/></td></tr>
+<tr class="separator:aa476c4a557c027e1a9c436ce0b57d4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb11ad861154416fd5dff0131cb94be1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#acb11ad861154416fd5dff0131cb94be1">setRowNums</a> (unsigned int num)</td></tr>
+<tr class="memdesc:acb11ad861154416fd5dff0131cb94be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列表视图的行数，即指定一下列表视图中包含几行列表项  <a href="#acb11ad861154416fd5dff0131cb94be1">更多...</a><br/></td></tr>
+<tr class="separator:acb11ad861154416fd5dff0131cb94be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9704271eeaad13a59e7585f7993f4c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aa9704271eeaad13a59e7585f7993f4c7">setColumnNums</a> (unsigned int num)</td></tr>
+<tr class="memdesc:aa9704271eeaad13a59e7585f7993f4c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列表视图的列数，即指定一行中包含几个列表项  <a href="#aa9704271eeaad13a59e7585f7993f4c7">更多...</a><br/></td></tr>
+<tr class="separator:aa9704271eeaad13a59e7585f7993f4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c73d12528eb365d1184d5bc12771c5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a9c73d12528eb365d1184d5bc12771c5c">item</a> (int index=-1)</td></tr>
+<tr class="memdesc:a9c73d12528eb365d1184d5bc12771c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取第 index 个列表项；如果index=-1则获取当前具有焦点状态的列表项  <a href="#a9c73d12528eb365d1184d5bc12771c5c">更多...</a><br/></td></tr>
+<tr class="separator:a9c73d12528eb365d1184d5bc12771c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a70a155106a8f579a8c0a5737b4f48f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a2a70a155106a8f579a8c0a5737b4f48f">getCurItemIndex</a> ()</td></tr>
+<tr class="memdesc:a2a70a155106a8f579a8c0a5737b4f48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前具有焦点状态的列表项的索引值  <a href="#a2a70a155106a8f579a8c0a5737b4f48f">更多...</a><br/></td></tr>
+<tr class="separator:a2a70a155106a8f579a8c0a5737b4f48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85305ca85d36280fcac063ea23bfb3a1"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a85305ca85d36280fcac063ea23bfb3a1">count</a> ()</td></tr>
+<tr class="memdesc:a85305ca85d36280fcac063ea23bfb3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回当前列表视图中所包含的列表项的数目  <a href="#a85305ca85d36280fcac063ea23bfb3a1">更多...</a><br/></td></tr>
+<tr class="separator:a85305ca85d36280fcac063ea23bfb3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e45ae50fdca7b0b99a0ff3d488545b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a28e45ae50fdca7b0b99a0ff3d488545b">clear</a> ()</td></tr>
+<tr class="memdesc:a28e45ae50fdca7b0b99a0ff3d488545b"><td class="mdescLeft">&#160;</td><td class="mdescRight">清空列表视图。列表视图中包含的所有列表项将被删除，它们占用的内存空间将被收回。  <a href="#a28e45ae50fdca7b0b99a0ff3d488545b">更多...</a><br/></td></tr>
+<tr class="separator:a28e45ae50fdca7b0b99a0ff3d488545b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74de5f22b09ce9e1d5fc93b6808cc4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aa74de5f22b09ce9e1d5fc93b6808cc4c">setFocusInImage</a> (const <a class="el" href="class_g_image.html">GImage</a> &amp;)</td></tr>
+<tr class="memdesc:aa74de5f22b09ce9e1d5fc93b6808cc4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当列表视图处于焦点状态时，列表项所使用的焦点图片  <a href="#aa74de5f22b09ce9e1d5fc93b6808cc4c">更多...</a><br/></td></tr>
+<tr class="separator:aa74de5f22b09ce9e1d5fc93b6808cc4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28290d15380fff137ef9a9836180cb0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a28290d15380fff137ef9a9836180cb0e">setFocusOutImage</a> (const <a class="el" href="class_g_image.html">GImage</a> &amp;)</td></tr>
+<tr class="memdesc:a28290d15380fff137ef9a9836180cb0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置当列表视图失去焦点状态之后，列表项所使用的焦点图片  <a href="#a28290d15380fff137ef9a9836180cb0e">更多...</a><br/></td></tr>
+<tr class="separator:a28290d15380fff137ef9a9836180cb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23734f5e579e6aef37348f54e54e585e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a23734f5e579e6aef37348f54e54e585e">setCurItemIndex</a> (const int nIndex)</td></tr>
+<tr class="memdesc:a23734f5e579e6aef37348f54e54e585e"><td class="mdescLeft">&#160;</td><td class="mdescRight">让第 nIndex 个列表项得到焦点状态  <a href="#a23734f5e579e6aef37348f54e54e585e">更多...</a><br/></td></tr>
+<tr class="separator:a23734f5e579e6aef37348f54e54e585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff3c136151a2bb0230499d036e5d562f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aff3c136151a2bb0230499d036e5d562f">setItemTextColor</a> (const <a class="el" href="class_g_color.html">GColor</a> &amp;c)</td></tr>
+<tr class="memdesc:aff3c136151a2bb0230499d036e5d562f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列表项文字标题的颜色  <a href="#aff3c136151a2bb0230499d036e5d562f">更多...</a><br/></td></tr>
+<tr class="separator:aff3c136151a2bb0230499d036e5d562f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ab874d061e72d691b0c0c7696f5d9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a29ab874d061e72d691b0c0c7696f5d9a">setItemTextFont</a> (const <a class="el" href="class_g_font.html">GFont</a> &amp;f)</td></tr>
+<tr class="memdesc:a29ab874d061e72d691b0c0c7696f5d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列表项文字标题的字体  <a href="#a29ab874d061e72d691b0c0c7696f5d9a">更多...</a><br/></td></tr>
+<tr class="separator:a29ab874d061e72d691b0c0c7696f5d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fce16ea1df704f82bdbceff7196300e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_color.html">GColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a9fce16ea1df704f82bdbceff7196300e">getItemTextColor</a> ()</td></tr>
+<tr class="memdesc:a9fce16ea1df704f82bdbceff7196300e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得列表项文字标题的颜色  <a href="#a9fce16ea1df704f82bdbceff7196300e">更多...</a><br/></td></tr>
+<tr class="separator:a9fce16ea1df704f82bdbceff7196300e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2ffc6ffedbf61292b6be6549ef373a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_font.html">GFont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a2f2ffc6ffedbf61292b6be6549ef373a">getItemTextFont</a> ()</td></tr>
+<tr class="memdesc:a2f2ffc6ffedbf61292b6be6549ef373a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获得列表项文字标题的字体  <a href="#a2f2ffc6ffedbf61292b6be6549ef373a">更多...</a><br/></td></tr>
+<tr class="separator:a2f2ffc6ffedbf61292b6be6549ef373a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525a262a51900c6e70c4de669e762332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a525a262a51900c6e70c4de669e762332">setItemScrollEnabled</a> (bool enabled)</td></tr>
+<tr class="memdesc:a525a262a51900c6e70c4de669e762332"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列表项的文字标题（在标题长度过长的情况下）是否能够以滚动字幕的形式进行显示  <a href="#a525a262a51900c6e70c4de669e762332">更多...</a><br/></td></tr>
+<tr class="separator:a525a262a51900c6e70c4de669e762332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab956ad8ce6edc6594e11584d53293d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a7ab956ad8ce6edc6594e11584d53293d">setLayoutMode</a> (<a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">E_ITEMS_LAYOUT_MODE</a> mode)</td></tr>
+<tr class="memdesc:a7ab956ad8ce6edc6594e11584d53293d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置列表应当如何排版列表项。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项  <a href="#a7ab956ad8ce6edc6594e11584d53293d">更多...</a><br/></td></tr>
+<tr class="separator:a7ab956ad8ce6edc6594e11584d53293d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa047923b9bd3b996659eaada8a2f551b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">GCtrlListBox::E_ITEMS_LAYOUT_MODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aa047923b9bd3b996659eaada8a2f551b">getLayoutMode</a> () const </td></tr>
+<tr class="memdesc:aa047923b9bd3b996659eaada8a2f551b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取列表的布局模式。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项  <a href="#aa047923b9bd3b996659eaada8a2f551b">更多...</a><br/></td></tr>
+<tr class="separator:aa047923b9bd3b996659eaada8a2f551b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7d2d59c5608c0a2802376b0152a513"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#afb7d2d59c5608c0a2802376b0152a513">setPreviousItemKey</a> (int nKey)</td></tr>
+<tr class="memdesc:afb7d2d59c5608c0a2802376b0152a513"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置一个用于将焦点移动到上一个列表项的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a8272d0f9bc1884499524d3661a9de478">Giveda::Key_Up</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key  <a href="#afb7d2d59c5608c0a2802376b0152a513">更多...</a><br/></td></tr>
+<tr class="separator:afb7d2d59c5608c0a2802376b0152a513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05637023cefc3ec0006103cd8a80e03c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a05637023cefc3ec0006103cd8a80e03c">setNextItemKey</a> (int nKey)</td></tr>
+<tr class="memdesc:a05637023cefc3ec0006103cd8a80e03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置一个用于将焦点移动到下一个列表项的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a2a235f8628bcf201a46b6172a4406e97">Giveda::Key_Down</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key  <a href="#a05637023cefc3ec0006103cd8a80e03c">更多...</a><br/></td></tr>
+<tr class="separator:a05637023cefc3ec0006103cd8a80e03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a1156da98ac1ebd206ed22e2aa67cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a82a1156da98ac1ebd206ed22e2aa67cf">setLoopFocus</a> (bool b)</td></tr>
+<tr class="memdesc:a82a1156da98ac1ebd206ed22e2aa67cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否允许循环切换焦点；<br/>
+如果允许，则当移到焦点到最后一个列表项后，此时如果试图移动焦点到下一个列表项，则焦点将移动到第一个列表项；<br/>
+如果禁止，则当移到焦点到最后一个列表项后，此时如果试图移动焦点到下一个列表项，则焦点保持不变。  <a href="#a82a1156da98ac1ebd206ed22e2aa67cf">更多...</a><br/></td></tr>
+<tr class="separator:a82a1156da98ac1ebd206ed22e2aa67cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68965c21dc2b78276be7cfb0a7f7dd3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a68965c21dc2b78276be7cfb0a7f7dd3b">setPreviousColumnKey</a> (int nKey)</td></tr>
+<tr class="memdesc:a68965c21dc2b78276be7cfb0a7f7dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置一个用于将焦点向前移动一列的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a57ef9bf8e9130c2c558dbb0308453dcc">Giveda::Key_PageUp</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key  <a href="#a68965c21dc2b78276be7cfb0a7f7dd3b">更多...</a><br/></td></tr>
+<tr class="separator:a68965c21dc2b78276be7cfb0a7f7dd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25adef8eacef3fdedbc195ab6a240519"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a25adef8eacef3fdedbc195ab6a240519">setNextColumnKey</a> (int nKey)</td></tr>
+<tr class="memdesc:a25adef8eacef3fdedbc195ab6a240519"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置一个用于将焦点向后移动一列的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a6bd0d1bb741bd764cb84149292bea3bb">Giveda::Key_PageDown</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key  <a href="#a25adef8eacef3fdedbc195ab6a240519">更多...</a><br/></td></tr>
+<tr class="separator:a25adef8eacef3fdedbc195ab6a240519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5699648b13588e832e9680e8d1e42a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_container_item.html#a8b5699648b13588e832e9680e8d1e42a">setFocusToItem</a> (<a class="el" href="class_g_m_ctrl_item.html">GMCtrlItem</a> *pItem)</td></tr>
+<tr class="memdesc:a8b5699648b13588e832e9680e8d1e42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置焦点到指定的 <a class="el" href="class_g_m_ctrl_item.html" title="可以接收输入事件的界面元素的基类 ">GMCtrlItem</a>  <a href="#a8b5699648b13588e832e9680e8d1e42a">更多...</a><br/></td></tr>
+<tr class="separator:a8b5699648b13588e832e9680e8d1e42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce0e4841a52d99ba41adcc0da6695bf"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_container_item.html#afce0e4841a52d99ba41adcc0da6695bf">isContainerItem</a> ()</td></tr>
+<tr class="memdesc:afce0e4841a52d99ba41adcc0da6695bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否是容器  <a href="#afce0e4841a52d99ba41adcc0da6695bf">更多...</a><br/></td></tr>
+<tr class="separator:afce0e4841a52d99ba41adcc0da6695bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd66a4038ab83ed2a2366a2c8ef3ac4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a3fd66a4038ab83ed2a2366a2c8ef3ac4">isCtrlItem</a> ()</td></tr>
+<tr class="memdesc:a3fd66a4038ab83ed2a2366a2c8ef3ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否可以接收输入事件  <a href="#a3fd66a4038ab83ed2a2366a2c8ef3ac4">更多...</a><br/></td></tr>
+<tr class="separator:a3fd66a4038ab83ed2a2366a2c8ef3ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1661e90992d6bc25eedabfbf00480296"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a1661e90992d6bc25eedabfbf00480296">isFocusEnabled</a> ()</td></tr>
+<tr class="memdesc:a1661e90992d6bc25eedabfbf00480296"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取焦点是否被禁用；焦点被禁用后，此元素将不能获得焦点 ，不能处理各种输入事件。  <a href="#a1661e90992d6bc25eedabfbf00480296">更多...</a><br/></td></tr>
+<tr class="separator:a1661e90992d6bc25eedabfbf00480296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a9a0be1b0049b7edb0ae82e180de44c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a4a9a0be1b0049b7edb0ae82e180de44c">setFocusEnabled</a> (bool b)</td></tr>
+<tr class="memdesc:a4a9a0be1b0049b7edb0ae82e180de44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否禁此元素的焦点；焦点被禁用后，此元素将不能获得焦点 ，不能处理各种输入事件。  <a href="#a4a9a0be1b0049b7edb0ae82e180de44c">更多...</a><br/></td></tr>
+<tr class="separator:a4a9a0be1b0049b7edb0ae82e180de44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af17887879f72505d2c49b7b28ddf85d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#af17887879f72505d2c49b7b28ddf85d0">setFocus</a> ()</td></tr>
+<tr class="memdesc:af17887879f72505d2c49b7b28ddf85d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此元素到有焦点状态  <a href="#af17887879f72505d2c49b7b28ddf85d0">更多...</a><br/></td></tr>
+<tr class="separator:af17887879f72505d2c49b7b28ddf85d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa62a8ac997d9cbee0036bfd20bfbb760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#aa62a8ac997d9cbee0036bfd20bfbb760">hasFocus</a> ()</td></tr>
+<tr class="memdesc:aa62a8ac997d9cbee0036bfd20bfbb760"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回此元素是否具有焦点  <a href="#aa62a8ac997d9cbee0036bfd20bfbb760">更多...</a><br/></td></tr>
+<tr class="separator:aa62a8ac997d9cbee0036bfd20bfbb760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866ef9638d85287eb16720033912688a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a866ef9638d85287eb16720033912688a">setTabIndex</a> (unsigned int index)</td></tr>
+<tr class="memdesc:a866ef9638d85287eb16720033912688a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的tab index；在使用键盘来操作界面时，需要用到tab index  <a href="#a866ef9638d85287eb16720033912688a">更多...</a><br/></td></tr>
+<tr class="separator:a866ef9638d85287eb16720033912688a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200f5a2f9b31f1bfa61c6692c6e9d525"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a200f5a2f9b31f1bfa61c6692c6e9d525">tabIndex</a> ()</td></tr>
+<tr class="memdesc:a200f5a2f9b31f1bfa61c6692c6e9d525"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素的tab index；在使用键盘来操作界面时，需要用到tab index  <a href="#a200f5a2f9b31f1bfa61c6692c6e9d525">更多...</a><br/></td></tr>
+<tr class="separator:a200f5a2f9b31f1bfa61c6692c6e9d525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0834518655b8561c0c09423dab9360"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a0e0834518655b8561c0c09423dab9360">hide</a> ()</td></tr>
+<tr class="memdesc:a0e0834518655b8561c0c09423dab9360"><td class="mdescLeft">&#160;</td><td class="mdescRight">隐藏此界面元素。相当于：<br/>
+ <a href="#a0e0834518655b8561c0c09423dab9360">更多...</a><br/></td></tr>
+<tr class="separator:a0e0834518655b8561c0c09423dab9360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1594c818e1c47168b118f977e47dcc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#ac1594c818e1c47168b118f977e47dcc6">fwKeyPress</a> (<a class="el" href="class_g_key_event.html">GKeyEvent</a> *e)</td></tr>
+<tr class="separator:ac1594c818e1c47168b118f977e47dcc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d88626d6fbbb6c356a574a2640f931"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a49d88626d6fbbb6c356a574a2640f931">fwMousePress</a> (<a class="el" href="class_g_mouse_event.html">GMouseEvent</a> *e)</td></tr>
+<tr class="separator:a49d88626d6fbbb6c356a574a2640f931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf6f93c408433e361600c200101b67a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#adbf6f93c408433e361600c200101b67a">fwTap</a> (<a class="el" href="class_g_tap_event.html">GTapEvent</a> *e)</td></tr>
+<tr class="separator:adbf6f93c408433e361600c200101b67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9006153b079bd02f108648f2a33f6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#adf9006153b079bd02f108648f2a33f6f">fwSwipe</a> (<a class="el" href="class_g_swipe_event.html">GSwipeEvent</a> *e)</td></tr>
+<tr class="separator:adf9006153b079bd02f108648f2a33f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070bc4702eab21bbb67969dcc57b15db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a070bc4702eab21bbb67969dcc57b15db">fwGestureScroll</a> (<a class="el" href="class_g_gesture_scroll_event.html">GGestureScrollEvent</a> *e)</td></tr>
+<tr class="separator:a070bc4702eab21bbb67969dcc57b15db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e0fc134fdd57d694a711bf8c0a892f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a1e0fc134fdd57d694a711bf8c0a892f9">setX</a> (int <a class="el" href="class_g_m_item.html#a06f82238c8cff72233a83771ce923158">x</a>)</td></tr>
+<tr class="memdesc:a1e0fc134fdd57d694a711bf8c0a892f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的x坐标  <a href="#a1e0fc134fdd57d694a711bf8c0a892f9">更多...</a><br/></td></tr>
+<tr class="separator:a1e0fc134fdd57d694a711bf8c0a892f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94d41175efd16a4ac6db81b2fa601d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#ad94d41175efd16a4ac6db81b2fa601d7">setY</a> (int <a class="el" href="class_g_m_item.html#a7d2f7aaa3468ab7584b356e81464d433">y</a>)</td></tr>
+<tr class="memdesc:ad94d41175efd16a4ac6db81b2fa601d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的y坐标  <a href="#ad94d41175efd16a4ac6db81b2fa601d7">更多...</a><br/></td></tr>
+<tr class="separator:ad94d41175efd16a4ac6db81b2fa601d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7043fb0d16e08278a1dfb255ca32b8be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a7043fb0d16e08278a1dfb255ca32b8be">setZ</a> (int <a class="el" href="class_g_m_item.html#a615594a316ab8c6e2e9720761459411f">z</a>)</td></tr>
+<tr class="memdesc:a7043fb0d16e08278a1dfb255ca32b8be"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的z坐标  <a href="#a7043fb0d16e08278a1dfb255ca32b8be">更多...</a><br/></td></tr>
+<tr class="separator:a7043fb0d16e08278a1dfb255ca32b8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bfad260a640f71bef2b71c090f30b51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a5bfad260a640f71bef2b71c090f30b51">setWidth</a> (int w)</td></tr>
+<tr class="memdesc:a5bfad260a640f71bef2b71c090f30b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的宽度  <a href="#a5bfad260a640f71bef2b71c090f30b51">更多...</a><br/></td></tr>
+<tr class="separator:a5bfad260a640f71bef2b71c090f30b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b475a3c4913554f23aeebf562d9ec38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a1b475a3c4913554f23aeebf562d9ec38">setHeight</a> (int h)</td></tr>
+<tr class="memdesc:a1b475a3c4913554f23aeebf562d9ec38"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的高度  <a href="#a1b475a3c4913554f23aeebf562d9ec38">更多...</a><br/></td></tr>
+<tr class="separator:a1b475a3c4913554f23aeebf562d9ec38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06f82238c8cff72233a83771ce923158"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a06f82238c8cff72233a83771ce923158">x</a> () const </td></tr>
+<tr class="memdesc:a06f82238c8cff72233a83771ce923158"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素的x坐标  <a href="#a06f82238c8cff72233a83771ce923158">更多...</a><br/></td></tr>
+<tr class="separator:a06f82238c8cff72233a83771ce923158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d2f7aaa3468ab7584b356e81464d433"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a7d2f7aaa3468ab7584b356e81464d433">y</a> () const </td></tr>
+<tr class="memdesc:a7d2f7aaa3468ab7584b356e81464d433"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素的y坐标  <a href="#a7d2f7aaa3468ab7584b356e81464d433">更多...</a><br/></td></tr>
+<tr class="separator:a7d2f7aaa3468ab7584b356e81464d433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a615594a316ab8c6e2e9720761459411f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a615594a316ab8c6e2e9720761459411f">z</a> () const </td></tr>
+<tr class="memdesc:a615594a316ab8c6e2e9720761459411f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素的z坐标  <a href="#a615594a316ab8c6e2e9720761459411f">更多...</a><br/></td></tr>
+<tr class="separator:a615594a316ab8c6e2e9720761459411f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea59079d86502ea2d7d80a1760c0826"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a8ea59079d86502ea2d7d80a1760c0826">width</a> () const </td></tr>
+<tr class="memdesc:a8ea59079d86502ea2d7d80a1760c0826"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素的宽度  <a href="#a8ea59079d86502ea2d7d80a1760c0826">更多...</a><br/></td></tr>
+<tr class="separator:a8ea59079d86502ea2d7d80a1760c0826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802f121dca816ca5ae31b2379d5506a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a802f121dca816ca5ae31b2379d5506a3">height</a> () const </td></tr>
+<tr class="memdesc:a802f121dca816ca5ae31b2379d5506a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素的高度  <a href="#a802f121dca816ca5ae31b2379d5506a3">更多...</a><br/></td></tr>
+<tr class="separator:a802f121dca816ca5ae31b2379d5506a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa9c99e710e06fe0c5c2ab4a976645c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#aaa9c99e710e06fe0c5c2ab4a976645c4">right</a> () const </td></tr>
+<tr class="memdesc:aaa9c99e710e06fe0c5c2ab4a976645c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取右边界的坐标  <a href="#aaa9c99e710e06fe0c5c2ab4a976645c4">更多...</a><br/></td></tr>
+<tr class="separator:aaa9c99e710e06fe0c5c2ab4a976645c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d2a35519ffd56324acc867807b2b5a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a9d2a35519ffd56324acc867807b2b5a0">bottom</a> () const </td></tr>
+<tr class="memdesc:a9d2a35519ffd56324acc867807b2b5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取下边界的坐标  <a href="#a9d2a35519ffd56324acc867807b2b5a0">更多...</a><br/></td></tr>
+<tr class="separator:a9d2a35519ffd56324acc867807b2b5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4657a4fc1e16e8006dd5b1c82903938e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_rect.html">GRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a4657a4fc1e16e8006dd5b1c82903938e">rect</a> () const </td></tr>
+<tr class="memdesc:a4657a4fc1e16e8006dd5b1c82903938e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素所占用的矩形区域  <a href="#a4657a4fc1e16e8006dd5b1c82903938e">更多...</a><br/></td></tr>
+<tr class="separator:a4657a4fc1e16e8006dd5b1c82903938e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090c5a05a501b82e11f76622269c8665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a090c5a05a501b82e11f76622269c8665">setPosition</a> (int <a class="el" href="class_g_m_item.html#a06f82238c8cff72233a83771ce923158">x</a>, int <a class="el" href="class_g_m_item.html#a7d2f7aaa3468ab7584b356e81464d433">y</a>)</td></tr>
+<tr class="memdesc:a090c5a05a501b82e11f76622269c8665"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的位置  <a href="#a090c5a05a501b82e11f76622269c8665">更多...</a><br/></td></tr>
+<tr class="separator:a090c5a05a501b82e11f76622269c8665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff898ca21f84856147985aa9b76cd345"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#aff898ca21f84856147985aa9b76cd345">setSize</a> (int w, int h)</td></tr>
+<tr class="memdesc:aff898ca21f84856147985aa9b76cd345"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的大小  <a href="#aff898ca21f84856147985aa9b76cd345">更多...</a><br/></td></tr>
+<tr class="separator:aff898ca21f84856147985aa9b76cd345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e0768da254f4f39e8971587c442bbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#ad2e0768da254f4f39e8971587c442bbf">setSize</a> (const <a class="el" href="class_g_size.html">GSize</a> &amp;s)</td></tr>
+<tr class="memdesc:ad2e0768da254f4f39e8971587c442bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的大小  <a href="#ad2e0768da254f4f39e8971587c442bbf">更多...</a><br/></td></tr>
+<tr class="separator:ad2e0768da254f4f39e8971587c442bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f7028ac36f8032fcede42e5dc58995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#ae9f7028ac36f8032fcede42e5dc58995">setGeometry</a> (int <a class="el" href="class_g_m_item.html#a06f82238c8cff72233a83771ce923158">x</a>, int <a class="el" href="class_g_m_item.html#a7d2f7aaa3468ab7584b356e81464d433">y</a>, int w, int h)</td></tr>
+<tr class="memdesc:ae9f7028ac36f8032fcede42e5dc58995"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素所占用的矩形区域，位置及大小  <a href="#ae9f7028ac36f8032fcede42e5dc58995">更多...</a><br/></td></tr>
+<tr class="separator:ae9f7028ac36f8032fcede42e5dc58995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c713c08ebacd17a15494d9d2604c1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#ad3c713c08ebacd17a15494d9d2604c1c">moveBy</a> (int <a class="el" href="class_g_m_item.html#a06f82238c8cff72233a83771ce923158">x</a>, int <a class="el" href="class_g_m_item.html#a7d2f7aaa3468ab7584b356e81464d433">y</a>)</td></tr>
+<tr class="memdesc:ad3c713c08ebacd17a15494d9d2604c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动此界面元素；将此界面元素沿X轴移动 x 像素，沿Y轴移动 y 像素  <a href="#ad3c713c08ebacd17a15494d9d2604c1c">更多...</a><br/></td></tr>
+<tr class="separator:ad3c713c08ebacd17a15494d9d2604c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef3cf9327a3388cbc5a85d2501a3f6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#abef3cf9327a3388cbc5a85d2501a3f6d">setPaletteBackgroundColor</a> (const <a class="el" href="class_g_color.html">GColor</a> &amp;c)</td></tr>
+<tr class="memdesc:abef3cf9327a3388cbc5a85d2501a3f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素的背景颜色  <a href="#abef3cf9327a3388cbc5a85d2501a3f6d">更多...</a><br/></td></tr>
+<tr class="separator:abef3cf9327a3388cbc5a85d2501a3f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71bd2bb2e4dcdc393cd9a0387d28c2ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a71bd2bb2e4dcdc393cd9a0387d28c2ce">loadBackgroundPixmap</a> (const uint16_t imgID)</td></tr>
+<tr class="memdesc:a71bd2bb2e4dcdc393cd9a0387d28c2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">加载一个图片作为此界面元素的背景  <a href="#a71bd2bb2e4dcdc393cd9a0387d28c2ce">更多...</a><br/></td></tr>
+<tr class="separator:a71bd2bb2e4dcdc393cd9a0387d28c2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbbdb6a6cd13f49273a59a5bcc3b33d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#adbbdb6a6cd13f49273a59a5bcc3b33d8">isVisible</a> ()</td></tr>
+<tr class="memdesc:adbbdb6a6cd13f49273a59a5bcc3b33d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回此界面元素当前是否可见；show() 之后可见， <a class="el" href="class_g_m_item.html#aadf709c543bb6f8efe3489d607a83444" title="隐藏此界面元素。相当于： ">hide()</a> 之后不可见  <a href="#adbbdb6a6cd13f49273a59a5bcc3b33d8">更多...</a><br/></td></tr>
+<tr class="separator:adbbdb6a6cd13f49273a59a5bcc3b33d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a499c052b7fe4d9afa75a0ab84108c967"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a499c052b7fe4d9afa75a0ab84108c967">setVisible</a> (bool b)</td></tr>
+<tr class="memdesc:a499c052b7fe4d9afa75a0ab84108c967"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置此界面元素是否可见；（用户改变此界面元素的可见属性之后，需要调用 <a class="el" href="class_g_m_item.html#aa61a9eeaaa08f4bc47e91a2ac66a1d3a" title="更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。 ...">update()</a> 或 repaint() ）  <a href="#a499c052b7fe4d9afa75a0ab84108c967">更多...</a><br/></td></tr>
+<tr class="separator:a499c052b7fe4d9afa75a0ab84108c967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8152ca65287c7335b33d8204c69ae466"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a8152ca65287c7335b33d8204c69ae466">show</a> ()</td></tr>
+<tr class="memdesc:a8152ca65287c7335b33d8204c69ae466"><td class="mdescLeft">&#160;</td><td class="mdescRight">显示此界面元素。相当于：<br/>
+ <a href="#a8152ca65287c7335b33d8204c69ae466">更多...</a><br/></td></tr>
+<tr class="separator:a8152ca65287c7335b33d8204c69ae466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb06da793f5bde4e2c4cb294f6558c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_ctrl_form.html">GCtrlForm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a0fb06da793f5bde4e2c4cb294f6558c4">form</a> ()</td></tr>
+<tr class="memdesc:a0fb06da793f5bde4e2c4cb294f6558c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取此界面元素所在的窗体  <a href="#a0fb06da793f5bde4e2c4cb294f6558c4">更多...</a><br/></td></tr>
+<tr class="separator:a0fb06da793f5bde4e2c4cb294f6558c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61a9eeaaa08f4bc47e91a2ac66a1d3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#aa61a9eeaaa08f4bc47e91a2ac66a1d3a">update</a> ()</td></tr>
+<tr class="memdesc:aa61a9eeaaa08f4bc47e91a2ac66a1d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。  <a href="#aa61a9eeaaa08f4bc47e91a2ac66a1d3a">更多...</a><br/></td></tr>
+<tr class="separator:aa61a9eeaaa08f4bc47e91a2ac66a1d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6beda929f276e93a35224bd46c7375f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#a6beda929f276e93a35224bd46c7375f8">draw</a> ()</td></tr>
+<tr class="separator:a6beda929f276e93a35224bd46c7375f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab784117f5d0cdb52eb2ab0dc6b22ed83"><td class="memItemLeft" align="right" valign="top">QCtrlDefaultAppStyle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#ab784117f5d0cdb52eb2ab0dc6b22ed83">getDefaultAppStyle</a> ()</td></tr>
+<tr class="separator:ab784117f5d0cdb52eb2ab0dc6b22ed83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0badddeb6239c6fcc2e8efa5c639ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_item.html#add0badddeb6239c6fcc2e8efa5c639ea">isComplex</a> ()</td></tr>
+<tr class="separator:add0badddeb6239c6fcc2e8efa5c639ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1b539842f0d5fbc09ad52163b7323b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#afa1b539842f0d5fbc09ad52163b7323b">name</a> () const </td></tr>
+<tr class="memdesc:afa1b539842f0d5fbc09ad52163b7323b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象名称  <a href="#afa1b539842f0d5fbc09ad52163b7323b">更多...</a><br/></td></tr>
+<tr class="separator:afa1b539842f0d5fbc09ad52163b7323b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef28ababe03e654cd4edcebffd7950c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#a7ef28ababe03e654cd4edcebffd7950c">parent</a> () const </td></tr>
+<tr class="memdesc:a7ef28ababe03e654cd4edcebffd7950c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的parent  <a href="#a7ef28ababe03e654cd4edcebffd7950c">更多...</a><br/></td></tr>
+<tr class="separator:a7ef28ababe03e654cd4edcebffd7950c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe1539cdd85a5fc2198baf8580a2f9e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#aafe1539cdd85a5fc2198baf8580a2f9e">event</a> (<a class="el" href="class_g_event.html">GEvent</a> *)</td></tr>
+<tr class="memdesc:aafe1539cdd85a5fc2198baf8580a2f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">开发者可以在子类中覆盖此函数，处理自己需要的事件  <a href="#aafe1539cdd85a5fc2198baf8580a2f9e">更多...</a><br/></td></tr>
+<tr class="separator:aafe1539cdd85a5fc2198baf8580a2f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:aca0ed736728ec72a656131539f668c3e"><td class="memTemplParams" colspan="2">template&lt;class Receiver , typename... Args&gt; </td></tr>
+<tr class="memitem:aca0ed736728ec72a656131539f668c3e"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_g_object.html#aca0ed736728ec72a656131539f668c3e">connect</a> (<a class="el" href="class_g_object.html">GObject</a> *sender, <a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;signal, Receiver *receiver, void(Receiver::*SlotFunc)(Args...))</td></tr>
+<tr class="memdesc:aca0ed736728ec72a656131539f668c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">将信号和槽建立连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。  <a href="#aca0ed736728ec72a656131539f668c3e">更多...</a><br/></td></tr>
+<tr class="separator:aca0ed736728ec72a656131539f668c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f70e9463996742b85cf1a1605bc6db"><td class="memTemplParams" colspan="2">template&lt;class Receiver , typename... Args&gt; </td></tr>
+<tr class="memitem:a26f70e9463996742b85cf1a1605bc6db"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_g_object.html#a26f70e9463996742b85cf1a1605bc6db">disconnect</a> (<a class="el" href="class_g_object.html">GObject</a> *sender, <a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;signal, Receiver *receiver, void(Receiver::*SlotFunc)(Args...))</td></tr>
+<tr class="memdesc:a26f70e9463996742b85cf1a1605bc6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">将信号和槽断开连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。  <a href="#a26f70e9463996742b85cf1a1605bc6db">更多...</a><br/></td></tr>
+<tr class="separator:a26f70e9463996742b85cf1a1605bc6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0292d8a8d300394df2b977ce59a23bcb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#a0292d8a8d300394df2b977ce59a23bcb">isObjectExist</a> (<a class="el" href="class_g_object.html">GObject</a> *obj)</td></tr>
+<tr class="memdesc:a0292d8a8d300394df2b977ce59a23bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断对象是否已经被析构掉了。  <a href="#a0292d8a8d300394df2b977ce59a23bcb">更多...</a><br/></td></tr>
+<tr class="separator:a0292d8a8d300394df2b977ce59a23bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:af93db2bb75bc4f67100ae44116962d3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(const <br class="typebreak"/>
+<a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#af93db2bb75bc4f67100ae44116962d3b">focusChangedTo_pI</a></td></tr>
+<tr class="memdesc:af93db2bb75bc4f67100ae44116962d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">当列表项的焦点发生改变时，该信号被立即发射；参数为：当前具有焦点的列表项  <a href="#af93db2bb75bc4f67100ae44116962d3b">更多...</a><br/></td></tr>
+<tr class="separator:af93db2bb75bc4f67100ae44116962d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7849cba3927d177c2f2240fde5c29bf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a7849cba3927d177c2f2240fde5c29bf0">focusChangedTo_pi</a></td></tr>
+<tr class="memdesc:a7849cba3927d177c2f2240fde5c29bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">当列表项的焦点发生改变时，该信号被立即发射；参数为：当前具有焦点的列表项的索引值  <a href="#a7849cba3927d177c2f2240fde5c29bf0">更多...</a><br/></td></tr>
+<tr class="separator:a7849cba3927d177c2f2240fde5c29bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75fc40f999ad71d89b3ee5f0e3f47644"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(const <br class="typebreak"/>
+<a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a75fc40f999ad71d89b3ee5f0e3f47644">highlighted_pI</a></td></tr>
+<tr class="memdesc:a75fc40f999ad71d89b3ee5f0e3f47644"><td class="mdescLeft">&#160;</td><td class="mdescRight">列表项的焦点发生了改变，并且10秒之内列表项的焦点没有再次发生改变，该信号被立即发射；参数为：当前具有焦点的列表项  <a href="#a75fc40f999ad71d89b3ee5f0e3f47644">更多...</a><br/></td></tr>
+<tr class="separator:a75fc40f999ad71d89b3ee5f0e3f47644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae980908408beada95183b3f7b153cf2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#ae980908408beada95183b3f7b153cf2d">highlighted_pi</a></td></tr>
+<tr class="memdesc:ae980908408beada95183b3f7b153cf2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">列表项的焦点发生了改变，并且10秒之内列表项的焦点没有再次发生改变，该信号被立即发射；参数为：当前具有焦点的列表项的索引值  <a href="#ae980908408beada95183b3f7b153cf2d">更多...</a><br/></td></tr>
+<tr class="separator:ae980908408beada95183b3f7b153cf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c4acb5d5b895562ad16098bb01ac2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(const <br class="typebreak"/>
+<a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#ab1c4acb5d5b895562ad16098bb01ac2b">selected_pI</a></td></tr>
+<tr class="memdesc:ab1c4acb5d5b895562ad16098bb01ac2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">当列表项被用户点击时，该信号被立即发射；参数为：当前具有焦点的列表项  <a href="#ab1c4acb5d5b895562ad16098bb01ac2b">更多...</a><br/></td></tr>
+<tr class="separator:ab1c4acb5d5b895562ad16098bb01ac2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51573d2dbd7861feb7de5c931d22b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(int)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#ab51573d2dbd7861feb7de5c931d22b87">selected_pi</a></td></tr>
+<tr class="memdesc:ab51573d2dbd7861feb7de5c931d22b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">当列表项被用户点击时，该信号被立即发射；参数为：当前具有焦点的列表项的索引值  <a href="#ab51573d2dbd7861feb7de5c931d22b87">更多...</a><br/></td></tr>
+<tr class="separator:ab51573d2dbd7861feb7de5c931d22b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aee1b5f71bdb89e9af328ee6e449e9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(void)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a2aee1b5f71bdb89e9af328ee6e449e9e">loseFocus</a></td></tr>
+<tr class="memdesc:a2aee1b5f71bdb89e9af328ee6e449e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">当此元素失去焦点时，会立即发射此信号  <a href="#a2aee1b5f71bdb89e9af328ee6e449e9e">更多...</a><br/></td></tr>
+<tr class="separator:a2aee1b5f71bdb89e9af328ee6e449e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4def5f85fd24804fdefffd610e5fa1b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(void)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a4def5f85fd24804fdefffd610e5fa1b2">getFocus</a></td></tr>
+<tr class="memdesc:a4def5f85fd24804fdefffd610e5fa1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">当此元素获得焦点时，会立即发射此信号  <a href="#a4def5f85fd24804fdefffd610e5fa1b2">更多...</a><br/></td></tr>
+<tr class="separator:a4def5f85fd24804fdefffd610e5fa1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdde379be11052e84e0eb8ac79bba37f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(void)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#acdde379be11052e84e0eb8ac79bba37f">sigDestroyed</a></td></tr>
+<tr class="memdesc:acdde379be11052e84e0eb8ac79bba37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">当对象被析构时，会发射此信号  <a href="#acdde379be11052e84e0eb8ac79bba37f">更多...</a><br/></td></tr>
+<tr class="separator:acdde379be11052e84e0eb8ac79bba37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9bf4442aa04ab58d986fdbe643bf7dee"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a9bf4442aa04ab58d986fdbe643bf7dee">fwKeyPressEvent</a> (<a class="el" href="class_g_key_event.html">GKeyEvent</a> *)</td></tr>
+<tr class="separator:a9bf4442aa04ab58d986fdbe643bf7dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa88a393e448b7d9a41a993b9c23c3483"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#aa88a393e448b7d9a41a993b9c23c3483">fwMousePressEvent</a> (<a class="el" href="class_g_mouse_event.html">GMouseEvent</a> *)</td></tr>
+<tr class="separator:aa88a393e448b7d9a41a993b9c23c3483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e340e1bfe98a656a7d87b0c78acd616"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a0e340e1bfe98a656a7d87b0c78acd616">fwTapEvent</a> (<a class="el" href="class_g_tap_event.html">GTapEvent</a> *)</td></tr>
+<tr class="separator:a0e340e1bfe98a656a7d87b0c78acd616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2dbe9edd19f4cd4dab344a5cd74ce7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a0b2dbe9edd19f4cd4dab344a5cd74ce7">fwSwipeEvent</a> (<a class="el" href="class_g_swipe_event.html">GSwipeEvent</a> *)</td></tr>
+<tr class="separator:a0b2dbe9edd19f4cd4dab344a5cd74ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6214032905c04aa445a1a81939796b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#ad6214032905c04aa445a1a81939796b2">paintEvent</a> ()</td></tr>
+<tr class="separator:ad6214032905c04aa445a1a81939796b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131d43aa59257ebf4d7a6dad327bea44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a131d43aa59257ebf4d7a6dad327bea44">getMaxIconHeight</a> ()</td></tr>
+<tr class="memdesc:a131d43aa59257ebf4d7a6dad327bea44"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取列表项的最大显示高度  <a href="#a131d43aa59257ebf4d7a6dad327bea44">更多...</a><br/></td></tr>
+<tr class="separator:a131d43aa59257ebf4d7a6dad327bea44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afedcf0f3f1292ca5849a70d0651f96a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#afedcf0f3f1292ca5849a70d0651f96a3">getMaxIconWidth</a> ()</td></tr>
+<tr class="memdesc:afedcf0f3f1292ca5849a70d0651f96a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取列表项的最大显示宽度  <a href="#afedcf0f3f1292ca5849a70d0651f96a3">更多...</a><br/></td></tr>
+<tr class="separator:afedcf0f3f1292ca5849a70d0651f96a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738db757df7acb91a032c429253b8cc4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a738db757df7acb91a032c429253b8cc4">keyPressEvent</a> (<a class="el" href="class_g_key_event.html">GKeyEvent</a> *)</td></tr>
+<tr class="memdesc:a738db757df7acb91a032c429253b8cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户可以在子类中覆盖这个函数处理按键。用户不可以覆盖任何以fw开头的函数  <a href="#a738db757df7acb91a032c429253b8cc4">更多...</a><br/></td></tr>
+<tr class="separator:a738db757df7acb91a032c429253b8cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2d96f80fb8a3bf14c2512b67fbeecb7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#ad2d96f80fb8a3bf14c2512b67fbeecb7">mousePressEvent</a> (<a class="el" href="class_g_mouse_event.html">GMouseEvent</a> *)</td></tr>
+<tr class="memdesc:ad2d96f80fb8a3bf14c2512b67fbeecb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户可以在子类中覆盖这个函数处理鼠标事件。用户不可以覆盖任何以fw开头的函数  <a href="#ad2d96f80fb8a3bf14c2512b67fbeecb7">更多...</a><br/></td></tr>
+<tr class="separator:ad2d96f80fb8a3bf14c2512b67fbeecb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dfb52c91fdd2935454d7b07831b2a2d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a4dfb52c91fdd2935454d7b07831b2a2d">tapEvent</a> (<a class="el" href="class_g_tap_event.html">GTapEvent</a> *)</td></tr>
+<tr class="memdesc:a4dfb52c91fdd2935454d7b07831b2a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户可以在子类中覆盖这个函数处理点击事件。用户不可以覆盖任何以fw开头的函数  <a href="#a4dfb52c91fdd2935454d7b07831b2a2d">更多...</a><br/></td></tr>
+<tr class="separator:a4dfb52c91fdd2935454d7b07831b2a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b16ded82826b4c958d70730ded1ab6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a99b16ded82826b4c958d70730ded1ab6">swipeEvent</a> (<a class="el" href="class_g_swipe_event.html">GSwipeEvent</a> *)</td></tr>
+<tr class="memdesc:a99b16ded82826b4c958d70730ded1ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户可以在子类中覆盖这个函数处理滑动事件。用户不可以覆盖任何以fw开头的函数  <a href="#a99b16ded82826b4c958d70730ded1ab6">更多...</a><br/></td></tr>
+<tr class="separator:a99b16ded82826b4c958d70730ded1ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314fbb15dd8c4a525b8451a6e6814b69"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a314fbb15dd8c4a525b8451a6e6814b69">gestureScrollEvent</a> (<a class="el" href="class_g_gesture_scroll_event.html">GGestureScrollEvent</a> *)</td></tr>
+<tr class="memdesc:a314fbb15dd8c4a525b8451a6e6814b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">用户可以在子类中覆盖这个函数处理滑动手势。用户不可以覆盖任何以fw开头的函数  <a href="#a314fbb15dd8c4a525b8451a6e6814b69">更多...</a><br/></td></tr>
+<tr class="separator:a314fbb15dd8c4a525b8451a6e6814b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a755352affce5fd6a9c5171dce58d3cc4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_ctrl_item.html#a755352affce5fd6a9c5171dce58d3cc4">fwGestureScrollEvent</a> (<a class="el" href="class_g_gesture_scroll_event.html">GGestureScrollEvent</a> *)</td></tr>
+<tr class="separator:a755352affce5fd6a9c5171dce58d3cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a1d5e8ad8abbc5dc28510d01fa4317e11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_pointer.html">GPointer</a>&lt; <a class="el" href="class_g_m_ctrl_item.html">GMCtrlItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_container_item.html#a1d5e8ad8abbc5dc28510d01fa4317e11">mpFocus</a></td></tr>
+<tr class="separator:a1d5e8ad8abbc5dc28510d01fa4317e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a105dfd1dd909db591539179c9b5b8002"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_ctrl_list_box.html#a105dfd1dd909db591539179c9b5b8002">GCtrlListBoxItem</a></td></tr>
+<tr class="separator:a105dfd1dd909db591539179c9b5b8002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_g_ctrl_list_box.html" title="GCtrlListBox 类提供了类似windows资源管理器中的列表视图；列表视图可以包含任意数目的列表项 GCtrlListBoxItem ；如果没有列表视图，列表项将无法显示。 ...">GCtrlListBox</a> 类提供了类似windows资源管理器中的列表视图；列表视图可以包含任意数目的列表项 <a class="el" href="class_g_ctrl_list_box_item.html" title="列表视图中可以包含任意数目的列表项， GCtrlListBoxItem 类代表只有一个文字标题的所述列表项； ">GCtrlListBoxItem</a> ；如果没有列表视图，列表项将无法显示。 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a class="anchor" id="a963110edd99a9b5cc2a09be732a7c23d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">GCtrlListBox::E_ITEMS_LAYOUT_MODE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>列表如何排版其中的列表项 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a963110edd99a9b5cc2a09be732a7c23da69c038302feb5bba5f72c0b6c2d95191"></a>E_ITEMS_LAYOUT_TOP_2_BOTTOM</em>&#160;</td><td class="fielddoc">
+<p>默认值。从上往下排版列表项，超出下边界则在右侧另起一列 </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a963110edd99a9b5cc2a09be732a7c23daa36d607fc3ea8c512f5aa1d81890150f"></a>E_ITEMS_LAYOUT_LEFT_2_RIGHT</em>&#160;</td><td class="fielddoc">
+<p>从左向右排版列表项，超出右边界则在下方另起一行 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="ab7aafec88d1aab660d1232c36ce33613"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GCtrlListBox::GCtrlListBox </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_ctrl_form.html">GCtrlForm</a> *&#160;</td>
+          <td class="paramname"><em>frm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_m_item.html">GMItem</a> *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>showSingleTitle</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造一个列表视图。一个列表视图可以包含任意数目的列表项 <a class="el" href="class_g_ctrl_list_box_item.html" title="列表视图中可以包含任意数目的列表项， GCtrlListBoxItem 类代表只有一个文字标题的所述列表项； ">GCtrlListBoxItem</a> 。默认情况下，列表视图会按照列表项被添加进来的先后顺序，为所有列表项建立索引。用户可以使用索引值来访问、操作任一列表项。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frm</td><td>... </td></tr>
+    <tr><td class="paramname">parent</td><td>... </td></tr>
+    <tr><td class="paramname">name</td><td>... </td></tr>
+    <tr><td class="paramname">showSingleTitle</td><td>是否仅显示当前具有焦点的图标项的文字标题。如果为true，则其它无焦点的图标项的文字标题会被隐藏。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aed13463ac05fa7dc683cd8b9403edf0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GCtrlListBox::~GCtrlListBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a9d2a35519ffd56324acc867807b2b5a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::bottom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取下边界的坐标 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa476c4a557c027e1a9c436ce0b57d4fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::changeItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>更换第 index 个列表项；系统将自动回收被替换掉的列表项所占用的内存；如果 index 等于-1，会替换掉当前处于焦点状态的列表项； </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a28e45ae50fdca7b0b99a0ff3d488545b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清空列表视图。列表视图中包含的所有列表项将被删除，它们占用的内存空间将被收回。 </p>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aca0ed736728ec72a656131539f668c3e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Receiver , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GObject::connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Receiver *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Receiver::*)(Args...)&#160;</td>
+          <td class="paramname"><em>SlotFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将信号和槽建立连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>指向发射者的指针 </td></tr>
+    <tr><td class="paramname">signal</td><td>指向信号的引用。 </td></tr>
+    <tr><td class="paramname">receiver</td><td>指向接收者的指针 </td></tr>
+    <tr><td class="paramname">SlotFunc</td><td>指向槽函数的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0代表成功；非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a85305ca85d36280fcac063ea23bfb3a1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int GCtrlListBox::count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回当前列表视图中所包含的列表项的数目 </p>
+<dl class="section return"><dt>返回</dt><dd>unsigned int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a26f70e9463996742b85cf1a1605bc6db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Receiver , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GObject::disconnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Receiver *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Receiver::*)(Args...)&#160;</td>
+          <td class="paramname"><em>SlotFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将信号和槽断开连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>指向发射者的指针 </td></tr>
+    <tr><td class="paramname">signal</td><td>指向信号的引用。 </td></tr>
+    <tr><td class="paramname">receiver</td><td>指向接收者的指针 </td></tr>
+    <tr><td class="paramname">SlotFunc</td><td>指向槽函数的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0代表成功；非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6beda929f276e93a35224bd46c7375f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMItem::draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aafe1539cdd85a5fc2198baf8580a2f9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GObject::event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>开发者可以在子类中覆盖此函数，处理自己需要的事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>被 <a class="el" href="class_g_tcp_socket.html#a301d16eec79b36b1980f0d61947436f0">GTcpSocket</a>, <a class="el" href="class_g_timer.html#a33b3aacbc681e77e39dda1f3fc86537a">GTimer</a>, <a class="el" href="class_g_udp_socket.html#a263983d7bc772761ecd7c314ca6e4e54">GUdpSocket</a> , 以及 <a class="el" href="class_g_tcp_server.html#ab1f77167f5e49d831c8e5d2b281c052c">GTcpServer</a> 重载.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fb06da793f5bde4e2c4cb294f6558c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_ctrl_form.html">GCtrlForm</a>* GMItem::form </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素所在的窗体 </p>
+<dl class="section return"><dt>返回</dt><dd>GCtrlForm* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a070bc4702eab21bbb67969dcc57b15db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::fwGestureScroll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_gesture_scroll_event.html">GGestureScrollEvent</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a755352affce5fd6a9c5171dce58d3cc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::fwGestureScrollEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_gesture_scroll_event.html">GGestureScrollEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_g_m_progress_bar.html#a0a079c6003142922648b97f43c323ae4">GMProgressBar</a> 重载.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1594c818e1c47168b118f977e47dcc6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::fwKeyPress </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_key_event.html">GKeyEvent</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9bf4442aa04ab58d986fdbe643bf7dee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GCtrlListBox::fwKeyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_key_event.html">GKeyEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_g_m_ctrl_item.html#abec88a4cf3e6dd7f4654723365bc02b3">GMCtrlItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a49d88626d6fbbb6c356a574a2640f931"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::fwMousePress </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_mouse_event.html">GMouseEvent</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa88a393e448b7d9a41a993b9c23c3483"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GCtrlListBox::fwMousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_mouse_event.html">GMouseEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_g_m_ctrl_item.html#a7d944ea1094b8a6692770541116a230e">GMCtrlItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="adf9006153b079bd02f108648f2a33f6f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::fwSwipe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_swipe_event.html">GSwipeEvent</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0b2dbe9edd19f4cd4dab344a5cd74ce7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GCtrlListBox::fwSwipeEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_swipe_event.html">GSwipeEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_g_m_ctrl_item.html#aba895a764451b07cd91b4a0bf7b12cd7">GMCtrlItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="adbf6f93c408433e361600c200101b67a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::fwTap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_tap_event.html">GTapEvent</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e340e1bfe98a656a7d87b0c78acd616"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GCtrlListBox::fwTapEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_tap_event.html">GTapEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_g_m_ctrl_item.html#a088874f965b3f59eeed685af75dc143d">GMCtrlItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a314fbb15dd8c4a525b8451a6e6814b69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::gestureScrollEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_gesture_scroll_event.html">GGestureScrollEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用户可以在子类中覆盖这个函数处理滑动手势。用户不可以覆盖任何以fw开头的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a70a155106a8f579a8c0a5737b4f48f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GCtrlListBox::getCurItemIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前具有焦点状态的列表项的索引值 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab784117f5d0cdb52eb2ab0dc6b22ed83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCtrlDefaultAppStyle* GMItem::getDefaultAppStyle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9fce16ea1df704f82bdbceff7196300e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_color.html">GColor</a> GCtrlListBox::getItemTextColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获得列表项文字标题的颜色 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_g_color.html" title="颜色、像素， GColor 提供了对ARGB8888格式像素的封装 ">GColor</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f2ffc6ffedbf61292b6be6549ef373a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_font.html">GFont</a> GCtrlListBox::getItemTextFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获得列表项文字标题的字体 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_g_font.html" title="字体、字号等信息。 ">GFont</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa047923b9bd3b996659eaada8a2f551b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">GCtrlListBox::E_ITEMS_LAYOUT_MODE</a> GCtrlListBox::getLayoutMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取列表的布局模式。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d" title="列表如何排版其中的列表项 ">GCtrlListBox::E_ITEMS_LAYOUT_MODE</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a131d43aa59257ebf4d7a6dad327bea44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GCtrlListBox::getMaxIconHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取列表项的最大显示高度 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afedcf0f3f1292ca5849a70d0651f96a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GCtrlListBox::getMaxIconWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取列表项的最大显示宽度 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa62a8ac997d9cbee0036bfd20bfbb760"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::hasFocus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回此元素是否具有焦点 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a802f121dca816ca5ae31b2379d5506a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素的高度 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e0834518655b8561c0c09423dab9360"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMCtrlItem::hide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>隐藏此界面元素。相当于：<br/>
+</p>
+<pre>
+setVisible (false);
+<a class="el" href="class_g_m_item.html#aa61a9eeaaa08f4bc47e91a2ac66a1d3a" title="更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。 ...">update()</a>;
+</pre><dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+<p>重载 <a class="el" href="class_g_m_item.html#aadf709c543bb6f8efe3489d607a83444">GMItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b5449e2871700a2e7ee2326d813e664"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::insertItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向列表视图中添加列表项。列表视图会按照列表项被添加进来的先后顺序，为所有列表项建立索引。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>列表项 </td></tr>
+    <tr><td class="paramname">index</td><td>指定列表项在列表视图中的显示位置；-1意味着列表项将被放置在列表视图的最后； </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="add0badddeb6239c6fcc2e8efa5c639ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMItem::isComplex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_g_ctrl_scroll_text.html#aec4ccc8bacc36e50108177f298950d7a">GCtrlScrollText</a>, <a class="el" href="class_g_ctrl_text.html#ac03a09c32cff9ef46a54941818a53ab1">GCtrlText</a>, <a class="el" href="class_g_ctrl_pixmap.html#ab54ab893f282fd2f0dfdbfe047326602">GCtrlPixmap</a> , 以及 <a class="el" href="class_g_ctrl_image.html#a3793af73ad1d288a9464e46b582f387e">GCtrlImage</a> 重载.</p>
+
+</div>
+</div>
+<a class="anchor" id="afce0e4841a52d99ba41adcc0da6695bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMContainerItem::isContainerItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否是容器 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>重载 <a class="el" href="class_g_m_item.html#ac2aa8bf13a82170f107bc1bd3b4582ed">GMItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a3fd66a4038ab83ed2a2366a2c8ef3ac4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::isCtrlItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否可以接收输入事件 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>重载 <a class="el" href="class_g_m_item.html#ae1dc323b6ac9b7feec366547e5ed6119">GMItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a1661e90992d6bc25eedabfbf00480296"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMCtrlItem::isFocusEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取焦点是否被禁用；焦点被禁用后，此元素将不能获得焦点 ，不能处理各种输入事件。 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0292d8a8d300394df2b977ce59a23bcb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool GObject::isObjectExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断对象是否已经被析构掉了。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool true表示对象健在，false表示对象已经被析构掉了 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adbbdb6a6cd13f49273a59a5bcc3b33d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMItem::isVisible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回此界面元素当前是否可见；show() 之后可见， <a class="el" href="class_g_m_item.html#aadf709c543bb6f8efe3489d607a83444" title="隐藏此界面元素。相当于： ">hide()</a> 之后不可见 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c73d12528eb365d1184d5bc12771c5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a>* GCtrlListBox::item </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取第 index 个列表项；如果index=-1则获取当前具有焦点状态的列表项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>GCtrlListBoxItem* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a738db757df7acb91a032c429253b8cc4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_key_event.html">GKeyEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用户可以在子类中覆盖这个函数处理按键。用户不可以覆盖任何以fw开头的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a71bd2bb2e4dcdc393cd9a0387d28c2ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::loadBackgroundPixmap </td>
+          <td>(</td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>imgID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>加载一个图片作为此界面元素的背景 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgID</td><td>图片的数字ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad2d96f80fb8a3bf14c2512b67fbeecb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_mouse_event.html">GMouseEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用户可以在子类中覆盖这个函数处理鼠标事件。用户不可以覆盖任何以fw开头的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3c713c08ebacd17a15494d9d2604c1c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::moveBy </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移动此界面元素；将此界面元素沿X轴移动 x 像素，沿Y轴移动 y 像素 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>... </td></tr>
+    <tr><td class="paramname">y</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa1b539842f0d5fbc09ad52163b7323b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* GObject::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const char* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad6214032905c04aa445a1a81939796b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GCtrlListBox::paintEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_g_m_item.html#a3ed297b54331a3cb9849e80253e72751">GMItem</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ef28ababe03e654cd4edcebffd7950c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_object.html">GObject</a>* GObject::parent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象的parent </p>
+<dl class="section return"><dt>返回</dt><dd>GObject* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4657a4fc1e16e8006dd5b1c82903938e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_rect.html">GRect</a> GMItem::rect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素所占用的矩形区域 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_g_rect.html" title="GRect 代表二维平面中的一个矩形区域。对二维平面上的一个矩形区域进行各种数学运算。 ">GRect</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3cc8eb72e5005e5a86f59d16b5c98357"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::removeItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从列表视图中删除一个列表项。如果 index 等于-1，会删除当前处于焦点状态的列表项；否则，删除第 index 个列表项。系统将自动回收被删除掉的列表项所占用的内存。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1db4edd6dddf961f84040152d5d819e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::removeItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从列表视图中删除指定的列表项。系统将自动回收被删除掉的列表项所占用的内存。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa9c99e710e06fe0c5c2ab4a976645c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::right </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取右边界的坐标 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa9704271eeaad13a59e7585f7993f4c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setColumnNums </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列表视图的列数，即指定一行中包含几个列表项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a23734f5e579e6aef37348f54e54e585e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setCurItemIndex </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>让第 nIndex 个列表项得到焦点状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nIndex</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af17887879f72505d2c49b7b28ddf85d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMCtrlItem::setFocus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此元素到有焦点状态 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a9a0be1b0049b7edb0ae82e180de44c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMCtrlItem::setFocusEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否禁此元素的焦点；焦点被禁用后，此元素将不能获得焦点 ，不能处理各种输入事件。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa74de5f22b09ce9e1d5fc93b6808cc4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setFocusInImage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_image.html">GImage</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置当列表视图处于焦点状态时，列表项所使用的焦点图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a28290d15380fff137ef9a9836180cb0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setFocusOutImage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_image.html">GImage</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置当列表视图失去焦点状态之后，列表项所使用的焦点图片 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b5699648b13588e832e9680e8d1e42a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMContainerItem::setFocusToItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_m_ctrl_item.html">GMCtrlItem</a> *&#160;</td>
+          <td class="paramname"><em>pItem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置焦点到指定的 <a class="el" href="class_g_m_ctrl_item.html" title="可以接收输入事件的界面元素的基类 ">GMCtrlItem</a> </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pItem</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9f7028ac36f8032fcede42e5dc58995"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setGeometry </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素所占用的矩形区域，位置及大小 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>... </td></tr>
+    <tr><td class="paramname">y</td><td>... </td></tr>
+    <tr><td class="paramname">w</td><td>... </td></tr>
+    <tr><td class="paramname">h</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1b475a3c4913554f23aeebf562d9ec38"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setHeight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的高度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a525a262a51900c6e70c4de669e762332"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setItemScrollEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列表项的文字标题（在标题长度过长的情况下）是否能够以滚动字幕的形式进行显示 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aff3c136151a2bb0230499d036e5d562f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setItemTextColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_color.html">GColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列表项文字标题的颜色 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a29ab874d061e72d691b0c0c7696f5d9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setItemTextFont </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_font.html">GFont</a> &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列表项文字标题的字体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ab956ad8ce6edc6594e11584d53293d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setLayoutMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_ctrl_list_box.html#a963110edd99a9b5cc2a09be732a7c23d">E_ITEMS_LAYOUT_MODE</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列表应当如何排版列表项。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a82a1156da98ac1ebd206ed22e2aa67cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setLoopFocus </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置是否允许循环切换焦点；<br/>
+如果允许，则当移到焦点到最后一个列表项后，此时如果试图移动焦点到下一个列表项，则焦点将移动到第一个列表项；<br/>
+如果禁止，则当移到焦点到最后一个列表项后，此时如果试图移动焦点到下一个列表项，则焦点保持不变。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a25adef8eacef3fdedbc195ab6a240519"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setNextColumnKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置一个用于将焦点向后移动一列的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a6bd0d1bb741bd764cb84149292bea3bb">Giveda::Key_PageDown</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nKey</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a05637023cefc3ec0006103cd8a80e03c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setNextItemKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置一个用于将焦点移动到下一个列表项的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a2a235f8628bcf201a46b6172a4406e97">Giveda::Key_Down</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nKey</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abef3cf9327a3388cbc5a85d2501a3f6d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setPaletteBackgroundColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_color.html">GColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的背景颜色 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a090c5a05a501b82e11f76622269c8665"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>... </td></tr>
+    <tr><td class="paramname">y</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a68965c21dc2b78276be7cfb0a7f7dd3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setPreviousColumnKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置一个用于将焦点向前移动一列的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a57ef9bf8e9130c2c558dbb0308453dcc">Giveda::Key_PageUp</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nKey</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afb7d2d59c5608c0a2802376b0152a513"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setPreviousItemKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置一个用于将焦点移动到上一个列表项的按键键值。默认值为 <a class="el" href="namespace_giveda.html#ae568c4cf9a0ef24f98b56baec8e2e3d9a8272d0f9bc1884499524d3661a9de478">Giveda::Key_Up</a> <br/>
+请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nKey</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acb11ad861154416fd5dff0131cb94be1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GCtrlListBox::setRowNums </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置列表视图的行数，即指定一下列表视图中包含几行列表项 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aff898ca21f84856147985aa9b76cd345"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的大小 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>... </td></tr>
+    <tr><td class="paramname">h</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad2e0768da254f4f39e8971587c442bbf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的大小 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a866ef9638d85287eb16720033912688a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMCtrlItem::setTabIndex </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的tab index；在使用键盘来操作界面时，需要用到tab index </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a499c052b7fe4d9afa75a0ab84108c967"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setVisible </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素是否可见；（用户改变此界面元素的可见属性之后，需要调用 <a class="el" href="class_g_m_item.html#aa61a9eeaaa08f4bc47e91a2ac66a1d3a" title="更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。 ...">update()</a> 或 repaint() ） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5bfad260a640f71bef2b71c090f30b51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的宽度 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1e0fc134fdd57d694a711bf8c0a892f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setX </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的x坐标 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad94d41175efd16a4ac6db81b2fa601d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的y坐标 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7043fb0d16e08278a1dfb255ca32b8be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::setZ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置此界面元素的z坐标 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8152ca65287c7335b33d8204c69ae466"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMItem::show </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>显示此界面元素。相当于：<br/>
+</p>
+<pre>
+setVisible (true);
+<a class="el" href="class_g_m_item.html#aa61a9eeaaa08f4bc47e91a2ac66a1d3a" title="更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。 ...">update()</a>;
+</pre><dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99b16ded82826b4c958d70730ded1ab6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::swipeEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_swipe_event.html">GSwipeEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用户可以在子类中覆盖这个函数处理滑动事件。用户不可以覆盖任何以fw开头的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a200f5a2f9b31f1bfa61c6692c6e9d525"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int GMCtrlItem::tabIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素的tab index；在使用键盘来操作界面时，需要用到tab index </p>
+<dl class="section return"><dt>返回</dt><dd>unsigned int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4dfb52c91fdd2935454d7b07831b2a2d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GMCtrlItem::tapEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_tap_event.html">GTapEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>用户可以在子类中覆盖这个函数处理点击事件。用户不可以覆盖任何以fw开头的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa61a9eeaaa08f4bc47e91a2ac66a1d3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMItem::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。 </p>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ea59079d86502ea2d7d80a1760c0826"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素的宽度 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06f82238c8cff72233a83771ce923158"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::x </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素的x坐标 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d2f7aaa3468ab7584b356e81464d433"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素的y坐标 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a615594a316ab8c6e2e9720761459411f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMItem::z </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取此界面元素的z坐标 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a class="anchor" id="a105dfd1dd909db591539179c9b5b8002"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="af93db2bb75bc4f67100ae44116962d3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void ( const <a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a>* )&gt; GCtrlListBox::focusChangedTo_pI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当列表项的焦点发生改变时，该信号被立即发射；参数为：当前具有焦点的列表项 </p>
+
+</div>
+</div>
+<a class="anchor" id="a7849cba3927d177c2f2240fde5c29bf0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void ( int )&gt; GCtrlListBox::focusChangedTo_pi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当列表项的焦点发生改变时，该信号被立即发射；参数为：当前具有焦点的列表项的索引值 </p>
+
+</div>
+</div>
+<a class="anchor" id="a4def5f85fd24804fdefffd610e5fa1b2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void(void)&gt; GMCtrlItem::getFocus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当此元素获得焦点时，会立即发射此信号 </p>
+
+</div>
+</div>
+<a class="anchor" id="a75fc40f999ad71d89b3ee5f0e3f47644"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void ( const <a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a>* )&gt; GCtrlListBox::highlighted_pI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>列表项的焦点发生了改变，并且10秒之内列表项的焦点没有再次发生改变，该信号被立即发射；参数为：当前具有焦点的列表项 </p>
+
+</div>
+</div>
+<a class="anchor" id="ae980908408beada95183b3f7b153cf2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void ( int )&gt; GCtrlListBox::highlighted_pi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>列表项的焦点发生了改变，并且10秒之内列表项的焦点没有再次发生改变，该信号被立即发射；参数为：当前具有焦点的列表项的索引值 </p>
+
+</div>
+</div>
+<a class="anchor" id="a2aee1b5f71bdb89e9af328ee6e449e9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void(void)&gt; GMCtrlItem::loseFocus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当此元素失去焦点时，会立即发射此信号 </p>
+
+</div>
+</div>
+<a class="anchor" id="a1d5e8ad8abbc5dc28510d01fa4317e11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_pointer.html">GPointer</a>&lt;<a class="el" href="class_g_m_ctrl_item.html">GMCtrlItem</a>&gt; GMContainerItem::mpFocus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1c4acb5d5b895562ad16098bb01ac2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void ( const <a class="el" href="class_g_ctrl_list_box_item.html">GCtrlListBoxItem</a>* )&gt; GCtrlListBox::selected_pI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当列表项被用户点击时，该信号被立即发射；参数为：当前具有焦点的列表项 </p>
+
+</div>
+</div>
+<a class="anchor" id="ab51573d2dbd7861feb7de5c931d22b87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void ( int )&gt; GCtrlListBox::selected_pi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当列表项被用户点击时，该信号被立即发射；参数为：当前具有焦点的列表项的索引值 </p>
+
+</div>
+</div>
+<a class="anchor" id="acdde379be11052e84e0eb8ac79bba37f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void(void)&gt; GObject::sigDestroyed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当对象被析构时，会发射此信号 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_ctrl_list_box_8h.html">gCtrlListBox.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:09 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

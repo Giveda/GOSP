@@ -1,0 +1,865 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: API/config_giveda.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_19ea4dbfe8f0e4681f60b9b97f7b5d11.html">API</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle">
+<div class="title">config_giveda.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:acd30e9ad4c440226ee92431c9976e25f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#acd30e9ad4c440226ee92431c9976e25f">CONFIG_COMPILER_PREFIX</a>&#160;&#160;&#160;&quot;&quot;</td></tr>
+<tr class="separator:acd30e9ad4c440226ee92431c9976e25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a909b0294059f97cb66cd3f72bc1f90e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a909b0294059f97cb66cd3f72bc1f90e7">CONFIG_STD_CPP11</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a909b0294059f97cb66cd3f72bc1f90e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6fed4df74b1a6ef9499dfaf5f6898b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a9c6fed4df74b1a6ef9499dfaf5f6898b">CONFIG_OPT4_RAM</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a9c6fed4df74b1a6ef9499dfaf5f6898b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b027ed4ad8a3a4cda4bdfaa435d823"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a41b027ed4ad8a3a4cda4bdfaa435d823">CONFIG_LINUX_POSIX</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a41b027ed4ad8a3a4cda4bdfaa435d823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90108345763d33caf0c161079ac04ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#aa90108345763d33caf0c161079ac04ef">CONFIG_GUI_MODE_MULTI_FORM</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:aa90108345763d33caf0c161079ac04ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6415ab16bf8453d87e82bba309b2c112"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a6415ab16bf8453d87e82bba309b2c112">CONFIG_GIMG_FW_NUM_NEEDED</a>&#160;&#160;&#160;13</td></tr>
+<tr class="separator:a6415ab16bf8453d87e82bba309b2c112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b095919f3f0c96e61b3cc1b525f273"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#af6b095919f3f0c96e61b3cc1b525f273">CONFIG_KEY_EVENT_ENABLED</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:af6b095919f3f0c96e61b3cc1b525f273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aa006e52dd7888153ea9a2958d03121"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a9aa006e52dd7888153ea9a2958d03121">CONFIG_KEY_PRESS_EVENT_ENABLED</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a9aa006e52dd7888153ea9a2958d03121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1796490c23ef025f5589d1d1ab38d5e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a1796490c23ef025f5589d1d1ab38d5e1">CONFIG_MOUSE_EVENT_ENABLED</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a1796490c23ef025f5589d1d1ab38d5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317d53086f95516d962c5b321c9a7954"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a317d53086f95516d962c5b321c9a7954">CONFIG_TOUCH_EVENT_ENABLED</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a317d53086f95516d962c5b321c9a7954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee3d4f1aeff51d69adcb42126bbd2fa6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#aee3d4f1aeff51d69adcb42126bbd2fa6">CONFIG_R_SCREEN_DISABLED</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:aee3d4f1aeff51d69adcb42126bbd2fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53006fb2d44001ef8a6b987134572126"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a53006fb2d44001ef8a6b987134572126">CONFIG_KEY_PRESS_EVENT_REMOTE</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a53006fb2d44001ef8a6b987134572126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71855a26d2f4aa775d2b94442d97fcb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a71855a26d2f4aa775d2b94442d97fcb8">CONFIG_MOUSE_EVENT_REMOTE</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a71855a26d2f4aa775d2b94442d97fcb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe6229c86078e05be759b9644692b59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#acfe6229c86078e05be759b9644692b59">CONFIG_TOUCH_EVENT_REMOTE</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:acfe6229c86078e05be759b9644692b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71babe740cbcd8b4235d7ca66fe06788"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a71babe740cbcd8b4235d7ca66fe06788">CONFIG_V_SCREEN_ENABLED</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a71babe740cbcd8b4235d7ca66fe06788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00a55f99282270cb8467c4ce22a6fa3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#aa00a55f99282270cb8467c4ce22a6fa3">CONFIG_V_SCREEN_WIFI</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:aa00a55f99282270cb8467c4ce22a6fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d4712fd25bd0b895c7ed8641b6d245"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a66d4712fd25bd0b895c7ed8641b6d245">CONFIG_gBrush</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a66d4712fd25bd0b895c7ed8641b6d245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07eca137ac8bbdcfcb2313252426f1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ac07eca137ac8bbdcfcb2313252426f1d">CONFIG_gColor</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ac07eca137ac8bbdcfcb2313252426f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94df29173ef58ac7e109e3b833a02c89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a94df29173ef58ac7e109e3b833a02c89">CONFIG_gCtrlButton</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a94df29173ef58ac7e109e3b833a02c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a90330c67007a3d2198494c8ea50e04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a2a90330c67007a3d2198494c8ea50e04">CONFIG_gCtrlForm</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a2a90330c67007a3d2198494c8ea50e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a170c707fbc55c8ede689ec11f6fd2666"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a170c707fbc55c8ede689ec11f6fd2666">CONFIG_gCtrlIconView</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a170c707fbc55c8ede689ec11f6fd2666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af00db71e4fe1dd466bb6ed43b708ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a7af00db71e4fe1dd466bb6ed43b708ce">CONFIG_gCtrlItem</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a7af00db71e4fe1dd466bb6ed43b708ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d2326dd40e4e2bf48077c7b87953747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a7d2326dd40e4e2bf48077c7b87953747">CONFIG_gCtrlLineEdit</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a7d2326dd40e4e2bf48077c7b87953747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3bd7d6ba0cba9738a71c62617d26c10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ad3bd7d6ba0cba9738a71c62617d26c10">CONFIG_gCtrlListBox</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ad3bd7d6ba0cba9738a71c62617d26c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852cd1d53ae41644ef72c71c87ab68ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a852cd1d53ae41644ef72c71c87ab68ff">CONFIG_gCtrlMsgBox</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a852cd1d53ae41644ef72c71c87ab68ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d76c22c4bd4db56ca6fe81654f4e66e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a3d76c22c4bd4db56ca6fe81654f4e66e">CONFIG_gCtrlProgressBar</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a3d76c22c4bd4db56ca6fe81654f4e66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2214a84ac196990778534c37ad563c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a7f2214a84ac196990778534c37ad563c">CONFIG_gCtrlRadioButtonGroup</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a7f2214a84ac196990778534c37ad563c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c3020e058c0fdb6e59f8e6b306c34b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ad3c3020e058c0fdb6e59f8e6b306c34b">CONFIG_gEvent</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ad3c3020e058c0fdb6e59f8e6b306c34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2b3d61f66e8b1f8c469c18e93c656e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a9a2b3d61f66e8b1f8c469c18e93c656e">CONFIG_gFont</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a9a2b3d61f66e8b1f8c469c18e93c656e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a37a2a2476bd20e1c9ff1def16f6c9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a6a37a2a2476bd20e1c9ff1def16f6c9d">CONFIG_gFontmetrics</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a6a37a2a2476bd20e1c9ff1def16f6c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5fa7b8256005f17374ed4d82fcb7802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ac5fa7b8256005f17374ed4d82fcb7802">CONFIG_gImage</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ac5fa7b8256005f17374ed4d82fcb7802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d643eeb861127902113eaf886aa118"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ad6d643eeb861127902113eaf886aa118">CONFIG_gMap</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ad6d643eeb861127902113eaf886aa118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d83d8a98a56c0dc59dd4e2889ee2a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a12d83d8a98a56c0dc59dd4e2889ee2a4">CONFIG_gMItem</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a12d83d8a98a56c0dc59dd4e2889ee2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafdbb17d5960878a01faa7ec4078baa4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#aafdbb17d5960878a01faa7ec4078baa4">CONFIG_gObject</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:aafdbb17d5960878a01faa7ec4078baa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4742ddb6957aa90f9c3b2d506c7cb079"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a4742ddb6957aa90f9c3b2d506c7cb079">CONFIG_gObject_cpp11</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a4742ddb6957aa90f9c3b2d506c7cb079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f0d214e0c4198e20d508ddea3bb710"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ac5f0d214e0c4198e20d508ddea3bb710">CONFIG_gPaintDevice</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ac5f0d214e0c4198e20d508ddea3bb710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b52380544b7d2654fdd83d9b87c7e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a03b52380544b7d2654fdd83d9b87c7e2">CONFIG_gPainter</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a03b52380544b7d2654fdd83d9b87c7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91962845656323aba3cca090829a0851"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a91962845656323aba3cca090829a0851">CONFIG_gPointer</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a91962845656323aba3cca090829a0851"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65590a97d4c034c0a2b5bef825adcb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#aa65590a97d4c034c0a2b5bef825adcb1">CONFIG_gPoint</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:aa65590a97d4c034c0a2b5bef825adcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f834ff10b489edb76e01057eac3e1fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a0f834ff10b489edb76e01057eac3e1fd">CONFIG_gPtrList</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a0f834ff10b489edb76e01057eac3e1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f89bdb14358ac7e356e1eee6ef85b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ad0f89bdb14358ac7e356e1eee6ef85b6">CONFIG_gRect</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ad0f89bdb14358ac7e356e1eee6ef85b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861ccc345a7746b8028d5614907ef259"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a861ccc345a7746b8028d5614907ef259">CONFIG_gRegExp</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a861ccc345a7746b8028d5614907ef259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854bcb63ef4918016078d535d6de96f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a854bcb63ef4918016078d535d6de96f3">CONFIG_gRegion</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a854bcb63ef4918016078d535d6de96f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd5ba90fef0d1c6946ddc65a0158078"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#aedd5ba90fef0d1c6946ddc65a0158078">CONFIG_gRwLock</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:aedd5ba90fef0d1c6946ddc65a0158078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b67f44a9db4c865ba685340246b59e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a38b67f44a9db4c865ba685340246b59e">CONFIG_gSharedData</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a38b67f44a9db4c865ba685340246b59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f0939092be21dee80de79c1d8fb7fbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a8f0939092be21dee80de79c1d8fb7fbf">CONFIG_gSize</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a8f0939092be21dee80de79c1d8fb7fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40934aaa9ef99532a5132f2753f11b5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a40934aaa9ef99532a5132f2753f11b5b">CONFIG_gSocketInterface</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a40934aaa9ef99532a5132f2753f11b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0041a138c99594d7fc55368fb7852865"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a0041a138c99594d7fc55368fb7852865">CONFIG_gString</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a0041a138c99594d7fc55368fb7852865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8780624ed0172e69afac2207ba3c32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a1b8780624ed0172e69afac2207ba3c32">CONFIG_gTcpServer</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a1b8780624ed0172e69afac2207ba3c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e31acc1c853950eb309bc6a9ca1836a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a0e31acc1c853950eb309bc6a9ca1836a">CONFIG_gTcpSocket</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a0e31acc1c853950eb309bc6a9ca1836a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e256234216c67b7888963ccec849799"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a0e256234216c67b7888963ccec849799">CONFIG_gTimer</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a0e256234216c67b7888963ccec849799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0cd8d055c00e13dd0246ec264238b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a8b0cd8d055c00e13dd0246ec264238b4">CONFIG_gUdpSocket</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a8b0cd8d055c00e13dd0246ec264238b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a7b6cc17168af41ee1111784357d57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#ab3a7b6cc17168af41ee1111784357d57">CONFIG_gUIEvent</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:ab3a7b6cc17168af41ee1111784357d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e40a8a4732b4ca57aca7722501ec0f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="config__giveda_8h.html#a9e40a8a4732b4ca57aca7722501ec0f7">CONFIG_gUIEvtLoop</a>&#160;&#160;&#160;y</td></tr>
+<tr class="separator:a9e40a8a4732b4ca57aca7722501ec0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a class="anchor" id="acd30e9ad4c440226ee92431c9976e25f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_COMPILER_PREFIX&#160;&#160;&#160;&quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a66d4712fd25bd0b895c7ed8641b6d245"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gBrush&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac07eca137ac8bbdcfcb2313252426f1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gColor&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a94df29173ef58ac7e109e3b833a02c89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlButton&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2a90330c67007a3d2198494c8ea50e04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlForm&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a170c707fbc55c8ede689ec11f6fd2666"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlIconView&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7af00db71e4fe1dd466bb6ed43b708ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlItem&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d2326dd40e4e2bf48077c7b87953747"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlLineEdit&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad3bd7d6ba0cba9738a71c62617d26c10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlListBox&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a852cd1d53ae41644ef72c71c87ab68ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlMsgBox&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3d76c22c4bd4db56ca6fe81654f4e66e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlProgressBar&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7f2214a84ac196990778534c37ad563c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gCtrlRadioButtonGroup&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad3c3020e058c0fdb6e59f8e6b306c34b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gEvent&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9a2b3d61f66e8b1f8c469c18e93c656e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gFont&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6a37a2a2476bd20e1c9ff1def16f6c9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gFontmetrics&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac5fa7b8256005f17374ed4d82fcb7802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gImage&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6415ab16bf8453d87e82bba309b2c112"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_GIMG_FW_NUM_NEEDED&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6d643eeb861127902113eaf886aa118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gMap&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a12d83d8a98a56c0dc59dd4e2889ee2a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gMItem&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aafdbb17d5960878a01faa7ec4078baa4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gObject&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4742ddb6957aa90f9c3b2d506c7cb079"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gObject_cpp11&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac5f0d214e0c4198e20d508ddea3bb710"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gPaintDevice&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a03b52380544b7d2654fdd83d9b87c7e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gPainter&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa65590a97d4c034c0a2b5bef825adcb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gPoint&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a91962845656323aba3cca090829a0851"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gPointer&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0f834ff10b489edb76e01057eac3e1fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gPtrList&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad0f89bdb14358ac7e356e1eee6ef85b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gRect&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a861ccc345a7746b8028d5614907ef259"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gRegExp&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a854bcb63ef4918016078d535d6de96f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gRegion&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aedd5ba90fef0d1c6946ddc65a0158078"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gRwLock&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a38b67f44a9db4c865ba685340246b59e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gSharedData&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8f0939092be21dee80de79c1d8fb7fbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gSize&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a40934aaa9ef99532a5132f2753f11b5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gSocketInterface&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0041a138c99594d7fc55368fb7852865"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gString&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b8780624ed0172e69afac2207ba3c32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gTcpServer&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e31acc1c853950eb309bc6a9ca1836a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gTcpSocket&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e256234216c67b7888963ccec849799"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gTimer&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8b0cd8d055c00e13dd0246ec264238b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gUdpSocket&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa90108345763d33caf0c161079ac04ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_GUI_MODE_MULTI_FORM&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab3a7b6cc17168af41ee1111784357d57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gUIEvent&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9e40a8a4732b4ca57aca7722501ec0f7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_gUIEvtLoop&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af6b095919f3f0c96e61b3cc1b525f273"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_KEY_EVENT_ENABLED&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9aa006e52dd7888153ea9a2958d03121"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_KEY_PRESS_EVENT_ENABLED&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a53006fb2d44001ef8a6b987134572126"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_KEY_PRESS_EVENT_REMOTE&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a41b027ed4ad8a3a4cda4bdfaa435d823"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LINUX_POSIX&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1796490c23ef025f5589d1d1ab38d5e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_MOUSE_EVENT_ENABLED&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a71855a26d2f4aa775d2b94442d97fcb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_MOUSE_EVENT_REMOTE&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c6fed4df74b1a6ef9499dfaf5f6898b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_OPT4_RAM&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aee3d4f1aeff51d69adcb42126bbd2fa6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_R_SCREEN_DISABLED&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a909b0294059f97cb66cd3f72bc1f90e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_STD_CPP11&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a317d53086f95516d962c5b321c9a7954"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_TOUCH_EVENT_ENABLED&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acfe6229c86078e05be759b9644692b59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_TOUCH_EVENT_REMOTE&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a71babe740cbcd8b4235d7ca66fe06788"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_V_SCREEN_ENABLED&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa00a55f99282270cb8467c4ce22a6fa3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_V_SCREEN_WIFI&#160;&#160;&#160;y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:09 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

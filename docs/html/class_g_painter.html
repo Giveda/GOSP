@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GPainter类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="class_g_painter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GPainter类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>提供GDI接口、较底层的绘制接口。开发者使用 <a class="el" href="class_g_painter.html#ae5ed477e43d7c02104c43180ab1f7881" title="获取 GPainter 对象 ">GPainter::instance()</a> 来获取 <a class="el" href="class_g_painter.html" title="提供GDI接口、较底层的绘制接口。开发者使用 GPainter::instance() 来获取 GPainter 对象。相关接口可以参考 Qt 文档 ">GPainter</a> 对象。相关接口可以参考 Qt 文档  
+ <a href="class_g_painter.html#details">更多...</a></p>
+
+<p><code>#include &lt;gPainter.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a7632db8aa12a39171cc76edef0615657"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657">TYPE</a> { <a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657ac1b8b2959986f638e452c97dc1e0d768">LOCAL</a> =0, 
+<a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657ad3e8a0b7a040c64c144e3c08b3db964b">REMOTE</a>, 
+<a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657abfbdd95141bfd7f09610c5a4169dd10c">UNKNOWN</a>
+ }</td></tr>
+<tr class="separator:a7632db8aa12a39171cc76edef0615657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4a0ef6d92a340213413ae19d38a215e4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a4a0ef6d92a340213413ae19d38a215e4">~GPainter</a> ()</td></tr>
+<tr class="separator:a4a0ef6d92a340213413ae19d38a215e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a5cf4b8d176111db23f7cd145f45e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a85a5cf4b8d176111db23f7cd145f45e1">drawPixmap</a> (const <a class="el" href="class_g_image.html">GImage</a> &amp;pix, const <a class="el" href="class_g_rect.html">GRect</a> &amp;dR, const <a class="el" href="class_g_rect.html">GRect</a> &amp;sR)=0</td></tr>
+<tr class="separator:a85a5cf4b8d176111db23f7cd145f45e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0cf2de0b420d75bda0c4ca014ef814"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#add0cf2de0b420d75bda0c4ca014ef814">drawPixmap</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dx, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dy, const <a class="el" href="class_g_image.html">GImage</a> &amp;pix, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sx=0, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sy=0, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sw=-1, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sh=-1)=0</td></tr>
+<tr class="separator:add0cf2de0b420d75bda0c4ca014ef814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244cf8b44e29146b774bb647aa301182"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a244cf8b44e29146b774bb647aa301182">setClipRegion</a> (const <a class="el" href="class_g_region.html">GRegion</a> &amp;r)=0</td></tr>
+<tr class="separator:a244cf8b44e29146b774bb647aa301182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaea58c4e7e52ecfd01ff1be3ae3bef5"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="class_g_region.html">GRegion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#acaea58c4e7e52ecfd01ff1be3ae3bef5">clipRegion</a> () const =0</td></tr>
+<tr class="separator:acaea58c4e7e52ecfd01ff1be3ae3bef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0932af455f49bb3c35b6a58f0bc696e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a0932af455f49bb3c35b6a58f0bc696e6">save</a> ()=0</td></tr>
+<tr class="separator:a0932af455f49bb3c35b6a58f0bc696e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af920681bee8781991e5927261aa6a31a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#af920681bee8781991e5927261aa6a31a">restore</a> ()=0</td></tr>
+<tr class="separator:af920681bee8781991e5927261aa6a31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a258125c9911440c1b95b85b5830ca420"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a258125c9911440c1b95b85b5830ca420">translate</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> x, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> y)=0</td></tr>
+<tr class="separator:a258125c9911440c1b95b85b5830ca420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71aafc1af1768dafcf4a08821ab6857"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#af71aafc1af1768dafcf4a08821ab6857">drawImage</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dx, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dy, const <a class="el" href="class_g_image.html">GImage</a> &amp;img, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sx=0, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sy=0, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sw=-1, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> sh=-1)=0</td></tr>
+<tr class="separator:af71aafc1af1768dafcf4a08821ab6857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca161026e91fdd239204385a381d6a62"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#aca161026e91fdd239204385a381d6a62">setPen</a> (const <a class="el" href="class_g_color.html">GColor</a> &amp;c)=0</td></tr>
+<tr class="separator:aca161026e91fdd239204385a381d6a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb769ec48bd28eae03c4f8b06e72708"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a3fb769ec48bd28eae03c4f8b06e72708">setFont</a> (const <a class="el" href="class_g_font.html">GFont</a> &amp;f)=0</td></tr>
+<tr class="separator:a3fb769ec48bd28eae03c4f8b06e72708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88469f29cd77860b5132704a857d4961"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a88469f29cd77860b5132704a857d4961">setBrush</a> (const <a class="el" href="class_g_brush.html">GBrush</a> &amp;b)=0</td></tr>
+<tr class="separator:a88469f29cd77860b5132704a857d4961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa46a310e36f79395901d2508b788d9b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#aa46a310e36f79395901d2508b788d9b5">drawText</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dX, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dY, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dW, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> dH, int32_t flags, const <a class="el" href="class_g_string.html">GString</a> &amp;str)=0</td></tr>
+<tr class="separator:aa46a310e36f79395901d2508b788d9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2027599ec6df342e97bfdc9964e2542b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a2027599ec6df342e97bfdc9964e2542b">fillRect</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> x, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> y, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> w, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> h, const <a class="el" href="class_g_brush.html">GBrush</a> &amp;b)=0</td></tr>
+<tr class="separator:a2027599ec6df342e97bfdc9964e2542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3253ac88f7985b1060c3e4d91ec0f15"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#aa3253ac88f7985b1060c3e4d91ec0f15">fillRect</a> (const <a class="el" href="class_g_rect.html">GRect</a> &amp;r, const <a class="el" href="class_g_brush.html">GBrush</a> &amp;b)=0</td></tr>
+<tr class="separator:aa3253ac88f7985b1060c3e4d91ec0f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4082a888e7ea445dfb7c7cf64a364f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#ac4082a888e7ea445dfb7c7cf64a364f8">fillRect</a> (const <a class="el" href="class_g_rect.html">GRect</a> &amp;r)=0</td></tr>
+<tr class="separator:ac4082a888e7ea445dfb7c7cf64a364f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c0a132be4afb4ca45d15beef17285bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657">TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a1c0a132be4afb4ca45d15beef17285bc">type</a> () const </td></tr>
+<tr class="separator:a1c0a132be4afb4ca45d15beef17285bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:ae5ed477e43d7c02104c43180ab1f7881"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_g_painter.html">GPainter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#ae5ed477e43d7c02104c43180ab1f7881">instance</a> ()</td></tr>
+<tr class="memdesc:ae5ed477e43d7c02104c43180ab1f7881"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 <a class="el" href="class_g_painter.html" title="提供GDI接口、较底层的绘制接口。开发者使用 GPainter::instance() 来获取 GPainter 对象。相关接口可以参考 Qt 文档 ">GPainter</a> 对象  <a href="#ae5ed477e43d7c02104c43180ab1f7881">更多...</a><br/></td></tr>
+<tr class="separator:ae5ed477e43d7c02104c43180ab1f7881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ab40323692c73eae87c2c43776562d622"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#ab40323692c73eae87c2c43776562d622">GPainter</a> ()</td></tr>
+<tr class="separator:ab40323692c73eae87c2c43776562d622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334ecc698a3c397ad72087b82945d406"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_painter.html#a334ecc698a3c397ad72087b82945d406">GPainter</a> (const <a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657">TYPE</a> t)</td></tr>
+<tr class="separator:a334ecc698a3c397ad72087b82945d406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>提供GDI接口、较底层的绘制接口。开发者使用 <a class="el" href="class_g_painter.html#ae5ed477e43d7c02104c43180ab1f7881" title="获取 GPainter 对象 ">GPainter::instance()</a> 来获取 <a class="el" href="class_g_painter.html" title="提供GDI接口、较底层的绘制接口。开发者使用 GPainter::instance() 来获取 GPainter 对象。相关接口可以参考 Qt 文档 ">GPainter</a> 对象。相关接口可以参考 Qt 文档 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a class="anchor" id="a7632db8aa12a39171cc76edef0615657"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657">GPainter::TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a7632db8aa12a39171cc76edef0615657ac1b8b2959986f638e452c97dc1e0d768"></a>LOCAL</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a7632db8aa12a39171cc76edef0615657ad3e8a0b7a040c64c144e3c08b3db964b"></a>REMOTE</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a7632db8aa12a39171cc76edef0615657abfbdd95141bfd7f09610c5a4169dd10c"></a>UNKNOWN</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="ab40323692c73eae87c2c43776562d622"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPainter::GPainter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a334ecc698a3c397ad72087b82945d406"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPainter::GPainter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657">TYPE</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4a0ef6d92a340213413ae19d38a215e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GPainter::~GPainter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="acaea58c4e7e52ecfd01ff1be3ae3bef5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="class_g_region.html">GRegion</a>&amp; GPainter::clipRegion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af71aafc1af1768dafcf4a08821ab6857"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::drawImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_image.html">GImage</a> &amp;&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sx</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sy</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sw</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sh</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a85a5cf4b8d176111db23f7cd145f45e1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::drawPixmap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_image.html">GImage</a> &amp;&#160;</td>
+          <td class="paramname"><em>pix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_rect.html">GRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>dR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_rect.html">GRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>sR</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="add0cf2de0b420d75bda0c4ca014ef814"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::drawPixmap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_image.html">GImage</a> &amp;&#160;</td>
+          <td class="paramname"><em>pix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sx</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sy</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sw</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>sh</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa46a310e36f79395901d2508b788d9b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::drawText </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dW</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>dH</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>flags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2027599ec6df342e97bfdc9964e2542b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::fillRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_brush.html">GBrush</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3253ac88f7985b1060c3e4d91ec0f15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::fillRect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_rect.html">GRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_brush.html">GBrush</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac4082a888e7ea445dfb7c7cf64a364f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::fillRect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_rect.html">GRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae5ed477e43d7c02104c43180ab1f7881"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_g_painter.html">GPainter</a>* GPainter::instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取 <a class="el" href="class_g_painter.html" title="提供GDI接口、较底层的绘制接口。开发者使用 GPainter::instance() 来获取 GPainter 对象。相关接口可以参考 Qt 文档 ">GPainter</a> 对象 </p>
+<dl class="section return"><dt>返回</dt><dd>GPainter* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af920681bee8781991e5927261aa6a31a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::restore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0932af455f49bb3c35b6a58f0bc696e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a88469f29cd77860b5132704a857d4961"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::setBrush </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_brush.html">GBrush</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a244cf8b44e29146b774bb647aa301182"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::setClipRegion </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_region.html">GRegion</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3fb769ec48bd28eae03c4f8b06e72708"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::setFont </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_font.html">GFont</a> &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aca161026e91fdd239204385a381d6a62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::setPen </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_color.html">GColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a258125c9911440c1b95b85b5830ca420"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GPainter::translate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c0a132be4afb4ca45d15beef17285bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_painter.html#a7632db8aa12a39171cc76edef0615657">TYPE</a> GPainter::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_painter_8h.html">gPainter.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

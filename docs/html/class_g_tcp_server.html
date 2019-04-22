@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GTcpServer类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="class_g_tcp_server-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GTcpServer类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_g_tcp_server.html" title="GTcpServer TCP server端 ">GTcpServer</a> TCP server端  
+ <a href="class_g_tcp_server.html#details">更多...</a></p>
+
+<p><code>#include &lt;gTcpServer.h&gt;</code></p>
+
+<p>继承自 <a class="el" href="class_g_object.html">GObject</a> .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aff3a5c079fde53bdc42c4b0d61bc0ed6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_tcp_server.html#aff3a5c079fde53bdc42c4b0d61bc0ed6">GTcpServer</a> (<a class="el" href="class_g_object.html">GObject</a> *<a class="el" href="class_g_object.html#a7ef28ababe03e654cd4edcebffd7950c">parent</a>=0, const char *<a class="el" href="class_g_object.html#afa1b539842f0d5fbc09ad52163b7323b">name</a>=0)</td></tr>
+<tr class="separator:aff3a5c079fde53bdc42c4b0d61bc0ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa2684e669d8fbabb8b009f977503d1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_tcp_server.html#a6aa2684e669d8fbabb8b009f977503d1">~GTcpServer</a> ()</td></tr>
+<tr class="separator:a6aa2684e669d8fbabb8b009f977503d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb61ddc7a8c92c1f5d431d2b293f9c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_tcp_server.html#a6cb61ddc7a8c92c1f5d431d2b293f9c5">bind</a> (const uint16_t hPort, const in_addr_t addr)</td></tr>
+<tr class="memdesc:a6cb61ddc7a8c92c1f5d431d2b293f9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">绑定到指定端口  <a href="#a6cb61ddc7a8c92c1f5d431d2b293f9c5">更多...</a><br/></td></tr>
+<tr class="separator:a6cb61ddc7a8c92c1f5d431d2b293f9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31fd79633ef30a3e4ef70496383f2fdd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_tcp_server.html#a31fd79633ef30a3e4ef70496383f2fdd">listen</a> (int backlog)</td></tr>
+<tr class="memdesc:a31fd79633ef30a3e4ef70496383f2fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">启动监听  <a href="#a31fd79633ef30a3e4ef70496383f2fdd">更多...</a><br/></td></tr>
+<tr class="separator:a31fd79633ef30a3e4ef70496383f2fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f77167f5e49d831c8e5d2b281c052c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_tcp_server.html#ab1f77167f5e49d831c8e5d2b281c052c">event</a> (<a class="el" href="class_g_event.html">GEvent</a> *evt)</td></tr>
+<tr class="memdesc:ab1f77167f5e49d831c8e5d2b281c052c"><td class="mdescLeft">&#160;</td><td class="mdescRight">开发者可以在子类中覆盖此函数，处理自己需要的事件  <a href="#ab1f77167f5e49d831c8e5d2b281c052c">更多...</a><br/></td></tr>
+<tr class="separator:ab1f77167f5e49d831c8e5d2b281c052c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1b539842f0d5fbc09ad52163b7323b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#afa1b539842f0d5fbc09ad52163b7323b">name</a> () const </td></tr>
+<tr class="memdesc:afa1b539842f0d5fbc09ad52163b7323b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象名称  <a href="#afa1b539842f0d5fbc09ad52163b7323b">更多...</a><br/></td></tr>
+<tr class="separator:afa1b539842f0d5fbc09ad52163b7323b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef28ababe03e654cd4edcebffd7950c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#a7ef28ababe03e654cd4edcebffd7950c">parent</a> () const </td></tr>
+<tr class="memdesc:a7ef28ababe03e654cd4edcebffd7950c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的parent  <a href="#a7ef28ababe03e654cd4edcebffd7950c">更多...</a><br/></td></tr>
+<tr class="separator:a7ef28ababe03e654cd4edcebffd7950c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:aca0ed736728ec72a656131539f668c3e"><td class="memTemplParams" colspan="2">template&lt;class Receiver , typename... Args&gt; </td></tr>
+<tr class="memitem:aca0ed736728ec72a656131539f668c3e"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_g_object.html#aca0ed736728ec72a656131539f668c3e">connect</a> (<a class="el" href="class_g_object.html">GObject</a> *sender, <a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;signal, Receiver *receiver, void(Receiver::*SlotFunc)(Args...))</td></tr>
+<tr class="memdesc:aca0ed736728ec72a656131539f668c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">将信号和槽建立连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。  <a href="#aca0ed736728ec72a656131539f668c3e">更多...</a><br/></td></tr>
+<tr class="separator:aca0ed736728ec72a656131539f668c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f70e9463996742b85cf1a1605bc6db"><td class="memTemplParams" colspan="2">template&lt;class Receiver , typename... Args&gt; </td></tr>
+<tr class="memitem:a26f70e9463996742b85cf1a1605bc6db"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_g_object.html#a26f70e9463996742b85cf1a1605bc6db">disconnect</a> (<a class="el" href="class_g_object.html">GObject</a> *sender, <a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;signal, Receiver *receiver, void(Receiver::*SlotFunc)(Args...))</td></tr>
+<tr class="memdesc:a26f70e9463996742b85cf1a1605bc6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">将信号和槽断开连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。  <a href="#a26f70e9463996742b85cf1a1605bc6db">更多...</a><br/></td></tr>
+<tr class="separator:a26f70e9463996742b85cf1a1605bc6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0292d8a8d300394df2b977ce59a23bcb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#a0292d8a8d300394df2b977ce59a23bcb">isObjectExist</a> (<a class="el" href="class_g_object.html">GObject</a> *obj)</td></tr>
+<tr class="memdesc:a0292d8a8d300394df2b977ce59a23bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断对象是否已经被析构掉了。  <a href="#a0292d8a8d300394df2b977ce59a23bcb">更多...</a><br/></td></tr>
+<tr class="separator:a0292d8a8d300394df2b977ce59a23bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a4c1753bac19f895e371ee76154a4e8f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(int fd, const <br class="typebreak"/>
+sockaddr_in &amp;addr, const <br class="typebreak"/>
+socklen_t addr_len)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_tcp_server.html#a4c1753bac19f895e371ee76154a4e8f2">onAccept</a></td></tr>
+<tr class="memdesc:a4c1753bac19f895e371ee76154a4e8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">当有客户端连接上来时，该信号被立即发射。  <a href="#a4c1753bac19f895e371ee76154a4e8f2">更多...</a><br/></td></tr>
+<tr class="separator:a4c1753bac19f895e371ee76154a4e8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdde379be11052e84e0eb8ac79bba37f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(void)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#acdde379be11052e84e0eb8ac79bba37f">sigDestroyed</a></td></tr>
+<tr class="memdesc:acdde379be11052e84e0eb8ac79bba37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">当对象被析构时，会发射此信号  <a href="#acdde379be11052e84e0eb8ac79bba37f">更多...</a><br/></td></tr>
+<tr class="separator:acdde379be11052e84e0eb8ac79bba37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_g_tcp_server.html" title="GTcpServer TCP server端 ">GTcpServer</a> TCP server端 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="aff3a5c079fde53bdc42c4b0d61bc0ed6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GTcpServer::GTcpServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6aa2684e669d8fbabb8b009f977503d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GTcpServer::~GTcpServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a6cb61ddc7a8c92c1f5d431d2b293f9c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GTcpServer::bind </td>
+          <td>(</td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>hPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const in_addr_t&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>绑定到指定端口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hPort</td><td>... </td></tr>
+    <tr><td class="paramname">addr</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aca0ed736728ec72a656131539f668c3e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Receiver , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GObject::connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Receiver *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Receiver::*)(Args...)&#160;</td>
+          <td class="paramname"><em>SlotFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将信号和槽建立连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>指向发射者的指针 </td></tr>
+    <tr><td class="paramname">signal</td><td>指向信号的引用。 </td></tr>
+    <tr><td class="paramname">receiver</td><td>指向接收者的指针 </td></tr>
+    <tr><td class="paramname">SlotFunc</td><td>指向槽函数的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0代表成功；非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a26f70e9463996742b85cf1a1605bc6db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Receiver , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GObject::disconnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Receiver *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Receiver::*)(Args...)&#160;</td>
+          <td class="paramname"><em>SlotFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将信号和槽断开连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>指向发射者的指针 </td></tr>
+    <tr><td class="paramname">signal</td><td>指向信号的引用。 </td></tr>
+    <tr><td class="paramname">receiver</td><td>指向接收者的指针 </td></tr>
+    <tr><td class="paramname">SlotFunc</td><td>指向槽函数的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0代表成功；非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab1f77167f5e49d831c8e5d2b281c052c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GTcpServer::event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>开发者可以在子类中覆盖此函数，处理自己需要的事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>重载 <a class="el" href="class_g_object.html#aafe1539cdd85a5fc2198baf8580a2f9e">GObject</a> .</p>
+
+</div>
+</div>
+<a class="anchor" id="a0292d8a8d300394df2b977ce59a23bcb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool GObject::isObjectExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断对象是否已经被析构掉了。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool true表示对象健在，false表示对象已经被析构掉了 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a31fd79633ef30a3e4ef70496383f2fdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GTcpServer::listen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>backlog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>启动监听 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">backlog</td><td>参见 man 2 listen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa1b539842f0d5fbc09ad52163b7323b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* GObject::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const char* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ef28ababe03e654cd4edcebffd7950c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_object.html">GObject</a>* GObject::parent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象的parent </p>
+<dl class="section return"><dt>返回</dt><dd>GObject* </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="a4c1753bac19f895e371ee76154a4e8f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void(int fd, const sockaddr_in &amp; addr, const socklen_t addr_len)&gt; GTcpServer::onAccept</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>当有客户端连接上来时，该信号被立即发射。 </p>
+
+</div>
+</div>
+<a class="anchor" id="acdde379be11052e84e0eb8ac79bba37f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void(void)&gt; GObject::sigDestroyed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当对象被析构时，会发射此信号 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_tcp_server_8h.html">gTcpServer.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GPaintDevice类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_g_paint_device-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GPaintDevice类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>可绘制对象的基类  
+ <a href="class_g_paint_device.html#details">更多...</a></p>
+
+<p><code>#include &lt;gPaintDevice.h&gt;</code></p>
+
+<p>继承自 <a class="el" href="class_g_size.html">GSize</a> .</p>
+
+<p>被 <a class="el" href="class_g_image.html">GImage</a> 继承.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adf150b07f5998df3c9268ca189e4a173"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_device.html#adf150b07f5998df3c9268ca189e4a173">GPaintDevice</a> ()</td></tr>
+<tr class="memdesc:adf150b07f5998df3c9268ca189e4a173"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造一个宽高均为0的空对象  <a href="#adf150b07f5998df3c9268ca189e4a173">更多...</a><br/></td></tr>
+<tr class="separator:adf150b07f5998df3c9268ca189e4a173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a534c1e0a9d3beb83a887c49be5630d7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_device.html#a534c1e0a9d3beb83a887c49be5630d7a">GPaintDevice</a> (int w, int h)</td></tr>
+<tr class="memdesc:a534c1e0a9d3beb83a887c49be5630d7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据指定的宽高去构造一个 paint device 对象  <a href="#a534c1e0a9d3beb83a887c49be5630d7a">更多...</a><br/></td></tr>
+<tr class="separator:a534c1e0a9d3beb83a887c49be5630d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa656a6a9a35ee1c3d62e23fe9b12c8ae"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_device.html#aa656a6a9a35ee1c3d62e23fe9b12c8ae">~GPaintDevice</a> ()</td></tr>
+<tr class="separator:aa656a6a9a35ee1c3d62e23fe9b12c8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fdcc96c7b645a36bdf1828b1f289186"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_paint_device.html#a2fdcc96c7b645a36bdf1828b1f289186">size</a> ()</td></tr>
+<tr class="memdesc:a2fdcc96c7b645a36bdf1828b1f289186"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取paint device的大小  <a href="#a2fdcc96c7b645a36bdf1828b1f289186">更多...</a><br/></td></tr>
+<tr class="separator:a2fdcc96c7b645a36bdf1828b1f289186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d22befb95c006e831c07845f8955f9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a2d22befb95c006e831c07845f8955f9f">isNull</a> () const </td></tr>
+<tr class="separator:a2d22befb95c006e831c07845f8955f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171a976ad6206c33dac7d0aba0482cf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a171a976ad6206c33dac7d0aba0482cf1">isEmpty</a> () const </td></tr>
+<tr class="separator:a171a976ad6206c33dac7d0aba0482cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317296022fd4eb653cda97967cb77402"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a317296022fd4eb653cda97967cb77402">isValid</a> () const </td></tr>
+<tr class="separator:a317296022fd4eb653cda97967cb77402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc5743ea7687c48ba39e6eafe52ea49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a4bc5743ea7687c48ba39e6eafe52ea49">width</a> () const </td></tr>
+<tr class="separator:a4bc5743ea7687c48ba39e6eafe52ea49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f9c586544124e3729ed1499f5c7f22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#ae9f9c586544124e3729ed1499f5c7f22">height</a> () const </td></tr>
+<tr class="separator:ae9f9c586544124e3729ed1499f5c7f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826f20c159d28a9eda5c573187147db9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a826f20c159d28a9eda5c573187147db9">setWidth</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> w)</td></tr>
+<tr class="separator:a826f20c159d28a9eda5c573187147db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbe14b47fbd844ace5dde43ca245fc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a5fbe14b47fbd844ace5dde43ca245fc2">setHeight</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> h)</td></tr>
+<tr class="separator:a5fbe14b47fbd844ace5dde43ca245fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d8dd15179446915b2714c52e10f77f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#ac0d8dd15179446915b2714c52e10f77f">transpose</a> ()</td></tr>
+<tr class="separator:ac0d8dd15179446915b2714c52e10f77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac0372a62ab5f9eef46093fa816284c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_size.html">GSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#adac0372a62ab5f9eef46093fa816284c">expandedTo</a> (const <a class="el" href="class_g_size.html">GSize</a> &amp;) const </td></tr>
+<tr class="separator:adac0372a62ab5f9eef46093fa816284c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa888be7b59cc0240398903c7c7b61eb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_size.html">GSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#aa888be7b59cc0240398903c7c7b61eb2">boundedTo</a> (const <a class="el" href="class_g_size.html">GSize</a> &amp;) const </td></tr>
+<tr class="separator:aa888be7b59cc0240398903c7c7b61eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff3b146c28381941c2982c96078888d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#acff3b146c28381941c2982c96078888d">rwidth</a> ()</td></tr>
+<tr class="separator:acff3b146c28381941c2982c96078888d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2bda9aa6d0b6b299a41a2264226d3c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#ac2bda9aa6d0b6b299a41a2264226d3c9">rheight</a> ()</td></tr>
+<tr class="separator:ac2bda9aa6d0b6b299a41a2264226d3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a888501f629379baedfb255659171a82b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a888501f629379baedfb255659171a82b">operator+=</a> (const <a class="el" href="class_g_size.html">GSize</a> &amp;)</td></tr>
+<tr class="separator:a888501f629379baedfb255659171a82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109ff97ae0e628bc3c0b5100feea5162"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a109ff97ae0e628bc3c0b5100feea5162">operator-=</a> (const <a class="el" href="class_g_size.html">GSize</a> &amp;)</td></tr>
+<tr class="separator:a109ff97ae0e628bc3c0b5100feea5162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b8fe5702658d8f55ec03278856dfba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#a0b8fe5702658d8f55ec03278856dfba9">operator*=</a> (double c)</td></tr>
+<tr class="separator:a0b8fe5702658d8f55ec03278856dfba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac959ca9f0d6ee7bfe5eb823b2d9edecf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_size.html#ac959ca9f0d6ee7bfe5eb823b2d9edecf">operator/=</a> (double c)</td></tr>
+<tr class="separator:ac959ca9f0d6ee7bfe5eb823b2d9edecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>可绘制对象的基类 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="adf150b07f5998df3c9268ca189e4a173"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPaintDevice::GPaintDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造一个宽高均为0的空对象 </p>
+
+</div>
+</div>
+<a class="anchor" id="a534c1e0a9d3beb83a887c49be5630d7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GPaintDevice::GPaintDevice </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>根据指定的宽高去构造一个 paint device 对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>... </td></tr>
+    <tr><td class="paramname">h</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa656a6a9a35ee1c3d62e23fe9b12c8ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GPaintDevice::~GPaintDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="aa888be7b59cc0240398903c7c7b61eb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_size.html">GSize</a> GSize::boundedTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adac0372a62ab5f9eef46093fa816284c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_size.html">GSize</a> GSize::expandedTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae9f9c586544124e3729ed1499f5c7f22"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> GSize::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a171a976ad6206c33dac7d0aba0482cf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GSize::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d22befb95c006e831c07845f8955f9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GSize::isNull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a317296022fd4eb653cda97967cb77402"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GSize::isValid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0b8fe5702658d8f55ec03278856dfba9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_size.html">GSize</a>&amp; GSize::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a888501f629379baedfb255659171a82b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_size.html">GSize</a>&amp; GSize::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a109ff97ae0e628bc3c0b5100feea5162"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_size.html">GSize</a>&amp; GSize::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_size.html">GSize</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac959ca9f0d6ee7bfe5eb823b2d9edecf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_size.html">GSize</a>&amp; GSize::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac2bda9aa6d0b6b299a41a2264226d3c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&amp; GSize::rheight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acff3b146c28381941c2982c96078888d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&amp; GSize::rwidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5fbe14b47fbd844ace5dde43ca245fc2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GSize::setHeight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a826f20c159d28a9eda5c573187147db9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GSize::setWidth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2fdcc96c7b645a36bdf1828b1f289186"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_size.html">GSize</a>&amp; GPaintDevice::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取paint device的大小 </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="class_g_size.html" title="GSize 尺寸大小。对二维平面上的尺寸大小进行各种数学运算。 ">GSize</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac0d8dd15179446915b2714c52e10f77f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GSize::transpose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4bc5743ea7687c48ba39e6eafe52ea49"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> GSize::width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_paint_device_8h.html">gPaintDevice.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

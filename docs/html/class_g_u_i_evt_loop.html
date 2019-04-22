@@ -1,0 +1,973 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GUIEvtLoop类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="class_g_u_i_evt_loop-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GUIEvtLoop类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 为GUI程序提供了一个事件循环。<br/>
+<a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基本设置。一个GUI程序应当有且仅有一个 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 对象。<br/>
+在你软件代码的任何地方，你可以使用 <code>uiEvtLp</code> 这个全局变量来访问 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 对象。 作为一个最佳实践，用户可以创建一个 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 的子类（比如命名为GUIApplication），然后把所有事关软件总体、和全局的初始化等操作放在这个GUIApplication子类中。<br/>
+ 
+ <a href="class_g_u_i_evt_loop.html#details">更多...</a></p>
+
+<p><code>#include &lt;gUIEvtLoop.h&gt;</code></p>
+
+<p>继承自 <a class="el" href="class_g_object.html">GObject</a> .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae57903157d85506165391403a9fb9049"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#ae57903157d85506165391403a9fb9049">GUIEvtLoop</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:ae57903157d85506165391403a9fb9049"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下：<br/>
+ <a href="#ae57903157d85506165391403a9fb9049">更多...</a><br/></td></tr>
+<tr class="separator:ae57903157d85506165391403a9fb9049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52a2f9ff605634715b1242aac6ceef0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#af52a2f9ff605634715b1242aac6ceef0">~GUIEvtLoop</a> ()</td></tr>
+<tr class="memdesc:af52a2f9ff605634715b1242aac6ceef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构GUIEvtLoop，并设置全局变量uiEvtLp为0  <a href="#af52a2f9ff605634715b1242aac6ceef0">更多...</a><br/></td></tr>
+<tr class="separator:af52a2f9ff605634715b1242aac6ceef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1350e235bcabec3f77ad738a7bc07f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#ad1350e235bcabec3f77ad738a7bc07f8">exec</a> ()</td></tr>
+<tr class="memdesc:ad1350e235bcabec3f77ad738a7bc07f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">进入事件循环，开始处理事件。除非 <a class="el" href="class_g_u_i_evt_loop.html#a1886cea392d150b996785a8aff3a7e65" title="让程序退出； ">quit()</a> 被调用，否则exec()将一直阻塞。如果你想退出exec()，请调用 <a class="el" href="class_g_u_i_evt_loop.html#a1886cea392d150b996785a8aff3a7e65" title="让程序退出； ">quit()</a> 。<br/>
+事件循环从窗口系统中接收事件并且把它们分派给应用程序的窗口部件。<br/>
+通常来说，在调用exec()之前，不会发生任何的用户交互。但 <a class="el" href="class_g_ctrl_msg_box.html" title="对话框 ">GCtrlMsgBox</a> 这样的模式对话框是个例外，因为模式对话框拥有自己独立的 <a class="el" href="class_g_ctrl_msg_box.html#accb030432902c6904a54db4dc36cf291" title="启动对话框的事件循环；除非用户通过点击按钮来关闭对话框，否则本函数将永远阻塞。 ">GCtrlMsgBox::exec()</a> 。  <a href="#ad1350e235bcabec3f77ad738a7bc07f8">更多...</a><br/></td></tr>
+<tr class="separator:ad1350e235bcabec3f77ad738a7bc07f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b461e2c922d7f00435c30eb0afb002"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a16b461e2c922d7f00435c30eb0afb002">loopLevel</a> () const </td></tr>
+<tr class="memdesc:a16b461e2c922d7f00435c30eb0afb002"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回当前的事件循环级别。不要调用它，除非你是专家。  <a href="#a16b461e2c922d7f00435c30eb0afb002">更多...</a><br/></td></tr>
+<tr class="separator:a16b461e2c922d7f00435c30eb0afb002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06611060f19fa9d76ee38af48d19e208"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a06611060f19fa9d76ee38af48d19e208">keyPressEvent</a> (<a class="el" href="class_g_key_event.html">GKeyEvent</a> *)</td></tr>
+<tr class="separator:a06611060f19fa9d76ee38af48d19e208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a10366471a79e3d086ba0070e34d81"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a04a10366471a79e3d086ba0070e34d81">screenCounts</a> () const </td></tr>
+<tr class="memdesc:a04a10366471a79e3d086ba0070e34d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回目前的屏幕总数量，包括所有虚拟远程屏幕和真实硬件屏幕。  <a href="#a04a10366471a79e3d086ba0070e34d81">更多...</a><br/></td></tr>
+<tr class="separator:a04a10366471a79e3d086ba0070e34d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e0c9d1dbd18c327246f806eb00773b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#ae3e0c9d1dbd18c327246f806eb00773b">setSize</a> (<a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> w, <a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a> h)</td></tr>
+<tr class="memdesc:ae3e0c9d1dbd18c327246f806eb00773b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置GUI窗口系统的宽高，以像素为单位。建议用户将GUI窗口系统的宽高设置为自己屏幕的分辨率。  <a href="#ae3e0c9d1dbd18c327246f806eb00773b">更多...</a><br/></td></tr>
+<tr class="separator:ae3e0c9d1dbd18c327246f806eb00773b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810152a9fc6be334cbae72f055b7e7b9"><td class="memItemLeft" align="right" valign="top">GUIEvtLoopPriv *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a810152a9fc6be334cbae72f055b7e7b9">uiEvtLpPriv</a> ()</td></tr>
+<tr class="separator:a810152a9fc6be334cbae72f055b7e7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a698d3f2ac3e529cac0f9c68b083f10e6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a698d3f2ac3e529cac0f9c68b083f10e6">deviceModel</a> () const </td></tr>
+<tr class="memdesc:a698d3f2ac3e529cac0f9c68b083f10e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回设备型号；详见 <a class="el" href="class_g_u_i_evt_loop.html#ae57903157d85506165391403a9fb9049" title="使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下： ">GUIEvtLoop( int argc, char** argv)</a> ;  <a href="#a698d3f2ac3e529cac0f9c68b083f10e6">更多...</a><br/></td></tr>
+<tr class="separator:a698d3f2ac3e529cac0f9c68b083f10e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a231c408dda827e71a0a83d8667459d74"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a231c408dda827e71a0a83d8667459d74">deviceTittle</a> () const </td></tr>
+<tr class="memdesc:a231c408dda827e71a0a83d8667459d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回设备的显示名称；详见 <a class="el" href="class_g_u_i_evt_loop.html#ae57903157d85506165391403a9fb9049" title="使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下： ">GUIEvtLoop( int argc, char** argv)</a> ;  <a href="#a231c408dda827e71a0a83d8667459d74">更多...</a><br/></td></tr>
+<tr class="separator:a231c408dda827e71a0a83d8667459d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1b539842f0d5fbc09ad52163b7323b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#afa1b539842f0d5fbc09ad52163b7323b">name</a> () const </td></tr>
+<tr class="memdesc:afa1b539842f0d5fbc09ad52163b7323b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象名称  <a href="#afa1b539842f0d5fbc09ad52163b7323b">更多...</a><br/></td></tr>
+<tr class="separator:afa1b539842f0d5fbc09ad52163b7323b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef28ababe03e654cd4edcebffd7950c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#a7ef28ababe03e654cd4edcebffd7950c">parent</a> () const </td></tr>
+<tr class="memdesc:a7ef28ababe03e654cd4edcebffd7950c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对象的parent  <a href="#a7ef28ababe03e654cd4edcebffd7950c">更多...</a><br/></td></tr>
+<tr class="separator:a7ef28ababe03e654cd4edcebffd7950c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe1539cdd85a5fc2198baf8580a2f9e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#aafe1539cdd85a5fc2198baf8580a2f9e">event</a> (<a class="el" href="class_g_event.html">GEvent</a> *)</td></tr>
+<tr class="memdesc:aafe1539cdd85a5fc2198baf8580a2f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">开发者可以在子类中覆盖此函数，处理自己需要的事件  <a href="#aafe1539cdd85a5fc2198baf8580a2f9e">更多...</a><br/></td></tr>
+<tr class="separator:aafe1539cdd85a5fc2198baf8580a2f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a3e6605d34a4a7091ed1c81641e618e13"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a3e6605d34a4a7091ed1c81641e618e13">enterLoop</a> ()</td></tr>
+<tr class="memdesc:a3e6605d34a4a7091ed1c81641e618e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">对事件循环进行递归。不要调用它，除非你是专家。  <a href="#a3e6605d34a4a7091ed1c81641e618e13">更多...</a><br/></td></tr>
+<tr class="separator:a3e6605d34a4a7091ed1c81641e618e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad848e37263bedd6a42d4a536a67f6937"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#ad848e37263bedd6a42d4a536a67f6937">exitLoop</a> (int level, int code=0)</td></tr>
+<tr class="memdesc:ad848e37263bedd6a42d4a536a67f6937"><td class="mdescLeft">&#160;</td><td class="mdescRight">退出事件循环。不要调用它，除非你是专家。  <a href="#ad848e37263bedd6a42d4a536a67f6937">更多...</a><br/></td></tr>
+<tr class="separator:ad848e37263bedd6a42d4a536a67f6937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1886cea392d150b996785a8aff3a7e65"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a1886cea392d150b996785a8aff3a7e65">quit</a> (int code=0)</td></tr>
+<tr class="memdesc:a1886cea392d150b996785a8aff3a7e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">让程序退出；  <a href="#a1886cea392d150b996785a8aff3a7e65">更多...</a><br/></td></tr>
+<tr class="separator:a1886cea392d150b996785a8aff3a7e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ee87698b9aac8f364e7147a72641ae"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#ab1ee87698b9aac8f364e7147a72641ae">postEvent</a> (<a class="el" href="class_g_event.html">GEvent</a> *<a class="el" href="class_g_object.html#aafe1539cdd85a5fc2198baf8580a2f9e">event</a>, int priority=<a class="el" href="g_event_8h.html#aebb9cef49ea90447c0eacc5180323747">SYS_EVT_PRIORITY</a>, <a class="el" href="class_g_object.html">GObject</a> *receiver=NULL)</td></tr>
+<tr class="memdesc:ab1ee87698b9aac8f364e7147a72641ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">将一个事件加入事件循环。如果你不需要指定接收者和优先级，那么你调用这个函数会比较方便。  <a href="#ab1ee87698b9aac8f364e7147a72641ae">更多...</a><br/></td></tr>
+<tr class="separator:ab1ee87698b9aac8f364e7147a72641ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dfbc3f0229ac4b6ee27473b8d7f254"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#ad4dfbc3f0229ac4b6ee27473b8d7f254">postEvent</a> (<a class="el" href="class_g_event.html">GEvent</a> *<a class="el" href="class_g_object.html#aafe1539cdd85a5fc2198baf8580a2f9e">event</a>, <a class="el" href="class_g_object.html">GObject</a> *receiver, int priority=<a class="el" href="g_event_8h.html#aebb9cef49ea90447c0eacc5180323747">SYS_EVT_PRIORITY</a>)</td></tr>
+<tr class="memdesc:ad4dfbc3f0229ac4b6ee27473b8d7f254"><td class="mdescLeft">&#160;</td><td class="mdescRight">将一个事件加入事件循环。如果你不需要指定优先级，那么你调用这个函数会比较方便。  <a href="#ad4dfbc3f0229ac4b6ee27473b8d7f254">更多...</a><br/></td></tr>
+<tr class="separator:ad4dfbc3f0229ac4b6ee27473b8d7f254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1174810027a7353477438dc18607e1e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i_evt_loop.html#a1174810027a7353477438dc18607e1e9">setImageDB</a> (const <a class="el" href="struct_g_image_attr.html">GImageAttr</a> *p, const uint16_t nums)</td></tr>
+<tr class="memdesc:a1174810027a7353477438dc18607e1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">该函数用于设置软件所需要的图片数据；用户必须在构造GUIEvtLoop对象之前调用setImageDB。举例如下：<br/>
+ <a href="#a1174810027a7353477438dc18607e1e9">更多...</a><br/></td></tr>
+<tr class="separator:a1174810027a7353477438dc18607e1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0ed736728ec72a656131539f668c3e"><td class="memTemplParams" colspan="2">template&lt;class Receiver , typename... Args&gt; </td></tr>
+<tr class="memitem:aca0ed736728ec72a656131539f668c3e"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_g_object.html#aca0ed736728ec72a656131539f668c3e">connect</a> (<a class="el" href="class_g_object.html">GObject</a> *sender, <a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;signal, Receiver *receiver, void(Receiver::*SlotFunc)(Args...))</td></tr>
+<tr class="memdesc:aca0ed736728ec72a656131539f668c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">将信号和槽建立连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。  <a href="#aca0ed736728ec72a656131539f668c3e">更多...</a><br/></td></tr>
+<tr class="separator:aca0ed736728ec72a656131539f668c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f70e9463996742b85cf1a1605bc6db"><td class="memTemplParams" colspan="2">template&lt;class Receiver , typename... Args&gt; </td></tr>
+<tr class="memitem:a26f70e9463996742b85cf1a1605bc6db"><td class="memTemplItemLeft" align="right" valign="top">static int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_g_object.html#a26f70e9463996742b85cf1a1605bc6db">disconnect</a> (<a class="el" href="class_g_object.html">GObject</a> *sender, <a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;signal, Receiver *receiver, void(Receiver::*SlotFunc)(Args...))</td></tr>
+<tr class="memdesc:a26f70e9463996742b85cf1a1605bc6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">将信号和槽断开连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。  <a href="#a26f70e9463996742b85cf1a1605bc6db">更多...</a><br/></td></tr>
+<tr class="separator:a26f70e9463996742b85cf1a1605bc6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0292d8a8d300394df2b977ce59a23bcb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#a0292d8a8d300394df2b977ce59a23bcb">isObjectExist</a> (<a class="el" href="class_g_object.html">GObject</a> *obj)</td></tr>
+<tr class="memdesc:a0292d8a8d300394df2b977ce59a23bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断对象是否已经被析构掉了。  <a href="#a0292d8a8d300394df2b977ce59a23bcb">更多...</a><br/></td></tr>
+<tr class="separator:a0292d8a8d300394df2b977ce59a23bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:acdde379be11052e84e0eb8ac79bba37f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(void)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_object.html#acdde379be11052e84e0eb8ac79bba37f">sigDestroyed</a></td></tr>
+<tr class="memdesc:acdde379be11052e84e0eb8ac79bba37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">当对象被析构时，会发射此信号  <a href="#acdde379be11052e84e0eb8ac79bba37f">更多...</a><br/></td></tr>
+<tr class="separator:acdde379be11052e84e0eb8ac79bba37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 为GUI程序提供了一个事件循环。<br/>
+<a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基本设置。一个GUI程序应当有且仅有一个 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 对象。<br/>
+在你软件代码的任何地方，你可以使用 <code>uiEvtLp</code> 这个全局变量来访问 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 对象。 作为一个最佳实践，用户可以创建一个 <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> 的子类（比如命名为GUIApplication），然后把所有事关软件总体、和全局的初始化等操作放在这个GUIApplication子类中。<br/>
+</p>
+<dl class="section author"><dt>作者</dt><dd>明心 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>1.0.0 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2019-2-4 </dd></dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="ae57903157d85506165391403a9fb9049"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GUIEvtLoop::GUIEvtLoop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下：<br/>
+</p>
+<pre>
+char* param[] = {
+    NULL, //这个位置放置的是程序的文件名，直接置为NULL也是可以的
+    (char*)"gCtrlMsgBox", //这个位置放置的是（运行本软件的）设备型号，本软件将根据这个设备型号去寻找相关资源比如图片等
+    (char*)"Hello Giveda",//这个位置放置的是设备的显示名称，
+    (char*)"36000",//这个位置放置的是设备端（即server端）所打开的TCP和UDP端口号，远程显示客户端会去连接TCP和UDP的这个端口号；UDP用于实现设备的搜索发现、TCP用于提供实际的远程显示服务；用户应当确保在此传入的端口号没有被其它软件占用。
+};
+argc = sizeof(param)/sizeof(char*);</pre><pre><a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> a( argc, param );//定义UI的事件循环
+</pre><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>参数的数目 </td></tr>
+    <tr><td class="paramname">argv</td><td>参数列表 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af52a2f9ff605634715b1242aac6ceef0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GUIEvtLoop::~GUIEvtLoop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构GUIEvtLoop，并设置全局变量uiEvtLp为0 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="aca0ed736728ec72a656131539f668c3e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Receiver , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GObject::connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Receiver *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Receiver::*)(Args...)&#160;</td>
+          <td class="paramname"><em>SlotFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将信号和槽建立连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>指向发射者的指针 </td></tr>
+    <tr><td class="paramname">signal</td><td>指向信号的引用。 </td></tr>
+    <tr><td class="paramname">receiver</td><td>指向接收者的指针 </td></tr>
+    <tr><td class="paramname">SlotFunc</td><td>指向槽函数的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0代表成功；非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a698d3f2ac3e529cac0f9c68b083f10e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_string.html">GString</a>&amp; GUIEvtLoop::deviceModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回设备型号；详见 <a class="el" href="class_g_u_i_evt_loop.html#ae57903157d85506165391403a9fb9049" title="使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下： ">GUIEvtLoop( int argc, char** argv)</a> ; </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="class_g_string.html" title="GString 字符串操作。对字符串进行各种运算处理。 ">GString</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a231c408dda827e71a0a83d8667459d74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_string.html">GString</a>&amp; GUIEvtLoop::deviceTittle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回设备的显示名称；详见 <a class="el" href="class_g_u_i_evt_loop.html#ae57903157d85506165391403a9fb9049" title="使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下： ">GUIEvtLoop( int argc, char** argv)</a> ; </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="class_g_string.html" title="GString 字符串操作。对字符串进行各种运算处理。 ">GString</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a26f70e9463996742b85cf1a1605bc6db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Receiver , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GObject::disconnect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_signal.html">GSignal</a>&lt; void(Args...)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>signal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Receiver *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Receiver::*)(Args...)&#160;</td>
+          <td class="paramname"><em>SlotFunc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将信号和槽断开连接。<br/>
+Receiver代表接收者的类型 Args是槽函数/信号的参数列表。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td>指向发射者的指针 </td></tr>
+    <tr><td class="paramname">signal</td><td>指向信号的引用。 </td></tr>
+    <tr><td class="paramname">receiver</td><td>指向接收者的指针 </td></tr>
+    <tr><td class="paramname">SlotFunc</td><td>指向槽函数的指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0代表成功；非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3e6605d34a4a7091ed1c81641e618e13"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GUIEvtLoop::enterLoop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>对事件循环进行递归。不要调用它，除非你是专家。 </p>
+<dl class="section return"><dt>返回</dt><dd>int 0代表成功，非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aafe1539cdd85a5fc2198baf8580a2f9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GObject::event </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>开发者可以在子类中覆盖此函数，处理自己需要的事件 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">...</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+<p>被 <a class="el" href="class_g_tcp_socket.html#a301d16eec79b36b1980f0d61947436f0">GTcpSocket</a>, <a class="el" href="class_g_timer.html#a33b3aacbc681e77e39dda1f3fc86537a">GTimer</a>, <a class="el" href="class_g_udp_socket.html#a263983d7bc772761ecd7c314ca6e4e54">GUdpSocket</a> , 以及 <a class="el" href="class_g_tcp_server.html#ab1f77167f5e49d831c8e5d2b281c052c">GTcpServer</a> 重载.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1350e235bcabec3f77ad738a7bc07f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GUIEvtLoop::exec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>进入事件循环，开始处理事件。除非 <a class="el" href="class_g_u_i_evt_loop.html#a1886cea392d150b996785a8aff3a7e65" title="让程序退出； ">quit()</a> 被调用，否则exec()将一直阻塞。如果你想退出exec()，请调用 <a class="el" href="class_g_u_i_evt_loop.html#a1886cea392d150b996785a8aff3a7e65" title="让程序退出； ">quit()</a> 。<br/>
+事件循环从窗口系统中接收事件并且把它们分派给应用程序的窗口部件。<br/>
+通常来说，在调用exec()之前，不会发生任何的用户交互。但 <a class="el" href="class_g_ctrl_msg_box.html" title="对话框 ">GCtrlMsgBox</a> 这样的模式对话框是个例外，因为模式对话框拥有自己独立的 <a class="el" href="class_g_ctrl_msg_box.html#accb030432902c6904a54db4dc36cf291" title="启动对话框的事件循环；除非用户通过点击按钮来关闭对话框，否则本函数将永远阻塞。 ">GCtrlMsgBox::exec()</a> 。 </p>
+<dl class="section return"><dt>返回</dt><dd>int 此处返回的是你调用 <a class="el" href="class_g_u_i_evt_loop.html#a1886cea392d150b996785a8aff3a7e65" title="让程序退出； ">quit()</a> 时所传入的code参数； </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad848e37263bedd6a42d4a536a67f6937"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GUIEvtLoop::exitLoop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>退出事件循环。不要调用它，除非你是专家。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>指定事件循环的级别 </td></tr>
+    <tr><td class="paramname">code</td><td>事件循环的退出码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0代表成功，非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0292d8a8d300394df2b977ce59a23bcb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool GObject::isObjectExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断对象是否已经被析构掉了。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool true表示对象健在，false表示对象已经被析构掉了 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06611060f19fa9d76ee38af48d19e208"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GUIEvtLoop::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_key_event.html">GKeyEvent</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16b461e2c922d7f00435c30eb0afb002"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t GUIEvtLoop::loopLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回当前的事件循环级别。不要调用它，除非你是专家。 </p>
+<dl class="section return"><dt>返回</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa1b539842f0d5fbc09ad52163b7323b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* GObject::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const char* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7ef28ababe03e654cd4edcebffd7950c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_object.html">GObject</a>* GObject::parent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对象的parent </p>
+<dl class="section return"><dt>返回</dt><dd>GObject* </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab1ee87698b9aac8f364e7147a72641ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GUIEvtLoop::postEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>priority</em> = <code><a class="el" href="g_event_8h.html#aebb9cef49ea90447c0eacc5180323747">SYS_EVT_PRIORITY</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>receiver</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将一个事件加入事件循环。如果你不需要指定接收者和优先级，那么你调用这个函数会比较方便。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+    <tr><td class="paramname">receiver</td><td>如果为空则代表事件由系统处理，如果不为空，则事件会直接分发给接收者进行处理。 </td></tr>
+    <tr><td class="paramname">priority</td><td>事件处理的优先级；值越高说明事件越紧急、需要优先处理。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0代表成功，非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad4dfbc3f0229ac4b6ee27473b8d7f254"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GUIEvtLoop::postEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_event.html">GEvent</a> *&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_object.html">GObject</a> *&#160;</td>
+          <td class="paramname"><em>receiver</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>priority</em> = <code><a class="el" href="g_event_8h.html#aebb9cef49ea90447c0eacc5180323747">SYS_EVT_PRIORITY</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将一个事件加入事件循环。如果你不需要指定优先级，那么你调用这个函数会比较方便。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>事件 </td></tr>
+    <tr><td class="paramname">receiver</td><td>如果为空则代表事件由系统处理，如果不为空，则事件会直接分发给接收者进行处理。 </td></tr>
+    <tr><td class="paramname">priority</td><td>事件处理的优先级；值越高说明事件越紧急、需要优先处理。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0代表成功，非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1886cea392d150b996785a8aff3a7e65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GUIEvtLoop::quit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>让程序退出； </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>指定程序的退出code，这个code将作为 <a class="el" href="class_g_u_i_evt_loop.html#ad1350e235bcabec3f77ad738a7bc07f8" title="进入事件循环，开始处理事件。除非 quit() 被调用，否则exec()将一直阻塞。如果你想退出exec()，请调用 quit() 。 事件循环从窗口系统中接收事件并且把它们分派给应用程序的窗口部件。 ...">exec()</a> 的返回值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>int 0代表成功，非0代表失败 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a04a10366471a79e3d086ba0070e34d81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t GUIEvtLoop::screenCounts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回目前的屏幕总数量，包括所有虚拟远程屏幕和真实硬件屏幕。 </p>
+<dl class="section return"><dt>返回</dt><dd>int8_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1174810027a7353477438dc18607e1e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GUIEvtLoop::setImageDB </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_g_image_attr.html">GImageAttr</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>nums</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>该函数用于设置软件所需要的图片数据；用户必须在构造GUIEvtLoop对象之前调用setImageDB。举例如下：<br/>
+</p>
+<pre>
+#include &lt;<a class="el" href="g_u_i_evt_loop_8h.html" title="GUIEvtLoop 为GUI程序提供了一个事件循环。 ">gUIEvtLoop.h</a>&gt;
+#include "gImgApp.h" //这个头文件由Giveda框架自动生成，用户在需要使用时include进来即可</pre><pre>int <a class="el" href="hello__world_8cpp.html#a78a394181a2ec486cda247b5ab57ed40">main( int argc, char** argv )</a>
+{
+    //在定义GUIEvtLoop对象之前，先执行setImageDB；
+    //其中用到的imageDB(), GIMG_APP_NUM_MAX均在gImgApp.h中定义
+    GUIEvtLoop::setImageDB( imageDB(), GIMG_APP_NUM_MAX);</pre><pre>    <a class="el" href="class_g_u_i_evt_loop.html" title="通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。 GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基...">GUIEvtLoop</a> a( argc, param );//定义UI的事件循环</pre><pre>    //用户在此进行自己需要的其它操作</pre><pre>    //进入事件循环
+    return a.exec();
+}
+</pre> <dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>直接传递imageDB()即可 </td></tr>
+    <tr><td class="paramname">nums</td><td>直接传递GIMG_APP_NUM_MAX即可 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae3e0c9d1dbd18c327246f806eb00773b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GUIEvtLoop::setSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_global_8h.html#a7e10d76994c6d6f42216e5a310255abf">T_OFFSET</a>&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置GUI窗口系统的宽高，以像素为单位。建议用户将GUI窗口系统的宽高设置为自己屏幕的分辨率。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>宽 </td></tr>
+    <tr><td class="paramname">h</td><td>高 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a810152a9fc6be334cbae72f055b7e7b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GUIEvtLoopPriv* GUIEvtLoop::uiEvtLpPriv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a class="anchor" id="acdde379be11052e84e0eb8ac79bba37f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_signal.html">GSignal</a>&lt;void(void)&gt; GObject::sigDestroyed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当对象被析构时，会发射此信号 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_u_i_evt_loop_8h.html">gUIEvtLoop.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

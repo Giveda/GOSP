@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GFont类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_g_font-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GFont类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>字体、字号等信息。  
+ <a href="class_g_font.html#details">更多...</a></p>
+
+<p><code>#include &lt;gFont.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ac4f824d5c200c92e459ec2276631b040"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">Weight</a> { <br/>
+&#160;&#160;<a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040a406739c53465304afa89fe9de1703b56">Light</a> = 25, 
+<a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040a2c4076f72d5f56f8c78a0a79adcff595">Normal</a> = 50, 
+<a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040ae4b833368f756ee1f63b8b3232b5c1cd">DemiBold</a> = 63, 
+<a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040a4269ff8fb4ca1fb79daae325fee2c27c">Bold</a> = 75, 
+<br/>
+&#160;&#160;<a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040a40a7696b44cafbf0b878758473a3053c">Black</a> = 87
+<br/>
+ }</td></tr>
+<tr class="separator:ac4f824d5c200c92e459ec2276631b040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fe1ffeef1ec840e8740aa3023f1d9f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">PointSize</a> { <a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9fa09e9462c6378f49ecea36f5a8adc2371">PointSize_24</a> =24, 
+<a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9faf400057eb84af9dc50f7bd74b4061a4c">PointSize_28</a> =28, 
+<a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9fadcfef20af141bbffd8266f88932a60bd">PointSize_32</a> =32, 
+<a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9fa7bd15ec063869448f5f31e7a99b06486">PointSize_36</a> =36
+ }</td></tr>
+<tr class="separator:ab7fe1ffeef1ec840e8740aa3023f1d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adcf3af84be1bfcd21d5a61c43b55fd0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#adcf3af84be1bfcd21d5a61c43b55fd0c">GFont</a> ()</td></tr>
+<tr class="separator:adcf3af84be1bfcd21d5a61c43b55fd0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc85304bff91fba8262e9c3f51a17d09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#abc85304bff91fba8262e9c3f51a17d09">GFont</a> (const <a class="el" href="class_g_font.html">GFont</a> &amp;src)</td></tr>
+<tr class="separator:abc85304bff91fba8262e9c3f51a17d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f4d126a5c2da33db1461572d6d64a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_font.html">GFont</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#a08f4d126a5c2da33db1461572d6d64a3">operator=</a> (const <a class="el" href="class_g_font.html">GFont</a> &amp;r)</td></tr>
+<tr class="separator:a08f4d126a5c2da33db1461572d6d64a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12d6f0bc732e2c70f7726b90c05e98f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#ab12d6f0bc732e2c70f7726b90c05e98f">~GFont</a> ()</td></tr>
+<tr class="separator:ab12d6f0bc732e2c70f7726b90c05e98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027c33edfd2c4036f447736399dbb72e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#a027c33edfd2c4036f447736399dbb72e">GFont</a> (const <a class="el" href="class_g_string.html">GString</a> &amp;<a class="el" href="class_g_font.html#a69402dec954d83c4727feffc9bf58a45">family</a>, <a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">PointSize</a> <a class="el" href="class_g_font.html#a6413526abee5bea3ba663029118cdda1">pointSize</a>=<a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9fa09e9462c6378f49ecea36f5a8adc2371">PointSize_24</a>, <a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">Weight</a> <a class="el" href="class_g_font.html#a5f0478548682d5670b931c902aa9a2f5">weight</a>=<a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040a2c4076f72d5f56f8c78a0a79adcff595">Normal</a>, bool <a class="el" href="class_g_font.html#a6fe3c9e19e5492335eb6b1b7a64bc129">italic</a>=false)</td></tr>
+<tr class="memdesc:a027c33edfd2c4036f447736399dbb72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用指定的信息构造一个字体对象  <a href="#a027c33edfd2c4036f447736399dbb72e">更多...</a><br/></td></tr>
+<tr class="separator:a027c33edfd2c4036f447736399dbb72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69402dec954d83c4727feffc9bf58a45"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#a69402dec954d83c4727feffc9bf58a45">family</a> () const </td></tr>
+<tr class="memdesc:a69402dec954d83c4727feffc9bf58a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取字体名称  <a href="#a69402dec954d83c4727feffc9bf58a45">更多...</a><br/></td></tr>
+<tr class="separator:a69402dec954d83c4727feffc9bf58a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6413526abee5bea3ba663029118cdda1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">PointSize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#a6413526abee5bea3ba663029118cdda1">pointSize</a> () const </td></tr>
+<tr class="memdesc:a6413526abee5bea3ba663029118cdda1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取字体大小  <a href="#a6413526abee5bea3ba663029118cdda1">更多...</a><br/></td></tr>
+<tr class="separator:a6413526abee5bea3ba663029118cdda1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f0478548682d5670b931c902aa9a2f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">Weight</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#a5f0478548682d5670b931c902aa9a2f5">weight</a> () const </td></tr>
+<tr class="memdesc:a5f0478548682d5670b931c902aa9a2f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取weight  <a href="#a5f0478548682d5670b931c902aa9a2f5">更多...</a><br/></td></tr>
+<tr class="separator:a5f0478548682d5670b931c902aa9a2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe3c9e19e5492335eb6b1b7a64bc129"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_font.html#a6fe3c9e19e5492335eb6b1b7a64bc129">italic</a> () const </td></tr>
+<tr class="memdesc:a6fe3c9e19e5492335eb6b1b7a64bc129"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否是斜体  <a href="#a6fe3c9e19e5492335eb6b1b7a64bc129">更多...</a><br/></td></tr>
+<tr class="separator:a6fe3c9e19e5492335eb6b1b7a64bc129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>字体、字号等信息。 </p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a class="anchor" id="ab7fe1ffeef1ec840e8740aa3023f1d9f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">GFont::PointSize</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ab7fe1ffeef1ec840e8740aa3023f1d9fa09e9462c6378f49ecea36f5a8adc2371"></a>PointSize_24</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ab7fe1ffeef1ec840e8740aa3023f1d9faf400057eb84af9dc50f7bd74b4061a4c"></a>PointSize_28</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ab7fe1ffeef1ec840e8740aa3023f1d9fadcfef20af141bbffd8266f88932a60bd"></a>PointSize_32</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ab7fe1ffeef1ec840e8740aa3023f1d9fa7bd15ec063869448f5f31e7a99b06486"></a>PointSize_36</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="ac4f824d5c200c92e459ec2276631b040"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">GFont::Weight</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ac4f824d5c200c92e459ec2276631b040a406739c53465304afa89fe9de1703b56"></a>Light</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac4f824d5c200c92e459ec2276631b040a2c4076f72d5f56f8c78a0a79adcff595"></a>Normal</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac4f824d5c200c92e459ec2276631b040ae4b833368f756ee1f63b8b3232b5c1cd"></a>DemiBold</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac4f824d5c200c92e459ec2276631b040a4269ff8fb4ca1fb79daae325fee2c27c"></a>Bold</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac4f824d5c200c92e459ec2276631b040a40a7696b44cafbf0b878758473a3053c"></a>Black</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="adcf3af84be1bfcd21d5a61c43b55fd0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GFont::GFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abc85304bff91fba8262e9c3f51a17d09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GFont::GFont </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_font.html">GFont</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab12d6f0bc732e2c70f7726b90c05e98f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GFont::~GFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a027c33edfd2c4036f447736399dbb72e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GFont::GFont </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td>
+          <td class="paramname"><em>family</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">PointSize</a>&#160;</td>
+          <td class="paramname"><em>pointSize</em> = <code><a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9fa09e9462c6378f49ecea36f5a8adc2371">PointSize_24</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">Weight</a>&#160;</td>
+          <td class="paramname"><em>weight</em> = <code><a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040a2c4076f72d5f56f8c78a0a79adcff595">Normal</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用指定的信息构造一个字体对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">family</td><td>字体名称 </td></tr>
+    <tr><td class="paramname">pointSize</td><td>字号 </td></tr>
+    <tr><td class="paramname">weight</td><td>加粗 </td></tr>
+    <tr><td class="paramname">italic</td><td>斜体 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a69402dec954d83c4727feffc9bf58a45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_g_string.html">GString</a>&amp; GFont::family </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取字体名称 </p>
+<dl class="section return"><dt>返回</dt><dd>const <a class="el" href="class_g_string.html" title="GString 字符串操作。对字符串进行各种运算处理。 ">GString</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6fe3c9e19e5492335eb6b1b7a64bc129"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GFont::italic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否是斜体 </p>
+<dl class="section return"><dt>返回</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a08f4d126a5c2da33db1461572d6d64a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_font.html">GFont</a>&amp; GFont::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_font.html">GFont</a> &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6413526abee5bea3ba663029118cdda1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">PointSize</a> GFont::pointSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取字体大小 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_g_font.html#ab7fe1ffeef1ec840e8740aa3023f1d9f">GFont::PointSize</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f0478548682d5670b931c902aa9a2f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">Weight</a> GFont::weight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取weight </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="class_g_font.html#ac4f824d5c200c92e459ec2276631b040">GFont::Weight</a> </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_font_8h.html">gFont.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

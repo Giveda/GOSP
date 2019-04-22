@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GBrush类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_g_brush-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GBrush类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>画刷，用于在绘制时指定填充风格。默认、和最常见的就是实心填充风格 SolidPattern （能够实现实心填充）  
+ <a href="class_g_brush.html#details">更多...</a></p>
+
+<p><code>#include &lt;gBrush.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a48f9d05f7bea4df55758c5b80ffe1448"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#a48f9d05f7bea4df55758c5b80ffe1448">GBrush</a> ()</td></tr>
+<tr class="memdesc:a48f9d05f7bea4df55758c5b80ffe1448"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用默认的 <a class="el" href="class_g_color.html" title="颜色、像素， GColor 提供了对ARGB8888格式像素的封装 ">GColor</a> 构造一个实心填充风格的画刷  <a href="#a48f9d05f7bea4df55758c5b80ffe1448">更多...</a><br/></td></tr>
+<tr class="separator:a48f9d05f7bea4df55758c5b80ffe1448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbc22940554f78c03e33641ac17f99c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#a3fbc22940554f78c03e33641ac17f99c">GBrush</a> (const <a class="el" href="class_g_color.html">GColor</a> &amp;color, <a class="el" href="g_brush_8h.html#af67a889bc5e9f8ab3a59fe58b0fa2128">BrushStyle</a> <a class="el" href="class_g_brush.html#a331c03d73b60180955bbf6e43f79d575">style</a>=<a class="el" href="g_brush_8h.html#af67a889bc5e9f8ab3a59fe58b0fa2128add709101b4b35e74bb23c14db2b389cd">SolidPattern</a>)</td></tr>
+<tr class="memdesc:a3fbc22940554f78c03e33641ac17f99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用指定的 <a class="el" href="class_g_color.html" title="颜色、像素， GColor 提供了对ARGB8888格式像素的封装 ">GColor</a> 构造一个指定填充风格的画刷  <a href="#a3fbc22940554f78c03e33641ac17f99c">更多...</a><br/></td></tr>
+<tr class="separator:a3fbc22940554f78c03e33641ac17f99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50d49506d695f40478150ba83aba3f0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#a50d49506d695f40478150ba83aba3f0c">GBrush</a> (const <a class="el" href="struct_t___b_r_u_s_h.html">T_BRUSH</a> &amp;tb)</td></tr>
+<tr class="separator:a50d49506d695f40478150ba83aba3f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8491d1edc4c8f858cbb7111c0a922c9d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#a8491d1edc4c8f858cbb7111c0a922c9d">~GBrush</a> ()</td></tr>
+<tr class="separator:a8491d1edc4c8f858cbb7111c0a922c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf4bed04c623df4b30388c862e9adaa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_color_8h.html#a0359532bf90ca9d57392246e52ba4d87">GRgb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#abf4bed04c623df4b30388c862e9adaa8">rgb</a> ()</td></tr>
+<tr class="memdesc:abf4bed04c623df4b30388c862e9adaa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回本画刷的色彩 GRgb  <a href="#abf4bed04c623df4b30388c862e9adaa8">更多...</a><br/></td></tr>
+<tr class="separator:abf4bed04c623df4b30388c862e9adaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331c03d73b60180955bbf6e43f79d575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="g_brush_8h.html#af67a889bc5e9f8ab3a59fe58b0fa2128">BrushStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#a331c03d73b60180955bbf6e43f79d575">style</a> ()</td></tr>
+<tr class="memdesc:a331c03d73b60180955bbf6e43f79d575"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回本画刷的填充风格 BrushStyle  <a href="#a331c03d73b60180955bbf6e43f79d575">更多...</a><br/></td></tr>
+<tr class="separator:a331c03d73b60180955bbf6e43f79d575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b73ecfe6742256aeef2cb0b7f1ab43f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_t___b_r_u_s_h.html">T_BRUSH</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_brush.html#a8b73ecfe6742256aeef2cb0b7f1ab43f">toT_BRUSH</a> () const </td></tr>
+<tr class="separator:a8b73ecfe6742256aeef2cb0b7f1ab43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>画刷，用于在绘制时指定填充风格。默认、和最常见的就是实心填充风格 SolidPattern （能够实现实心填充） </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="a48f9d05f7bea4df55758c5b80ffe1448"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GBrush::GBrush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用默认的 <a class="el" href="class_g_color.html" title="颜色、像素， GColor 提供了对ARGB8888格式像素的封装 ">GColor</a> 构造一个实心填充风格的画刷 </p>
+
+</div>
+</div>
+<a class="anchor" id="a3fbc22940554f78c03e33641ac17f99c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GBrush::GBrush </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_color.html">GColor</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="g_brush_8h.html#af67a889bc5e9f8ab3a59fe58b0fa2128">BrushStyle</a>&#160;</td>
+          <td class="paramname"><em>style</em> = <code><a class="el" href="g_brush_8h.html#af67a889bc5e9f8ab3a59fe58b0fa2128add709101b4b35e74bb23c14db2b389cd">SolidPattern</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用指定的 <a class="el" href="class_g_color.html" title="颜色、像素， GColor 提供了对ARGB8888格式像素的封装 ">GColor</a> 构造一个指定填充风格的画刷 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>指定的 <a class="el" href="class_g_color.html" title="颜色、像素， GColor 提供了对ARGB8888格式像素的封装 ">GColor</a> </td></tr>
+    <tr><td class="paramname">style</td><td>指定的 BrushStyle ，默认为实心画刷 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a50d49506d695f40478150ba83aba3f0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GBrush::GBrush </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_t___b_r_u_s_h.html">T_BRUSH</a> &amp;&#160;</td>
+          <td class="paramname"><em>tb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8491d1edc4c8f858cbb7111c0a922c9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GBrush::~GBrush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="abf4bed04c623df4b30388c862e9adaa8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_color_8h.html#a0359532bf90ca9d57392246e52ba4d87">GRgb</a> GBrush::rgb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回本画刷的色彩 GRgb </p>
+<dl class="section return"><dt>返回</dt><dd>GRgb </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a331c03d73b60180955bbf6e43f79d575"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="g_brush_8h.html#af67a889bc5e9f8ab3a59fe58b0fa2128">BrushStyle</a> GBrush::style </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回本画刷的填充风格 BrushStyle </p>
+<dl class="section return"><dt>返回</dt><dd>BrushStyle </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b73ecfe6742256aeef2cb0b7f1ab43f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_t___b_r_u_s_h.html">T_BRUSH</a> GBrush::toT_BRUSH </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_brush_8h.html">gBrush.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:09 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

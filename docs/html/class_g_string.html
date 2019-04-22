@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Giveda® Embedded Midware: GString类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Giveda® Embedded Midware
+   &#160;<span id="projectnumber">1.2.0</span>
+   </div>
+   <div id="projectbrief">本文档受《版权法》、《版权公约》保护。深圳技达®版权所有</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>命名空间</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>枚举</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>枚举值</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>友元</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>宏定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_g_string-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">GString类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="class_g_string.html" title="GString 字符串操作。对字符串进行各种运算处理。 ">GString</a> 字符串操作。对字符串进行各种运算处理。  
+ <a href="class_g_string.html#details">更多...</a></p>
+
+<p><code>#include &lt;gString.h&gt;</code></p>
+
+<p>继承自 string .</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af28e7657dd58d4c5b94c1b03e735015c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#af28e7657dd58d4c5b94c1b03e735015c">GString</a> ()</td></tr>
+<tr class="separator:af28e7657dd58d4c5b94c1b03e735015c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c457c9d8121a4db3c582a1c6d707c60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a1c457c9d8121a4db3c582a1c6d707c60">GString</a> (const char *sz)</td></tr>
+<tr class="separator:a1c457c9d8121a4db3c582a1c6d707c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa280c7d7f34b70cb96a051343c3532d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#aa280c7d7f34b70cb96a051343c3532d3">GString</a> (const <a class="el" href="class_g_string.html">GString</a> &amp;s)</td></tr>
+<tr class="separator:aa280c7d7f34b70cb96a051343c3532d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5cd28b6bb09d66ff31d7082019b427"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a5d5cd28b6bb09d66ff31d7082019b427">GString</a> (const string &amp;s)</td></tr>
+<tr class="separator:a5d5cd28b6bb09d66ff31d7082019b427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a593764cfb6e3a87a79234bfbed0428"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a9a593764cfb6e3a87a79234bfbed0428">~GString</a> ()</td></tr>
+<tr class="separator:a9a593764cfb6e3a87a79234bfbed0428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf4ce996a9a2b0b3daccc27c4557658"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a8bf4ce996a9a2b0b3daccc27c4557658">utf8</a> () const </td></tr>
+<tr class="separator:a8bf4ce996a9a2b0b3daccc27c4557658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43d1f6a21172b3148e6d9d39e921fd1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_string.html">GString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a43d1f6a21172b3148e6d9d39e921fd1b">arg</a> (const <a class="el" href="class_g_string.html">GString</a> &amp;str)</td></tr>
+<tr class="separator:a43d1f6a21172b3148e6d9d39e921fd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e7d6e415725154e697aee60afbe98c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_string.html">GString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a95e7d6e415725154e697aee60afbe98c">arg</a> (const long int num)</td></tr>
+<tr class="separator:a95e7d6e415725154e697aee60afbe98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1bff599bd01b9ccc73447593cb9c26e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#af1bff599bd01b9ccc73447593cb9c26e">fill</a> (const char c)</td></tr>
+<tr class="separator:af1bff599bd01b9ccc73447593cb9c26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ef96b0e6d78be3d596ae1cf5f470b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a83ef96b0e6d78be3d596ae1cf5f470b9">insert</a> (int idx, const char *<a class="el" href="class_g_string.html#a43d1f6a21172b3148e6d9d39e921fd1b">arg</a>)</td></tr>
+<tr class="separator:a83ef96b0e6d78be3d596ae1cf5f470b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d71e57c6756c85a61335a6149f12669"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a9d71e57c6756c85a61335a6149f12669">insert</a> (int idx, const <a class="el" href="class_g_string.html">GString</a> &amp;s)</td></tr>
+<tr class="separator:a9d71e57c6756c85a61335a6149f12669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6daff427a360b1abd7d0fb7163326883"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a6daff427a360b1abd7d0fb7163326883">remove</a> (int idx, int len)</td></tr>
+<tr class="separator:a6daff427a360b1abd7d0fb7163326883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0770aca9f5abef7a826b7024bb580aa5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_string.html#a0770aca9f5abef7a826b7024bb580aa5">isEmpty</a> () const </td></tr>
+<tr class="separator:a0770aca9f5abef7a826b7024bb580aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="class_g_string.html" title="GString 字符串操作。对字符串进行各种运算处理。 ">GString</a> 字符串操作。对字符串进行各种运算处理。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a class="anchor" id="af28e7657dd58d4c5b94c1b03e735015c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GString::GString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c457c9d8121a4db3c582a1c6d707c60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GString::GString </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>sz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa280c7d7f34b70cb96a051343c3532d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GString::GString </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5d5cd28b6bb09d66ff31d7082019b427"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GString::GString </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9a593764cfb6e3a87a79234bfbed0428"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual GString::~GString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a class="anchor" id="a43d1f6a21172b3148e6d9d39e921fd1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_string.html">GString</a> GString::arg </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a95e7d6e415725154e697aee60afbe98c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_string.html">GString</a> GString::arg </td>
+          <td>(</td>
+          <td class="paramtype">const long int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1bff599bd01b9ccc73447593cb9c26e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GString::fill </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a83ef96b0e6d78be3d596ae1cf5f470b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_string.html">GString</a>&amp; GString::insert </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>arg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9d71e57c6756c85a61335a6149f12669"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_string.html">GString</a>&amp; GString::insert </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_g_string.html">GString</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0770aca9f5abef7a826b7024bb580aa5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GString::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6daff427a360b1abd7d0fb7163326883"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_string.html">GString</a>&amp; GString::remove </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8bf4ce996a9a2b0b3daccc27c4557658"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* GString::utf8 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>API/<a class="el" href="g_string_8h.html">gString.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+生成于 2019年 三月 23日 星期六 14:13:10 , 为 Giveda® Embedded Midware使用  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
