@@ -18,77 +18,33 @@
 
 #include <config_giveda.h>
 
-#ifdef CONFIG_gColor
+#ifdef CONFIG_gBrush
 
-#ifndef GCOLOR_H
-#define GCOLOR_H
+#ifndef GBRUSH_H
+#define GBRUSH_H
 
-#include <gGlobal.h>
+#include <gColor.h>
 
-typedef  uint32_t GRgb;  ///代表一个像素
+///这个enum用于索引画刷风格
+enum BrushStyle
+{
+    ///无画刷
+    NoBrush,
+    
+    ///实心画刷
+    SolidPattern,
+};
 
-/**
- * @brief 提取 GRgb 中的红色值
- * 
- * @param rgb color in ARGB8888 format
- * @return GRgb
- */
-inline GRgb gRed( GRgb rgb )
-{ return (GRgb)((rgb >> 16) & 0xff); }
+#pragma pack(1)
+struct T_BRUSH
+{
+    GRgb rgb;
+    BrushStyle  style;
+};
+#pragma pack()
 
-/**
- * @brief 提取 GRgb 中的绿色值
- * 
- * @param rgb color in ARGB8888 format
- * @return GRgb
- */
- inline GRgb gGreen( GRgb rgb )
-{ return (GRgb)((rgb >> 8) & 0xff); }
-
-/**
- * @brief 提取 GRgb 中的蓝色值
- * 
- * @param rgb color in ARGB8888 format
- * @return GRgb
- */
- inline GRgb gBlue( GRgb rgb )
-{ return (GRgb)(rgb & 0xff); }
-
-/**
- * @brief 提取 GRgb 中的不透明度
- * 
- * @param rgb color in ARGB8888 format
- * @return GRgb
- */
- inline GRgb gAlpha( GRgb rgb )
-{ return (GRgb)((rgb >> 24) & 0xff); }
-
-/**
- * @brief 合成ARGB8888像素，不透明度为0xFF(完全不透明)
- * 
- * @param r 红色值
- * @param g 绿色值
- * @param b 蓝色值
- * @return GRgb ARGB8888像素
- */
-inline GRgb gRgb( int r, int g, int b )
-{ return (0xff << 24) | ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff); }
-
-/**
- * @brief 合成ARGB8888像素
- * 
- * @param r 红色值
- * @param g 绿色值
- * @param b 蓝色值
- * @param a 不透明度
- * @return GRgb ARGB8888像素
- */
-inline GRgb gRgba( int r, int g, int b, int a )
-{ return ((a & 0xff) << 24) | ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff); }
-
-
-/*! @file  gColor.h
- * @brief  GColor 颜色、像素。
+/*! @file  gBrush.h
+ * @brief  GBrush 画刷，用于在绘制时指定填充风格。
  * 
  * @author 明心
  * @version 1.0.0
@@ -96,48 +52,52 @@ inline GRgb gRgba( int r, int g, int b, int a )
  */
 
 /*!
- * @class GColor
- * @brief 颜色、像素， GColor 提供了对ARGB8888格式像素的封装
+ * @class GBrush
+ * @brief 画刷，用于在绘制时指定填充风格。默认、和最常见的就是实心填充风格 SolidPattern （能够实现实心填充）
  * 
  */
-class DLL_PUBLIC GColor
+class DLL_PUBLIC GBrush
 {
 public:
     /**
-     * @brief 构造一个red/green/blue均为0，不透明度为0xFF的像素
+     * @brief 使用默认的 GColor 构造一个实心填充风格的画刷
      * 
      */
-    GColor();
-    virtual ~GColor();
+    GBrush();
+    
+
+    /**
+     * @brief 使用指定的 GColor 构造一个指定填充风格的画刷
+     * 
+     * @param color 指定的 GColor
+     * @param style 指定的  BrushStyle ，默认为实心画刷
+     */
+    GBrush( const GColor & color, BrushStyle style=SolidPattern );
+    
+    GBrush( const T_BRUSH& tb);
+    virtual ~GBrush();
     
     /**
-     * @brief 构造一个值为 GRgb 的像素
+     * @brief 返回本画刷的色彩 GRgb 
      * 
-     * @param rgb pixel in ARGB8888 format
+     * @return GRgb
      */
-    GColor( GRgb rgb );
+    GRgb  rgb();
     
     /**
-     * @brief 构造一个格式为ARGB8888的像素
+     * @brief 返回本画刷的填充风格 BrushStyle 
      * 
-     * @param r 红色值
-     * @param g 绿色值
-     * @param b 蓝色值
+     * @return BrushStyle
      */
-    GColor( int r, int g, int b );
+    BrushStyle style();
     
-    /**
-     * @brief 获取该像素的 GRgb 值
-     * 
-     * @return GRgb pixel in ARGB8888 format
-     */
-    GRgb  rgb() const;
+    const T_BRUSH toT_BRUSH() const;
     
 private:
-    GRgb   m_rgb;
+    T_BRUSH  brushData;
 };
 
-#endif // GCOLOR_H
+#endif // GBRUSH_H
 
-#endif  //CONFIG_gColor
+#endif  //CONFIG_gBrush
 
