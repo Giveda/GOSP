@@ -18,391 +18,200 @@
 
 #include <config_giveda.h>
 
-#ifdef CONFIG_gUIEvent
+#ifdef CONFIG_gUIEvtLoop
 
-#ifndef GUIEVENT_H
-#define GUIEVENT_H
+#ifndef GUIEVTLOOP_H
+#define GUIEVTLOOP_H
 
-#include <gGlobal.h>
-#include <gEvent.h>
-#include <gRect.h>
-#include <gRegion.h>
-#include <gString.h>
-#include <stdint.h>
+#include <gUIEvent.h>
+#include <gObject.h>
 
-namespace Giveda
-{
-    enum AlignmentFlag {
-        AlignLeft = 0x0001,
-//         AlignRight = 0x0002,
-        AlignHCenter = 0x0004,
-//         AlignJustify = 0x0008,
-//         AlignAbsolute = 0x0010,
-//         AlignHorizontal_Mask = AlignLeft | AlignRight | AlignHCenter | AlignJustify | AlignAbsolute,
-        
-//         AlignTop = 0x0020,
-//         AlignBottom = 0x0040,
-        AlignVCenter = 0x0080,
-//         AlignVertical_Mask = AlignTop | AlignBottom | AlignVCenter,
-        
-        AlignCenter = AlignVCenter | AlignHCenter
-    };
-    enum TextFlag {
-        TextSingleLine = 0x0100,
-        TextDontClip = 0x0200,
-        TextExpandTabs = 0x0400,
-        TextShowMnemonic = 0x0800,
-        TextWordWrap = 0x1000,
-        TextWrapAnywhere = 0x2000,
-        TextDontPrint = 0x4000,
-        TextIncludeTrailingSpaces = 0x08000000,
-        TextHideMnemonic = 0x8000,
-        TextJustificationForced = 0x10000,
-        TextForceLeftToRight = 0x20000,
-        TextForceRightToLeft = 0x40000,
-        TextLongestVariant = 0x80000,
-        TextBypassShaping = 0x100000,
-        
-        SingleLine = TextSingleLine,
-        DontClip = TextDontClip,
-        ExpandTabs = TextExpandTabs,
-        ShowPrefix = TextShowMnemonic,
-        WordBreak = TextWordWrap,
-        BreakAnywhere = TextWrapAnywhere,
-        DontPrint = TextDontPrint,
-        IncludeTrailingSpaces = TextIncludeTrailingSpaces,
-        NoAccel = TextHideMnemonic
-    };
-};
+class GUIEvtLoopPriv;
+class GImageAttr;
 
-/*! @file  gUIEvent.h
- * @brief  Giveda::AlignmentFlag 文本对齐标志\n
- * Giveda::TextFlag 文本排版标志\n
- * GMouseEvent 鼠标事件\n
- * GKeyEvent 键盘事件\n
- * GPaintEvent 绘制事件\n
- * GTapEvent  触摸点击事件\n
- * GSwipeEvent 触摸滑动事件\n
- * GGestureScrollEvent 触摸拖动事件
+/*! @file  gUIEvtLoop.h
+ * @brief  GUIEvtLoop 为GUI程序提供了一个事件循环。
+ */
+
+/*!
+ * @class GUIEvtLoop
+ * @brief 通常情况下，GUI程序都是由事件驱动的、需要有一个事件循环。 GUIEvtLoop 为GUI程序提供了一个事件循环。\n
+ * GUIEvtLoop 管理着GUI程序的执行流程、负责GUI程序在总体上、全局上的基本设置。一个GUI程序应当有且仅有一个 GUIEvtLoop 对象。\n
+ * 在你软件代码的任何地方，你可以使用 \c uiEvtLp 这个全局变量来访问 GUIEvtLoop 对象。
+ * 作为一个最佳实践，用户可以创建一个 GUIEvtLoop 的子类（比如命名为GUIApplication），然后把所有事关软件总体、和全局的初始化等操作放在这个GUIApplication子类中。\n
  * 
  * @author 明心
  * @version 1.0.0
- * @date 2019-2-6
+ * @date 2019-2-4
  */
-
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-/*!
- * @class GMouseEvent
- * @brief GMouseEvent 鼠标事件
- * 
- */
-class DLL_PUBLIC GMouseEvent : public GEvent
+class DLL_PUBLIC GUIEvtLoop : public GObject
 {
 public:
     /**
-     * @brief 构造一个鼠标事件
+     * @brief 使用argv和argc作为命令行参数，构造一个GUI事件循环对象。举例如下：\n
+     * <pre>
+     * char* param[] = {
+     *     NULL, //这个位置放置的是程序的文件名，直接置为NULL也是可以的
+     *     (char*)"gCtrlMsgBox", //这个位置放置的是（运行本软件的）设备型号，本软件将根据这个设备型号去寻找相关资源比如图片等
+     *     (char*)"Hello Giveda",//这个位置放置的是设备的显示名称，
+     *     (char*)"36000",//这个位置放置的是设备端（即server端）所打开的TCP和UDP端口号，远程显示客户端会去连接TCP和UDP的这个端口号；UDP用于实现设备的搜索发现、TCP用于提供实际的远程显示服务；用户应当确保在此传入的端口号没有被其它软件占用。
+     * };
+     * argc = sizeof(param)/sizeof(char*);
      * 
-     * @param type 鼠标事件的具体类型
-     * @param pos 点击位置坐标
-     * @param btn 鼠标按钮
+     * GUIEvtLoop a( argc, param );//定义UI的事件循环
+     * </pre>
+     * 
+     * @param argc 参数的数目
+     * @param argv 参数列表
      */
-    GMouseEvent ( GEvent::EVT_TYPE type, const GPoint & pos, Giveda::MouseButton btn);
+    GUIEvtLoop( int argc, char** argv);
     
     /**
-     * @brief 点击的位置坐标
+     * @brief 析构GUIEvtLoop，并设置全局变量uiEvtLp为0
      * 
-     * @return GPoint&
      */
-    GPoint& pos();
-    
-    /**
-     * @brief 获取是哪个鼠标按钮
-     * 
-     * @return Giveda::MouseButton
-     */
-    Giveda::MouseButton  button() const;
-    
-private:
-    Giveda::MouseButton m_btn;
-    GPoint m_pos;
-};
-#endif
+    virtual ~GUIEvtLoop();
 
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED) || defined(CONFIG_KEY_RELEASE_EVENT_ENABLED)
-/*!
- * @class GKeyEvent
- * @brief GKeyEvent 键盘事件
- * 
- */
-class  DLL_PUBLIC GKeyEvent : public GEvent
-{
-public:
     /**
-     * @brief 构造一个键盘事件
+     * @brief 进入事件循环，开始处理事件。除非 quit() 被调用，否则exec()将一直阻塞。如果你想退出exec()，请调用 quit() 。\n
+     * 事件循环从窗口系统中接收事件并且把它们分派给应用程序的窗口部件。\n
+     * 通常来说，在调用exec()之前，不会发生任何的用户交互。但 GCtrlMsgBox 这样的模式对话框是个例外，因为模式对话框拥有自己独立的 GCtrlMsgBox::exec() 。
      * 
-     * @param type 键盘事件的具体类型
-     * @param keyCode 键码
-     * @param autorep 是否是自动重复的键盘事件
+     * @return int 此处返回的是你调用 quit() 时所传入的code参数；
      */
-    GKeyEvent( GEvent::EVT_TYPE type, Giveda::Key keyCode, bool autorep = false );
+    int exec();
     
     /**
-     * @brief 获取键码
+     * @brief 对事件循环进行递归。不要调用它，除非你是专家。
      * 
-     * @return Giveda::Key
+     * @return int 0代表成功，非0代表失败
      */
-    Giveda::Key     key() const;
+    static int enterLoop();
     
     /**
-     * @brief 获取 ascii 字符
+     * @brief 退出事件循环。不要调用它，除非你是专家。
+     * 
+     * @param level 指定事件循环的级别
+     * @param code  事件循环的退出码
+     * 
+     * @return int 0代表成功，非0代表失败
+     */
+    static int exitLoop( int level, int code=0 );
+    
+    /**
+     * @brief 返回当前的事件循环级别。不要调用它，除非你是专家。
      * 
      * @return int
      */
-    int     ascii() const;
+    int32_t loopLevel() const;
     
     /**
-     * @brief 获取 string 
+     * @brief 让程序退出；
      * 
-     * @return GString
+     * @param code 指定程序的退出code，这个code将作为 exec() 的返回值
+     * @return int 0代表成功，非0代表失败
      */
-    GString text() const;
+    static int quit( int code=0 );
     
-    /**
-     * @brief 是否是自动重复的键盘事件
-     * 
-     * @return bool
-     */
-    bool isAutoRepeat () const;
-    
-    /**
-     * @brief 是否可以合并 
-     * 
-     * @return bool
-     */
-    virtual bool canComposite ();
-    
-    /**
-     * @brief 是否与 evt 事件相同
-     * 
-     * @param evt ...
-     * @return bool
-     */
-    virtual bool isEqual2 ( GEvent* evt );
-    
-protected:
-    Giveda::Key k;
-    uint16_t unicode;
-    bool repeat;
-};
+#ifdef CONFIG_QT_SIMULATOR
+    virtual bool event(GEvent* e);
 #endif
+    
+#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
+    virtual void keyPressEvent ( GKeyEvent* );
+#endif
+    
+    /**
+     * @brief 将一个事件加入事件循环。如果你不需要指定接收者和优先级，那么你调用这个函数会比较方便。
+     * 
+     * @param event 事件
+     * @param receiver 如果为空则代表事件由系统处理，如果不为空，则事件会直接分发给接收者进行处理。
+     * @param priority 事件处理的优先级；值越高说明事件越紧急、需要优先处理。
+     * @return int 0代表成功，非0代表失败
+     */
+    static int postEvent(GEvent *event, int priority=SYS_EVT_PRIORITY, GObject *receiver=NULL);
+    
+    /**
+     * @brief 将一个事件加入事件循环。如果你不需要指定优先级，那么你调用这个函数会比较方便。
+     * 
+     * @param event 事件
+     * @param receiver 如果为空则代表事件由系统处理，如果不为空，则事件会直接分发给接收者进行处理。
+     * @param priority 事件处理的优先级；值越高说明事件越紧急、需要优先处理。
+     * @return int 0代表成功，非0代表失败
+     */
+    static int postEvent(GEvent *event, GObject *receiver, int priority=SYS_EVT_PRIORITY);
 
-#if !defined(CONFIG_GUI_MODE_NONE)
-/*!
- * @class GPaintEvent
- * @brief GPaintEvent 绘制事件
- * 
- */
-class  DLL_PUBLIC GPaintEvent : public GEvent
-{
 public:
-#define  ALL_SCREEN   -1
+#if defined(CONFIG_V_SCREEN_ENABLED) || !defined(CONFIG_R_SCREEN_DISABLED)
     /**
-     * @brief 构造一个绘制事件
-     * 
-     * @param paintRect 绘制区域
-     * @param screen 哪个屏幕
-     * @param erased 是否擦除
-     */
-    GPaintEvent( const GRect &paintRect, int8_t screen=ALL_SCREEN, bool erased = true );
-    
-    /**
-     * @brief 获取绘制区域
-     * 
-     * @return const GRect&
-     */
-    const GRect &rect() const;
-    
-    /**
-     * @brief 获取绘制区域
-     * 
-     * @return const GRegion&
-     */
-    const GRegion &region() const;
-    
-    /**
-     * @brief 是否已经擦除
-     * 
-     * @return bool
-     */
-    bool erased() const;
-    
-    /**
-     * @brief 获取屏幕索引
+     * @brief 返回目前的屏幕总数量，包括所有虚拟远程屏幕和真实硬件屏幕。
      * 
      * @return int8_t
      */
-    int8_t screen();
+    int8_t screenCounts() const;
     
     /**
-     * @brief 能否合并
+     * @brief 设置GUI窗口系统的宽高，以像素为单位。建议用户将GUI窗口系统的宽高设置为自己屏幕的分辨率。
      * 
-     * @return bool
-     */
-    virtual bool canComposite ();
-    
-    /**
-     * @brief 合并事件
-     * 
-     * @param e ...
+     * @param w 宽
+     * @param h 高
      * @return void
      */
-    virtual void composite ( GEvent* e );
+    void setSize(T_OFFSET w, T_OFFSET h);
     
-protected:
-    GRect rec;
-    GRegion reg;
-    bool erase;
-    int8_t screenIdx;
-};
+    GUIEvtLoopPriv* uiEvtLpPriv();
 #endif
 
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-/*!
- * @class GTapEvent
- * @brief GTapEvent  触摸点击事件
- * 
- */
-class DLL_PUBLIC GTapEvent : public GEvent
-{
-public:
     /**
-     * @brief 构造一个触摸点击事件
+     * @brief 返回设备型号；详见 GUIEvtLoop( int argc, char** argv) ;
      * 
-     * @param pos 点击位置坐标
+     * @return const GString&
      */
-    GTapEvent ( const GPoint & pos);
+    const GString& deviceModel() const;
     
     /**
-     * @brief 获取点击位置坐标
+     * @brief 返回设备的显示名称；详见 GUIEvtLoop( int argc, char** argv) ;
      * 
-     * @return GPoint&
+     * @return const GString&
      */
-    GPoint& pos();
-
-private:
-    GPoint m_pos;
-};
-
-/*!
- * @class GSwipeEvent
- * @brief GSwipeEvent 触摸滑动事件
- * 
- */
-class DLL_PUBLIC GSwipeEvent : public GEvent
-{
-public:
-    ///滑动方向
-    enum SWIPE_DIRECTION 
-    {
-        ///向左滑动
-        SWIPE_LEFT=0,
-        
-        ///向右滑动
-        SWIPE_RIGHT,
-        
-        ///向上滑动
-        SWIPE_UP,
-        
-        ///向下滑动
-        SWIPE_DOWN
-    };
-    /**
-     * @brief 构造一个滑动事件
-     * 
-     * @param d 滑动方向
-     * @param startPos 起始位置坐标
-     */
-    GSwipeEvent ( GSwipeEvent::SWIPE_DIRECTION d, const GPoint &startPos);
+    const GString& deviceTittle()  const;
     
+#ifdef CONFIG_gImage
     /**
-     * @brief 获取滑动方向
+     * @brief 该函数用于设置软件所需要的图片数据；用户必须在构造GUIEvtLoop对象之前调用setImageDB。举例如下：\n
+     * <pre>
+     * #include <gUIEvtLoop.h>
+     * #include "gImgApp.h" //这个头文件由Giveda框架自动生成，用户在需要使用时include进来即可
      * 
-     * @return GSwipeEvent::SWIPE_DIRECTION
-     */
-    GSwipeEvent::SWIPE_DIRECTION  direction() const;
-    
-    /**
-     * @brief 获取滑动的起始位置坐标
+     * int main( int argc, char** argv )
+     * {
+     *     //在定义GUIEvtLoop对象之前，先执行setImageDB；
+     *     //其中用到的imageDB(), GIMG_APP_NUM_MAX均在gImgApp.h中定义
+     *     GUIEvtLoop::setImageDB( imageDB(), GIMG_APP_NUM_MAX);
      * 
-     * @return GPoint&
+     *     GUIEvtLoop a( argc, param );//定义UI的事件循环
+     *     
+     *     //用户在此进行自己需要的其它操作
+     *     
+     *     //进入事件循环
+     *     return a.exec();
+     * }
+     * </pre>
+     * @param p 直接传递imageDB()即可
+     * @param nums 直接传递GIMG_APP_NUM_MAX即可
+     * @return void
      */
-    GPoint& pos();
+    static void setImageDB(const GImageAttr* p, const uint16_t nums);
+#endif
     
 private:
-    GSwipeEvent::SWIPE_DIRECTION m_direction;
-    GPoint m_pos;
+    GUIEvtLoopPriv *appPriv;
 };
 
-/*!
- * @class GGestureScrollEvent
- * @brief GGestureScrollEvent 触摸拖动事件
- * 
- */
-class DLL_PUBLIC GGestureScrollEvent : public GEvent
-{
-public:
-    ///拖动方向
-    enum SWIPE_DIRECTION 
-    {
-        ///向左拖动
-        SWIPE_LEFT=0,
-        
-        ///向右拖动
-        SWIPE_RIGHT,
-        
-        ///向上拖动
-        SWIPE_UP,
-        
-        ///向下拖动
-        SWIPE_DOWN
-    };
-    /**
-     * @brief 构造一个触摸拖动事件
-     * 
-     * @param d 拖动方向
-     * @param startPos 起始位置坐标
-     * @param distance 拖动的距离
-     */
-    GGestureScrollEvent ( GGestureScrollEvent::SWIPE_DIRECTION d, const GPoint &startPos, const T_OFFSET distance);
-    
-    /**
-     * @brief 获取拖动方向
-     * 
-     * @return GGestureScrollEvent::SWIPE_DIRECTION
-     */
-    GGestureScrollEvent::SWIPE_DIRECTION  direction() const;
-    
-    /**
-     * @brief 获取拖动的起始位置坐标
-     * 
-     * @return GPoint&
-     */
-    GPoint& pos();
-    
-    /**
-     * @brief 获取拖动的距离
-     * 
-     * @return T_OFFSET
-     */
-    T_OFFSET distance() const;
-    
-private:
-    GGestureScrollEvent::SWIPE_DIRECTION m_direction;
-    GPoint m_pos;
-    T_OFFSET m_distance;
-};
-#endif  //CONFIG_TOUCH_EVENT_ENABLED
+///uiEvtLp全局变量指向GUIEvtLoop对象，用户可以在软件的任意地方通过uiEvtLp来访问GUIEvtLoop对象
+DLL_PUBLIC extern GUIEvtLoop *uiEvtLp;
 
-#endif // GEVENT_H
 
-#endif  //CONFIG_gUIEvent
+#endif  // GUIEVTLOOP_H
+
+#endif  //CONFIG_gUIEvtLoop
