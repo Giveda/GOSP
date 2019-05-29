@@ -21,8 +21,8 @@ Qt实在太庞大了！
  **如果不同意以上协议，不要使用本软件，否则你或你老板将面临法律制裁。**    
 
 # 如何使用
-查看如下《简易指导文档》：
-https://gitee.com/giveda/GOSP/blob/master/HowTo.md
+查看如下《简易指导文档》：  
+https://gitee.com/giveda/GOSP/blob/master/HowTo.md  
 欢迎加入QQ交流群：914464844   
 
 
