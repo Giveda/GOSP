@@ -1,0 +1,9 @@
+Name: Giveda
+Description: Giveda-0.1 library
+Version: 0.1
+Requires: 
+Requires.private:
+Conflicts:
+Libs: -L../../lib -lGiveda -l:libfreetype.a -l:libjpeg.a -l:libpng12.a -lpthread -lrt -lz
+Libs.private: 
+Cflags:-I../../include -I/usr/include/libpng12 -I/usr/include/freetype2 -std=c++11 -Wno-pmf-conversions -Wno-unused-result -Wno-sign-compare
