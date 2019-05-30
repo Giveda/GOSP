@@ -11,7 +11,7 @@ make   #执行make
 
 # FAQ
 #### 编译过程中常见问题的解决：   
-如果提示找不到头文件或库文件，请安装依赖。本软件依赖libjpeg/libpng/libdbus-c++/freetype等。  
-    sudo apt-get install libjpeg-dev libpng-dev libdbus-c++-dev  
+如果提示找不到头文件或库文件，请安装依赖。本软件依赖libjpeg/libpng/freetype等。  
+    sudo apt-get install libjpeg-dev libpng-dev   
 
-执行qmake时，如果提示Project ERROR: Package Giveda not found，就将lib/Giveda.pc复制到/usr/lib/pkgconfig/下。  
+如果提示Project ERROR: Package Giveda not found，就将lib/Giveda.pc复制到/usr/lib/pkgconfig/下。  
