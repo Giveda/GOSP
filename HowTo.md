@@ -1,5 +1,6 @@
 # 简易指导
 进入/path/to/GOSP/code目录，能找到configure这个可执行文件。  
+sudo cp lib/Giveda.pc /usr/lib/pkgconfig/   #安装pkg-config包管理文件   
 export GIVEDA_DIR=/path/to/GOSP/code   #设置环境变量  
 ./configure  #执行configure  
 make           #执行make  
