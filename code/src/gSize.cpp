@@ -1,92 +1,168 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
-
-#ifdef CONFIG_gSize
-
-#ifndef GSIZE_H
-#define GSIZE_H
-
+#include "gSize.h"
+#include <gConstDefine.h>
 #include <gGlobal.h>
 
-#pragma pack(1)
-struct T_SIZE
+/*****************************************************************************
+ *  GSize functions
+ *****************************************************************************/
+
+GSize::GSize()
 {
-    T_OFFSET w;
-    T_OFFSET h;
-};
-#pragma pack()
+    m_data.w = m_data.h = -1;
+}
 
-/*! @file  gSize.h
- * @brief  GSize 尺寸大小
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-6
- */
-
-/*!
- * @class GSize
- * @brief GSize 尺寸大小。对二维平面上的尺寸大小进行各种数学运算。
- * 
- */
-class  DLL_PUBLIC GSize
+GSize::GSize ( T_OFFSET w, T_OFFSET h )
 {
-public:
-    GSize();
-    GSize(T_OFFSET w, T_OFFSET h);
-    virtual ~GSize() {}
-    
-    bool isNull() const;
-    bool isEmpty() const;
-    bool isValid() const;
-    
-    T_OFFSET width() const;
-    T_OFFSET height() const;
-    void setWidth(T_OFFSET w);
-    void setHeight(T_OFFSET h);
-    void transpose();
-    
-    GSize expandedTo(const GSize &) const;
-    GSize boundedTo(const GSize &) const;
-    
-    T_OFFSET &rwidth();
-    T_OFFSET &rheight();
-    
-    GSize &operator+=(const GSize &);
-    GSize &operator-=(const GSize &);
-    GSize &operator*=(double c);
-    GSize &operator/=(double c);
-    
-    friend bool operator==(const GSize &, const GSize &);
-    friend bool operator!=(const GSize &, const GSize &);
-    friend bool operator>(const GSize &, const GSize &);
-    friend const GSize operator+(const GSize &, const GSize &);
-    friend const GSize operator-(const GSize &, const GSize &);
-    friend const GSize operator*(const GSize &, double);
-    friend const GSize operator*(double, const GSize &);
-    friend const GSize operator/(const GSize &, double);
-    
-private:
-    T_SIZE m_data;
-};
+    m_data.w = w;
+    m_data.h = h;
+}
 
-#endif // ZSIZE_H
+bool GSize::isNull() const
+{
+    return m_data.w==0 && m_data.h==0;
+}
 
-#endif  //CONFIG_gSize
+bool GSize::isEmpty() const
+{
+    return m_data.w<1 || m_data.h<1;
+}
+
+bool GSize::isValid() const
+{
+    return m_data.w>=0 && m_data.h>=0;
+}
+
+T_OFFSET GSize::width() const
+{
+    return m_data.w;
+}
+
+T_OFFSET GSize::height() const
+{
+    return m_data.h;
+}
+
+void GSize::setWidth ( T_OFFSET w )
+{
+    m_data.w = w;
+}
+
+void GSize::setHeight ( T_OFFSET h )
+{
+    m_data.h = h;
+}
+
+// void GSize::scale(T_OFFSET w, T_OFFSET h, Giveda::AspectRatioMode mode)
+// { scale(GSize(w, h), mode); }
+
+T_OFFSET &GSize::rwidth()
+{
+    return m_data.w;
+}
+
+T_OFFSET &GSize::rheight()
+{
+    return m_data.h;
+}
+
+GSize &GSize::operator+= ( const GSize &s )
+{
+    m_data.w+=s.m_data.w;
+    m_data.h+=s.m_data.h;
+    return *this;
+}
+
+GSize &GSize::operator-= ( const GSize &s )
+{
+    m_data.w-=s.m_data.w;
+    m_data.h-=s.m_data.h;
+    return *this;
+}
+
+GSize &GSize::operator*= ( double c )
+{
+    m_data.w = gRound ( m_data.w*c );
+    m_data.h = gRound ( m_data.h*c );
+    return *this;
+}
+
+/*DLL_PUBLIC*/ bool operator== ( const GSize &s1, const GSize &s2 )
+{
+    return s1.m_data.w == s2.m_data.w && s1.m_data.h == s2.m_data.h;
+}
+
+/*DLL_PUBLIC*/ bool operator!= ( const GSize &s1, const GSize &s2 )
+{
+    return s1.m_data.w != s2.m_data.w || s1.m_data.h != s2.m_data.h;
+}
+
+/*DLL_PUBLIC*/ bool operator>( const GSize &s1, const GSize &s2 )
+{
+    return s1.m_data.w *s1.m_data.h > s2.m_data.w*s2.m_data.h;
+}
+
+/*DLL_PUBLIC*/ const GSize operator+ ( const GSize & s1, const GSize & s2 )
+{
+    return GSize ( s1.m_data.w+s2.m_data.w, s1.m_data.h+s2.m_data.h );
+}
+
+/*DLL_PUBLIC*/ const GSize operator- ( const GSize &s1, const GSize &s2 )
+{
+    return GSize ( s1.m_data.w-s2.m_data.w, s1.m_data.h-s2.m_data.h );
+}
+
+/*DLL_PUBLIC*/ const GSize operator* ( const GSize &s, double c )
+{
+    return GSize ( gRound ( s.m_data.w*c ), gRound ( s.m_data.h*c ) );
+}
+
+/*DLL_PUBLIC*/ const GSize operator* ( double c, const GSize &s )
+{
+    return GSize ( gRound ( s.m_data.w*c ), gRound ( s.m_data.h*c ) );
+}
+
+GSize &GSize::operator/= ( double c )
+{
+    G_ASSERT ( !gIsNear0 ( c ) );
+    m_data.w = gRound ( m_data.w/c );
+    m_data.h = gRound ( m_data.h/c );
+    return *this;
+}
+
+/*DLL_PUBLIC*/ const GSize operator/ ( const GSize &s, double c )
+{
+    G_ASSERT ( !gIsNear0 ( c ) );
+    return GSize ( gRound ( s.m_data.w/c ), gRound ( s.m_data.h/c ) );
+}
+
+GSize GSize::expandedTo ( const GSize & otherSize ) const
+{
+    return GSize ( gMax ( m_data.w,otherSize.m_data.w ), gMax ( m_data.h,otherSize.m_data.h ) );
+}
+
+GSize GSize::boundedTo ( const GSize & otherSize ) const
+{
+    return GSize ( gMin ( m_data.w,otherSize.m_data.w ), gMin ( m_data.h,otherSize.m_data.h ) );
+}
+
+void GSize::transpose()
+{
+    T_OFFSET tmp = m_data.w;
+    m_data.w = m_data.h;
+    m_data.h = tmp;
+}

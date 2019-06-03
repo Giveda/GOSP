@@ -1,166 +1,272 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
+#include <gCtrlStyle.h>
+#include "gCtrlRadioButtonGroup.h"
+#include <gConstDefine.h>
+#include <gGlobal.h>
 
-#ifdef CONFIG_gCtrlRadioButtonGroup
-
-#ifndef GCTRLRADIOBUTTONGROUP_H
-#define GCTRLRADIOBUTTONGROUP_H
-
-#include <gMItem.h>
-
-class GCtrlRadioButtonGroup;
-class GCtrlRadioButtonPrivate;
-
-/*! @file  gCtrlRadioButtonGroup.h
- * @brief  GCtrlRadioButton 单选按钮\n
- * GCtrlRadioButtonGroup 将多个单选按钮组织到一个组。
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-4
- */
-
-/*!
- * @class GCtrlRadioButton
- * @brief 单选按钮。\n
- * 当你需要提供多个选项给用户选择，让用户只能从中选择其一时，你可以创建一个 GCtrlRadioButtonGroup 对象作为一个选项组；选项组可以包含任意数目的选项 GCtrlRadioButton ；如果没有选项组，选项将无法显示。
- * 
- */
-class DLL_PUBLIC GCtrlRadioButton : public GMCtrlItem
+class GCtrlRadioButtonPrivate
 {
-    friend class GCtrlRadioButtonGroup;
-    SET_CLASS_NAME( GCtrlRadioButton )
-    G_DISABLE_ASSIGN ( GCtrlRadioButton )
-    
-#ifdef CONFIG_STD_ANSI
-    DEFINE_SIGNAL(T_pvrv, checkedChanged)
-#else
-signals:
-    ///当本按钮被选中、或者被取消选中时，该信号将立即发射。注意：初始状态下（程序刚启动时），将不会发射此信号。
-    GSignal<void(void)> checkedChanged;
-#endif
-    
 public:
-    /**
-     * @brief 使用指定的文字标题 str 构造一个单选按钮
-     * 
-     * @param str 文字标题
-     * @param frm ...
-     * @param parent ...
-     * @param name ...
-     * @param check true表示该单选按钮为选中状态，false表示该单选按钮为取消选中状态
-     */
-    GCtrlRadioButton ( const GString& str, GCtrlForm* frm, GCtrlRadioButtonGroup* parent=0, const char* name=0, bool check=false );
-    
-    virtual ~GCtrlRadioButton();
-
-    /**
-     * @brief 返回该单选按钮是否被选中
-     * 
-     * @return bool
-     */
-    bool isChecked();
-    
-protected:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    virtual bool fwKeyPressEvent ( GKeyEvent* );
-#endif
-    virtual void paintEvent (  );
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-    virtual bool fwMousePressEvent ( GMouseEvent* );
-#endif
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-    virtual bool fwTapEvent(GTapEvent*);
-#endif
-    
-private:
-    DLL_LOCAL void checkedChanged2( bool b );
-
-private:
-    GCtrlRadioButtonPrivate *rbPriv;
+    GCtrlRadioButtonPrivate( const GString& str, GCtrlForm* frm, GCtrlRadioButton* parent, bool check)
+        :     m_pixBg ( frm, parent, "radioButtonUnchecked" ),
+              m_pixTop ( frm, parent, "radioButtonChecked" ),
+              m_txt ( str, frm, parent, "radioButtonTxt" ),
+              m_bIsChecked ( check )
+    {}
+    GMPixmap m_pixBg;
+    GMPixmap m_pixTop;
+    GMText m_txt;
+    bool m_bIsChecked;
 };
 
-class GCtrlRadioButtonGroupPrivate;
-
-class DLL_PUBLIC GCtrlRadioButtonGroup : public GMContainerItem
+GCtrlRadioButton::GCtrlRadioButton ( const GString& str, GCtrlForm* frm, GCtrlRadioButtonGroup* parent, const char* name, bool check )
+    :GMCtrlItem ( frm, parent, name ),
+     rbPriv( new GCtrlRadioButtonPrivate(str, frm, this, check) )
 {
-    friend class GCtrlRadioButton;
-    SET_CLASS_NAME( GCtrlRadioButtonGroup )
-    G_DISABLE_ASSIGN ( GCtrlRadioButtonGroup )
-    
-#ifdef CONFIG_STD_ANSI
-    DEFINE_SIGNAL(T_pirv, checkedChanged)
-#else
-signals:
-    ///当被选中的按钮发生改变时，该信号将立即发射，参数为当前被选中的按钮的索引。注意：初始状态下（程序刚启动时），将不会发射此信号。
-    GSignal<void(int)> checkedChanged;
-#endif
-    
+    parent->appendItem ( this );
+    rbPriv->m_txt.setTextFlags ( Giveda::AlignVCenter );
+    GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
+    GCtrlItemStyle* pStyle=NULL;
+    while ( NULL== ( pStyle=pAppStyle->itemStyle ( className() ) ) )
+    {
+        pAppStyle->appendRadioButtonStyle();
+    }
+    rbPriv->m_pixBg.setPixmap ( pStyle->pixmap ( rbPriv->m_pixBg.name() ) );
+    rbPriv->m_pixTop.setPixmap ( pStyle->pixmap ( rbPriv->m_pixTop.name() ) );
+    rbPriv->m_txt.moveBy ( rbPriv->m_pixBg.width(), 0 );
+
+    int nH = rbPriv->m_txt.getSingleLineSize().height();
+    if ( rbPriv->m_pixBg.height() > nH )
+    {
+        nH = rbPriv->m_pixBg.height();
+        rbPriv->m_txt.setHeight(nH);
+    }
+    else
+    {
+        int nTmp = ( nH-rbPriv->m_pixBg.height() ) /2;
+        rbPriv->m_pixBg.setY ( nTmp );
+        rbPriv->m_pixTop.setY ( nTmp );
+    }
+    setHeight ( nH );
+}
+
+GCtrlRadioButton::~GCtrlRadioButton()
+{
+    delete rbPriv;
+}
+
+bool GCtrlRadioButton::isChecked()
+{
+    return rbPriv->m_bIsChecked;
+}
+
+void GCtrlRadioButton::setChecked ( bool b )
+{
+    rbPriv->m_bIsChecked=b;
+}
+
+void GCtrlRadioButton::paintEvent ( GPainter& p )
+{
+    rbPriv->m_pixBg.draw ( p );
+    if ( rbPriv->m_bIsChecked )
+    {
+        rbPriv->m_pixTop.draw ( p );
+    }
+    rbPriv->m_txt.draw ( p );
+}
+
+bool GCtrlRadioButton::fwKeyPressEvent ( GKeyEvent* e )
+{
+    bool bRetVal = true;
+    switch ( e->key() )
+    {
+    case Giveda::Key_Return:
+        if ( !rbPriv->m_bIsChecked )
+        {
+            GCtrlRadioButtonGroup* pBtnGroup = ( GCtrlRadioButtonGroup* ) parent();
+            pBtnGroup->uncheckedOther ( this );
+            setChecked ( true );
+            emitCheckedChanged();
+        }
+        break;
+    default:
+        bRetVal = false;
+        break;
+    }
+
+    return bRetVal;
+}
+
+void GCtrlRadioButton::emitCheckedChanged()
+{
+    checkedChanged.emit();
+    update();
+}
+
+class GCtrlRadioButtonGroupPrivate
+{
 public:
-    /**
-     * @brief 使用指定的文字标题 tittle 来构造一个单选按钮组
-     * 
-     * @param tittle 文字标题
-     * @param frm ...
-     * @param parent ...
-     * @param name ...
-     */
-    GCtrlRadioButtonGroup ( const GString& tittle, GCtrlForm* frm, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GCtrlRadioButtonGroup();
-
-    /**
-     * @brief 获取文字标题
-     * 
-     * @return GMText*
-     */
-    GMText* getTitle();
-
-protected:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    virtual bool fwKeyPressEvent ( GKeyEvent* );
-#endif
-    virtual void paintEvent (  );
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-    virtual bool fwMousePressEvent ( GMouseEvent* );
-#endif
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-    virtual bool fwTapEvent(GTapEvent*);
-#endif
-    
-private slots:
-    DLL_LOCAL void slotLoseFocus();
-    DLL_LOCAL void slotGetFocus();
-
-private:
-    DLL_LOCAL bool moveFocusUp();
-    DLL_LOCAL bool moveFocusDown();
-    DLL_LOCAL void moveFocus ( int toIndex );
-    DLL_LOCAL void checkButton ( GCtrlRadioButton* );
-    DLL_LOCAL void appendItem ( GCtrlRadioButton* );
-    DLL_LOCAL int index(GCtrlRadioButton* btn) const;
-    
-private:
-    GCtrlRadioButtonGroupPrivate *rbgPriv;
+    GCtrlRadioButtonGroupPrivate( const GString& title, GCtrlForm* frm, GCtrlRadioButtonGroup* parent)
+        :     m_imgFocusIn ( frm, parent, "radioButtonGroupFocusIn" ),
+              m_imgFocusOut ( frm, parent, "radioButtonGroupFocusOut" ),
+              m_txtTitle ( title, frm, parent, "radioButtonGroupTitle" ),
+              m_nCurItemIndex ( 0 )
+    {}
+    GPtrList<GCtrlRadioButton> m_itemList;
+    GMImage m_imgFocusIn;
+    GMImage m_imgFocusOut;
+    GMText m_txtTitle;
+    int m_nCurItemIndex;
 };
 
-#endif
+GCtrlRadioButtonGroup::GCtrlRadioButtonGroup ( const GString& title, GCtrlForm* frm, GMItem* parent, const char* name )
+    :GMContainerItem ( frm, parent, name ),
+     rbgPriv( new GCtrlRadioButtonGroupPrivate(title, frm, this) )
+{
+    frm->appendItem ( this );
+    GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
+    GCtrlItemStyle* pStyle=NULL;
+    while ( NULL== ( pStyle=pAppStyle->itemStyle ( className() ) ) )
+    {
+        pAppStyle->appendRadioButtonGroupStyle();
+    }
+    rbgPriv->m_imgFocusIn.setImage ( pStyle->pixmap ( rbgPriv->m_imgFocusIn.name() ) );
+    rbgPriv->m_imgFocusOut.setImage ( pStyle->pixmap ( rbgPriv->m_imgFocusOut.name() ) );
+}
 
-#endif  //CONFIG_gCtrlRadioButtonGroup
+GCtrlRadioButtonGroup::~GCtrlRadioButtonGroup()
+{
+    delete rbgPriv;
+}
+
+void GCtrlRadioButtonGroup::paintEvent ( GPainter& p )
+{
+    rbgPriv->m_txtTitle.draw ( p );
+
+    for ( GCtrlRadioButton* pItem = rbgPriv->m_itemList.first(); pItem; pItem=rbgPriv->m_itemList.next() )
+    {
+        pItem->setWidth ( width()-pItem->x() );
+
+        p.save();
+        p.translate ( pItem->x(), pItem->y() );
+        pItem->draw ( p );
+        p.restore();
+    }
+
+    if ( hasFocus() )
+    {
+        rbgPriv->m_imgFocusIn.setGeometry ( rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->x(), rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->y(), rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->width(), rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->height() );
+        rbgPriv->m_imgFocusIn.draw ( p );
+    }
+    else
+    {
+        rbgPriv->m_imgFocusOut.setGeometry ( rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->x(), rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->y(), rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->width(), rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->height() );
+        rbgPriv->m_imgFocusOut.draw ( p );
+    }
+}
+
+bool GCtrlRadioButtonGroup::fwKeyPressEvent ( GKeyEvent *e )
+{
+    mpFocus = rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex );
+    if ( mpFocus )
+    {
+        if ( true == mpFocus->fwKeyPress ( e ) )
+        {
+            return true;
+        }
+    }
+
+    bool bRetVal = true;
+    switch ( e->key() )
+    {
+    case Giveda::Key_Up:
+        bRetVal = moveFocusUp();
+        break;
+    case Giveda::Key_Down:
+        bRetVal = moveFocusDown();
+        break;
+    default:
+        bRetVal = false;
+        break;
+    }
+
+    return bRetVal;
+}
+
+void GCtrlRadioButtonGroup::uncheckedOther ( GCtrlRadioButton* pBtn )
+{
+    for ( GCtrlRadioButton* pItem = rbgPriv->m_itemList.first(); pItem; pItem=rbgPriv->m_itemList.next() )
+    {
+        if ( pBtn != pItem && pItem->isChecked() )
+        {
+            pItem->setChecked ( false );
+            pItem->emitCheckedChanged();
+        }
+    }
+}
+
+void GCtrlRadioButtonGroup::appendItem ( GCtrlRadioButton* pItem )
+{
+    rbgPriv->m_itemList.append ( pItem );
+}
+
+void GCtrlRadioButtonGroup::slotLoseFocus()
+{
+}
+
+void GCtrlRadioButtonGroup::slotGetFocus()
+{
+    rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->setFocus();
+}
+
+bool GCtrlRadioButtonGroup::moveFocusUp()
+{
+    int nIndex = rbgPriv->m_nCurItemIndex -1;
+    if ( rbgPriv->m_itemList.at ( nIndex ) )
+    {
+        moveFocus ( nIndex );
+        return true;
+    }
+
+    return false;
+}
+
+bool GCtrlRadioButtonGroup::moveFocusDown()
+{
+    int nIndex = rbgPriv->m_nCurItemIndex +1;
+    if ( rbgPriv->m_itemList.at ( nIndex ) )
+    {
+        moveFocus ( nIndex );
+        return true;
+    }
+
+    return false;
+}
+
+void GCtrlRadioButtonGroup::moveFocus ( int toIndex )
+{
+    rbgPriv->m_itemList.at ( toIndex )->setFocus();
+
+    rbgPriv->m_itemList.at ( rbgPriv->m_nCurItemIndex )->update();
+    rbgPriv->m_itemList.at ( toIndex )->update();
+
+    rbgPriv->m_nCurItemIndex = toIndex;
+}
+GMText* GCtrlRadioButtonGroup::getTitle()
+{
+    return &rbgPriv->m_txtTitle;
+}

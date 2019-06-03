@@ -1,828 +1,648 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
-
-#ifdef CONFIG_gMItem
-
-#ifndef GMITEM_H
-#define GMITEM_H
-
-#include <gObject.h>
-#include <gFont.h>
-#include <gColor.h>
-#include <gImage.h>
-#include <gPointer.h>
-#include <gTimer.h>
-#include <gUIEvent.h>
+#include "gMItem.h"
+#include "gCtrlView.h"
+#include <gFontMetrics.h>
 #include <gConstDefine.h>
+#include <gGlobal.h>
 
-class GCtrlForm;
-class GMItemPrivate;
-class QCtrlDefaultAppStyle;
-
-/*! @file  gMItem.h
- * @brief  用于拼装自定义控件的基本元素
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-6
- */
-
-/*!
- * @class GMItem
- * @brief 所有界面元素的基类
- * 
- */
-class DLL_PUBLIC GMItem : public GObject
+class GMItemPrivate
 {
-    G_DISABLE_COPY ( GMItem, GObject )
 public:
-    /**
-     * @brief 构造一个基本界面元素
-     * 
-     * @param form 属于哪个窗体
-     * @param parent ...
-     * @param name ...
-     */
-    GMItem ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GMItem();
-    
-    /**
-     * @brief 设置此界面元素的x坐标
-     * 
-     * @param x ...
-     * @return void
-     */
-    void setX ( int x );
-    
-    /**
-     * @brief 设置此界面元素的y坐标
-     * 
-     * @param y ...
-     * @return void
-     */
-    void setY ( int y );
-    
-    /**
-     * @brief 设置此界面元素的z坐标
-     * 
-     * @param z ...
-     * @return void
-     */
-    void setZ ( int z );
-    
-    /**
-     * @brief 设置此界面元素的宽度
-     * 
-     * @param w ...
-     * @return void
-     */
-    void setWidth ( int w );
-    
-    /**
-     * @brief 设置此界面元素的高度
-     * 
-     * @param h ...
-     * @return void
-     */
-    void setHeight ( int h );
-    
-    /**
-     * @brief 获取此界面元素的x坐标
-     * 
-     * @return int
-     */
-    int x() const;
-    
-    /**
-     * @brief 获取此界面元素的y坐标
-     * 
-     * @return int
-     */
-    int y() const;
-    
-    /**
-     * @brief 获取此界面元素的z坐标
-     * 
-     * @return int
-     */
-    int z() const;
-    
-    /**
-     * @brief 获取此界面元素的宽度
-     * 
-     * @return int
-     */
-    int width () const;
-    
-    /**
-     * @brief 获取此界面元素的高度
-     * 
-     * @return int
-     */
-    int height () const;
-    
-    /**
-     * @brief 获取右边界的坐标
-     * 
-     * @return int
-     */
-    int right () const;
-    
-    /**
-     * @brief 获取下边界的坐标
-     * 
-     * @return int
-     */
-    int bottom() const;
-    
-    /**
-     * @brief 获取此界面元素所占用的矩形区域
-     * 
-     * @return GRect
-     */
-    GRect rect() const;
-    
-    /**
-     * @brief 设置此界面元素的位置
-     * 
-     * @param x ...
-     * @param y ...
-     * @return void
-     */
-    void setPosition ( int x, int y );
-    
-    /**
-     * @brief 设置此界面元素的大小
-     * 
-     * @param w ...
-     * @param h ...
-     * @return void
-     */
-    void setSize ( int w, int h );
-    
-    /**
-     * @brief 设置此界面元素的大小
-     * 
-     * @param s ...
-     * @return void
-     */
-    void setSize ( const GSize &s );
-    
-    /**
-     * @brief 设置此界面元素所占用的矩形区域，位置及大小
-     * 
-     * @param x ...
-     * @param y ...
-     * @param w ...
-     * @param h ...
-     * @return void
-     */
-    void setGeometry ( int x, int y, int w, int h );
-    
-    /**
-     * @brief 移动此界面元素；将此界面元素沿X轴移动 x 像素，沿Y轴移动 y 像素
-     * 
-     * @param x ...
-     * @param y ...
-     * @return void
-     */
-    void moveBy ( int x, int y );
-    
-    /**
-     * @brief 设置此界面元素的背景颜色
-     * 
-     * @param c ...
-     * @return void
-     */
-    void setPaletteBackgroundColor ( const GColor &c );
-    
-    /**
-     * @brief 加载一个图片作为此界面元素的背景
-     * 
-     * @param imgID 图片的数字ID
-     * @return void
-     */
-    void loadBackgroundPixmap ( const uint16_t imgID );
-    
-    /**
-     * @brief 返回此界面元素当前是否可见；show() 之后可见， hide() 之后不可见
-     * 
-     * @return bool
-     */
-    bool isVisible ();
-    
-    /**
-     * @brief 设置此界面元素是否可见；（用户改变此界面元素的可见属性之后，需要调用 update() 或 repaint() ）
-     * 
-     * @param b ...
-     * @return void
-     */
-    void setVisible ( bool b );
-    
-    /**
-     * @brief 显示此界面元素。相当于：\n
-     * <pre>
-     * setVisible (true);
-     * update();
-     * </pre>
-     * 
-     * @return void
-     */
-    virtual void show();
-    
-    /**
-     * @brief 隐藏此界面元素。相当于：\n
-     * <pre>
-     * setVisible (false);
-     * update();
-     * </pre>
-     * 
-     * @return void
-     */
-    virtual void hide();
-    
-    /**
-     * @brief 是否可以接收输入事件
-     * 
-     * @return bool
-     */
-    virtual bool isCtrlItem();
-    
-    
-    virtual bool isContainerItem();
-    
-    /**
-     * @brief 获取此界面元素所在的窗体
-     * 
-     * @return GCtrlForm*
-     */
-    GCtrlForm* form();
-    
-    /**
-     * @brief 更新此界面元素所在的矩形区域；这个函数不会立刻进行重新绘制——而是发送一个绘制事件到事件循环中，后续，事件循环会分发、处理该绘制事件。这样能得到比调用 repaint() 更快的速度和更少的闪烁。
-     * 
-     * @return void
-     */
-    void update();
-    
-public:
-    virtual void draw ( );
-    QCtrlDefaultAppStyle* getDefaultAppStyle();
-    virtual bool isComplex();
-    
-protected:
-    virtual void paintEvent ( );
-    
-private:
-    GMItemPrivate *iPriv;
+    GMItemPrivate(): m_bgColor ( gRgba ( 0, 0, 0, 0 ) ) {}
+    GRect m_rect;
+    int m_nZ;
+    GCtrlForm* m_pForm;
+    bool m_bIsVisible;
+    GColor m_bgColor;
+    GPixmap m_pixBg;
 };
 
-class GMCtrlItemPrivate;
-
-/*!
- * @class GMCtrlItem
- * @brief 可以接收输入事件的界面元素的基类
- * 
- */
-class DLL_PUBLIC GMCtrlItem : public GMItem
+GMItem::GMItem ( GCtrlForm* form, GMItem* parent, const char* name )
+    :GObject ( parent, name ), iPriv( new GMItemPrivate )
 {
-    friend class GCtrlForm;
-    friend class GMContainerItem;
-    G_DISABLE_ASSIGN ( GMCtrlItem )
-#ifndef CONFIG_STD_CPP11
-    DEFINE_SIGNAL(T_pvrv, loseFocus)
-    DEFINE_SIGNAL(T_pvrv, getFocus)
-#else
-signals:
-    ///当此元素失去焦点时，会立即发射此信号
-    GSignal<void(void)>  loseFocus;
-    
-    ///当此元素获得焦点时，会立即发射此信号
-    GSignal<void(void)>  getFocus;
+    setGeometry ( 0, 0, form->width() /2, form->height() /2 );
+    iPriv->m_pForm = form;
+    setVisible ( true );
+    iPriv->m_nZ = 1;
+#if 0
+    if ( parent )
+    {
+        parent->addChild ( this );
+    }
+#endif
+}
+
+GMItem::~GMItem()
+{
+    delete iPriv;
+}
+
+GCtrlDefaultAppStyle* GMItem::getDefaultAppStyle()
+{
+    return form()->view()->appStyle();
+}
+void GMItem::setWidth ( int w )
+{
+    iPriv->m_rect.setWidth ( w );
+}
+void GMItem::setHeight ( int h )
+{
+    iPriv->m_rect.setHeight ( h );
+}
+int GMItem::width() const
+{
+    return iPriv->m_rect.width();
+}
+int GMItem::z() const
+{
+    return iPriv->m_nZ;
+}
+int GMItem::y() const
+{
+    return iPriv->m_rect.y();
+}
+int GMItem::x() const
+{
+    return iPriv->m_rect.x();
+}
+int GMItem::height() const
+{
+    return iPriv->m_rect.height();
+}
+int GMItem::right() const
+{
+    return iPriv->m_rect.right();
+}
+int GMItem::bottom() const
+{
+    return iPriv->m_rect.bottom();
+}
+GRect GMItem::rect() const
+{
+    return iPriv->m_rect;
+}
+void GMItem::setSize ( int w, int h )
+{
+    iPriv->m_rect.setSize ( GSize ( w, h ) );
+}
+bool GMItem::isCtrlItem()
+{
+    return false;
+}
+GCtrlForm* GMItem::form()
+{
+    return iPriv->m_pForm;
+}
+bool GMItem::isVisible()
+{
+    return iPriv->m_bIsVisible;
+}
+void GMItem::setVisible ( bool b )
+{
+    iPriv->m_bIsVisible = b;
+}
+void GMItem::setPaletteBackgroundColor ( const GColor& c )
+{
+    iPriv->m_bgColor = c;
+}
+bool GMItem::isComplex()
+{
+    return true;
+}
+void GMItem::paintEvent ( GPainter& ) {}
+
+void GMItem::show()
+{
+    setVisible ( true );
+    update();
+}
+
+void GMItem::hide()
+{
+    setVisible ( false );
+    update();
+}
+
+void GMItem::draw ( GPainter& p )
+{
+    if ( !iPriv->m_pixBg.isNull() )
+    {
+        p.drawPixmap ( 0, 0, iPriv->m_pixBg );
+    }
+#if 0
+    else
+    {
+        p.fillRect ( 0, 0, width(), height(), GBrush ( iPriv->m_bgColor ) );
+    }
 #endif
 
-public:
-    /**
-     * @brief 构造一个可以接收输入事件的界面元素
-     * 
-     * @param form 属于哪个窗体
-     * @param parent ...
-     * @param name ...
-     */
-    GMCtrlItem ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GMCtrlItem();
-    
-    /**
-     * @brief 是否可以接收输入事件
-     * 
-     * @return bool
-     */
-    virtual bool isCtrlItem();
-    
-    /**
-     * @brief 获取焦点是否被禁用；焦点被禁用后，此元素将不能获得焦点 ，不能处理各种输入事件。
-     * 
-     * @return bool
-     */
-    bool isFocusEnabled();
-    
-    /**
-     * @brief 设置是否禁此元素的焦点；焦点被禁用后，此元素将不能获得焦点 ，不能处理各种输入事件。
-     * 
-     * @param b ...
-     * @return void
-     */
-    void setFocusEnabled ( bool b );
-    
-    /**
-     * @brief 设置此元素到有焦点状态
-     * 
-     * @return bool
-     */
-    void setFocus();
-    
-    /**
-     * @brief 返回此元素是否具有焦点
-     * 
-     * @return bool
-     */
-    bool hasFocus();
-    
-    /**
-     * @brief 设置此界面元素的tab index；在使用键盘来操作界面时，需要用到tab index
-     * 
-     * @param index ...
-     * @return void
-     */
-    void setTabIndex ( unsigned int index );
-    
-    /**
-     * @brief 获取此界面元素的tab index；在使用键盘来操作界面时，需要用到tab index
-     * 
-     * @return unsigned int
-     */
-    unsigned int tabIndex();
-    
-    /**
-     * @brief 隐藏此界面元素。相当于：\n
-     * <pre>
-     * setVisible (false);
-     * update();
-     * </pre>
-     * 
-     * @return void
-     */
-    virtual void hide ();
-    
-protected:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    /**
-     * @brief 用户可以在子类中覆盖这个函数处理按键。用户不可以覆盖任何以fw开头的函数
-     * 
-     * @param  ...
-     * @return bool
-     */
-    virtual bool keyPressEvent ( GKeyEvent* );
-    
-    virtual bool fwKeyPressEvent ( GKeyEvent* );
-#endif
-    
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-    /**
-     * @brief 用户可以在子类中覆盖这个函数处理鼠标事件。用户不可以覆盖任何以fw开头的函数
-     * 
-     * @param  ...
-     * @return bool
-     */
-    virtual bool mousePressEvent ( GMouseEvent* );
-    
-    virtual bool fwMousePressEvent ( GMouseEvent* );
-#endif
-    
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-    /**
-     * @brief 用户可以在子类中覆盖这个函数处理点击事件。用户不可以覆盖任何以fw开头的函数
-     * 
-     * @param  ...
-     * @return bool
-     */
-    virtual bool tapEvent(GTapEvent*);
-        
-    /**
-     * @brief 用户可以在子类中覆盖这个函数处理滑动事件。用户不可以覆盖任何以fw开头的函数
-     * 
-     * @param  ...
-     * @return bool
-     */
-    virtual bool swipeEvent ( GSwipeEvent* );
-    
-    /**
-     * @brief 用户可以在子类中覆盖这个函数处理滑动手势。用户不可以覆盖任何以fw开头的函数
-     * 
-     * @param  ...
-     * @return bool
-     */
-    virtual bool gestureScrollEvent ( GGestureScrollEvent* );
-    
-    virtual bool fwGestureScrollEvent ( GGestureScrollEvent* );
-    virtual bool fwTapEvent(GTapEvent*);
-    virtual bool fwSwipeEvent ( GSwipeEvent* );
-#endif
-    
-public:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    bool fwKeyPress ( GKeyEvent * e);
-#endif
-    
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-    bool fwMousePress( GMouseEvent* e );
-#endif
-    
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-    bool fwTap(GTapEvent* e);
-    bool fwSwipe( GSwipeEvent* e);
-    bool fwGestureScroll( GGestureScrollEvent* e);
-#endif
+    paintEvent ( p );
+}
 
-private:
-    DLL_LOCAL void emitLoseFocus();
-    DLL_LOCAL void emitGetFocus();
-    
-private:
-    GMCtrlItemPrivate *ciPriv;
+void GMItem::loadBackgroundPixmap ( const GString& strPic )
+{
+    iPriv->m_pixBg.load ( strPic );
+}
+
+void GMItem::setX ( int x )
+{
+    iPriv->m_rect.moveBy ( x-this->x(), 0 );
+}
+
+void GMItem::setY ( int y )
+{
+    iPriv->m_rect.moveBy ( 0, y-this->y() );
+}
+
+void GMItem::setZ ( int z )
+{
+    iPriv->m_nZ = z;
+}
+
+void GMItem::setPosition ( int x, int y )
+{
+    iPriv->m_rect.moveTopLeft ( GPoint ( x,y ) );
+}
+
+void GMItem::setGeometry ( int x, int y, int w, int h )
+{
+    iPriv->m_rect.setRect ( x, y, w, h );
+#if 0
+    for ( GMItem* pItem = m_listChildren.first(); pItem!=NULL; pItem = m_listChildren.next() )
+    {
+        pItem->moveBy ( x-this->x(), y-this->y() );
+    }
+#endif
+}
+
+void GMItem::moveBy ( int x, int y )
+{
+    iPriv->m_rect.moveBy ( x, y );
+#if 0
+    for ( GMItem* pItem = m_listChildren.first(); pItem!=NULL; pItem = m_listChildren.next() )
+    {
+        pItem->moveBy ( x, y );
+    }
+#endif
+}
+
+void GMItem::update()
+{
+    GRect r = rect();
+    GMItem* pParent = ( GMItem* ) parent();
+    while ( pParent )
+    {
+        r.moveBy ( pParent->x(), pParent->y() );
+        pParent = ( GMItem* ) pParent->parent();
+    }
+    form()->update ( r );
+}
+
+class GMCtrlItemPrivate
+{
+public:
+    GMCtrlItemPrivate() : m_bIsHasFocus ( false ), m_bIsFocusEnabled ( true ) {}
+    bool m_bIsHasFocus;
+    bool m_bIsFocusEnabled;
+    unsigned int m_nTabIndex;
 };
 
-/*!
- * @class GMContainerItem
- * @brief 所有容器元素的基类；一个容器元素可以包含任意数目的 GMItem 对象
- * 
- */
-class DLL_PUBLIC GMContainerItem : public GMCtrlItem
+GMCtrlItem::GMCtrlItem ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), ciPriv( new GMCtrlItemPrivate )
 {
-    G_DISABLE_ASSIGN ( GMContainerItem )
+    if ( parent )
+    {
+        setTabIndex ( ( ( GMCtrlItem* ) parent )->tabIndex() );
+    }
+    else
+    {
+        setTabIndex ( form->getMaxTabIndex() +1 );
+    }
+    
+    ciPriv->m_bIsHasFocus = false;
+    setFocusEnabled( true );
+}
+
+GMCtrlItem::~GMCtrlItem()
+{
+    delete ciPriv;
+}
+
+bool GMCtrlItem::isCtrlItem()
+{
+    return true;
+}
+bool GMCtrlItem::isFocusEnabled()
+{
+    return ciPriv->m_bIsFocusEnabled;
+}
+void GMCtrlItem::setFocusEnabled ( bool b )
+{
+    ciPriv->m_bIsFocusEnabled = b;
+}
+void GMCtrlItem::setTabIndex ( unsigned int index )
+{
+    ciPriv->m_nTabIndex = index;
+}
+unsigned int GMCtrlItem::tabIndex()
+{
+    return ciPriv->m_nTabIndex;
+}
+bool GMCtrlItem::keyPressEvent ( GKeyEvent* )
+{
+    return false;
+}
+
+void GMCtrlItem::setFocus()
+{
+    if ( !isVisible() )
+    {
+        WARNING ( "item[%s] is not visible\n", name() );
+        return;
+    }
+    else if ( !isFocusEnabled() )
+    {
+        WARNING ( "item[%s] is not focus-enabled\n", name() );
+        return;
+    }
+
+    GMContainerItem* pContainer = ( GMContainerItem* ) parent();
+    if ( pContainer )
+    {
+        pContainer->setFocusToItem ( this );
+    }
+    else
+    {
+        form()->setFocusToItem ( this );
+    }
+}
+
+bool GMCtrlItem::hasFocus()
+{
+    return ciPriv->m_bIsHasFocus;
+}
+
+bool GMCtrlItem::fwKeyPress ( GKeyEvent *e )
+{
+    bool bRet = fwKeyPressEvent ( e );
+    if ( true == bRet )
+    {
+        return true;
+    }
+
+    bRet = keyPressEvent ( e );
+
+    return bRet;
+}
+
+void GMCtrlItem::emitLoseFocus()
+{
+    ciPriv->m_bIsHasFocus = false;
+    loseFocus.emit();
+}
+
+void GMCtrlItem::emitGetFocus()
+{
+    ciPriv->m_bIsHasFocus = true;
+    getFocus.emit();
+}
+
+void GMCtrlItem::hide()
+{
+    if ( hasFocus() )
+    {
+        form()->setFocusToItem ( NULL );
+    }
+
+    GMItem::hide();
+}
+
+GMContainerItem::GMContainerItem ( GCtrlForm* form, GMItem* parent, const char* name )
+    :GMCtrlItem ( form, parent, name ), mpFocus ( NULL )
+{
+}
+
+void GMContainerItem::setFocusToItem ( GMCtrlItem* pItem )
+{
+    if ( mpFocus )
+    {
+        if ( pItem != mpFocus )
+        {
+            mpFocus->emitLoseFocus();
+            mpFocus->update();
+        }
+        else
+        {
+            return ;
+        }
+    }
+
+    mpFocus = pItem;
+
+    if ( mpFocus )
+    {
+        mpFocus->emitGetFocus();
+        mpFocus->update();
+    }
+}
+
+class GMPixmapPrivate
+{
 public:
-    /**
-     * @brief 构造一个能够包含任意数目 GMItem 的窗口界面元素
-     * 
-     * @param form 属于哪个窗体
-     * @param parent ...
-     * @param name ...
-     */
-    GMContainerItem ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    /**
-     * @brief 设置焦点到指定的 GMCtrlItem 
-     * 
-     * @param pItem ...
-     * @return void
-     */
-    void setFocusToItem ( GMCtrlItem* pItem );
-    
-    /**
-     * @brief 是否是容器
-     * 
-     * @return bool
-     */
-    virtual bool isContainerItem();
-    
-protected:
-    GPointer<GMCtrlItem> mpFocus;
+    GPixmap m_pixmap;
 };
 
-class GMPixmapPrivate;
-
-/*!
- * @class GMPixmap
- * @brief 图片元素（原样显示，不会自动缩放到用户所设置的尺寸大小）；\n
- * GCtrlPixmap 与 GMPixmap 的区别在于： GCtrlPixmap 会主动将自己添加到 GCtrlForm 中，而 GMPixmap 则不会；因此开发者可以直接在 GCtrlForm 中使用 GCtrlPixmap ；而 GMPixmap 则可以用于拼装出自定义的UI控件。
- * 
- */
-class DLL_PUBLIC GMPixmap : public GMItem
+GMPixmap::GMPixmap ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), pixPriv( new GMPixmapPrivate )
 {
-    G_DISABLE_ASSIGN ( GMPixmap )
+}
+
+GMPixmap::GMPixmap ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), pixPriv( new GMPixmapPrivate )
+{
+    load ( strPath );
+}
+
+GMPixmap::GMPixmap ( const GPixmap & pm, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), pixPriv( new GMPixmapPrivate )
+{
+    setPixmap ( pm );
+}
+
+GMPixmap::~GMPixmap()
+{
+    delete pixPriv;
+}
+
+void GMPixmap::load ( const GString& strPath )
+{
+    pixPriv->m_pixmap.load ( strPath );
+    setSize ( pixPriv->m_pixmap.width(), pixPriv->m_pixmap.height() );
+}
+
+void GMPixmap::setPixmap ( const GPixmap &pm )
+{
+    pixPriv->m_pixmap = pm;
+    setSize ( pixPriv->m_pixmap.width(), pixPriv->m_pixmap.height() );
+}
+
+void GMPixmap::loadButNotAdjustSize ( const GString& strPath )
+{
+    pixPriv->m_pixmap.load ( strPath );
+}
+
+void GMPixmap::setPixmapButNotAdjustSize ( const GPixmap &pm )
+{
+    pixPriv->m_pixmap = pm;
+}
+
+void GMPixmap::paintEvent ( GPainter& p )
+{
+    int nX = x(), nY = y();
+    if ( width() > pixPriv->m_pixmap.width() +1 )
+    {
+        nX += ( width()-pixPriv->m_pixmap.width() ) /2;
+    }
+    if ( height() > pixPriv->m_pixmap.height() +1 )
+    {
+        nY += ( height()-pixPriv->m_pixmap.height() ) /2;
+    }
+    p.drawPixmap ( nX, nY, pixPriv->m_pixmap );
+}
+
+
+class GMImagePrivate
+{
 public:
-    /**
-     * @brief 构造一个空的图片元素
-     * 
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMPixmap ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    /**
-     * @brief 使用指定的图片ID去构造一个图片元素
-     * 
-     * @param imgID 图片ID
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMPixmap ( const uint16_t imgID, GCtrlForm* form, GMItem* parent = 0, const char* name = 0 );
-    
-    /**
-     * @brief 使用指定的图片对象去构造一个图片元素
-     * 
-     * @param img 图片
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMPixmap ( const GImage & img, GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GMPixmap();
-    
-    /**
-     * @brief 使用指定的数字ID去加载图片。此控件的大小将被设置为图片的大小
-     * 
-     * @param imgID ...
-     * @return 
-     */
-    void load ( const uint16_t imgID );
-    
-    /**
-     * @brief 加载指定的图片对象。此控件的大小将被设置为图片的大小
-     * 
-     * @param pm ...
-     * @return 
-     */
-    void setPixmap ( const GImage &pm );
-    
-    /**
-     * @brief 使用指定的数字ID去加载图片。但不会设置此控件的大小到图片大小
-     * 
-     * @param imgID ...
-     * @return 
-     */
-    void loadButNotAdjustSize ( const uint16_t imgID );
-    
-    /**
-     * @brief 加载指定的图片对象。但不会设置此控件的大小到图片大小
-     * 
-     * @param pm ...
-     * @return 
-     */
-    void setPixmapButNotAdjustSize ( const GImage &pm );
-    
-protected:
-    virtual void paintEvent (  );
-    
-private:
-    GMPixmapPrivate *pixPriv;
+    GImage m_imageOrg;
+    GImage m_imageScaled;
 };
 
-class GMImagePrivate;
-
-/*!
- * @class GMImage
- * @brief 图片元素（能够自动缩放到用户所设置的尺寸大小）；\n
- * GCtrlImage 与 GMImage 的区别在于： GCtrlImage 会主动将自己添加到 GCtrlForm 中，而 GMImage 则没有；因此开发者可以直接在 GCtrlForm 中使用 GCtrlImage ；而 GMImage 则可以用于拼装出自定义的UI控件。
- * 
- */
-class DLL_PUBLIC GMImage : public GMItem
+GMImage::GMImage ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), imgPriv( new GMImagePrivate )
 {
-    G_DISABLE_ASSIGN ( GMImage )
-public:
-    /**
-     * @brief 构造一个空的图片元素
-     * 
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMImage ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    /**
-     * @brief 使用指定的图片ID去构造一个图片元素
-     * 
-     * @param imgID 图片ID
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMImage ( const uint16_t imgID, GCtrlForm* form, GMItem* parent = 0, const char* name = 0 );
-    
-    /**
-     * @brief 使用指定的图片对象去构造一个图片元素
-     * 
-     * @param img 图片
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMImage ( const GImage & img, GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GMImage();
-    
-    /**
-     * @brief 使用指定的数字ID去加载图片。此控件的大小将被设置为图片的大小
-     * 
-     * @param imgID ...
-     * @return 
-     */
-    void load ( const uint16_t imgID );
-    
-    /**
-     * @brief 加载指定的图片对象。此控件的大小将被设置为图片的大小
-     * 
-     * @param img ...
-     * @return 
-     */
-    void setImage ( const GImage &img );
+}
 
-protected:
-    virtual void paintEvent ();
-    
-private:
-    GMImagePrivate *imgPriv;
+GMImage::GMImage ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), imgPriv( new GMImagePrivate )
+{
+    load ( strPath );
+}
+
+GMImage::GMImage ( const GImage & img, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), imgPriv( new GMImagePrivate )
+{
+    setImage ( img );
+}
+
+GMImage::~GMImage()
+{
+    delete imgPriv;
+}
+
+void GMImage::load ( const GString& strPath )
+{
+    imgPriv->m_imageOrg.load ( strPath );
+    imgPriv->m_imageScaled.load ( strPath );
+    GMItem::setSize ( imgPriv->m_imageOrg.width(), imgPriv->m_imageOrg.height() );
+}
+
+void GMImage::setImage ( const GImage &img )
+{
+    imgPriv->m_imageOrg = img;
+    imgPriv->m_imageScaled = img;
+    GMItem::setSize ( imgPriv->m_imageOrg.width(), imgPriv->m_imageOrg.height() );
+}
+
+void GMImage::paintEvent ( GPainter& p )
+{
+    if ( width() > imgPriv->m_imageScaled.width()
+            || height() > imgPriv->m_imageScaled.height() )
+    {
+        imgPriv->m_imageScaled = imgPriv->m_imageOrg.smoothScale ( width(), height() );
+    }
+
+    int nX = x(), nY = y();
+    int off = width()-imgPriv->m_imageScaled.width();
+    if ( 1 < off )
+    {
+        nX += off /2;
+    }
+    off =  height()-imgPriv->m_imageScaled.height();
+    if ( 1 < off )
+    {
+        nY += off /2;
+    }
+    p.drawImage ( nX, nY, imgPriv->m_imageScaled, 0, 0, width(), height() );
+}
+
+class GMTextPrivate
+{
+public:
+    GMTextPrivate() : m_singleLineSize ( 0, 0 ) {}
+    GString m_str;
+    GFont m_font;
+    GColor m_color;
+    int m_nFlags;
+    GSize m_singleLineSize;
 };
 
-class GMTextPrivate;
-
-/*!
- * @class GMText
- * @brief 文字元素；\n
- * GCtrlText 与 GMText 的区别在于： GCtrlText 会主动将自己添加到 GCtrlForm 中，而 GMText 则没有；因此开发者可以直接在 GCtrlForm 中使用 GCtrlText ；而 GMText 则可以用于拼装出自定义的UI控件。
- * 
- */
-class DLL_PUBLIC GMText : public GMItem
+GMText::GMText ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), txtPriv( new GMTextPrivate )
 {
-    G_DISABLE_ASSIGN ( GMText )
+    txtPriv->m_font = GFont ( "Sans", 20 );
+    txtPriv->m_color = GColor ( 0x10, 0x10, 0x10 );
+    txtPriv->m_nFlags = Giveda::AlignLeft | Giveda::WordBreak;
+}
+
+GMText::GMText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMItem ( form, parent, name ), txtPriv( new GMTextPrivate )
+{
+    txtPriv->m_str = str;
+    txtPriv->m_font = GFont ( "Sans", 20 );
+    txtPriv->m_color = GColor ( 0x10, 0x10, 0x10 );
+    txtPriv->m_nFlags = Giveda::AlignLeft | Giveda::WordBreak;
+
+    GFontMetrics fontMetrics ( txtPriv->m_font );
+    txtPriv->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtPriv->m_str );
+    setSize ( txtPriv->m_singleLineSize.width(), txtPriv->m_singleLineSize.height() );
+}
+
+GMText::~GMText()
+{
+    delete txtPriv;
+}
+
+void GMText::setColor ( const GColor& color )
+{
+    txtPriv->m_color = color;
+}
+void GMText::setTextFlags ( int nFlags )
+{
+    txtPriv->m_nFlags = nFlags;
+}
+GString GMText::text()
+{
+    return txtPriv->m_str;
+}
+GSize GMText::getSingleLineSize()
+{
+    return txtPriv->m_singleLineSize;
+}
+
+void GMText::paintEvent ( GPainter& p )
+{
+    p.setFont ( txtPriv->m_font );
+    p.setPen ( txtPriv->m_color );
+    p.drawText ( x(), y(), width(), height(), txtPriv->m_nFlags, txtPriv->m_str );
+}
+
+void GMText::setText ( const GString& str )
+{
+    txtPriv->m_str = str;
+    GFontMetrics fontMetrics ( txtPriv->m_font );
+    txtPriv->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtPriv->m_str );
+}
+
+void GMText::setFont ( const GFont & font )
+{
+    txtPriv->m_font = font;
+    GFontMetrics fontMetrics ( txtPriv->m_font );
+    txtPriv->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtPriv->m_str );
+}
+
+class GMScrollTextPrivate
+{
 public:
-    /**
-     * @brief 构造一个空的 GMText 文字元素
-     * 
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMText ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    /**
-     * @brief 使用开发者指定的字符串去构造一个 GMText 文字元素
-     * 
-     * @param str 字符串
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMText ( const GString & str, GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GMText();
-    
-    /**
-     * @brief 使用指定的文本内容
-     * 
-     * @param str ...
-     * @return void
-     */
-    void setText ( const GString& str );
-    
-    /**
-     * @brief 使用指定的字体和字号去显示文本
-     * 
-     * @param font ...
-     * @return void
-     */
-    void setFont ( const GFont & font );
-    
-    /**
-     * @brief 使用指定的颜色去显示文本
-     * 
-     * @param color ...
-     * @return void
-     */
-    void setColor ( const GColor& color );
-    
-    /**
-     * @brief 设置排版格式。nFlags可由 Giveda::AlignmentFlag 和 Giveda::TextFlag 进行位操作（比如进行按位相或）得到。
-     * 
-     * @param nFlags ...
-     * @return void
-     */
-    void setTextFlags ( int nFlags );
-    
-    /**
-     * @brief 返回当前的文本内容
-     * 
-     * @return GString
-     */
-    GString text();
-    
-    /**
-     * @brief 获取单行显示情况下的宽高
-     * 
-     * @return GSize
-     */
-    GSize getSingleLineSize();
-    
-    /**
-     * @brief 获取当前的字体
-     * 
-     * @return GFont
-     */
-    GFont font();
-    
-protected:
-    virtual void paintEvent ();
-    
-protected://这里用protected，GMScrollText中访问比较方便
-    GMTextPrivate *txtPriv;
+    GTimer* m_pTimer;
+    bool m_bIsResetX;
+    int m_nX;
+    int m_nW;
+    bool m_bShouldSroll;
 };
 
-class GMScrollTextPrivate;
-
-/*!
- * @class GMScrollText
- * @brief 滚动字幕；\n
- * GCtrlScrollText 与 GMScrollText 的区别在于： GCtrlScrollText 会主动将自己添加到 GCtrlForm 中，而 GMScrollText 则没有；因此开发者可以直接在 GCtrlForm 中使用 GCtrlScrollText ；而 GMScrollText 则可以用于拼装出自定义的UI控件。
- * 
- */
-class DLL_PUBLIC GMScrollText : public GMText
+GMScrollText::GMScrollText ( GCtrlForm* form, GMItem* parent, const char* name )
+    :GMText ( form, parent, name ), stPriv( new GMScrollTextPrivate )
 {
-    G_DISABLE_ASSIGN ( GMScrollText )
-public:
-     /**
-     * @brief 构造一个空的 滚动字幕
-     * 
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMScrollText ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    /**
-     * @brief 使用开发者指定的字符串去构造一个 滚动字幕
-     * 
-     * @param str 字符串
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GMScrollText ( const GString & str, GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GMScrollText();
+    stPriv->m_pTimer = new GTimer ( this );
+    connect ( stPriv->m_pTimer, stPriv->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
+    stPriv->m_bIsResetX = true;
+    stPriv->m_bShouldSroll = false;
+}
 
-    /**
-     * @brief 开始滚动。刷新的时间间隔为 msec 
-     * 
-     * @param msec ...
-     * @return void
-     */
-    void startScroll ( unsigned int msec=500 );
-    
-    /**
-     * @brief 停止滚动
-     * 
-     * @return void
-     */
-    void stopScroll();
-    
-    /**
-     * @brief 返回当前是否正在滚动显示
-     * 
-     * @return bool
-     */
-    bool isScroll();
-    
-protected:
-    virtual void paintEvent ();
-    
-private:
-    DLL_LOCAL bool isNeedScroll();
-    
-#ifndef CONFIG_STD_CPP11
-private slots:
-    DLL_LOCAL void slotUpdate();
-    DLL_LOCAL static void slotUpdate( GObject* );
-#else
-private slots:
-    DLL_LOCAL void slotUpdate();
-#endif
-    
-private:
-    GMScrollTextPrivate *stPriv;
-};
+GMScrollText::GMScrollText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
+    :GMText ( str, form, parent, name ), stPriv( new GMScrollTextPrivate )
+{
+    stPriv->m_pTimer = new GTimer ( this );
+    connect ( stPriv->m_pTimer, stPriv->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
+    stPriv->m_bIsResetX = true;
+    stPriv->m_bShouldSroll = false;
+}
 
-#endif
+GMScrollText::~GMScrollText()
+{
+    delete stPriv;
+}
 
-#endif  //CONFIG_gMItem
+void GMScrollText::startScroll ( unsigned int msec )
+{
+    if ( !isScroll() && isNeedScroll() )
+    {
+        stPriv->m_pTimer->start ( msec );
+        stPriv->m_bShouldSroll = true;
+    }
+}
+
+void GMScrollText::stopScroll()
+{
+    if ( isScroll() )
+    {
+        stPriv->m_pTimer->stop();
+        stPriv->m_bIsResetX = true;
+        update();
+        stPriv->m_bShouldSroll = false;
+    }
+}
+
+bool GMScrollText::isScroll()
+{
+    return stPriv->m_pTimer->isActive();
+}
+
+bool GMScrollText::isNeedScroll()
+{
+    if ( txtPriv->m_singleLineSize.width() >width() )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void GMScrollText::slotUpdate()
+{
+    if ( !isVisible()
+            || !form()->isVisible() 
+            || stPriv->m_bShouldSroll == false )
+    {
+        return ;
+    }
+    update();
+}
+

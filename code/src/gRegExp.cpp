@@ -1,72 +1,61 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
+#include "gRegExp.h"
+#include <sys/types.h>
+#include <regex.h>
+#include <gConstDefine.h>
+#include <gGlobal.h>
 
-#ifdef CONFIG_gRegExp
-
-#ifndef GREGEXP_H
-#define GREGEXP_H
-
-#include <string>
-#include <gCtrlDllSym.h>
-
-using namespace std;
-
-class GRegExpPrivate;
-
-/*! @file  gRegExp.h
- * @brief  GRegExp 正则表达式运算
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-6
- */
-
-/*!
- * @class GRegExp
- * @brief GRegExp 正则表达式运算
- * 
- */
-class DLL_PUBLIC GRegExp
+class GRegExpPrivate
 {
 public:
-    /**
-     * @brief 构建规则
-     * 
-     * @param s ...
-     */
-    GRegExp( const string& s );
-    
-    virtual ~GRegExp();
-    
-    /**
-     * @brief 尝试在指定的字符串src中去匹配之前指定的规则；
-     * 
-     * @param src ...
-     * @return int 匹配不到返回-1，否则返回子串的起始位置
-     */
-    int match(const string  &src );
-    
-private:
-    GRegExpPrivate *m_priv;
+    GRegExpPrivate(const string  &s):pattern(s)
+    {
+        regex_t treg;
+        int ret = regcomp(&treg, pattern.c_str(), REG_NEWLINE|REG_EXTENDED);
+        if(0 != ret)
+        {
+            ERROR("regcomp [%s]\n", pattern.c_str() );
+        }
+        preg = treg;
+    }
+
+    string  pattern;
+    regex_t preg;
 };
 
-#endif // GREGEXP_H
+GRegExp::GRegExp(const string  &s)
+    :m_priv( new GRegExpPrivate(s) )
+{
+}
 
-#endif  //CONFIG_gRegExp
+GRegExp::~GRegExp()
+{
+    delete m_priv;
+}
+
+int GRegExp::match ( const string& src )
+{
+    regmatch_t  pmatch[1];
+    int ret = regexec(&m_priv->preg, src.c_str(), 1, pmatch, 0 );
+
+    if(REG_NOMATCH == ret)
+    {
+        return -1;
+    }
+
+    return pmatch[0].rm_so;
+}

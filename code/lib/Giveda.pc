@@ -6,4 +6,55 @@ Requires.private:
 Conflicts:
 Libs: -L../../lib -lGiveda -l:libfreetype.a -l:libjpeg.a -l:libpng12.a -lpthread -lrt -lz
 Libs.private: 
-Cflags:-I../../include -I/usr/include/libpng12 -I/usr/include/freetype2 -std=c++11 -Wno-pmf-conversions -Wno-unused-result -Wno-sign-compare
+Cflags:-I../../include -I/usr/include/libpng12 -I/usr/include/freetype2 -std=c++11 -Wno-pmf-conversions -Wno-unused-result -Wno-sign-compare -DCONFIG_COMPILER_PREFIX=\"\" \
+																			 -DCONFIG_DEBUG_ENABLED=y \
+																			 -DCONFIG_STD_CPP11=y \
+																			 -DCONFIG_OPT4_RAM=y \
+																			 -DCONFIG_LINUX_POSIX=y \
+																			 -DCONFIG_GUI_MODE_MULTI_FORM=y \
+																			 -DCONFIG_GIMG_FW_NUM_NEEDED=13 \
+																			 -DCONFIG_KEY_EVENT_ENABLED=y \
+																			 -DCONFIG_KEY_PRESS_EVENT_ENABLED=y \
+																			 -DCONFIG_MOUSE_EVENT_ENABLED=y \
+																			 -DCONFIG_KEY_PRESS_EVENT_LOCAL=y \
+																			 -DCONFIG_MOUSE_EVENT_LOCAL=y \
+																			 -DCONFIG_PF_ARGB8888=y \
+																			 -DCONFIG_gBrush=y \
+																			 -DCONFIG_gColor=y \
+																			 -DCONFIG_gCtrlButton=y \
+																			 -DCONFIG_gCtrlForm=y \
+																			 -DCONFIG_gCtrlIconView=y \
+																			 -DCONFIG_gCtrlItem=y \
+																			 -DCONFIG_gCtrlLineEdit=y \
+																			 -DCONFIG_gCtrlListBox=y \
+																			 -DCONFIG_gCtrlMsgBox=y \
+																			 -DCONFIG_gCtrlProgressBar=y \
+																			 -DCONFIG_gCtrlRadioButtonGroup=y \
+																			 -DCONFIG_gEvent=y \
+																			 -DCONFIG_gFont=y \
+																			 -DCONFIG_gFontmetrics=y \
+																			 -DCONFIG_gImage=y \
+																			 -DCONFIG_gInputHandler=y \
+																			 -DCONFIG_gMap=y \
+																			 -DCONFIG_gMItem=y \
+																			 -DCONFIG_gNativePainter=y \
+																			 -DCONFIG_gObject=y \
+																			 -DCONFIG_gObject_cpp11=y \
+																			 -DCONFIG_gPaintDevice=y \
+																			 -DCONFIG_gPainter=y \
+																			 -DCONFIG_gPointer=y \
+																			 -DCONFIG_gPoint=y \
+																			 -DCONFIG_gPtrList=y \
+																			 -DCONFIG_gRect=y \
+																			 -DCONFIG_gRegExp=y \
+																			 -DCONFIG_gRegion=y \
+																			 -DCONFIG_gRwLock=y \
+																			 -DCONFIG_gSharedData=y \
+																			 -DCONFIG_gSize=y \
+																			 -DCONFIG_gString=y \
+																			 -DCONFIG_gTimer=y \
+																			 -DCONFIG_gUIEvent=y \
+																			 -DCONFIG_gUIEvtLoop=y \
+																			 -DCONFIG_gWinSys=y \
+																			 -DCONFIG_SUPPORT_PNG \
+																			 -DCONFIG_ENABLE_IMAGE_SMOOTHSCALE

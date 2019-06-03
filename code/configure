@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# Copyright (C) 2019  明心  <imleizhang@qq.com>
+# All rights reserved.
+# 
+# This program is an open-source software; and it is distributed in the hope 
+# that it will be useful, but WITHOUT ANY WARRANTY; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. 
+# This program is not a free software; so you can not redistribute it and/or 
+# modify it without my authorization. If you need use it for any 
+# commercial purpose, you should first get commercial authorization from
+# me, otherwise there will be your's credit and legal risks. 
+#
+#
+
+config4()
+{
+	DRIVER=$1
+	cd src
+	qmake-qt4 DEFINES=$DRIVER
+	cd - > /dev/null
+	for item in example/*; do
+		if [ -d $item ]; then
+			cd $item
+			qmake-qt4 DEFINES=$DRIVER
+			cd - > /dev/null
+		fi
+	done
+}
+
+echo -e "\033[01;33m Which driver would you like to use?\033[0m
+ 1)  Qt & X11(if you want to run on ubuntu/fedora/centos/or other Linux Desktop OS)
+ 2)  Framebuffer(if you want to run on Embedded Linux Device, such as TV or DVR)"
+
+read -p " please input your choice(number):  " CHOISE
+case $CHOISE in
+1)
+ echo -e "\033[01;32m Qt & X11 will be used! You can run this software on linux Desktop(such as fedora or ubuntu)!\033[0m"
+ config4 "CONFIG_QT_SIMULATOR"
+ cp .Makefile Makefile
+ ;;
+2)
+ echo -e "\033[01;32m Framebuffer will be used! You can run this software on Embedded Linux Device(such as TV or DVR)!\033[0m"
+ config4 "CONFIG_R_SCREEN_LINUX_FB"
+ cp .Makefile Makefile
+ ;;
+*)
+ echo -e "\033[01;31m wrong number, not supported yet!\033[0m"
+ ;;
+esac

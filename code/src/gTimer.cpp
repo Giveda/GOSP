@@ -1,133 +1,145 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
+#include "gTimer.h"
 
-#ifdef CONFIG_gTimer
+#include <signal.h>
+#include <time.h>
+#include <string.h>
+#include <errno.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <gConstDefine.h>
+#include <gGlobal.h>
+#include <gUIEvtLoop.h>
+#include <eventlist_p.h>
+#include <gEvent.h>
 
-#ifndef GTIMER_H
-#define GTIMER_H
+void addTimer ( GTimer* t );
+void deleteTimer ( GTimer* t );
 
-#include <gObject.h>
-
-class GTimerData;
-
-/*! @file  gTimer.h
- * @brief  GTimer  定时器
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-6
- */
-
-/*!
- * @class GTimer
- * @brief GTimer 定时器
- * 
- */
-class  DLL_PUBLIC GTimer : public GObject
+void  timer_notify_function(union sigval  d)
 {
-    friend class GTimerEvent;
-    G_DISABLE_COPY(GTimer, GObject)
-#ifndef CONFIG_STD_CPP11
-    DEFINE_SIGNAL(T_pvrv, timeout)
-#else
-signals:
-    ///当定时器超时，该信号被发射。
-    GSignal<void(void)>  timeout;
-#endif
+    GTimer *t = (GTimer*)d.sival_ptr;
+    putEvt( new GTimerEvent(t) );
+}
+
+class GTimerData
+{
 public:
-    /**
-     * @brief 构造一个定时器
-     * 
-     * @param parent ...
-     * @param name ...
-     * @param sshot 系统保留参数，开发者不可使用，否则将给你带来莫名其妙的问题
-     */
-    GTimer( GObject *parent=0, const char *name=0, bool sshot=false );
-    
-    virtual ~GTimer();
-
-    /**
-     * @brief 是否正在运行
-     * 
-     * @return bool
-     */
-    bool isActive() const;
-
-    /**
-     * @brief 启动定时器
-     * 
-     * @param msec 超时，单位为毫秒
-     * @param sshot 
-     * @return int 是否single shot（超时一次就停止的定时器）
-     */
-    int   start( int msec, bool sshot = false );
-    
-    /**
-     * @brief 停止定时器
-     * 
-     * @return void
-     */
-    void stop();
-    
-    /**
-     * @brief 重新启动定时器
-     * 
-     * @return int
-     */
-    int   restart();
-    
-#ifndef CONFIG_STD_CPP11
-    static void singleShot(int msec, GObject *receiver, T_pvrv member );
-#else
-    /**
-     * @brief 执行一个一次性定时操作。超时会执行指定的槽函数
-     * 
-     * @param msec 超时，单位为毫秒
-     * @param receiver 接收者
-     * @param SlotFunc  接收者的槽函数（用于接收超时信号）
-     * @return void
-     */
-    template<class Receiver>
-    static void singleShot(int msec, Receiver *receiver, void ( Receiver::*SlotFunc ) () )
+    GTimerData()
+        :id(NULL), needDelete(false), active(false), singleShot(false), msec(0)
     {
-        GTimer *t= new GTimer(NULL, "singleShotTimer", true);
-        connect( t,  t->timeout,  receiver, SlotFunc);
-        t->start(msec, true);
+        its.it_value.tv_sec = 0;
+        its.it_value.tv_nsec = 0;
+        its.it_interval.tv_sec = its.it_value.tv_sec; 
+        its.it_interval.tv_nsec = its.it_value.tv_nsec;
     }
-#endif
-
-public:
-    virtual bool event(GEvent*);
-
-private:
-    /**
-     * @brief 定时器ID
-     * 
-     * @return long int
-     */
-    DLL_LOCAL long int id() const;
-    
-private:
-    GTimerData *timerData;
+    timer_t     id;
+    bool needDelete;
+    bool active;
+    bool singleShot;
+    int msec;
+    struct itimerspec its;
 };
 
-#endif // GTIMER_H
+GTimer::GTimer ( GObject* parent, const char* name ) : GObject ( parent, name )
+{
+    timerData = new GTimerData;
+    sigevent_t  se;
+    se.sigev_notify = SIGEV_THREAD;
+    se.sigev_notify_function = timer_notify_function;
+    se.sigev_notify_attributes = NULL;
+    se.sigev_value.sival_ptr = (void *)this;
+    int ret = timer_create(CLOCK_REALTIME, &se, &timerData->id);
+    if(-1 == ret)
+    {
+        ERROR("timer_create: [%s]\n", strerror(errno) );
+        exit(-1);
+    }
+    addTimer(this);
+}
 
-#endif  //CONFIG_gTimer
+GTimer::~GTimer()
+{
+    deleteTimer(this);
+    if(timerData->id)
+    {
+        timer_delete(timerData->id);
+        return ;
+    }
+    delete timerData;
+}
+
+int GTimer::start ( int msec, bool sshot )
+{
+    int ret = 0;
+    timerData->its.it_value.tv_sec = msec / 1000;
+    timerData->its.it_value.tv_nsec = msec % 1000*1000000;
+    timerData->singleShot = sshot;
+    timerData->msec = msec;
+    if(sshot)
+    {
+        timerData->its.it_interval.tv_sec = 0; 
+        timerData->its.it_interval.tv_nsec = 0;
+    }
+    else
+    {
+        timerData->its.it_interval.tv_sec = timerData->its.it_value.tv_sec; 
+        timerData->its.it_interval.tv_nsec = timerData->its.it_value.tv_nsec;
+    }
+    ret = timer_settime(timerData->id, 0, &timerData->its, NULL);
+    if(-1 == ret)
+    {
+        WARNING("timer_settime: [%s]\n", strerror(errno) );
+        return -10;
+    }
+
+    timerData->active = true;
+    return 0;
+}
+
+void GTimer::stop()
+{
+    timerData->its.it_value.tv_sec = 0;
+    timerData->its.it_value.tv_nsec = 0;
+    int ret = timer_settime(timerData->id, 0, &timerData->its, NULL);
+    if(-1 == ret)
+    {
+        WARNING("timer_settime: [%s]\n", strerror(errno) );
+        return ;
+    }
+    timerData->active = false;
+}
+
+bool GTimer::isActive() const
+{
+    return timerData->active;
+}
+
+long int GTimer::id() const
+{
+    return reinterpret_cast<long>(timerData->id);
+}
+
+bool GTimer::isNeedDelete()
+{
+    return timerData->needDelete;
+}
+
+int GTimer::restart()
+{
+    return start(timerData->msec, timerData->singleShot);
+}

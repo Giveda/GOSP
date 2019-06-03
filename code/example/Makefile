@@ -1,3 +1,18 @@
+#
+# Copyright (C) 2019  明心  <imleizhang@qq.com>
+# All rights reserved.
+# 
+# This program is an open-source software; and it is distributed in the hope 
+# that it will be useful, but WITHOUT ANY WARRANTY; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. 
+# This program is not a free software; so you can not redistribute it and/or 
+# modify it without my authorization. If you need use it for any 
+# commercial purpose, you should first get commercial authorization from
+# me, otherwise there will be your's credit and legal risks. 
+#
+#
+
 FILES = $(wildcard ./*)
 MAKE = make 
 
@@ -25,7 +40,6 @@ strip:
 distclean:
 	@for i in $(FILES); do \
 	if [ -d $$i ]; then \
-	svn delete --force  $$i/$$i; \
 	$(MAKE) $@ -C $$i; \
 	fi \
 	done

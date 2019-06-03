@@ -1,115 +1,65 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
+#ifndef GPAINTER_H
+#define GPAINTER_H
 
-#ifdef CONFIG_gPainter
-
-#ifndef QPAINTER_H
-#define QPAINTER_H
-
+#include <gPixmap.h>
 #include <gImage.h>
 #include <gRect.h>
-#include <gRegion.h>
 #include <gColor.h>
 #include <gFont.h>
 #include <gBrush.h>
+#include <gPaintEngine.h>
+#include <gConstDefine.h>
+#include <gGlobal.h>
 
-enum RasterOp   // raster op mode
-{
-    CopyROP,
-    OrROP,
-    XorROP,
-    NotAndROP,
-    EraseROP=NotAndROP,
-    NotCopyROP,
-    NotOrROP,
-    NotXorROP,
-    AndROP,  NotEraseROP=AndROP,
-    NotROP,
-    ClearROP,
-    SetROP,
-    NopROP,
-    AndNotROP,
-    OrNotROP,
-    NandROP,
-    NorROP,  LastROP=NorROP
-};
+class GPainterPrivate;
+class GPaintDevice;
 
-/*! @file  gPainter.h
- * @brief  GPainter 提供GDI接口、较底层的绘制接口
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-6
- */
-
-/*!
- * @class GPainter
- * @brief 提供GDI接口、较底层的绘制接口。开发者使用 GPainter::instance() 来获取 GPainter 对象。相关接口可以参考 Qt 文档
- * 
- */
 class GPainter
 {
+    G_DISABLE_COPY_1(GPainter)
 public:
-    enum TYPE {
-        LOCAL=0,
-        REMOTE,
-        UNKNOWN,
-    };
-    
-public:
-    /**
-     * @brief 获取 GPainter 对象
-     * 
-     * @return GPainter*
-     */
-    static GPainter* instance();
-    
-protected:
     GPainter();
-    GPainter(const TYPE  t);
-    
-public:
+    explicit GPainter( GPaintDevice* p );
     virtual ~GPainter();
-    
-    virtual void drawPixmap ( const GImage& pix, const GRect &dR, const GRect &sR )=0;
-    virtual void drawPixmap ( T_OFFSET dx, T_OFFSET dy, const GImage &pix,  T_OFFSET sx=0, T_OFFSET sy=0, T_OFFSET sw=-1, T_OFFSET sh=-1 )=0;
-    virtual void setClipRegion ( const GRegion & r)=0;
-    virtual const GRegion&  clipRegion() const =0;
-    virtual void save()=0;
-    virtual void restore()=0;
-    virtual void translate(T_OFFSET x, T_OFFSET y)=0;
-    virtual void drawImage ( T_OFFSET dx, T_OFFSET dy, const GImage &img, T_OFFSET sx=0, T_OFFSET sy=0, T_OFFSET sw=-1, T_OFFSET sh=-1 )=0;
-    virtual void setPen ( const GColor& c )=0;
-    virtual void setFont ( const GFont& f )=0;
-    virtual void setBrush ( const GBrush &b )=0;
-    virtual void drawText ( T_OFFSET dX, T_OFFSET dY, T_OFFSET dW, T_OFFSET dH, int32_t flags, const GString& str )=0;
-    virtual void fillRect(T_OFFSET x, T_OFFSET y, T_OFFSET w, T_OFFSET h, const GBrush &b)=0;
-    virtual void fillRect( const GRect & r, const GBrush &b)=0;
-    virtual void fillRect( const GRect & r)=0;
+    GPaintDevice *device() const;
+    void setDevice(GPaintDevice *p);
+    void drawPixmap ( const GPixmap& pix, const GRect &dR, const GRect &sR );
+    void drawPixmap (int dx, int dy, const GPixmap &pix);
+    void drawPixmap ( int dx, int dy, const GPixmap &pix,  int sx, int sy, int sw, int sh );
+    void save();
+    void restore();
+    void translate(int x, int y);
+    void drawImage ( int dx, int dy, const GImage &img, int sx, int sy, int sw, int sh );
+    void setPen ( const GColor& c );
+    void setFont ( const GFont& f );
+    void setBrush ( const GBrush &b );
+    void drawText ( int dX, int dY, int dW, int dH, int flags, const GString& str );
+    void fillRect(int x, int y, int w, int h, const GBrush &b);
+    void fillRect( const GRect & r, const GBrush &b);
+    void fillRect( const GRect & r);
+    static GPixmap grabWidget ( GPaintDevice* dev, const GRect& dR );
+    void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterOp rop, bool noBlend=false );
 
-    TYPE type() const;
-    
 private:
-    TYPE m_type;
+    void drawTextPrivate ( GRect dR, const GString& str, int flags );
+    GPainterPrivate *m_priv;
 };
 
-#endif // QPAINTER_H
+void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterOp rop, bool noBlend=false );
 
-#endif  //CONFIG_gPainter
+#endif 

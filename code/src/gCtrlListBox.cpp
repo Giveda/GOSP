@@ -1,491 +1,508 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
+#include <gCtrlStyle.h>
+#include "gCtrlListBox.h"
+#include <gConstDefine.h>
+#include <gGlobal.h>
 
-#ifdef CONFIG_gCtrlListBox
-
-#ifndef GCTRLLISTBOX_H
-#define GCTRLLISTBOX_H
-
-#include <gMItem.h>
-
-class GCtrlListBox;
-
-/*! @file  gCtrlListBox.h
- * @brief  GCtrlListBox windows资源管理器中的列表视图。
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-4
- */
-
-/*!
- * @class GCtrlListBoxItem
- * @brief 列表视图中可以包含任意数目的列表项， GCtrlListBoxItem 类代表只有一个文字标题的所述列表项；
- * 
- */
-class DLL_PUBLIC GCtrlListBoxItem : public GMCtrlItem
+GCtrlListBoxItem::GCtrlListBoxItem ( const GString& str, GCtrlForm* frm, GMItem* parent, const char* name )
+    :GMCtrlItem ( frm, parent, name ), m_txt ( str, frm, this, "listBoxText" )
 {
-    G_DISABLE_ASSIGN ( GCtrlListBoxItem )
-public:
-    /**
-     * @brief 构造一个列表项；此列表项须要与列表视图 GCtrlListBox 配套使用。
-     * 
-     * @param str 图标的标题
-     * @param frm ...
-     * @param parent 此列表项需要放置到哪个列表视图
-     * @param name ...
-     */
-    GCtrlListBoxItem ( const GString& str, GCtrlForm* frm, GCtrlListBox* parent=0, const char* name="listBoxItem" );
-    virtual ~GCtrlListBoxItem();
-    
-    /**
-     * @brief 获取文字标题
-     * 
-     * @return GMScrollText*
-     */
-    GMScrollText* getTxt();
-    
-    /**
-     * @brief 获取文字标题的内容
-     * 
-     * @return GString
-     */
-    GString text();
-    
-    /**
-     * @brief 设置列表项所占用的矩形区域，位置及大小
-     * 
-     * @param x ...
-     * @param y ...
-     * @param w ...
-     * @param h ...
-     * @return void
-     */
-    virtual void setGeometry ( int x, int y, int w, int h  );
-    
-protected:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    virtual bool fwKeyPressEvent ( GKeyEvent* );
-#endif
-    virtual void paintEvent (  );
-    
-protected:
-    GMScrollText m_txt;
-};
+    m_txt.setTextFlags ( Giveda::AlignVCenter );
+}
 
-/*!
- * @class GCtrlListBoxPixmap
- * @brief 列表视图中可以包含任意数目的列表项， GCtrlListBoxPixmap 类代表拥有一个图标、和一个文字标题的所述列表项；
- * 
- */
-class DLL_PUBLIC GCtrlListBoxPixmap : public GCtrlListBoxItem
+void GCtrlListBoxItem::paintEvent ( GPainter& p )
 {
-    G_DISABLE_ASSIGN ( GCtrlListBoxPixmap )
-public:
-    /**
-     * @brief 构造一个列表项；此列表项须要与列表视图 GCtrlListBox 配套使用。
-     * 
-     * @param pm 列表项的图片
-     * @param str 列表项的文字标题
-     * @param frm 属于哪个窗体
-     * @param parent 此列表项需要放置到哪个列表视图
-     * @param name ...
-     */
-    GCtrlListBoxPixmap ( const GImage& pm, const GString& str, GCtrlForm* frm, GCtrlListBox* parent = 0, const char* name = "listBoxPixmap" );
-    
-    /**
-     * @brief 设置列表项所占用的矩形区域，位置及大小
-     * 
-     * @param x ...
-     * @param y ...
-     * @param w ...
-     * @param h ...
-     * @return void
-     */
-    virtual void setGeometry ( int x, int y, int w, int h  );
-    
-protected:
-    virtual void paintEvent (  );
-    
-protected:
-    GMPixmap m_pix;
-};
+    m_txt.draw ( p );
+}
 
-#ifdef CONFIG_gCtrlIconView
-/*!
- * @class GCtrlIconViewItem
- * @brief 列表视图中可以包含任意数目的列表项， GCtrlIconViewItem 类代表了图标在上、文字在下的所述列表项；
- * 
- */
-class DLL_PUBLIC GCtrlIconViewItem : public GCtrlListBoxPixmap
+bool GCtrlListBoxItem::fwKeyPressEvent ( GKeyEvent *e )
 {
-    G_DISABLE_ASSIGN ( GCtrlIconViewItem )
-public:
-    /**
-     * @brief 构造一个图标在上、文字在下的列表项，并通过 showTitle 来控制是否显示文字标题；此列表项须要与列表视图 GCtrlListBox 配套使用。
-     * 
-     * @param img 列表项的图片
-     * @param str 列表项的文字标题
-     * @param frm 属于哪个窗体
-     * @param parent 此列表项需要放置到哪个列表视图
-     * @param name ...
-     * @param showTitle 是否显示文字标题
-     */
-    GCtrlIconViewItem ( const GImage& img, const GString& str, GCtrlForm* frm, GCtrlListBox* parent, const char* name="iconViewItem", const bool showTitle=false );
-    
-    /**
-     * @brief 设置列表项所占用的矩形区域，位置及大小
-     * 
-     * @param x ...
-     * @param y ...
-     * @param w ...
-     * @param h ...
-     * @return void
-     */
-    virtual void setGeometry ( int x, int y, int w, int h  );
-};
-#endif
-
-class GCtrlListBoxPrivate;
-
-/*!
- * @class GCtrlListBox
- * @brief GCtrlListBox 类提供了类似windows资源管理器中的列表视图；列表视图可以包含任意数目的列表项 GCtrlListBoxItem ；如果没有列表视图，列表项将无法显示。
- * 
- */
-class DLL_PUBLIC GCtrlListBox : public GMContainerItem
-{
-    friend class GCtrlListBoxItem;
-    SET_CLASS_NAME( GCtrlListBox )
-    G_DISABLE_ASSIGN ( GCtrlListBox )
-#ifdef CONFIG_STD_ANSI
-public:
-    typedef void (*T_pIrv)( GObject*p, const GCtrlListBoxItem* );
-    DEFINE_SIGNAL( T_pIrv, focusChangedTo_pI)
-    DEFINE_SIGNAL( T_pirv, focusChangedTo_pi)
-    DEFINE_SIGNAL( T_pIrv, highlighted_pI)
-    DEFINE_SIGNAL( T_pirv, highlighted_pi)
-    DEFINE_SIGNAL( T_pIrv, selected_pI)
-    DEFINE_SIGNAL( T_pirv, selected_pi)
-#else
-signals:
-    ///当列表项的焦点发生改变时，该信号被立即发射；参数为：当前具有焦点的列表项
-    GSignal<void ( const GCtrlListBoxItem* )> focusChangedTo_pI;
-    
-    ///当列表项的焦点发生改变时，该信号被立即发射；参数为：当前具有焦点的列表项的索引值
-    GSignal<void ( int )> focusChangedTo_pi;
-    
-    ///列表项的焦点发生了改变，并且10秒之内列表项的焦点没有再次发生改变，该信号被立即发射；参数为：当前具有焦点的列表项
-    GSignal<void ( const GCtrlListBoxItem* )> highlighted_pI;
-    
-    ///列表项的焦点发生了改变，并且10秒之内列表项的焦点没有再次发生改变，该信号被立即发射；参数为：当前具有焦点的列表项的索引值
-    GSignal<void ( int )> highlighted_pi;
-    
-    ///当列表项被用户点击时，该信号被立即发射；参数为：当前具有焦点的列表项
-    GSignal<void ( const GCtrlListBoxItem* )> selected_pI;
-    
-    ///当列表项被用户点击时，该信号被立即发射；参数为：当前具有焦点的列表项的索引值
-    GSignal<void ( int )> selected_pi;
-#endif
-
-public:
-    ///列表如何排版其中的列表项
-    enum E_ITEMS_LAYOUT_MODE
+    bool bRetVal = true;
+    switch ( e->key() )
     {
-        ///默认值。从上往下排版列表项，超出下边界则在右侧另起一列
-        E_ITEMS_LAYOUT_TOP_2_BOTTOM=0,
-        
-        ///从左向右排版列表项，超出右边界则在下方另起一行
-        E_ITEMS_LAYOUT_LEFT_2_RIGHT,
-    };
-    
-    /**
-     * @brief 构造一个列表视图。一个列表视图可以包含任意数目的列表项 GCtrlListBoxItem 。默认情况下，列表视图会按照列表项被添加进来的先后顺序，为所有列表项建立索引。用户可以使用索引值来访问、操作任一列表项。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项。
-     * 
-     * @param frm ...
-     * @param parent ...
-     * @param name ...
-     * @param showSingleTitle 是否仅显示当前具有焦点的图标项的文字标题。如果为true，则其它无焦点的图标项的文字标题会被隐藏。
-     */
-    GCtrlListBox ( GCtrlForm* frm, GMItem* parent=0, const char* name=0, const bool showSingleTitle=false  );
-    
-    virtual ~GCtrlListBox();
-    
-    /**
-     * @brief 向列表视图中添加列表项。列表视图会按照列表项被添加进来的先后顺序，为所有列表项建立索引。
-     * 
-     * @param  p  列表项
-     * @param index 指定列表项在列表视图中的显示位置；-1意味着列表项将被放置在列表视图的最后；
-     * @return void
-     */
-    void insertItem ( GCtrlListBoxItem* p, int index=-1 );
-    
-    /**
-     * @brief 从列表视图中删除一个列表项。如果 index 等于-1，会删除当前处于焦点状态的列表项；否则，删除第 index 个列表项。系统将自动回收被删除掉的列表项所占用的内存。
-     * 
-     * @param index ...
-     * @return void
-     */
-    void removeItem ( int index=-1 );
-    
-    /**
-     * @brief 从列表视图中删除指定的列表项。系统将自动回收被删除掉的列表项所占用的内存。
-     * 
-     * @param  ...
-     * @return void
-     */
-    void removeItem ( GCtrlListBoxItem* );
-    
-    /**
-     * @brief 更换第 index 个列表项；系统将自动回收被替换掉的列表项所占用的内存；如果 index 等于-1，会替换掉当前处于焦点状态的列表项；
-     * 
-     * @param  ...
-     * @param index ...
-     * @return void
-     */
-    void changeItem ( GCtrlListBoxItem *, int index=-1 );
-    
-    /**
-     * @brief 设置列表视图的行数，即指定一下列表视图中包含几行列表项
-     * 
-     * @param num ...
-     * @return void
-     */
-    void setRowNums ( unsigned int num );
-    
-    /**
-     * @brief 设置列表视图的列数，即指定一行中包含几个列表项
-     * 
-     * @param num ...
-     * @return void
-     */
-    void setColumnNums ( unsigned int num );
-    
-    /**
-     * @brief 获取第 index 个列表项；如果index=-1则获取当前具有焦点状态的列表项
-     * 
-     * @param index ...
-     * @return GCtrlListBoxItem*
-     */
-    GCtrlListBoxItem* item ( int index=-1 );
-    
-    /**
-     * @brief 获取当前具有焦点状态的列表项的索引值
-     * 
-     * @return int
-     */
-    int getCurItemIndex();
-    
-    /**
-     * @brief 返回当前列表视图中所包含的列表项的数目
-     * 
-     * @return unsigned int
-     */
-    unsigned int count();
-    
-    /**
-     * @brief 清空列表视图。列表视图中包含的所有列表项将被删除，它们占用的内存空间将被收回。
-     * 
-     * @return void
-     */
-    void clear();
-    
-    /**
-     * @brief 设置当列表视图处于焦点状态时，列表项所使用的焦点图片
-     * 
-     * @param  ...
-     * @return void
-     */
-    void setFocusInImage ( const GImage& );
-    
-    /**
-     * @brief 设置当列表视图失去焦点状态之后，列表项所使用的焦点图片
-     * 
-     * @param  ...
-     * @return void
-     */
-    void setFocusOutImage ( const GImage& );
-    
-    /**
-     * @brief 让第 nIndex 个列表项得到焦点状态
-     * 
-     * @param nIndex ...
-     * @return void
-     */
-    void setCurItemIndex ( const int nIndex );
+    case Giveda::Key_Return:
+        {
+            GCtrlListBox* pBox = ( GCtrlListBox* ) parent();
+            pBox->emitSelected ( this );
+        }
+        break;
+    default:
+        bRetVal = false;
+        break;
+    }
 
-    /**
-     * @brief 设置列表项文字标题的颜色
-     * 
-     * @param c ...
-     * @return void
-     */
-    void setItemTextColor ( const GColor& c );
-    
-    /**
-     * @brief 设置列表项文字标题的字体
-     * 
-     * @param f ...
-     * @return void
-     */
-    void setItemTextFont ( const GFont& f );
-    
-    /**
-     * @brief 获得列表项文字标题的颜色
-     * 
-     * @return GColor
-     */
-    GColor getItemTextColor();
-    
-    /**
-     * @brief 获得列表项文字标题的字体
-     * 
-     * @return GFont
-     */
-    GFont getItemTextFont();
-    
-    /**
-     * @brief 设置列表项的文字标题（在标题长度过长的情况下）是否能够以滚动字幕的形式进行显示
-     * 
-     * @param enabled ...
-     * @return void
-     */
-    void setItemScrollEnabled ( bool enabled );
-    
-    /**
-     * @brief 设置列表应当如何排版列表项。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项
-     * 
-     * @param mode ...
-     * @return void
-     */
-    void setLayoutMode( E_ITEMS_LAYOUT_MODE mode );
-    
-    /**
-     * @brief 获取列表的布局模式。默认情况下，列表使用 E_ITEMS_LAYOUT_TOP_2_BOTTOM 从下往下依次布局列表项
-     * 
-     * @return GCtrlListBox::E_ITEMS_LAYOUT_MODE
-     */
-    GCtrlListBox::E_ITEMS_LAYOUT_MODE getLayoutMode() const;
-    
-#if defined(CONFIG_KEY_EVENT_ENABLED)
-    /**
-     * @brief 设置一个用于将焦点移动到上一个列表项的按键键值。默认值为 Giveda::Key_Up \n
-     * 请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key
-     * 
-     * @param nKey ...
-     * @return void
-     */
-    void setPreviousItemKey ( int nKey );
-    
-    /**
-     * @brief 设置一个用于将焦点移动到下一个列表项的按键键值。默认值为 Giveda::Key_Down \n
-     * 请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key
-     * 
-     * @param nKey ...
-     * @return void
-     */
-    void setNextItemKey ( int nKey );
-    
-    /**
-     * @brief 设置是否允许循环切换焦点；\n
-     * 如果允许，则当移到焦点到最后一个列表项后，此时如果试图移动焦点到下一个列表项，则焦点将移动到第一个列表项；\n
-     * 如果禁止，则当移到焦点到最后一个列表项后，此时如果试图移动焦点到下一个列表项，则焦点保持不变。
-     * 
-     * @param b ...
-     * @return void
-     */
-    void setLoopFocus ( bool b );
-    
-        /**
-     * @brief 设置一个用于将焦点向前移动一列的按键键值。默认值为 Giveda::Key_PageUp \n
-     * 请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key
-     * 
-     * @param nKey ...
-     * @return void
-     */
-    void setPreviousColumnKey ( int nKey );
-    
-    /**
-     * @brief 设置一个用于将焦点向后移动一列的按键键值。默认值为 Giveda::Key_PageDown \n
-     * 请注意，因为PreviousItemKey/NextItemKey/PreviousColumnKey/NextColumnKey都有默认的值，所以调用此函数有可能会导致键值冲突。键值冲突时，框架会打印出来一条warning提示：can not override another key
-     * 
-     * @param nKey ...
-     * @return void
-     */
-    void setNextColumnKey ( int nKey );
-#endif
-    
-protected:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    virtual bool fwKeyPressEvent ( GKeyEvent* );
-#endif
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-    virtual bool fwMousePressEvent ( GMouseEvent* );
-#endif
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-    virtual bool fwTapEvent(GTapEvent*);
-    virtual bool fwSwipeEvent ( GSwipeEvent* );
-#endif
-    virtual void paintEvent ();
+    return bRetVal;
+}
 
-    /**
-     * @brief 获取列表项的最大显示高度
-     * 
-     * @return int
-     */
-    int getMaxIconHeight();
-    
-    /**
-     * @brief 获取列表项的最大显示宽度
-     * 
-     * @return int
-     */
-    int getMaxIconWidth();
-    
-private slots:
-    DLL_LOCAL void slotFocusChangedTo();
-    DLL_LOCAL void slotLoseFocus();
-    DLL_LOCAL void slotGetFocus();
-    
-#ifdef CONFIG_STD_ANSI
-private slots:
-    DLL_LOCAL static void slotFocusChangedTo( GObject* p );
-    DLL_LOCAL static void slotLoseFocus( GObject* p );
-    DLL_LOCAL static void slotGetFocus( GObject* p );
-#endif
-    
-private:
-#if defined(CONFIG_KEY_EVENT_ENABLED)
-    DLL_LOCAL bool moveFocusLeft();
-    DLL_LOCAL bool moveFocusRight();
-    DLL_LOCAL bool moveFocusUp();
-    DLL_LOCAL bool moveFocusDown();
-#endif
-    DLL_LOCAL void moveFocus ( int toIndex );
+void GCtrlListBoxItem::setGeometry ( int x, int y, int w, int h )
+{
+    GMItem::setGeometry ( x,y,w,h );
+    m_txt.setSize ( width(), height() );
+}
 
-    DLL_LOCAL void emitSelected ( GCtrlListBoxItem* );
+GCtrlListBoxPixmap::GCtrlListBoxPixmap ( const GPixmap& pm, const GString& str, GCtrlForm* frm, GMItem* parent, const char* name )
+    :GCtrlListBoxItem ( str, frm, parent, name ), m_pix ( pm, frm, this, "listBoxPixmap" )
+{
+}
 
-private:
-    GCtrlListBoxPrivate *lbPriv;
+void GCtrlListBoxPixmap::paintEvent ( GPainter& p )
+{
+    m_pix.draw ( p );
+    m_txt.draw ( p );
+}
+
+void GCtrlListBoxPixmap::setGeometry ( int x, int y, int w, int h )
+{
+    GMItem::setGeometry ( x,y,w,h );
+    int nTmp = height() - m_pix.height();
+    if ( nTmp > 1 )
+    {
+        m_pix.setY ( nTmp/2 );
+    }
+    m_txt.setGeometry ( m_pix.width(), 0,  width()-m_pix.width(), height() );
+}
+
+class GCtrlListBoxPrivate
+{
+public:
+    GCtrlListBoxPrivate ( GCtrlForm* frm, GMItem* parent, GCtrlListBox *lb)
+        :m_imgFocusIn ( frm, parent, "listBoxFocusIn" ), m_imgFocusOut ( frm, parent, "listBoxFocusOut" ), m_timerForShowItemInfo ( lb ), m_itemTxtColor ( 255,255,255 ), m_itemTxtFont ( "Sans", 20 )
+    {}
+    GPtrList<GCtrlListBoxItem> m_itemList;
+    GMImage m_imgFocusIn;
+    GMImage m_imgFocusOut;
+    GTimer m_timerForShowItemInfo;
+    unsigned int m_nCurItemIndex;
+    bool m_bIsNeedDoLayout;
+    bool m_bIsNeedShowItemInfo;
+    bool m_bSendHighLighted;
+    unsigned int m_nDrawFrom;
+    unsigned int m_nDrawTo;
+    unsigned int m_nMaxWofItem;
+    unsigned int m_nMaxHofItem;
+    int m_nColumnNums;
+    int m_nRowNums;
+    GColor m_itemTxtColor;
+    GFont m_itemTxtFont;
+    bool m_bScrollEnabled;
+    int m_nPreviousItemKey;
+    int m_nNextItemKey;
 };
 
-#endif
+GCtrlListBox::GCtrlListBox ( GCtrlForm* frm, GMItem* parent, const char* name )
+    :GMContainerItem ( frm, parent, name )
+{
+    lbPriv = new GCtrlListBoxPrivate(frm, parent, this );
+    frm->appendItem ( this );
+    lbPriv->m_nDrawFrom = 0;
+    lbPriv->m_nColumnNums = 1;
+    setRowNums ( 3 );
 
-#endif  //CONFIG_gCtrlListBox
+    connect ( &lbPriv->m_timerForShowItemInfo,
+              lbPriv->m_timerForShowItemInfo.timeout, this, &GCtrlListBox::slotFocusChangedTo );
+    connect ( this, this->loseFocus, this, &GCtrlListBox::slotLoseFocus );
+    connect ( this, this->getFocus, this, &GCtrlListBox::slotGetFocus );
+
+    lbPriv->m_nCurItemIndex = 0;
+    lbPriv->m_bIsNeedDoLayout = true;
+    lbPriv->m_bIsNeedShowItemInfo = true;
+    lbPriv->m_bSendHighLighted = false;
+
+    GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
+    GCtrlItemStyle* pStyle=NULL;
+    while ( NULL== ( pStyle=pAppStyle->itemStyle ( className() ) ) )
+    {
+        pAppStyle->appendListBoxStyle();
+    }
+    lbPriv->m_imgFocusIn.setImage ( pStyle->pixmap ( lbPriv->m_imgFocusIn.name() ) );
+    lbPriv->m_imgFocusOut.setImage ( pStyle->pixmap ( lbPriv->m_imgFocusOut.name() ) );
+    
+    lbPriv->m_itemList.setAutoDelete ( true );
+
+    lbPriv->m_bScrollEnabled = true;
+    lbPriv->m_nPreviousItemKey = Giveda::Key_Up;
+    lbPriv->m_nNextItemKey = Giveda::Key_Down;
+}
+
+GCtrlListBox::~GCtrlListBox()
+{
+    lbPriv->m_itemList.clear();
+    delete lbPriv;
+}
+
+void GCtrlListBox::paintEvent ( GPainter& p )
+{
+    if ( lbPriv->m_itemList.isEmpty() )
+    {
+        return;
+    }
+
+    int nDrawTo = lbPriv->m_itemList.count()-1<lbPriv->m_nDrawTo ? lbPriv->m_itemList.count()-1 : lbPriv->m_nDrawTo;
+    GCtrlListBoxItem* pItem=NULL;
+    if ( lbPriv->m_bIsNeedDoLayout )
+    {
+        lbPriv->m_itemList.at ( lbPriv->m_nDrawFrom )->setGeometry ( 0, 0, lbPriv->m_nMaxWofItem, lbPriv->m_nMaxHofItem );
+        lbPriv->m_itemList.at ( lbPriv->m_nDrawFrom )->getTxt()->setColor ( lbPriv->m_itemTxtColor );
+        lbPriv->m_itemList.at ( lbPriv->m_nDrawFrom )->getTxt()->setFont ( lbPriv->m_itemTxtFont );
+        int nBottomEdge = lbPriv->m_nMaxHofItem* ( lbPriv->m_nRowNums-1 );
+        for ( int j=lbPriv->m_nDrawFrom; j<nDrawTo; j++ )
+        {
+            pItem = lbPriv->m_itemList.at ( j+1 );
+            if ( lbPriv->m_itemList.at ( j )->y() == nBottomEdge )
+            {
+                pItem->setGeometry ( lbPriv->m_itemList.at ( j )->x() +lbPriv->m_nMaxWofItem, 0,  lbPriv->m_nMaxWofItem, lbPriv->m_nMaxHofItem );
+            }
+            else
+            {
+                pItem->setGeometry ( lbPriv->m_itemList.at ( j )->x(), lbPriv->m_itemList.at ( j )->y() +lbPriv->m_nMaxHofItem, lbPriv->m_nMaxWofItem, lbPriv->m_nMaxHofItem );
+            }
+            pItem->getTxt()->setColor ( lbPriv->m_itemTxtColor );
+            pItem->getTxt()->setFont ( lbPriv->m_itemTxtFont );
+        }
+
+        lbPriv->m_bIsNeedDoLayout = false;
+    }
+
+    if ( hasFocus() )
+    {
+        lbPriv->m_imgFocusIn.setGeometry ( lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->x(), lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->y(), lbPriv->m_nMaxWofItem, lbPriv->m_nMaxHofItem );
+        lbPriv->m_imgFocusIn.draw ( p );
+    }
+    else
+    {
+        lbPriv->m_imgFocusOut.setGeometry ( lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->x(), lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->y(), lbPriv->m_nMaxWofItem, lbPriv->m_nMaxHofItem );
+        lbPriv->m_imgFocusOut.draw ( p );
+    }
+
+    for ( int j=lbPriv->m_nDrawFrom; j<=nDrawTo; j++ )
+    {
+        pItem = lbPriv->m_itemList.at ( j );
+
+        p.save();
+        p.translate ( pItem->x(), pItem->y() );
+        pItem->draw ( p );
+        p.restore();
+    }
+
+    if ( lbPriv->m_bSendHighLighted )
+    {
+        highlighted_pI.emit ( lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex ) );
+        highlighted_pi.emit ( lbPriv->m_nCurItemIndex );
+        lbPriv->m_bSendHighLighted = false;
+    }
+
+    if ( lbPriv->m_bIsNeedShowItemInfo )
+    {
+        lbPriv->m_timerForShowItemInfo.start ( 1000, true );
+        lbPriv->m_bIsNeedShowItemInfo = false;
+    }
+}
+
+bool GCtrlListBox::fwKeyPressEvent ( GKeyEvent* e )
+{
+    mpFocus = lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex );
+    if ( mpFocus )
+    {
+        if ( true == mpFocus->fwKeyPress ( e ) )
+        {
+            return true;
+        }
+    }
+
+    int nKey=e->key();
+    bool bRetVal = true;
+    if ( nKey == lbPriv->m_nPreviousItemKey )
+    {
+        bRetVal = moveFocusUp();
+        if ( true == bRetVal )
+        {
+            return true;
+        }
+    }
+    if ( nKey == lbPriv->m_nNextItemKey )
+    {
+        bRetVal = moveFocusDown();
+        if ( true == bRetVal )
+        {
+            return true;
+        }
+    }
+    switch ( nKey )
+    {
+    case Giveda::Key_Left:
+        bRetVal = moveFocusLeft();
+        break;
+    case Giveda::Key_Right:
+        bRetVal = moveFocusRight();
+        break;
+    default:
+        bRetVal = false;
+        break;
+    }
+
+    return bRetVal;
+}
+
+void GCtrlListBox::insertItem ( GCtrlListBoxItem* pItem, int index )
+{
+    if ( index<0 )
+    {
+        lbPriv->m_itemList.append ( pItem );
+    }
+    else
+    {
+        lbPriv->m_itemList.insert ( index, pItem );
+    }
+}
+
+void GCtrlListBox::removeItem ( int index )
+{
+    lbPriv->m_itemList.remove(index);
+    lbPriv->m_bIsNeedDoLayout = true;
+}
+
+void GCtrlListBox::changeItem ( GCtrlListBoxItem *pItem, int  index )
+{
+    if ( index == -1 )
+    {
+        index = lbPriv->m_nCurItemIndex;
+    }
+
+    lbPriv->m_itemList.remove ( index );
+    lbPriv->m_itemList.insert ( index, pItem );
+}
+
+void GCtrlListBox::setRowNums ( unsigned int num )
+{
+    lbPriv->m_nRowNums = num;
+    lbPriv->m_nMaxHofItem = height() /lbPriv->m_nRowNums;
+    lbPriv->m_nDrawTo = lbPriv->m_nColumnNums*lbPriv->m_nRowNums-1 + lbPriv->m_nDrawFrom;
+}
+
+void GCtrlListBox::setColumnNums ( unsigned int num )
+{
+    lbPriv->m_nColumnNums = num;
+    lbPriv->m_nMaxWofItem = width() /lbPriv->m_nColumnNums;
+    lbPriv->m_nDrawTo = lbPriv->m_nColumnNums*lbPriv->m_nRowNums-1 + lbPriv->m_nDrawFrom;
+}
+
+GCtrlListBoxItem* GCtrlListBox::item ( int index )
+{
+    if ( -1 == index )
+    {
+        index = lbPriv->m_nCurItemIndex;
+    }
+    return lbPriv->m_itemList.at ( index );
+}
+
+unsigned int GCtrlListBox::count()
+{
+    return lbPriv->m_itemList.count();
+}
+
+void GCtrlListBox::clear()
+{
+    lbPriv->m_nDrawFrom = 0;
+    lbPriv->m_nDrawTo = lbPriv->m_nColumnNums*lbPriv->m_nRowNums-1 + lbPriv->m_nDrawFrom;
+    lbPriv->m_nCurItemIndex = 0;
+    lbPriv->m_bIsNeedDoLayout = true;
+    lbPriv->m_bIsNeedShowItemInfo = true;
+    lbPriv->m_bSendHighLighted = true;
+
+    lbPriv->m_itemList.clear();
+}
+
+void GCtrlListBox::setFocusInImage ( const GImage& img )
+{
+    lbPriv->m_imgFocusIn.setImage ( img );
+}
+
+void GCtrlListBox::setFocusOutImage ( const GImage& img )
+{
+    lbPriv->m_imgFocusOut.setImage ( img );
+}
+
+void GCtrlListBox::setCurItemIndex ( const int nIndex )
+{
+    lbPriv->m_nCurItemIndex = nIndex;
+    int nCountsPerScreen=lbPriv->m_nColumnNums*lbPriv->m_nRowNums;
+    int nToScreen=lbPriv->m_nCurItemIndex/nCountsPerScreen;
+    lbPriv->m_nDrawFrom = nToScreen*nCountsPerScreen;
+    lbPriv->m_nDrawTo = nCountsPerScreen-1 + lbPriv->m_nDrawFrom;
+    lbPriv->m_bIsNeedDoLayout = true;
+    lbPriv->m_bIsNeedShowItemInfo = true;
+    lbPriv->m_bSendHighLighted = true;
+}
+
+void GCtrlListBox::emitSelected ( GCtrlListBoxItem* pItem )
+{
+    selected_pi.emit ( lbPriv->m_nCurItemIndex );
+    selected_pI.emit ( pItem );
+}
+
+void GCtrlListBox::slotFocusChangedTo()
+{
+    if ( hasFocus() )
+    {
+        focusChangedTo_pi.emit ( lbPriv->m_nCurItemIndex );
+        focusChangedTo_pI.emit ( lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex ) );
+        if ( lbPriv->m_bScrollEnabled )
+        {
+            lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->getTxt()->startScroll();
+        }
+    }
+}
+
+void GCtrlListBox::slotLoseFocus()
+{
+    if ( lbPriv->m_itemList.isEmpty() )
+    {
+        return;
+    }
+    
+    if ( lbPriv->m_bScrollEnabled )
+    {
+        lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->getTxt()->stopScroll();
+    }
+}
+
+void GCtrlListBox::slotGetFocus()
+{
+    if ( lbPriv->m_itemList.isEmpty() )
+    {
+        return;
+    }
+    
+    lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex )->setFocus();
+    lbPriv->m_bIsNeedShowItemInfo = true;
+    highlighted_pI.emit ( lbPriv->m_itemList.at ( lbPriv->m_nCurItemIndex ) );
+    highlighted_pi.emit ( lbPriv->m_nCurItemIndex );
+}
+
+bool GCtrlListBox::moveFocusLeft()
+{
+    int nIndex = lbPriv->m_nCurItemIndex -lbPriv->m_nRowNums;
+    if ( lbPriv->m_itemList.at ( nIndex ) )
+    {
+        moveFocus ( nIndex );
+        return true;
+    }
+
+    return false;
+}
+
+bool GCtrlListBox::moveFocusRight()
+{
+    int nIndex = lbPriv->m_nCurItemIndex +lbPriv->m_nRowNums;
+    if ( lbPriv->m_itemList.at ( nIndex ) )
+    {
+        moveFocus ( nIndex );
+        return true;
+    }
+
+    return false;
+}
+
+bool GCtrlListBox::moveFocusUp()
+{
+    int nIndex = lbPriv->m_nCurItemIndex -1;
+    if ( lbPriv->m_itemList.at ( nIndex ) )
+    {
+        moveFocus ( nIndex );
+        return true;
+    }
+
+    return false;
+}
+
+bool GCtrlListBox::moveFocusDown()
+{
+    int nIndex = lbPriv->m_nCurItemIndex +1;
+    if( lbPriv->m_itemList.at(nIndex) )
+    {
+        moveFocus( nIndex );
+        return true;
+    }
+
+    return false;
+}
+
+void GCtrlListBox::moveFocus ( int toIndex )
+{
+    int fromIndex = lbPriv->m_nCurItemIndex;
+    int nCountsPerScreen=lbPriv->m_nColumnNums*lbPriv->m_nRowNums;
+    int nFromScreen=fromIndex/nCountsPerScreen;
+    int nToScreen=toIndex/nCountsPerScreen;
+    if ( nFromScreen != nToScreen )
+    {
+        lbPriv->m_bIsNeedDoLayout = true;
+        lbPriv->m_nDrawFrom = nToScreen*nCountsPerScreen;
+        lbPriv->m_nDrawTo = lbPriv->m_nDrawFrom+nCountsPerScreen-1;
+    }
+
+    lbPriv->m_itemList.at ( fromIndex )->getTxt()->stopScroll();
+    lbPriv->m_itemList.at ( toIndex )->setFocus();
+    if ( lbPriv->m_bIsNeedDoLayout )
+    {
+        update();
+    }
+
+    highlighted_pI.emit ( lbPriv->m_itemList.at ( toIndex ) );
+    highlighted_pi.emit ( toIndex );
+    lbPriv->m_nCurItemIndex = toIndex;
+    lbPriv->m_bIsNeedShowItemInfo = true;
+}
+int GCtrlListBox::getMaxIconHeight()
+{
+    return lbPriv->m_nMaxHofItem;
+}
+int GCtrlListBox::getMaxIconWidth()
+{
+    return lbPriv->m_nMaxWofItem;
+}
+int GCtrlListBox::getCurItemIndex()
+{
+    return lbPriv->m_nCurItemIndex;
+}
+void GCtrlListBox::setItemTextColor ( GColor& c )
+{
+    lbPriv->m_itemTxtColor=c;
+}
+void GCtrlListBox::setItemTextFont ( GFont f )
+{
+    lbPriv->m_itemTxtFont = f;
+}
+GColor GCtrlListBox::getItemTextColor()
+{
+    return lbPriv->m_itemTxtColor;
+}
+GFont GCtrlListBox::getItemTextFont()
+{
+    return lbPriv->m_itemTxtFont;
+}
+void GCtrlListBox::setItemScrollEnabled ( bool enabled )
+{
+    lbPriv->m_bScrollEnabled = enabled;
+}
+void GCtrlListBox::setPreviousItemKey ( int nKey )
+{
+    lbPriv->m_nPreviousItemKey = nKey;
+}
+void GCtrlListBox::setNextItemKey ( int nKey )
+{
+    lbPriv->m_nNextItemKey = nKey;
+}

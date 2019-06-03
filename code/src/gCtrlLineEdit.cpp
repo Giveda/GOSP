@@ -1,164 +1,200 @@
 /*
  * Copyright (C) 2019  明心  <imleizhang@qq.com>
  * All rights reserved.
- * 
- * This program is an open-source software; and it is distributed in the hope 
+ *
+ * This program is an open-source software; and it is distributed in the hope
  * that it will be useful, but WITHOUT ANY WARRANTY; without even the
- * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
- * PURPOSE. 
- * This program is not a free software; so you can not redistribute it and/or 
- * modify it without my authorization. If you only need use it for personal
- * study purpose(no redistribution, and without any  commercial behavior), 
- * you should accept and follow the GNU AGPL v3 license, otherwise there
- * will be your's credit and legal risks.  And if you need use it for any 
- * commercial purpose, you should first get commercial authorization from
- * me, otherwise there will be your's credit and legal risks. 
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.
+ * This program is not a free software; so you can not redistribute it(include
+ * binary form and source code form) without my authorization. And if you
+ * need use it for any commercial purpose, you should first get commercial
+ * authorization from me, otherwise there will be your's legal&credit risks.
  *
  */
 
-#include <config_giveda.h>
+#include "gCtrlLineEdit.h"
+#include <gCtrlStyle.h>
+#include <gConstDefine.h>
+#include <gGlobal.h>
 
-#ifdef CONFIG_gCtrlLineEdit
-
-#ifndef GCTRLLINEEDIT_H
-#define GCTRLLINEEDIT_H
-
-#include <gMItem.h>
-
-class GCtrlLineEditPrivate;
-
-/*! @file  gCtrlLineEdit.h
- * @brief  GCtrlLineEdit 输入框、input box。
- * 
- * @author 明心
- * @version 1.0.0
- * @date 2019-2-4
- */
-
-/*!
- * @class GCtrlLineEdit
- * @brief 输入框、input box
- * 
- */
-class DLL_PUBLIC GCtrlLineEdit : public GMCtrlItem
+class GCtrlLineEditPrivate
 {
-    SET_CLASS_NAME( GCtrlLineEdit )
-    G_DISABLE_ASSIGN ( GCtrlLineEdit )
 public:
-    ///此枚举用于索引输入框的显示模式：密文、或者明文
-    enum	EchoMode 
-    { 
-        ///明文显示
-        Normal, 
-        
-        ///密文显示
-        Password 
-    };
-    
-    /**
-     * @brief 构造一个输入框
-     * 
-     * @param form ...
-     * @param parent ...
-     * @param name ...
-     */
-    GCtrlLineEdit ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
-    
-    virtual ~GCtrlLineEdit();
-    
-    /**
-     * @brief 设置显示模式（密文、或者明文）
-     * 
-     * @param mode ...
-     * @return void
-     */
-    void setEchoMode ( EchoMode mode );
-    
-    /**
-     * @brief 获取当前的显示模式
-     * 
-     * @return GCtrlLineEdit::EchoMode
-     */
-    EchoMode 	echoMode() const;
-
-    /**
-     * @brief 设置文本的字体和字号
-     * 
-     * @param font ...
-     * @return void
-     */
-    void setFont ( const GFont& font );
-
-    /**
-     * @brief 设置文本的颜色
-     * 
-     * @param color ...
-     * @return void
-     */
-    void setColor ( const GColor& color );
-
-    /**
-     * @brief 设置文本内容
-     * 
-     * @param str ...
-     * @return void
-     */
-    void setText ( const GString& str );
-
-    /**
-     * @brief 获取已经输入的文本内容
-     * 
-     * @return GString
-     */
-    GString text();
-
-    /**
-     * @brief 清空输入框
-     * 
-     * @return void
-     */
-    void clear();
-    
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED) || defined(CONFIG_KEY_RELEASE_EVENT_ENABLED)
-    /**
-     * @brief 设置backspace键的键码
-     * 
-     * @param nKey ...
-     * @return void
-     */
-    void setBackspaceKey ( int nKey );
-#endif
-    
-protected:
-#if defined(CONFIG_KEY_PRESS_EVENT_ENABLED)
-    virtual bool fwKeyPressEvent ( GKeyEvent * );
-#endif
-    virtual void paintEvent (  );
-#ifdef CONFIG_MOUSE_EVENT_ENABLED
-    virtual bool fwMousePressEvent ( GMouseEvent* );
-#endif
-#ifdef CONFIG_TOUCH_EVENT_ENABLED
-    virtual bool fwTapEvent(GTapEvent*);
-#endif
-    
-private:
-    DLL_LOCAL void initAttributes ();
-
-private slots:
-    DLL_LOCAL void slotTimeOut();
-    DLL_LOCAL void slotGetFocus();
-    DLL_LOCAL void slotLoseFocus();
-    
-#ifdef CONFIG_STD_ANSI
-    DLL_LOCAL static void slotTimeOut( GObject* p );
-    DLL_LOCAL static void slotGetFocus( GObject* p );
-    DLL_LOCAL static void slotLoseFocus( GObject* p );
-#endif
-    
-private:
-    GCtrlLineEditPrivate *lePriv;
+    GCtrlLineEditPrivate ( GCtrlForm* frm,  GCtrlLineEdit* le )
+        :m_pixBg ( frm, le, "lineEditBg" ), m_txtDisplay ( frm, le, "lineEditText" ), m_timer ( le )
+    {}
+    GMPixmap m_pixBg;
+    GMText m_txtDisplay;
+    GTimer m_timer;
+    GCtrlLineEdit::EchoMode m_echoMode;
+    int m_nCursorPos;
+    GString m_strData;
+    bool m_bIsShowCursor;
+    int m_nKey_Backspace;
 };
 
-#endif
+GCtrlLineEdit::GCtrlLineEdit ( GCtrlForm* frm, GMItem* parent, const char* name )
+    : GMCtrlItem ( frm, parent, name ), lePriv ( new GCtrlLineEditPrivate ( frm, this ) )
+{
+    frm->appendItem ( this );
+    initAttributes();
+}
 
-#endif  //CONFIG_gCtrlLineEdit
+GCtrlLineEdit::~GCtrlLineEdit()
+{
+    delete lePriv;
+}
+
+void GCtrlLineEdit::initAttributes()
+{
+    lePriv->m_strData = "";
+    lePriv->m_nCursorPos = 0;
+    lePriv->m_bIsShowCursor = false;
+    lePriv->m_echoMode = Normal;
+    lePriv->m_nKey_Backspace = Giveda::Key_Backspace;
+    lePriv->m_txtDisplay.setTextFlags ( Giveda::AlignVCenter );
+
+    connect ( &lePriv->m_timer, lePriv->m_timer.timeout, this, &GCtrlLineEdit::slotTimeOut );
+    connect ( this, this->loseFocus, this, &GCtrlLineEdit::slotLoseFocus );
+    connect ( this, this->getFocus, this, &GCtrlLineEdit::slotGetFocus );
+
+    GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
+    GCtrlItemStyle* pStyle=NULL;
+    while ( NULL== ( pStyle=pAppStyle->itemStyle ( className() ) ) )
+    {
+        pAppStyle->appendLineEditStyle();
+    }
+    lePriv->m_pixBg.setPixmap ( pStyle->pixmap ( lePriv->m_pixBg.name() ) );
+    lePriv->m_txtDisplay.setFont ( pStyle->font ( lePriv->m_txtDisplay.name() ) );
+    lePriv->m_txtDisplay.setColor ( pStyle->color ( lePriv->m_txtDisplay.name() ) );
+    setSize ( lePriv->m_pixBg.width(), lePriv->m_pixBg.height() );
+    lePriv->m_txtDisplay.setSize ( lePriv->m_pixBg.width(), lePriv->m_pixBg.height() );
+}
+
+void GCtrlLineEdit::slotTimeOut()
+{
+    lePriv->m_bIsShowCursor = !lePriv->m_bIsShowCursor;
+    update();
+}
+
+void GCtrlLineEdit::slotGetFocus()
+{
+    lePriv->m_bIsShowCursor = true;
+    lePriv->m_timer.start ( 1000 );
+}
+
+void GCtrlLineEdit::slotLoseFocus()
+{
+    lePriv->m_bIsShowCursor = false;
+    lePriv->m_timer.stop();
+}
+
+void GCtrlLineEdit::paintEvent ( GPainter& p )
+{
+    lePriv->m_pixBg.draw ( p );
+
+    GString str = lePriv->m_strData;
+    if ( lePriv->m_echoMode == Password )
+    {
+        str.fill ( '*' );
+    }
+    if ( lePriv->m_bIsShowCursor )
+    {
+        str.insert ( lePriv->m_nCursorPos, "|" );
+    }
+    lePriv->m_txtDisplay.setText ( str );
+    lePriv->m_txtDisplay.draw ( p );
+}
+
+bool GCtrlLineEdit::fwKeyPressEvent ( GKeyEvent* e )
+{
+    if ( lePriv->m_nKey_Backspace == e->key() )
+    {
+        lePriv->m_nCursorPos--;
+        if ( lePriv->m_nCursorPos<0 )
+        {
+            lePriv->m_nCursorPos = 0;
+        }
+        else
+        {
+            lePriv->m_strData.remove ( lePriv->m_nCursorPos, 1 );
+        }
+        update();
+        return true;
+    }
+
+    bool bRet = true;
+    switch ( e->key() )
+    {
+    case Giveda::Key_Down:
+    case Giveda::Key_Up:
+        return false;
+    case Giveda::Key_Left:
+        lePriv->m_nCursorPos--;
+        if ( lePriv->m_nCursorPos<0 )
+        {
+            lePriv->m_nCursorPos = 0;
+        }
+        update();
+        return true;
+    case Giveda::Key_Right:
+        lePriv->m_nCursorPos++;
+        if ( ( unsigned int ) lePriv->m_nCursorPos>lePriv->m_strData.length() )
+        {
+            lePriv->m_nCursorPos = lePriv->m_strData.length();
+        }
+        update();
+        return true;
+    default:
+        bRet = false;
+        break;
+    }
+
+    GString s = e->text();
+    if ( s.isEmpty() || e->ascii() <32 )
+    {
+        return bRet;
+    }
+
+    lePriv->m_strData.insert ( lePriv->m_nCursorPos, s );
+    lePriv->m_nCursorPos++;
+    update();
+    return true;
+}
+void GCtrlLineEdit::setEchoMode ( GCtrlLineEdit::EchoMode mode )
+{
+    lePriv->m_echoMode = mode;
+}
+GCtrlLineEdit::EchoMode GCtrlLineEdit::echoMode() const
+{
+    return lePriv->m_echoMode;
+}
+void GCtrlLineEdit::setTextGeometry ( int x, int y, int w, int h )
+{
+    lePriv->m_txtDisplay.setGeometry ( x, y, w, h );
+}
+void GCtrlLineEdit::setFont ( const GFont& font )
+{
+    lePriv->m_txtDisplay.setFont ( font );
+}
+void GCtrlLineEdit::setColor ( const GColor& color )
+{
+    lePriv->m_txtDisplay.setColor ( color );
+}
+void GCtrlLineEdit::setText ( const GString& str )
+{
+    lePriv->m_strData = str;
+}
+GString GCtrlLineEdit::text()
+{
+    return lePriv->m_strData;
+}
+void GCtrlLineEdit::clear()
+{
+    lePriv->m_strData = "";
+}
+void GCtrlLineEdit::setBackspaceKey ( int nKey )
+{
+    lePriv->m_nKey_Backspace = nKey;
+}
