@@ -43,3 +43,5 @@ distclean:
 	$(MAKE) $@ -C $$i; \
 	fi \
 	done
+	@rm -rf moc_obj
+	@rm -f  Makefile
