@@ -30,7 +30,15 @@
 #include <gGlobal.h>
 
 #define OUTPUT_VINFO \
+printf("varinfo-xres: %d\n", vinfo.xres); \
+printf("varinfo-yres: %d\n", vinfo.yres); \
+printf("varinfo-xresvirtual: %d\n", vinfo.xres_virtual); \
+printf("varinfo-yresvirtual: %d\n", vinfo.yres_virtual); \
+printf("varinfo-xoffset: %d\n", vinfo.xoffset); \
+printf("varinfo-yoffset: %d\n", vinfo.yoffset); \
+printf("varinfo-bits_per_pixel: %d\n\n", vinfo.bits_per_pixel)
 #define OUTPUT_FINFO \
+printf("finfo-smem_len: %d\n\n", finfo.smem_len)
 
 void writeTerm ( const char* termctl, int sizeof_termctl )
 {
