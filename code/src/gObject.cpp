@@ -284,3 +284,4 @@ pthread_t GObject::tid()
 void GSlot::operator() ( const GSlot& )
 {
 }
+// have a nice day

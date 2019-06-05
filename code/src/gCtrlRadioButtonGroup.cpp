@@ -270,3 +270,4 @@ GMText* GCtrlRadioButtonGroup::getTitle()
 {
     return &rbgPriv->m_txtTitle;
 }
+// have a nice day

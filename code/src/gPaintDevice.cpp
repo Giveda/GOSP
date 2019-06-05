@@ -37,3 +37,4 @@ void GPaintDevice::setAlphaBuffer ( bool  alpha )
 {
     pdevData.alpha = alpha;
 }
+// have a nice day

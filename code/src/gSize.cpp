@@ -166,3 +166,4 @@ void GSize::transpose()
     m_data.w = m_data.h;
     m_data.h = tmp;
 }
+// have a nice day

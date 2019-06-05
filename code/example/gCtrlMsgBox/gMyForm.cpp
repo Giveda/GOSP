@@ -80,3 +80,4 @@ bool GMyForm::keyPressEvent ( GKeyEvent* e )
 
     return bRet;
 }
+// have a nice day

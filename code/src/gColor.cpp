@@ -38,3 +38,4 @@ GColor::GColor ( int r, int g, int b )
 {
     m_rgb = gRgba(r, g, b, 0xFF);
 }
+// have a nice day

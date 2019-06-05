@@ -32,3 +32,4 @@ GPaintEngine* GPaintEngineFactory::createPaintEngine ( const string &  )
     return new GSoftPaintEngine();
 }
 
+// have a nice day

@@ -462,3 +462,4 @@ bool GCtrlForm::keyPressEvent ( GKeyEvent* )
 {
     return false;
 }
+// have a nice day

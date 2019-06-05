@@ -33,3 +33,4 @@ GBrush::~GBrush()
 {
 
 }
+// have a nice day

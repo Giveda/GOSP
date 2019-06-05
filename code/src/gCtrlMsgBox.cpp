@@ -108,3 +108,4 @@ void GCtrlMsgBox::slotBtnClicked()
         m_bIsInLoop = false;
     }
 }
+// have a nice day

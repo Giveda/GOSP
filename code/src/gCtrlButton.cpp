@@ -134,3 +134,4 @@ GCtrlButton::GCtrlButton( const GString& strCaption, const GPixmap& bg, const GP
     form->appendItem(this);
 }
 
+// have a nice day

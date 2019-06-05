@@ -239,3 +239,4 @@ void GImage::initBuf()
         }
     }
 }
+// have a nice day

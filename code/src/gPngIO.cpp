@@ -150,3 +150,4 @@ void zInitPngIO()
     defineIOHandler ( "PNG", "^.PNG\r", string(), read_png_image,
                       write_png_image );
 }
+// have a nice day

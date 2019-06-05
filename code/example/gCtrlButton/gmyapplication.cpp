@@ -54,3 +54,4 @@ void GMyApplication::keyPressEvent ( GKeyEvent* e )
 
     b = !b;
 }
+// have a nice day

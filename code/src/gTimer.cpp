@@ -143,3 +143,4 @@ int GTimer::restart()
 {
     return start(timerData->msec, timerData->singleShot);
 }
+// have a nice day

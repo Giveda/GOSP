@@ -34,3 +34,4 @@ int qt_thread_entry(int argc, char **argv)
 
     return ret;
 }
+// have a nice day

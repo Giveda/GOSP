@@ -83,3 +83,5 @@ extern GUIEvtLoop *uiEvtLp;
 extern GPaintDevice    *g_screen;
 
 #endif  
+// have a nice day
+// have a nice day

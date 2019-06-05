@@ -332,3 +332,4 @@ void GCtrlDefaultAppStyle::appendProgressStyle()
     appendItemStyle ( "GCtrlProgressBar", pItemStyle );
 }
 
+// have a nice day

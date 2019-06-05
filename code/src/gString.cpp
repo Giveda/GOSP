@@ -99,3 +99,4 @@ char* GString::utf8() const
 {
     return const_cast<char*>(c_str() );
 }
+// have a nice day

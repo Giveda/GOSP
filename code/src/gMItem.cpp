@@ -646,3 +646,4 @@ void GMScrollText::slotUpdate()
     update();
 }
 
+// have a nice day

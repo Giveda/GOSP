@@ -38,3 +38,4 @@ int init_freetype()
 
     return 0;
 }
+// have a nice day

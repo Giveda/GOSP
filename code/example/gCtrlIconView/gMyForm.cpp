@@ -126,3 +126,4 @@ void GMyForm::slotBtn1BeenClicked()
 		m_pBtn1->setCaption("Hide");
     }
 }
+// have a nice day
