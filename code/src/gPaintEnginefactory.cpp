@@ -33,3 +33,4 @@ GPaintEngine* GPaintEngineFactory::createPaintEngine ( const string &  )
 }
 
 // have a nice day
+// have a nice day

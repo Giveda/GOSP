@@ -38,3 +38,4 @@ void GPaintDevice::setAlphaBuffer ( bool  alpha )
     pdevData.alpha = alpha;
 }
 // have a nice day
+// have a nice day

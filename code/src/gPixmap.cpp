@@ -36,3 +36,4 @@ GPixmap::~GPixmap()
 {
 }
 // have a nice day
+// have a nice day

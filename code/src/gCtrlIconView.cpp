@@ -401,3 +401,4 @@ int GCtrlIconView::getMaxIconWidth()
     return ikvPriv->m_nMaxWofItem;
 }
 // have a nice day
+// have a nice day

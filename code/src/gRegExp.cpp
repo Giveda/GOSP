@@ -60,3 +60,4 @@ int GRegExp::match ( const string& src )
     return pmatch[0].rm_so;
 }
 // have a nice day
+// have a nice day

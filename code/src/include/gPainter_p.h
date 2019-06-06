@@ -38,3 +38,5 @@ int  deinit_freetype();
 #endif
 // have a nice day
 // have a nice day
+// have a nice day
+// have a nice day

@@ -342,3 +342,4 @@ Giveda::Key scanCode2KeyCode ( const int scanCode )
     return key;
 }
 // have a nice day
+// have a nice day

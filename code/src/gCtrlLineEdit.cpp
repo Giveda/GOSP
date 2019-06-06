@@ -199,3 +199,4 @@ void GCtrlLineEdit::setBackspaceKey ( int nKey )
     lePriv->m_nKey_Backspace = nKey;
 }
 // have a nice day
+// have a nice day

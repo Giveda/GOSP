@@ -135,3 +135,4 @@ GCtrlButton::GCtrlButton( const GString& strCaption, const GPixmap& bg, const GP
 }
 
 // have a nice day
+// have a nice day

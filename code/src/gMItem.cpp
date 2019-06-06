@@ -647,3 +647,4 @@ void GMScrollText::slotUpdate()
 }
 
 // have a nice day
+// have a nice day
