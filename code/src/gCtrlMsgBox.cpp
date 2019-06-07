@@ -110,3 +110,4 @@ void GCtrlMsgBox::slotBtnClicked()
 }
 // have a nice day
 // have a nice day
+// have a nice day

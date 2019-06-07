@@ -40,3 +40,4 @@ GColor::GColor ( int r, int g, int b )
 }
 // have a nice day
 // have a nice day
+// have a nice day

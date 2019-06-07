@@ -508,3 +508,4 @@ void GCtrlListBox::setNextItemKey ( int nKey )
 }
 // have a nice day
 // have a nice day
+// have a nice day

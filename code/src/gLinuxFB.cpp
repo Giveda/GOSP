@@ -179,3 +179,4 @@ GRgb* GLinuxFB::scanLine ( const int l ) const
 }
 // have a nice day
 // have a nice day
+// have a nice day

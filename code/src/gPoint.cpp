@@ -178,3 +178,4 @@ const GPoint operator/ ( const GPoint &p, double c )
 }
 // have a nice day
 // have a nice day
+// have a nice day

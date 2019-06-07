@@ -128,3 +128,4 @@ void GMyForm::slotBtn1BeenClicked()
 }
 // have a nice day
 // have a nice day
+// have a nice day

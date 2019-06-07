@@ -388,3 +388,4 @@ void GPainter::bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect s
 }
 // have a nice day
 // have a nice day
+// have a nice day

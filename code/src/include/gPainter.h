@@ -67,3 +67,5 @@ void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterO
 // have a nice day
 // have a nice day
 // have a nice day
+// have a nice day
+// have a nice day

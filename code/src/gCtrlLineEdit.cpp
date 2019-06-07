@@ -200,3 +200,4 @@ void GCtrlLineEdit::setBackspaceKey ( int nKey )
 }
 // have a nice day
 // have a nice day
+// have a nice day
