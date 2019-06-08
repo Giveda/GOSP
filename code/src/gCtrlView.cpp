@@ -232,6 +232,5 @@ int GCtrlView::width() const
 {
     return m_rect.width();
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

@@ -67,8 +67,6 @@ void GSize::setHeight ( T_OFFSET h )
     m_data.h = h;
 }
 
-// void GSize::scale(T_OFFSET w, T_OFFSET h, Giveda::AspectRatioMode mode)
-// { scale(GSize(w, h), mode); }
 
 T_OFFSET &GSize::rwidth()
 {
@@ -166,6 +164,5 @@ void GSize::transpose()
     m_data.w = m_data.h;
     m_data.h = tmp;
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

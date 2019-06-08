@@ -13,7 +13,6 @@
  *
  */
 
-// #ifdef CONFIG_gPoint
 
 #ifndef GPOINT_H
 #define GPOINT_H
@@ -86,10 +85,6 @@ private:
 
 #endif // GPOINT_H
 
-// #endif // CONFIG_gPoint
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
+
+
+// have a nice day ^_^

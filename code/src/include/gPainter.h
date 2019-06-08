@@ -63,9 +63,6 @@ private:
 void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterOp rop, bool noBlend=false );
 
 #endif 
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
+
+
+// have a nice day ^_^

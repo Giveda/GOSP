@@ -13,7 +13,6 @@
  *
  */
 
-// #ifdef CONFIG_gRect
 
 #ifndef GRECT_H
 #define GRECT_H
@@ -106,10 +105,6 @@ private:
 
 #endif // GRECT_H
 
-// #endif  //CONFIG_gRect
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
+
+
+// have a nice day ^_^

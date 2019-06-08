@@ -24,12 +24,10 @@ int main( int argc, char** argv )
 
     GMyForm frm( NULL, "testForm" );
     frm.setGeometry( 0, 0, 700, 600 );
-    //frm.loadBackgroundPixmap( "./pics/frmBg.jpg" );
 	frm.setPaletteBackgroundColor( GColor(200, 200, 200) );
     frm.show();
 
     return a.exec();
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

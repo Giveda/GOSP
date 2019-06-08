@@ -326,6 +326,5 @@ void GUIEvtLoop::setSize(int w, int h)
 #endif
 }
 #endif
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

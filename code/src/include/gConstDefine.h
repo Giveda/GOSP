@@ -35,9 +35,6 @@
 #define  NOT_IMP()  ERROR("not implemented yet\n")
 
 #endif
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
+
+
+// have a nice day ^_^

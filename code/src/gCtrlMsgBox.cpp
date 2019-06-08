@@ -108,6 +108,5 @@ void GCtrlMsgBox::slotBtnClicked()
         m_bIsInLoop = false;
     }
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

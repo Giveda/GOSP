@@ -23,13 +23,11 @@ int main( int argc, char** argv )
     a.setSize(500, 500);
 
     GMyForm form2( NULL, "testForm2" );
-    //form2.loadBackgroundPixmap("./pics/frmBg.jpg");
 	form2.setPaletteBackgroundColor( GColor(200, 200, 200) );
 	form2.setSize( 500, 500 );
     form2.show();
 
     return a.exec();
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

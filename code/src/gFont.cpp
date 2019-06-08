@@ -129,6 +129,5 @@ GFont::GFont ( const GFont& src )
     
     fontData = src.fontData;
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

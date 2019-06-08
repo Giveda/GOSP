@@ -506,6 +506,5 @@ void GCtrlListBox::setNextItemKey ( int nKey )
 {
     lbPriv->m_nNextItemKey = nKey;
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

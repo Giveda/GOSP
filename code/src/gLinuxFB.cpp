@@ -177,6 +177,5 @@ GRgb* GLinuxFB::scanLine ( const int l ) const
     GRgb (*p)[][pdevData.w] = reinterpret_cast<GRgb(*)[][pdevData.w]>(display_base);
     return (*p)[l];
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

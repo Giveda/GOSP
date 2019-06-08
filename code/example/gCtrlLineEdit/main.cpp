@@ -24,11 +24,9 @@ int main( int argc, char** argv )
     GMyForm frm( NULL, "testForm" );
     frm.loadBackgroundPixmap("./pics/frmBg.png");
     frm.show();
-    //a.setSize(618, 303);
     a.setSize(frm.width(), frm.height() );
 
     return a.exec();
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

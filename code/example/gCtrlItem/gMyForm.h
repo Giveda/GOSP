@@ -36,6 +36,5 @@ private:
 };
 
 #endif
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

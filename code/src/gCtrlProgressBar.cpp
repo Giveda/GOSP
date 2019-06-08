@@ -175,6 +175,5 @@ GCtrlProgressBar::GCtrlProgressBar ( int totalSteps, GCtrlForm* form, GMItem* pa
     form->appendItem ( this );
 }
 
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

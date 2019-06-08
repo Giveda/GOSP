@@ -35,6 +35,5 @@ GPixmap::GPixmap ( const GString& fn, const string& format )
 GPixmap::~GPixmap()
 {
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

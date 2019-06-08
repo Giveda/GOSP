@@ -133,6 +133,5 @@ GFontMetrics& GFontMetrics::operator= ( const GFontMetrics& r)
 
     return *this;
 }
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^

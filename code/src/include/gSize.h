@@ -13,7 +13,6 @@
  *
  */
 
-// #ifdef CONFIG_gSize
 
 #ifndef GSIZE_H
 #define GSIZE_H
@@ -86,10 +85,6 @@ private:
 
 #endif // ZSIZE_H
 
-// #endif  //CONFIG_gSize
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
-// have a nice day
+
+
+// have a nice day ^_^

@@ -430,6 +430,5 @@ GImageSmoothScaler::scale ( void )
     return dst;
 }
 #endif
-// have a nice day
-// have a nice day
-// have a nice day
+
+// have a nice day ^_^
