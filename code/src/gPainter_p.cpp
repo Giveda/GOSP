@@ -40,3 +40,4 @@ int init_freetype()
 }
 
 // have a nice day ^_^
+// have a nice day ^_^
