@@ -345,3 +345,4 @@ Giveda::Key scanCode2KeyCode ( const int scanCode )
 // have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
+// have a nice day ^_^
