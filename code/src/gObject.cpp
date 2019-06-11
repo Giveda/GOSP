@@ -286,6 +286,3 @@ void GSlot::operator() ( const GSlot& )
 }
 
 // have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
