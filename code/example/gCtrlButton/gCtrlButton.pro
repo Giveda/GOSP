@@ -25,5 +25,5 @@ strip.commands = strip $(DESTDIR)/$(TARGET)
 GMAKE_EXTRA_TARGETS += strip
 
 # Input
-HEADERS += gmyapplication.h gMyForm.h
-SOURCES += main.cpp gmyapplication.cpp gMyForm.cpp
+HEADERS += gMyApp.h gMyForm.h
+SOURCES += main.cpp gMyApp.cpp gMyForm.cpp

@@ -13,11 +13,11 @@
  *
  */
 
-#include "gmyapplication.h"
+#include "gMyApp.h"
 
 int main( int argc, char** argv )
 {
-    GMyApplication a( argc, argv );
+    GMyApp a( argc, argv );
 
     return a.exec();
 }

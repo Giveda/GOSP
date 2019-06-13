@@ -13,16 +13,16 @@
  *
  */
 
-#ifndef GMYAPPLICATION_H
-#define GMYAPPLICATION_H
+#ifndef GMYAPP_H
+#define GMYAPP_H
 
 #include <gUIEvtLoop.h>
 #include "gMyForm.h"
 
-class GMyApplication :  public GUIEvtLoop
+class GMyApp :  public GUIEvtLoop
 {
 public:
-    GMyApplication ( int argc, char** argv);
+    GMyApp ( int argc, char** argv);
     virtual void keyPressEvent ( GKeyEvent* );
 
 private:

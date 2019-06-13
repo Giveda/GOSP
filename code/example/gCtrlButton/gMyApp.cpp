@@ -13,9 +13,9 @@
  *
  */
 
-#include "gmyapplication.h"
+#include "gMyApp.h"
 
-GMyApplication::GMyApplication ( int argc, char** argv )
+GMyApp::GMyApp ( int argc, char** argv )
     :GUIEvtLoop(argc, argv)
 {
     setSize(900, 600);
@@ -32,7 +32,7 @@ GMyApplication::GMyApplication ( int argc, char** argv )
     form->show();
 }
 
-void GMyApplication::keyPressEvent ( GKeyEvent* e )
+void GMyApp::keyPressEvent ( GKeyEvent* e )
 {
     if( Giveda::Key_Space != e->key() )
     {
