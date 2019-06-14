@@ -349,4 +349,3 @@ int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Rece
 
 
 // have a nice day ^_^
-// have a nice day ^_^
