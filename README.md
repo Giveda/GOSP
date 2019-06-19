@@ -42,8 +42,8 @@ http://giveda.com/
 
 
 # 四、如何使用
- 目前这里只是一个广告宣传的渠道，请你到  http://giveda.com/get-GOSP.php  获取开源代码   
-  **查看如下《简易指导文档》：**      
+目前这里只是一个广告宣传的渠道，请到  http://giveda.com/  获取最新代码   
+查看如下《简易指导文档》：   
 https://gitee.com/giveda/GOSP/blob/master/HowTo.md  
 欢迎加入QQ交流群：914464844   
 
