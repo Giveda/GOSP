@@ -26,7 +26,7 @@ class GMItem;
 class GMCtrlItem;
 class GCtrlDefaultAppStyle;
 class GKeyEvent;
-class GCtrlFormPrivate;
+class GCtrlFormSelf;
 
 class GCtrlForm : public GObject
 {
@@ -86,7 +86,7 @@ private:
     void initFocus();
     bool fwKeyPressEvent(GKeyEvent*);
 private:
-    GCtrlFormPrivate *frmPriv;
+    GCtrlFormSelf *frmSpp;
 };
 
 #endif

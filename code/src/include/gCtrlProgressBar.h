@@ -20,7 +20,7 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMProgressBarPrivate;
+class GMProgressBarSelf;
 
 
 class GMProgressBar: public GMItem
@@ -55,7 +55,7 @@ signals:
     GSignal<void(int)> sigProgressChanged;
 
 private:
-    GMProgressBarPrivate  *pbPriv;
+    GMProgressBarSelf  *pbSpp;
 };
 
 class GCtrlProgressBar: public GMProgressBar
