@@ -86,11 +86,13 @@ private:
     void initFocus();
     bool fwKeyPressEvent(GKeyEvent*);
 private:
-    GCtrlFormSelf *frmSpp;
+    GCtrlFormSelf *frmFhl;
 };
 
 #endif
 
 
+// have a nice day ^_^
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

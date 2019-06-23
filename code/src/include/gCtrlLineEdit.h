@@ -57,11 +57,13 @@ private slots:
     void slotLoseFocus();
 
 private:
-    GCtrlLineEditSelf *leSpp;
+    GCtrlLineEditSelf *leFhl;
 };
 
 #endif
 
 
+// have a nice day ^_^
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

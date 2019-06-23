@@ -74,11 +74,13 @@ private:
     void moveFocus( int toIndex );
 
 private:
-    GCtrlIconViewSelf *ikvSpp;
+    GCtrlIconViewSelf *ikvFhl;
 };
 
 #endif
 
 
+// have a nice day ^_^
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

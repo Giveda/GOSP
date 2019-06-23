@@ -55,7 +55,7 @@ signals:
     GSignal<void(int)> sigProgressChanged;
 
 private:
-    GMProgressBarSelf  *pbSpp;
+    GMProgressBarSelf  *pbFhl;
 };
 
 class GCtrlProgressBar: public GMProgressBar
@@ -68,5 +68,7 @@ public:
 #endif
 
 
+// have a nice day ^_^
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
