@@ -19,14 +19,14 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMButtonSelf
+class GMButtonFles
 {
 public:
-    GMButtonSelf( const GString& strCaption, const GPixmap& bg, const GPixmap& focus, GCtrlForm* form, GMItem* parent ) : m_txtCaption( strCaption, form, parent, "btnCaption" ),
+    GMButtonFles( const GString& strCaption, const GPixmap& bg, const GPixmap& focus, GCtrlForm* form, GMItem* parent ) : m_txtCaption( strCaption, form, parent, "btnCaption" ),
         m_pixBg( bg, form, parent, "btnBg" ),
         m_pixFocus( focus, form, parent, "btnFocus" )
     {}
-    GMButtonSelf( GCtrlForm* form, GMItem* parent ) : m_txtCaption( form, parent, "btnCaption" ),
+    GMButtonFles( GCtrlForm* form, GMItem* parent ) : m_txtCaption( form, parent, "btnCaption" ),
         m_pixBg( form, parent, "btnBg" ),
         m_pixFocus( form, parent, "btnFocus" )
     {}
@@ -38,7 +38,7 @@ public:
 GMButton::GMButton( GCtrlForm* form, GMItem* parent, const char* name )
     : GMCtrlItem( form, parent, name )
 {
-    btnFhl = new GMButtonSelf( form, this);
+    btnFhl = new GMButtonFles( form, this);
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
     while (NULL== (pStyle=pAppStyle->itemStyle("GCtrlButton" ) ) ) {
@@ -59,7 +59,7 @@ GMButton::GMButton( GCtrlForm* form, GMItem* parent, const char* name )
 GMButton::GMButton( const GString& strCaption, const GPixmap& bg, const GPixmap& focus, GCtrlForm* form, GMItem* parent, const char* name )
     : GMCtrlItem( form, parent, name )
 {
-    btnFhl = new GMButtonSelf(strCaption, bg, focus, form, this);
+    btnFhl = new GMButtonFles(strCaption, bg, focus, form, this);
     int nW = btnFhl->m_pixFocus.width() > btnFhl->m_pixBg.width() ? btnFhl->m_pixFocus.width() : btnFhl->m_pixBg.width();
     int nH = btnFhl->m_pixFocus.height() > btnFhl->m_pixBg.height() ? btnFhl->m_pixFocus.height() : btnFhl->m_pixBg.height();
     setSize( nW, nH );
@@ -135,6 +135,3 @@ GCtrlButton::GCtrlButton( const GString& strCaption, const GPixmap& bg, const GP
 }
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlLineEditSelf
+class GCtrlLineEditFles
 {
 public:
-    GCtrlLineEditSelf ( GCtrlForm* frm,  GCtrlLineEdit* le )
+    GCtrlLineEditFles ( GCtrlForm* frm,  GCtrlLineEdit* le )
         :m_pixBg ( frm, le, "lineEditBg" ), m_txtDisplay ( frm, le, "lineEditText" ), m_timer ( le )
     {}
     GMPixmap m_pixBg;
@@ -35,7 +35,7 @@ public:
 };
 
 GCtrlLineEdit::GCtrlLineEdit ( GCtrlForm* frm, GMItem* parent, const char* name )
-    : GMCtrlItem ( frm, parent, name ), leFhl ( new GCtrlLineEditSelf ( frm, this ) )
+    : GMCtrlItem ( frm, parent, name ), leFhl ( new GCtrlLineEditFles ( frm, this ) )
 {
     frm->appendItem ( this );
     initAttributes();
@@ -199,6 +199,3 @@ void GCtrlLineEdit::setBackspaceKey ( int nKey )
     leFhl->m_nKey_Backspace = nKey;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

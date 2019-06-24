@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMProgressBarSelf
+class GMProgressBarFles
 {
 public:
-    GMProgressBarSelf(GCtrlForm* form, GMItem* bar,  int totalSteps=100 )
+    GMProgressBarFles(GCtrlForm* form, GMItem* bar,  int totalSteps=100 )
         : m_progressColor ( 250, 0, 0 ), m_imgProgressBg ( form, bar, "progressBg" ), m_imgProgress ( form, bar, "progress" ), m_imgProgressCursor ( form, bar, "progressCursor" ), m_nProgress ( 0 ), m_nTotalSteps ( totalSteps ), m_nStepLength ( 1 )
     {}
     GColor m_progressColor;
@@ -36,7 +36,7 @@ public:
 GMProgressBar::GMProgressBar ( GCtrlForm* form, GMItem* parent, const char* name )
     :GMItem ( form, parent, name )
 {
-    pbFhl = new GMProgressBarSelf(form, this);
+    pbFhl = new GMProgressBarFles(form, this);
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
     while ( NULL== ( pStyle=pAppStyle->itemStyle ( "GCtrlProgressBar" ) ) )
@@ -57,7 +57,7 @@ GMProgressBar::GMProgressBar ( GCtrlForm* form, GMItem* parent, const char* name
 GMProgressBar::GMProgressBar ( int totalSteps, GCtrlForm* form, GMItem* parent, const char* name )
     :GMItem ( form, parent, name )
 {
-    pbFhl = new GMProgressBarSelf(form, this, totalSteps);
+    pbFhl = new GMProgressBarFles(form, this, totalSteps);
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
     while ( NULL== ( pStyle=pAppStyle->itemStyle ( "GCtrlProgressBar" ) ) )
@@ -176,6 +176,3 @@ GCtrlProgressBar::GCtrlProgressBar ( int totalSteps, GCtrlForm* form, GMItem* pa
 }
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

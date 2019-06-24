@@ -85,7 +85,3 @@ extern GPaintDevice    *g_screen;
 #endif  
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

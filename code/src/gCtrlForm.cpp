@@ -66,10 +66,10 @@ int GMCtrlItemList::compareItems ( GMCtrlItem* p1, GMCtrlItem* p2 )
     }
 }
 
-class GCtrlFormSelf
+class GCtrlFormFles
 {
 public:
-    GCtrlFormSelf() : m_pItemWithFocus ( NULL ), m_bgColor ( gRgba ( 0, 0, 0, 0 ) ), m_bIsVisible ( true ), m_eFocusMode ( GCtrlForm::Auto_Focus ), m_bIsFocusEnabled ( true )
+    GCtrlFormFles() : m_pItemWithFocus ( NULL ), m_bgColor ( gRgba ( 0, 0, 0, 0 ) ), m_bIsVisible ( true ), m_eFocusMode ( GCtrlForm::Auto_Focus ), m_bIsFocusEnabled ( true )
     {}
     GMItemList m_itemList;
     GMCtrlItemList m_ctrlItemList;
@@ -84,7 +84,7 @@ public:
 };
 
 GCtrlForm::GCtrlForm ( GCtrlForm* parent, const char* name )
-    :GObject ( parent, name ),  frmFhl( new GCtrlFormSelf )
+    :GObject ( parent, name ),  frmFhl( new GCtrlFormFles )
 {
     g_ws->appendForm ( this );
     setGeometry ( 0, 0, g_ws->width(), g_ws->height() );
@@ -463,6 +463,3 @@ bool GCtrlForm::keyPressEvent ( GKeyEvent* )
     return false;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

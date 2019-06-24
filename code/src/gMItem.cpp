@@ -19,10 +19,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMItemSelf
+class GMItemFles
 {
 public:
-    GMItemSelf(): m_bgColor ( gRgba ( 0, 0, 0, 0 ) ) {}
+    GMItemFles(): m_bgColor ( gRgba ( 0, 0, 0, 0 ) ) {}
     GRect m_rect;
     int m_nZ;
     GCtrlForm* m_pForm;
@@ -32,7 +32,7 @@ public:
 };
 
 GMItem::GMItem ( GCtrlForm* form, GMItem* parent, const char* name )
-    :GObject ( parent, name ), iFhl( new GMItemSelf )
+    :GObject ( parent, name ), iFhl( new GMItemFles )
 {
     setGeometry ( 0, 0, form->width() /2, form->height() /2 );
     iFhl->m_pForm = form;
@@ -212,17 +212,17 @@ void GMItem::update()
     form()->update ( r );
 }
 
-class GMCtrlItemSelf
+class GMCtrlItemFles
 {
 public:
-    GMCtrlItemSelf() : m_bIsHasFocus ( false ), m_bIsFocusEnabled ( true ) {}
+    GMCtrlItemFles() : m_bIsHasFocus ( false ), m_bIsFocusEnabled ( true ) {}
     bool m_bIsHasFocus;
     bool m_bIsFocusEnabled;
     unsigned int m_nTabIndex;
 };
 
 GMCtrlItem::GMCtrlItem ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), ciFhl( new GMCtrlItemSelf )
+    : GMItem ( form, parent, name ), ciFhl( new GMCtrlItemFles )
 {
     if ( parent )
     {
@@ -360,25 +360,25 @@ void GMContainerItem::setFocusToItem ( GMCtrlItem* pItem )
     }
 }
 
-class GMPixmapSelf
+class GMPixmapFles
 {
 public:
     GPixmap m_pixmap;
 };
 
 GMPixmap::GMPixmap ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), pixFhl( new GMPixmapSelf )
+    : GMItem ( form, parent, name ), pixFhl( new GMPixmapFles )
 {
 }
 
 GMPixmap::GMPixmap ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), pixFhl( new GMPixmapSelf )
+    : GMItem ( form, parent, name ), pixFhl( new GMPixmapFles )
 {
     load ( strPath );
 }
 
 GMPixmap::GMPixmap ( const GPixmap & pm, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), pixFhl( new GMPixmapSelf )
+    : GMItem ( form, parent, name ), pixFhl( new GMPixmapFles )
 {
     setPixmap ( pm );
 }
@@ -425,7 +425,7 @@ void GMPixmap::paintEvent ( GPainter& p )
 }
 
 
-class GMImageSelf
+class GMImageFles
 {
 public:
     GImage m_imageOrg;
@@ -433,18 +433,18 @@ public:
 };
 
 GMImage::GMImage ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), imgFhl( new GMImageSelf )
+    : GMItem ( form, parent, name ), imgFhl( new GMImageFles )
 {
 }
 
 GMImage::GMImage ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), imgFhl( new GMImageSelf )
+    : GMItem ( form, parent, name ), imgFhl( new GMImageFles )
 {
     load ( strPath );
 }
 
 GMImage::GMImage ( const GImage & img, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), imgFhl( new GMImageSelf )
+    : GMItem ( form, parent, name ), imgFhl( new GMImageFles )
 {
     setImage ( img );
 }
@@ -490,10 +490,10 @@ void GMImage::paintEvent ( GPainter& p )
     p.drawImage ( nX, nY, imgFhl->m_imageScaled, 0, 0, width(), height() );
 }
 
-class GMTextSelf
+class GMTextFles
 {
 public:
-    GMTextSelf() : m_singleLineSize ( 0, 0 ) {}
+    GMTextFles() : m_singleLineSize ( 0, 0 ) {}
     GString m_str;
     GFont m_font;
     GColor m_color;
@@ -502,7 +502,7 @@ public:
 };
 
 GMText::GMText ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), txtFhl( new GMTextSelf )
+    : GMItem ( form, parent, name ), txtFhl( new GMTextFles )
 {
     txtFhl->m_font = GFont ( "Sans", 20 );
     txtFhl->m_color = GColor ( 0x10, 0x10, 0x10 );
@@ -510,7 +510,7 @@ GMText::GMText ( GCtrlForm* form, GMItem* parent, const char* name )
 }
 
 GMText::GMText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), txtFhl( new GMTextSelf )
+    : GMItem ( form, parent, name ), txtFhl( new GMTextFles )
 {
     txtFhl->m_str = str;
     txtFhl->m_font = GFont ( "Sans", 20 );
@@ -565,7 +565,7 @@ void GMText::setFont ( const GFont & font )
     txtFhl->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtFhl->m_str );
 }
 
-class GMScrollTextSelf
+class GMScrollTextFles
 {
 public:
     GTimer* m_pTimer;
@@ -576,7 +576,7 @@ public:
 };
 
 GMScrollText::GMScrollText ( GCtrlForm* form, GMItem* parent, const char* name )
-    :GMText ( form, parent, name ), stFhl( new GMScrollTextSelf )
+    :GMText ( form, parent, name ), stFhl( new GMScrollTextFles )
 {
     stFhl->m_pTimer = new GTimer ( this );
     connect ( stFhl->m_pTimer, stFhl->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
@@ -585,7 +585,7 @@ GMScrollText::GMScrollText ( GCtrlForm* form, GMItem* parent, const char* name )
 }
 
 GMScrollText::GMScrollText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
-    :GMText ( str, form, parent, name ), stFhl( new GMScrollTextSelf )
+    :GMText ( str, form, parent, name ), stFhl( new GMScrollTextFles )
 {
     stFhl->m_pTimer = new GTimer ( this );
     connect ( stFhl->m_pTimer, stFhl->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
@@ -647,6 +647,3 @@ void GMScrollText::slotUpdate()
 }
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

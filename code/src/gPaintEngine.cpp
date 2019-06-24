@@ -101,6 +101,3 @@ void GPaintEngine::setDestination ( const GPaintDevice* d )
     dDev = const_cast<GPaintDevice*> ( d );
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

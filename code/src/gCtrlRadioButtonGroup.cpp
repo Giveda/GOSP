@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlRadioButtonSelf
+class GCtrlRadioButtonFles
 {
 public:
-    GCtrlRadioButtonSelf( const GString& str, GCtrlForm* frm, GCtrlRadioButton* parent, bool check)
+    GCtrlRadioButtonFles( const GString& str, GCtrlForm* frm, GCtrlRadioButton* parent, bool check)
         :     m_pixBg ( frm, parent, "radioButtonUnchecked" ),
               m_pixTop ( frm, parent, "radioButtonChecked" ),
               m_txt ( str, frm, parent, "radioButtonTxt" ),
@@ -35,7 +35,7 @@ public:
 
 GCtrlRadioButton::GCtrlRadioButton ( const GString& str, GCtrlForm* frm, GCtrlRadioButtonGroup* parent, const char* name, bool check )
     :GMCtrlItem ( frm, parent, name ),
-     rbFhl( new GCtrlRadioButtonSelf(str, frm, this, check) )
+     rbFhl( new GCtrlRadioButtonFles(str, frm, this, check) )
 {
     parent->appendItem ( this );
     rbFhl->m_txt.setTextFlags ( Giveda::AlignVCenter );
@@ -117,10 +117,10 @@ void GCtrlRadioButton::emitCheckedChanged()
     update();
 }
 
-class GCtrlRadioButtonGroupSelf
+class GCtrlRadioButtonGroupFles
 {
 public:
-    GCtrlRadioButtonGroupSelf( const GString& title, GCtrlForm* frm, GCtrlRadioButtonGroup* parent)
+    GCtrlRadioButtonGroupFles( const GString& title, GCtrlForm* frm, GCtrlRadioButtonGroup* parent)
         :     m_imgFocusIn ( frm, parent, "radioButtonGroupFocusIn" ),
               m_imgFocusOut ( frm, parent, "radioButtonGroupFocusOut" ),
               m_txtTitle ( title, frm, parent, "radioButtonGroupTitle" ),
@@ -135,7 +135,7 @@ public:
 
 GCtrlRadioButtonGroup::GCtrlRadioButtonGroup ( const GString& title, GCtrlForm* frm, GMItem* parent, const char* name )
     :GMContainerItem ( frm, parent, name ),
-     rbgFhl( new GCtrlRadioButtonGroupSelf(title, frm, this) )
+     rbgFhl( new GCtrlRadioButtonGroupFles(title, frm, this) )
 {
     frm->appendItem ( this );
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
@@ -271,6 +271,3 @@ GMText* GCtrlRadioButtonGroup::getTitle()
     return &rbgFhl->m_txtTitle;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

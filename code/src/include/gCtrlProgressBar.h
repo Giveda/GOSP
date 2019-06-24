@@ -20,7 +20,7 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMProgressBarSelf;
+class GMProgressBarFles;
 
 
 class GMProgressBar: public GMItem
@@ -55,7 +55,7 @@ signals:
     GSignal<void(int)> sigProgressChanged;
 
 private:
-    GMProgressBarSelf  *pbFhl;
+    GMProgressBarFles  *pbFhl;
 };
 
 class GCtrlProgressBar: public GMProgressBar
@@ -68,7 +68,3 @@ public:
 #endif
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

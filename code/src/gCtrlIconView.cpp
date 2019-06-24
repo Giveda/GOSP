@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlIconViewSelf
+class GCtrlIconViewFles
 {
 public:
-    GCtrlIconViewSelf( GCtrlForm* frm, GMItem* parent, GCtrlIconView *ikv ): m_imgFocusIn ( frm, parent, "iconViewFocusIn" ), m_imgFocusOut ( frm, parent, "iconViewFocusOut" ), m_timerForShowItemInfo ( ikv )
+    GCtrlIconViewFles( GCtrlForm* frm, GMItem* parent, GCtrlIconView *ikv ): m_imgFocusIn ( frm, parent, "iconViewFocusIn" ), m_imgFocusOut ( frm, parent, "iconViewFocusOut" ), m_timerForShowItemInfo ( ikv )
     {}
     GPtrList<GCtrlIconViewItem> m_itemList;
     GMImage m_imgFocusIn;
@@ -42,7 +42,7 @@ public:
 GCtrlIconView::GCtrlIconView ( GCtrlForm* frm, GMItem* parent, const char* name )
     : GMContainerItem ( frm, parent, name )
 {
-    ikvFhl = new GCtrlIconViewSelf(frm, parent, this);
+    ikvFhl = new GCtrlIconViewFles(frm, parent, this);
     frm->appendItem ( this );
     ikvFhl->m_nDrawFrom = 0;
     ikvFhl->m_nRowNums = 3;
@@ -401,6 +401,3 @@ int GCtrlIconView::getMaxIconWidth()
     return ikvFhl->m_nMaxWofItem;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
