@@ -165,3 +165,4 @@ void GSize::transpose()
     m_data.h = tmp;
 }
 
+// have a nice day ^_^

@@ -181,3 +181,4 @@ bool GTimerEvent::canComposite()
     return true;
 }
 
+// have a nice day ^_^

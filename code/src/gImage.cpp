@@ -240,3 +240,4 @@ void GImage::initBuf()
     }
 }
 
+// have a nice day ^_^

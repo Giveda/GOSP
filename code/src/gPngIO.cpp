@@ -151,3 +151,4 @@ void zInitPngIO()
                       write_png_image );
 }
 
+// have a nice day ^_^

@@ -94,3 +94,4 @@ bool GCtrlScrollText::isComplex()
     return false;
 }
 
+// have a nice day ^_^

@@ -74,3 +74,4 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
     return bRetVal;
 }
 
+// have a nice day ^_^

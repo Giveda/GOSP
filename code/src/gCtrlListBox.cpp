@@ -76,10 +76,10 @@ void GCtrlListBoxPixmap::setGeometry ( int x, int y, int w, int h )
     m_txt.setGeometry ( m_pix.width(), 0,  width()-m_pix.width(), height() );
 }
 
-class GCtrlListBoxFles
+class GCtrlListBoxSelf
 {
 public:
-    GCtrlListBoxFles ( GCtrlForm* frm, GMItem* parent, GCtrlListBox *lb)
+    GCtrlListBoxSelf ( GCtrlForm* frm, GMItem* parent, GCtrlListBox *lb)
         :m_imgFocusIn ( frm, parent, "listBoxFocusIn" ), m_imgFocusOut ( frm, parent, "listBoxFocusOut" ), m_timerForShowItemInfo ( lb ), m_itemTxtColor ( 255,255,255 ), m_itemTxtFont ( "Sans", 20 )
     {}
     GPtrList<GCtrlListBoxItem> m_itemList;
@@ -106,7 +106,7 @@ public:
 GCtrlListBox::GCtrlListBox ( GCtrlForm* frm, GMItem* parent, const char* name )
     :GMContainerItem ( frm, parent, name )
 {
-    lbFhl = new GCtrlListBoxFles(frm, parent, this );
+    lbFhl = new GCtrlListBoxSelf(frm, parent, this );
     frm->appendItem ( this );
     lbFhl->m_nDrawFrom = 0;
     lbFhl->m_nColumnNums = 1;
@@ -507,3 +507,4 @@ void GCtrlListBox::setNextItemKey ( int nKey )
     lbFhl->m_nNextItemKey = nKey;
 }
 
+// have a nice day ^_^
