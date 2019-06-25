@@ -88,7 +88,7 @@ public:
 
     const GImage  *src;
 
-    void setup ( const int srcWidth, const int srcHeight, const int dstWidth,
+    void build ( const int srcWidth, const int srcHeight, const int dstWidth,
                  const int dstHeight, bool hasAlpha );
 };
 
@@ -97,12 +97,12 @@ GImageSmoothScaler::GImageSmoothScaler ( const int w, const int h,
 {
     d = new GImageSmoothScalerSelf;
 
-    d->setup ( src.width(), src.height(), w, h, src.hasAlphaBuffer() );
+    d->build ( src.width(), src.height(), w, h, src.hasAlphaBuffer() );
     this->d->src = &src;
 }
 
 void
-GImageSmoothScalerSelf::setup ( const int srcWidth, const int srcHeight,
+GImageSmoothScalerSelf::build ( const int srcWidth, const int srcHeight,
                                    const int dstWidth, const int dstHeight, bool hasAlphaBuffer )
 {
     cols = srcWidth;
