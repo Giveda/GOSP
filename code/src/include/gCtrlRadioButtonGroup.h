@@ -43,7 +43,7 @@ signals:
     GSignal<void(void)> checkedChanged;
 
 private:
-    GCtrlRadioButtonSelf *rbFhl;
+    GCtrlRadioButtonSelf *rbSpp;
 };
 
 class GCtrlRadioButtonGroupSelf;
@@ -76,10 +76,11 @@ private:
     void moveFocus( int toIndex );
 
 private:
-    GCtrlRadioButtonGroupSelf *rbgFhl;
+    GCtrlRadioButtonGroupSelf *rbgSpp;
 };
 
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^

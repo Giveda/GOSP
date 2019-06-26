@@ -40,7 +40,7 @@ protected:
 signals:
     GSignal<void(void)> clicked;
 private:
-    GMButtonSelf *btnFhl;
+    GMButtonSelf *btnSpp;
 };
 
 class GCtrlButton : public GMButton
@@ -55,4 +55,5 @@ public:
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^

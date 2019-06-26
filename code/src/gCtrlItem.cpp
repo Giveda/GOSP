@@ -95,3 +95,4 @@ bool GCtrlScrollText::isComplex()
 }
 
 // have a nice day ^_^
+// have a nice day ^_^

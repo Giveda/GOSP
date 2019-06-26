@@ -116,10 +116,11 @@ private:
     void moveFocus( int toIndex );
 
 private:
-    GCtrlListBoxSelf *lbFhl;
+    GCtrlListBoxSelf *lbSpp;
 };
 
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^

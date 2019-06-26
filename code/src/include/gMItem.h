@@ -79,7 +79,7 @@ public slots:
 protected:
     virtual void paintEvent ( GPainter& );
 private:
-    GMItemSelf *iFhl;
+    GMItemSelf *iSpp;
 #if 0
     GPtrList<GMItem> m_listChildren;
 #endif
@@ -114,7 +114,7 @@ protected:
     virtual bool keyPressEvent(GKeyEvent* );
     virtual bool fwKeyPressEvent(GKeyEvent*)=0;
 private:
-    GMCtrlItemSelf *ciFhl;
+    GMCtrlItemSelf *ciSpp;
 };
 
 class GMContainerItem : public GMCtrlItem
@@ -144,7 +144,7 @@ public:
 protected:
     virtual void paintEvent ( GPainter& );
 private:
-    GMPixmapSelf *pixFhl;
+    GMPixmapSelf *pixSpp;
 };
 
 class GMImageSelf;
@@ -163,7 +163,7 @@ public:
 protected:
     virtual void paintEvent ( GPainter& );
 private:
-    GMImageSelf *imgFhl;
+    GMImageSelf *imgSpp;
 };
 
 class GMTextSelf;
@@ -184,7 +184,7 @@ public:
 protected:
     virtual void paintEvent ( GPainter& );
 protected:
-    GMTextSelf *txtFhl;
+    GMTextSelf *txtSpp;
 };
 
 class GMScrollTextSelf;
@@ -209,10 +209,11 @@ private slots:
     void slotUpdate();
     
 private:
-    GMScrollTextSelf *stFhl;
+    GMScrollTextSelf *stSpp;
 };
 
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^
