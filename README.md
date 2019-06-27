@@ -49,6 +49,8 @@ https://gitee.com/giveda/GOSP/blob/master/HowTo.md
 
 # 五、效果演示  
 
+![Giveda](docs/images/configureResult1.jpeg)
+
 ![Giveda](docs/images/gCtrlButton.jpeg)
 
 ![Giveda](docs/images/gCtrlIconView.jpeg)
