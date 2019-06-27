@@ -21,7 +21,7 @@
 #include <gGlobal.h>
 
 class GCtrlRadioButtonGroup;
-class GCtrlRadioButtonSelf;
+class GCtrlRadioButtonPrivate;
 
 class GCtrlRadioButton : public GMCtrlItem
 {
@@ -43,10 +43,10 @@ signals:
     GSignal<void(void)> checkedChanged;
 
 private:
-    GCtrlRadioButtonSelf *rbSpp;
+    GCtrlRadioButtonPrivate *rbPriv;
 };
 
-class GCtrlRadioButtonGroupSelf;
+class GCtrlRadioButtonGroupPrivate;
 
 class GCtrlRadioButtonGroup : public GMContainerItem
 {
@@ -76,11 +76,12 @@ private:
     void moveFocus( int toIndex );
 
 private:
-    GCtrlRadioButtonGroupSelf *rbgSpp;
+    GCtrlRadioButtonGroupPrivate *rbgPriv;
 };
 
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
