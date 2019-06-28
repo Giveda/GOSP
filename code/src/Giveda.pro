@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = lib
-CONFIG += debug
+CONFIG += release
 CONFIG += staticlib
 QT -= core gui
 DEPENDPATH += .

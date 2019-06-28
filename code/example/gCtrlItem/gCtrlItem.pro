@@ -16,7 +16,7 @@ contains(DEFINES, CONFIG_QT_SIMULATOR) {
     error("DEFINES not set, please refer to the manual!")
 }
 
-CONFIG += debug
+CONFIG += release
 CONFIG += link_pkgconfig
 PKGCONFIG += Giveda
 
