@@ -67,8 +67,9 @@ https://gitee.com/giveda/GOSP/blob/master/HowTo.md
 
 ![Giveda](docs/images/gCtrlRadioButton.jpeg)
 
-控制台输出的打印信息非常规范：
 ![Giveda](docs/images/debugInfo.jpeg)
+
+![Giveda](docs/images/DVB_768x432.gif)
 
 
 # 六、写在最后  
