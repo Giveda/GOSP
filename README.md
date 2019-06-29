@@ -1,6 +1,6 @@
 # GOSP = Giveda® Open Source Project   
 example演示：   
-![docs/images/DVB_768x432.gif](docs/images/DVB_768x432.gif)
+![https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif](https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif)
 
 
 # 一、简介和概述  
@@ -74,7 +74,7 @@ https://gitee.com/giveda/GOSP/blob/master/HowTo.md
 
 ![Giveda](docs/images/debugInfo.jpeg)
 
-![docs/images/DVB_768x432.gif](docs/images/DVB_768x432.gif)
+![https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif](https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif)
 
 
 # 六、写在最后  
