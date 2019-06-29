@@ -1,3 +1,8 @@
+# GOSP = Giveda® Open Source Project   
+example演示：   
+![Giveda](docs/images/DVB_768x432.gif)
+
+
 # 一、简介和概述  
   **2019-06-03，发表v1.0，版本代号为：沉默的蓝色幽灵。**    
   **这是一个处于筹划过程中的项目，视情况而定。**   
