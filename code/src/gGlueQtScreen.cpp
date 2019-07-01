@@ -24,7 +24,6 @@ extern sem_t g_sem_qt_obj_ready;
 int qt_thread_entry(int argc, char **argv)
 {
     QApplication a(argc, argv);
-    
     GScreenOnQt* w = GScreenOnQt::instance();
     w->show();
 
@@ -34,8 +33,6 @@ int qt_thread_entry(int argc, char **argv)
     int ret = a.exec();
 
     return ret;
-    
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

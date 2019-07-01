@@ -61,11 +61,11 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
     switch ( e->key() )
     {
     case Giveda::Key_Return:
-    {
-        GCtrlIconView* pBox = ( GCtrlIconView* ) parent();
-        pBox->emitSelected ( this );
-    }
-    break;
+        {
+            GCtrlIconView* pBox = ( GCtrlIconView* ) parent();
+            pBox->emitSelected ( this );
+        }
+        break;
     default:
         bRetVal = false;
         break;
@@ -74,5 +74,4 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
     return bRetVal;
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

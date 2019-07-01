@@ -24,16 +24,13 @@
 GRect::GRect()
 {
     m_rectData.left = m_rectData.top = 0;
-    
     m_rectData.right = m_rectData.bottom = -1;
 }
 
 GRect GRect::operator& ( const GRect &r ) const
 {
     if ( isNull() || r.isNull() )
-    {
         return GRect();
-    }
 
     T_OFFSET l1 = m_rectData.left;
     T_OFFSET r1 = m_rectData.left;
@@ -436,9 +433,7 @@ GRect::GRect(const T_RECT& tr)
     m_rectData.right = ntohs( tr.right );
     m_rectData.top = ntohs( tr.top );
     m_rectData.bottom = ntohs( tr.bottom );
-    
 }
 
 
-// have a nice day ^_^
 // have a nice day ^_^

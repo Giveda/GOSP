@@ -55,8 +55,7 @@ class GImageData
 {
 public:
     int   nbytes;           
-    unsigned char **bits;      
-    
+    unsigned char **bits;           
     string image_format;
     int dirty;
 };
@@ -232,7 +231,6 @@ void GImage::initBuf()
 {
     GRgb ( *p ) [][pdevData.w] = reinterpret_cast<GRgb ( * ) [][pdevData.w]> ( imgData->bits );
     GRgb black = gRgb ( 0, 0, 0 );
-    
     for ( int line=0; line<pdevData.h; line++ )
     {
         for ( int col=0; col<pdevData.w; col++ )
@@ -242,5 +240,4 @@ void GImage::initBuf()
     }
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

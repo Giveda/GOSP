@@ -33,7 +33,6 @@ GCtrlMsgBox::GCtrlMsgBox ( GString strTitle, GString strInfo, int nBtnNums,
     }
 
     loadBackgroundPixmap ( pStyle->pixmap ( "msgBoxBg" ) );
-    
     int nX=0, nY=0;
     if ( view()->width() > width() +2 )
         nX = ( view()->width() -width() ) /2;
@@ -105,11 +104,9 @@ void GCtrlMsgBox::slotBtnClicked()
 {
     if ( m_bIsInLoop )
     {
-        
         uiEvtLp->exitLoop();
         m_bIsInLoop = false;
     }
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

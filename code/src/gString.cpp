@@ -18,8 +18,7 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-GString::GString()
-:string()
+GString::GString():string()
 {
 
 }
@@ -99,8 +98,6 @@ bool GString::isEmpty() const
 char* GString::utf8() const
 {
     return const_cast<char*>(c_str() );
-    
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

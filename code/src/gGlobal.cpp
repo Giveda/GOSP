@@ -21,6 +21,7 @@
 #endif
 
 #if defined(G_ASSERT)
+
 #if defined(CONFIG_DEBUG_ENABLED)
 void doQuit(const char *assertion, const char *file, int line)
 {
@@ -60,7 +61,6 @@ bool mIsNull(double d)
 {
     union U {
         double d;
-        
         uint64_t u64;
     };
     U val;
@@ -68,5 +68,4 @@ bool mIsNull(double d)
     return val.u64 == uint64_t(0);
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

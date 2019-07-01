@@ -19,10 +19,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GRegExpSelf
+class GRegExpFles
 {
 public:
-    GRegExpSelf(const string  &s):pattern(s)
+    GRegExpFles(const string  &s):pattern(s)
     {
         regex_t treg;
         int ret = regcomp(&treg, pattern.c_str(), REG_NEWLINE|REG_EXTENDED);
@@ -32,12 +32,13 @@ public:
         }
         preg = treg;
     }
+
     string  pattern;
     regex_t preg;
 };
 
 GRegExp::GRegExp(const string  &s)
-    :m_priv( new GRegExpSelf(s) )
+    :m_priv( new GRegExpFles(s) )
 {
 }
 
@@ -55,8 +56,8 @@ int GRegExp::match ( const string& src )
     {
         return -1;
     }
+
     return pmatch[0].rm_so;
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

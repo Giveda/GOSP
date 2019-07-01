@@ -20,7 +20,6 @@
 int sem_creat( sem_t* sem, int pshared, int num )
 {
     return sem_init( sem, pshared, num);
-    
 }
 
 void del_sem( sem_t* sem )
@@ -42,9 +41,7 @@ int getSemVal( sem_t* sem )
 {
     int val=0;
     sem_getvalue(sem, &val );
-    
     return val;
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

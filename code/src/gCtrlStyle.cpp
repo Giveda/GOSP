@@ -33,7 +33,6 @@ GCtrlItemStyle::GCtrlItemStyle ( GCtrlAppStyle* pAppStyle )
 GCtrlItemStyle::~GCtrlItemStyle()
 {
     m_mapFont.clear();
-    
     m_mapColor.clear();
 }
 
@@ -324,7 +323,6 @@ void GCtrlDefaultAppStyle::appendMsgBoxStyle()
 void GCtrlDefaultAppStyle::appendProgressStyle()
 {
     GCtrlItemStyle* pItemStyle = new GCtrlItemStyle ( this );
-    
     GString strName = "progressBg";
     pItemStyle->setPicPath ( strName, appPicPath() +"/"+strName+".png" );
     strName = "progress";
@@ -335,5 +333,4 @@ void GCtrlDefaultAppStyle::appendProgressStyle()
 }
 
 
-// have a nice day ^_^
 // have a nice day ^_^

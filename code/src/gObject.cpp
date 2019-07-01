@@ -26,6 +26,7 @@ struct SenderPair
     SenderPair(GObject* _sender, SIGNAL_POINTER(void*) _signal )
         :sender(_sender), signal(_signal)
     { }
+
     bool operator==(const SenderPair &r ) const
     {
         return r.sender == sender && r.signal == signal;
@@ -35,10 +36,10 @@ struct SenderPair
     SIGNAL_POINTER(void*) signal;
 };
 
-class GObjectSelf
+class GObjectFles
 {
 public:
-    GObjectSelf ( GObject *p, const char* nm, bool r )
+    GObjectFles ( GObject *p, const char* nm, bool r )
         :m_parent ( p ),
          strName ( nm ),
          reserved(r)
@@ -49,7 +50,7 @@ public:
         rLst.clear();
     }
 
-    ~GObjectSelf()
+    ~GObjectFles()
     {
         sLst.clear();
         rLst.clear();
@@ -62,11 +63,10 @@ public:
 
     list<SenderPair>  sLst;
     list<GObject*>  rLst;
-    
 };
 
 GObject::GObject ( GObject *p,  const char *n, bool reserved )
-    :m_priv ( new GObjectSelf ( p, NULL==n?"":n, reserved ) )
+    :m_priv ( new GObjectFles ( p, NULL==n?"":n, reserved ) )
 {
     if(false == reserved)
     {
@@ -267,7 +267,7 @@ GObject& GObject::operator= ( const GObject&  )
 }
 
 GObject::GObject ( const GObject& src )
-    :m_priv ( new GObjectSelf ( NULL, "", src.m_priv->reserved ) )
+    :m_priv ( new GObjectFles ( NULL, "", src.m_priv->reserved ) )
 {
 }
 
@@ -283,8 +283,6 @@ pthread_t GObject::tid()
 
 void GSlot::operator() ( const GSlot& )
 {
-    
 }
 
-// have a nice day ^_^
 // have a nice day ^_^

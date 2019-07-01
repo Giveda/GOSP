@@ -51,20 +51,12 @@ int initGImage ( GImage* image, png_structp png_ptr, png_infop info_ptr )
     return 0;
 }
 
-void giveda_png_io_warning ( png_structp , png_const_charp message )
+void giveda_png_io_warning ( png_structp , png_const_charp )
 {
-    WARNING ( "libpng warning: %s\n", message );
 }
 
 int read_png_image ( GImageIO* iio )
 {
-    if ( strcmp ( png_libpng_ver, PNG_LIBPNG_VER_STRING ) )
-    {
-        WARNING ( "Warning: versions are different between png.h and png.c\n" );
-        WARNING ( "  png.h version: %s\n", PNG_LIBPNG_VER_STRING );
-        WARNING ( "  png.c version: %s\n\n", png_libpng_ver );
-    }
-
     png_structp png_ptr;
     png_infop info_ptr;
     png_infop end_info;

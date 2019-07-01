@@ -34,7 +34,6 @@ class GImageHandler
 {
 public:
     GImageHandler( const string& f, const string& h, const string& fl, image_io_handler r, image_io_handler w );
-    
     string         format;        
     GRegExp       header;        
     image_io_handler  read_image;      
@@ -50,13 +49,14 @@ GImageHandler *get_image_handler( const string& format );
 void   defineIOHandler( const string& format, const string& header, const string& flags, image_io_handler read_image, image_io_handler write_image );
 
 #ifdef CONFIG_ENABLE_IMAGE_SMOOTHSCALE
-class GImageSmoothScalerSelf;
+class GImageSmoothScalerFles;
 class GImageSmoothScaler
 {
 public:
     GImageSmoothScaler( const int w, const int h, GImage& src );
     GImageSmoothScaler(const int srcWidth, const int srcHeight,
                        const char *parameters);
+
     virtual ~GImageSmoothScaler(void);
 
     GImage  scale();
@@ -65,13 +65,11 @@ protected:
     int scaledWidth(void) const;
 
 private:
-    GImageSmoothScalerSelf	*d;
+    GImageSmoothScalerFles	*d;
     virtual GRgb* scanLine(const int line = 0, const GImage *src = 0);
 };
-
 #endif
 
 #endif 
 
-// have a nice day ^_^
 // have a nice day ^_^
