@@ -15,6 +15,8 @@ cd example        #进入example目录
 ./runExample.sh   #在example目录下执行runExample.sh  
 使用按键进行操作（常用的按键包括：上下左右方向键（用于移动焦点）、回车用于选中、Esc用于返回和退出）  
 
+![在doc/images/目录下](docs/images/DVB_768x432.gif)
+
 
 # FAQ
 #### 编译过程中常见问题的解决：   
