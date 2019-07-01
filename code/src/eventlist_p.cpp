@@ -39,6 +39,8 @@ void destroySem()
 {
     for(int i=0; i<SEM_MAX; i++)
     {
+        
+        
         del_sem(&semID[i]);
     }
 }
@@ -46,11 +48,13 @@ void destroySem()
 
 struct EqualEvent {
     static GEvent*  evt;
+    
     bool operator() ( const GEvent * e)
     {
         return evt->isEqual2(const_cast<GEvent*>(e) );
     }
 };
+
 GEvent*  EqualEvent::evt=NULL;
 
 void getBatch( GEvent *evt)
@@ -62,6 +66,7 @@ void getBatch( GEvent *evt)
 
     EqualEvent::evt = evt;
     EVT_LST::iterator it=evtLst.begin();
+    
     for(; it!=evtLst.end(); ++it)
     {
         if( false ==  evt->isEqual2( *it ) )
@@ -97,4 +102,5 @@ void putEvt( GEvent* e)
     v(semID+EVT_PRODUCER);
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

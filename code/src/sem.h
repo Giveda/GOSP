@@ -26,8 +26,10 @@ extern "C" {
 
 int sem_creat( sem_t* sem, int pshared, int num );
 void del_sem( sem_t* sem );
+
 int p( sem_t* sem);
 int v( sem_t* sem);
+
 int getSemVal( sem_t* sem );
 
 #ifdef __cplusplus
@@ -36,4 +38,5 @@ int getSemVal( sem_t* sem );
 
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^

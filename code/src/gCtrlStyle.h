@@ -30,7 +30,8 @@ class GCtrlItemStyle
 public:
     GCtrlItemStyle() :m_pAppStyle(NULL) {}
     GCtrlItemStyle( GCtrlAppStyle* );
-    ~GCtrlItemStyle();
+    virtual ~GCtrlItemStyle();
+    
     void setPicPath( const GString& name, const GString& path );
     const GPixmap& pixmap( const GString& name );
 
@@ -84,10 +85,12 @@ public:
     const GString appPicPath() {
         return m_strAppPicDir;
     }
+    
 private:
     GString m_strAppPicDir;
 };
 
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^

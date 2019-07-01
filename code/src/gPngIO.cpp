@@ -22,6 +22,7 @@
 #include <png.h>
 
 extern "C" {
+    
     void giveda_png_io_warning ( png_structp , png_const_charp message );
 }
 
@@ -149,6 +150,8 @@ void zInitPngIO()
 {
     defineIOHandler ( "PNG", "^.PNG\r", string(), read_png_image,
                       write_png_image );
+    
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

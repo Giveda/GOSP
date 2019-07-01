@@ -112,6 +112,7 @@ int GKeyEvent::ascii() const
 struct isKeyCode
 {
     static uint16_t   keyCode;
+    
     bool operator() ( const KEYMAP_S & item )
     {
         return item.key_code == keyCode;
@@ -179,6 +180,8 @@ bool GKeyEvent::canComposite()
 bool GTimerEvent::canComposite()
 {
     return true;
+    
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

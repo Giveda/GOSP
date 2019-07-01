@@ -39,6 +39,7 @@ void init_image_handlers()
     s_b = true;
 
     imageHandlers.setAutoDelete ( true );
+    
 #ifdef CONFIG_SUPPORT_PNG
     extern void zInitPngIO();
     zInitPngIO();
@@ -77,7 +78,7 @@ void   defineIOHandler ( const string& format,
 }
 
 #ifdef CONFIG_ENABLE_IMAGE_SMOOTHSCALE
-class GImageSmoothScalerFles
+class GImageSmoothScalerSelf
 {
 public:
     int      cols;
@@ -95,14 +96,14 @@ public:
 GImageSmoothScaler::GImageSmoothScaler ( const int w, const int h,
         GImage &src )
 {
-    d = new GImageSmoothScalerFles;
+    d = new GImageSmoothScalerSelf;
 
     d->build ( src.width(), src.height(), w, h, src.hasAlphaBuffer() );
     this->d->src = &src;
 }
 
 void
-GImageSmoothScalerFles::build ( const int srcWidth, const int srcHeight,
+GImageSmoothScalerSelf::build ( const int srcWidth, const int srcHeight,
                                    const int dstWidth, const int dstHeight, bool hasAlphaBuffer )
 {
     cols = srcWidth;
@@ -428,7 +429,9 @@ GImageSmoothScaler::scale ( void )
     }
 
     return dst;
+    
 }
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^

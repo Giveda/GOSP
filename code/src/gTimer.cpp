@@ -28,6 +28,7 @@
 #include <gEvent.h>
 
 void addTimer ( GTimer* t );
+
 void deleteTimer ( GTimer* t );
 
 void  timer_notify_function(union sigval  d)
@@ -142,6 +143,8 @@ bool GTimer::isNeedDelete()
 int GTimer::restart()
 {
     return start(timerData->msec, timerData->singleShot);
+    
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

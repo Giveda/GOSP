@@ -35,6 +35,7 @@ void GSoftPaintEngine::blt ( const GPoint& dP, const GRect& sR )
     GRgb *s = (GRgb*)sDev->scanLine(sR.y());
     GRgb *d = (GRgb*)dDev->scanLine(dP.y());
     s +=  sR.x(), d +=  dP.x();
+    
     int w = sR.width(), h = sR.height();
     if( type == IgnoreAlpha)
     {
@@ -97,8 +98,10 @@ void GSoftPaintEngine::fillRect ( const GRect& dR )
 }
 
 void GPaintEngine::setDestination ( const GPaintDevice* d )
+
 {
     dDev = const_cast<GPaintDevice*> ( d );
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

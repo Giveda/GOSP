@@ -41,6 +41,7 @@ printf("varinfo-bits_per_pixel: %d\n\n", vinfo.bits_per_pixel)
 printf("finfo-smem_len: %d\n\n", finfo.smem_len)
 
 void writeTerm ( const char* termctl, int sizeof_termctl )
+
 {
     const char* fileLst[]= {"/dev/tty", "/dev/console", "/dev/tty0", 0};
     const char** dev=fileLst;
@@ -173,9 +174,11 @@ void GLinuxFB::shutdownDevice()
 }
 
 GRgb* GLinuxFB::scanLine ( const int l ) const
+
 {
     GRgb (*p)[][pdevData.w] = reinterpret_cast<GRgb(*)[][pdevData.w]>(display_base);
     return (*p)[l];
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

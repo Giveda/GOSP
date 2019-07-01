@@ -14,6 +14,7 @@
  */
 
 #include "gPixmap.h"
+
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
@@ -34,6 +35,8 @@ GPixmap::GPixmap ( const GString& fn, const string& format )
 
 GPixmap::~GPixmap()
 {
+    
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

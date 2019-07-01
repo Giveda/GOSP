@@ -18,7 +18,8 @@
 #include <gGlobal.h>
 
 GPointerData::GPointerData( GObject* o)
-    : GObject(0, "_ptrpriv" ), m_pObject( o )
+    : GObject(0, "_ptrpriv" ), 
+    m_pObject( o )
 {
     if ( m_pObject )
     {
@@ -34,10 +35,12 @@ GPointerData::~GPointerData()
 
 
 void GPointerData::slotDestroyed()
+
 {
     m_pObject = 0;
 }
 
 
 
+// have a nice day ^_^
 // have a nice day ^_^
