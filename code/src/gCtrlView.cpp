@@ -38,6 +38,7 @@ int QFormList::compareItems ( GCtrlForm* p1, GCtrlForm* p2 )
     {
         return 0;
     }
+    
     else if ( p1->z() > p2->z() )
     {
         return 1;
@@ -231,6 +232,8 @@ GRect GCtrlView::rect() const
 int GCtrlView::width() const
 {
     return m_rect.width();
+    
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

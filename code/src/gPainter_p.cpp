@@ -19,17 +19,20 @@
 
 
 FT_Error g_err;
+
 FT_Library g_library;
 
 int init_freetype()
 {
     static bool s_b = false;
-    if ( s_b ) {
+    if ( s_b )
+    {
         return 0;
     }
     s_b = true;
 
     g_err=FT_Init_FreeType ( &g_library );
+    
     if ( g_err )
     {
         ERROR ( "FT_Init_FreeType err[%d]\n", g_err );
@@ -39,4 +42,5 @@ int init_freetype()
     return 0;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

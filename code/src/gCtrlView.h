@@ -41,6 +41,7 @@ class GCtrlView
 public:
     GCtrlView (const GString& strPicPath="" );
     virtual ~GCtrlView();
+    
     void appendForm ( GCtrlForm* );
     void removeForm ( GCtrlForm* );
     void setFocusToFrm ( GCtrlForm* );
@@ -85,4 +86,5 @@ private:
 
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^

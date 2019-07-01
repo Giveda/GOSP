@@ -38,7 +38,6 @@ public:
     EvtLoop(pthread_mutex_t m, pthread_t id)
         :mutex(m), id(id), bRun(true) {}
     virtual ~EvtLoop() {}
-
 public:
     pthread_mutex_t   mutex;
     pthread_t id;
@@ -324,7 +323,9 @@ void GUIEvtLoop::setSize(int w, int h)
 #ifdef CONFIG_QT_SIMULATOR
     GScreenOnQt::instance()->doSetSize(w, h);
 #endif
+    
 }
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^

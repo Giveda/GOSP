@@ -18,64 +18,64 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-GCtrlImage::GCtrlImage( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMImage( form, parent, name)
+GCtrlImage::GCtrlImage ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMImage ( form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
-GCtrlImage::GCtrlImage( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMImage( strPath, form, parent, name )
+GCtrlImage::GCtrlImage ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMImage ( strPath, form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
-GCtrlImage::GCtrlImage( const GImage & img, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMImage( img, form, parent, name )
+GCtrlImage::GCtrlImage ( const GImage & img, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMImage ( img, form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
-GCtrlPixmap::GCtrlPixmap( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMPixmap( form, parent, name)
+GCtrlPixmap::GCtrlPixmap ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMPixmap ( form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
-GCtrlPixmap::GCtrlPixmap( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMPixmap( strPath, form, parent, name )
+GCtrlPixmap::GCtrlPixmap ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMPixmap ( strPath, form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
-GCtrlPixmap::GCtrlPixmap( const GPixmap & pm, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMPixmap( pm, form, parent, name )
+GCtrlPixmap::GCtrlPixmap ( const GPixmap & pm, GCtrlForm* form, GMItem* parent, const char* name )
+    : GMPixmap ( pm, form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
-GCtrlText::GCtrlText( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMText( form, parent, name )
+GCtrlText::GCtrlText ( GCtrlForm* form, GMItem* parent, const char* name )
+    : GMText ( form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
 GCtrlText::GCtrlText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMText( str, form, parent, name )
+    : GMText ( str, form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
 GCtrlScrollText::GCtrlScrollText ( GCtrlForm* form, GMItem* parent, const char* name )
-    :GMScrollText( form, parent, name )
+    :GMScrollText ( form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 
 GCtrlScrollText::GCtrlScrollText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
-    :GMScrollText( str, form, parent, name )
+    :GMScrollText ( str, form, parent, name )
 {
-    form->appendItem(this);
+    form->appendItem ( this );
 }
 bool GCtrlImage::isComplex()
 {
@@ -89,9 +89,11 @@ bool GCtrlText::isComplex()
 {
     return false;
 }
+
 bool GCtrlScrollText::isComplex()
 {
     return false;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

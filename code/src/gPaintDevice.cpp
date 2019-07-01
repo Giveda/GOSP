@@ -26,6 +26,7 @@ GPaintDevice::GPaintDevice()
 
 GPaintDevice::~GPaintDevice()
 {
+    
 }
 
 bool GPaintDevice::hasAlphaBuffer()
@@ -36,6 +37,8 @@ bool GPaintDevice::hasAlphaBuffer()
 void GPaintDevice::setAlphaBuffer ( bool  alpha )
 {
     pdevData.alpha = alpha;
+    
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
