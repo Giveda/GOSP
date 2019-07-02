@@ -38,10 +38,10 @@ public:
 
 typedef vector<GPainterState>   STATE_STACK_T;
 
-class GPainterSelf
+class GPainterPrivate
 {
 public:
-    GPainterSelf ( GPaintDevice* p );
+    GPainterPrivate ( GPaintDevice* p );
     GPaintDevice *d;
     GPainterState  state;
     STATE_STACK_T  stack;
@@ -49,7 +49,7 @@ public:
     void drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y );
 };
 
-GPainterSelf::GPainterSelf ( GPaintDevice* p ) :d ( p )
+GPainterPrivate::GPainterPrivate ( GPaintDevice* p ) :d ( p )
 {
     state.brush = GBrush ( GColor ( 250, 0, 0 ) );
     state.pen = GColor ( 0, 250, 0 );
@@ -86,7 +86,7 @@ void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterO
     return ;
 }
 
-inline void GPainterSelf::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y )
+inline void GPainterPrivate::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y )
 {
     int x=0;
     int h, w;
@@ -136,7 +136,7 @@ inline void GPainterSelf::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y
 }
 
 GPainter::GPainter()
-    :m_priv ( new GPainterSelf ( NULL ) )
+    :m_priv ( new GPainterPrivate ( NULL ) )
 {
 
 }
@@ -147,7 +147,7 @@ GPainter::~GPainter()
 }
 
 GPainter::GPainter ( GPaintDevice* p )
-    :m_priv ( new GPainterSelf ( p ) )
+    :m_priv ( new GPainterPrivate ( p ) )
 {
 
 }
@@ -235,12 +235,12 @@ void GPainter::drawText ( int dX, int dY, int dW, int dH, int flags, const GStri
     GPixmap  dev = grabWidget(m_priv->d, dR );
     m_priv->pTxtBg = &dev;
     GRect  bR(GPoint(0, 0), dR.size() );
-    drawTextSelf ( bR, str, flags );
+    drawTextPrivate ( bR, str, flags );
 
     bitBlt(m_priv->d, dR.topLeft(), m_priv->pTxtBg, bR, CopyROP, true );
 }
 
-void GPainter::drawTextSelf ( GRect dR, const GString& str, int flags )
+void GPainter::drawTextPrivate ( GRect dR, const GString& str, int flags )
 {
     FT_GlyphSlot slot;
     uint16_t result=0, part1=0, part2=0, part3=0;
@@ -389,5 +389,6 @@ void GPainter::bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect s
     engine->blt ( dP,  sR );
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

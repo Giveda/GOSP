@@ -25,7 +25,7 @@ using namespace std;
 int init_input_handlers();
 void deinit_input_handlers();
 
-class  GInputHandlerSelf;
+class  GInputHandlerPrivate;
 
 class GInputHandler
 {
@@ -35,17 +35,19 @@ public:
     ~GInputHandler();
     GInputHandler& operator= ( const GInputHandler& other );
 
-    static int exec ( GInputHandlerSelf* data );
+    static int exec ( GInputHandlerPrivate* data );
     int enterLoop();
     void exitLoop();
 
 private:
     virtual string getEvtDevice();
-    GInputHandlerSelf  *m_priv;
+    GInputHandlerPrivate  *m_priv;
 };
 
 #endif 
 
 
+// have a nice day ^_^
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

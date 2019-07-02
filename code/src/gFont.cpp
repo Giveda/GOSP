@@ -23,6 +23,7 @@ GFont::GFont()
     :fontData(NULL)
 {
     fontData = new GFontData;
+    
     fontData->m_face = NULL;
     fontData->req.family = "Sans";
     fontData->req.pointSize = 16;
@@ -123,6 +124,7 @@ GFont::GFont ( const GFont& src )
     :fontData(NULL)
 {
     if(fontData == src.fontData)
+    
     {
         return ;
     }
@@ -131,5 +133,6 @@ GFont::GFont ( const GFont& src )
     
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

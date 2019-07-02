@@ -118,6 +118,7 @@ struct isKeyCode
         return item.key_code == keyCode;
     }
 };
+
 uint16_t isKeyCode::keyCode=0xFFFF;
 
 GKeyEvent::GKeyEvent ( GEvent::EVT_TYPE type, int keyCode, bool autorep )
@@ -172,6 +173,7 @@ int GKeyEvent::key() const
 {
     return k;
 }
+
 bool GKeyEvent::canComposite()
 {
     return true;
@@ -183,5 +185,6 @@ bool GTimerEvent::canComposite()
     
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

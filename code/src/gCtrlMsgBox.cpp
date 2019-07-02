@@ -23,7 +23,8 @@
 
 GCtrlMsgBox::GCtrlMsgBox ( GString strTitle, GString strInfo, int nBtnNums,
                            GCtrlForm* parent, const char* name )
-    : GCtrlForm ( parent, name ), m_txtTitle ( strTitle, this, NULL, "msgBoxTitle" ), m_txtInfo ( strInfo, this, NULL, "msgBoxInfo" ), m_nBtnNums ( nBtnNums ), m_bIsInLoop ( false )
+    : GCtrlForm ( parent, name ), 
+    m_txtTitle ( strTitle, this, NULL, "msgBoxTitle" ), m_txtInfo ( strInfo, this, NULL, "msgBoxInfo" ), m_nBtnNums ( nBtnNums ), m_bIsInLoop ( false )
 {
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
@@ -105,11 +106,11 @@ void GCtrlMsgBox::slotBtnClicked()
 {
     if ( m_bIsInLoop )
     {
-        
         uiEvtLp->exitLoop();
         m_bIsInLoop = false;
     }
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

@@ -45,10 +45,12 @@ public:
     void appendForm ( GCtrlForm* );
     void removeForm ( GCtrlForm* );
     void setFocusToFrm ( GCtrlForm* );
+    
     GCtrlForm* getFocusFrm()
     {
         return m_pFocusForm;
     }
+    
     void setStyle ( GCtrlDefaultAppStyle* );
     GCtrlDefaultAppStyle* appStyle();
     void inSort ( GCtrlForm* );
@@ -86,5 +88,6 @@ private:
 
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

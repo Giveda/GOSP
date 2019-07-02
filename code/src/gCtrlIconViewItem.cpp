@@ -19,7 +19,8 @@
 #include <gGlobal.h>
 
 GCtrlIconViewItem::GCtrlIconViewItem ( const GImage& img, const GString& str,  GCtrlForm* frm, GCtrlIconView* pIconView, const char* name )
-    :GMCtrlItem ( frm, pIconView, name ), m_txtTitle ( str, frm, this, "iconViewItemTitle" ), m_imgIcon ( img, frm, this, "iconViewItemIcon" )
+    :GMCtrlItem ( frm, pIconView, name ),
+     m_txtTitle ( str, frm, this, "iconViewItemTitle" ), m_imgIcon ( img, frm, this, "iconViewItemIcon" )
 {
     m_txtTitle.setVisible ( false );
 }
@@ -67,12 +68,15 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
     }
     break;
     default:
+    {
         bRetVal = false;
-        break;
+    }
+    break;
     }
 
     return bRetVal;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

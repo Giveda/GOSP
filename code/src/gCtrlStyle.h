@@ -28,22 +28,23 @@ class GCtrlAppStyle;
 class GCtrlItemStyle
 {
 public:
-    GCtrlItemStyle() :m_pAppStyle(NULL) {}
-    GCtrlItemStyle( GCtrlAppStyle* );
+    GCtrlItemStyle()
+        :m_pAppStyle ( NULL ) {}
+    GCtrlItemStyle ( GCtrlAppStyle* );
     virtual ~GCtrlItemStyle();
-    
-    void setPicPath( const GString& name, const GString& path );
-    const GPixmap& pixmap( const GString& name );
 
-    void setFont( const GString& name, const GFont& font );
-    const GFont font( const GString& name );
+    void setPicPath ( const GString& name, const GString& path );
+    const GPixmap& pixmap ( const GString& name );
 
-    void setColor( const GString& name, const GColor& color );
-    const GColor color(const GString& name );
+    void setFont ( const GString& name, const GFont& font );
+    const GFont font ( const GString& name );
+
+    void setColor ( const GString& name, const GColor& color );
+    const GColor color ( const GString& name );
 
 private:
-    bool isFileExist( const GString& strUtf8 );
-    int  useResourceFile( const GString& strPath, const GString& name );
+    bool isFileExist ( const GString& strUtf8 );
+    int  useResourceFile ( const GString& strPath, const GString& name );
 private:
     GMap<GString, GPixmap> m_mapPixmap;
     GMap<GString, GFont> m_mapFont;
@@ -57,9 +58,10 @@ public:
     typedef GMap<GString, GCtrlItemStyle*>  ITEM_STYLE_MAP_T;
     GCtrlAppStyle();
     ~GCtrlAppStyle();
-    void appendItemStyle( const char* className, GCtrlItemStyle* pStyle );
-    GCtrlItemStyle* itemStyle( const char* className );
-    const GString libPicPath() {
+    void appendItemStyle ( const char* className, GCtrlItemStyle* pStyle );
+    GCtrlItemStyle* itemStyle ( const char* className );
+    const GString libPicPath()
+    {
         return m_strPicDir;
     }
 
@@ -71,8 +73,8 @@ private:
 class GCtrlDefaultAppStyle : public GCtrlAppStyle
 {
 public:
-    GCtrlDefaultAppStyle( const GString& strUtf8="" )
-        :m_strAppPicDir( strUtf8 )
+    GCtrlDefaultAppStyle ( const GString& strUtf8="" )
+        :m_strAppPicDir ( strUtf8 )
     {}
     void appendButtonStyle();
     void appendIconViewStyle();
@@ -82,15 +84,17 @@ public:
     void appendRadioButtonStyle();
     void appendMsgBoxStyle();
     void appendProgressStyle();
-    const GString appPicPath() {
+    const GString appPicPath()
+    {
         return m_strAppPicDir;
     }
-    
+
 private:
     GString m_strAppPicDir;
 };
 
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

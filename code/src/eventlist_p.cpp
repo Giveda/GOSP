@@ -21,7 +21,7 @@
 
 enum  SEM_IDX {
     EVT_PRODUCER=0,
-    EVT_OPERATOR,
+    EVT_OPERATOR=1,
     SEM_MAX,
 };
 
@@ -62,6 +62,7 @@ void getBatch( GEvent *evt)
     if(false == evt->canComposite() )
     {
         return ;
+        
     }
 
     EqualEvent::evt = evt;
@@ -97,10 +98,11 @@ void putEvt( GEvent* e)
 {
     p(semID+EVT_OPERATOR);
     evtLst.push_back(e);
+    
     v(semID+EVT_OPERATOR);
-
     v(semID+EVT_PRODUCER);
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

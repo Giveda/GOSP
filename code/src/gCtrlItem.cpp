@@ -85,6 +85,7 @@ bool GCtrlPixmap::isComplex()
 {
     return false;
 }
+
 bool GCtrlText::isComplex()
 {
     return false;
@@ -95,5 +96,6 @@ bool GCtrlScrollText::isComplex()
     return false;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
