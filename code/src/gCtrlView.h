@@ -60,6 +60,7 @@ public:
     GRect rect() const;
 
     void update ( GRect r );
+    
     const GPixmap* backgroundPixmap() const
     {
         return &m_pixBg;
@@ -88,6 +89,4 @@ private:
 
 #endif
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

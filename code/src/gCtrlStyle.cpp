@@ -328,6 +328,7 @@ void GCtrlDefaultAppStyle::appendProgressStyle()
     
     pItemStyle->setPicPath ( strName, appPicPath() +"/"+strName+".png" );
     strName = "progress";
+    
     pItemStyle->setPicPath ( strName, appPicPath() +"/"+strName+".png" );
     strName = "progressCursor";
     pItemStyle->setPicPath ( strName, appPicPath() +"/"+strName+".png" );
@@ -335,6 +336,4 @@ void GCtrlDefaultAppStyle::appendProgressStyle()
 }
 
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

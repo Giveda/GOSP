@@ -124,7 +124,6 @@ GFont::GFont ( const GFont& src )
     :fontData(NULL)
 {
     if(fontData == src.fontData)
-    
     {
         return ;
     }
@@ -133,6 +132,4 @@ GFont::GFont ( const GFont& src )
     
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

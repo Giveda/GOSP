@@ -67,6 +67,7 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
         pBox->emitSelected ( this );
     }
     break;
+    
     default:
     {
         bRetVal = false;
@@ -77,6 +78,4 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
     return bRetVal;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

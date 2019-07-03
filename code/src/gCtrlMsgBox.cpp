@@ -97,6 +97,7 @@ GCtrlMsgBox::enumBtn GCtrlMsgBox::exec()
     }
 
     hide();
+    
     view()->setFocusToFrm ( pBak );
 
     return ( enumBtn ) m_btnList.findRef ( ( GCtrlButton* ) getFocusItem() );
@@ -111,6 +112,4 @@ void GCtrlMsgBox::slotBtnClicked()
     }
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

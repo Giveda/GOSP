@@ -169,6 +169,7 @@ bool GEvent::isEqual2 ( GEvent* evt )
 {
     return m_type == evt->type();
 }
+
 int GKeyEvent::key() const
 {
     return k;
@@ -185,6 +186,4 @@ bool GTimerEvent::canComposite()
     
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

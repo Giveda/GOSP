@@ -54,7 +54,7 @@ private:
     GMPixmap m_pix;
 };
 
-class GCtrlListBoxPrivate;
+class GCtrlListBoxSelf;
 
 class GCtrlListBox : public GMContainerItem
 {
@@ -116,13 +116,10 @@ private:
     void moveFocus( int toIndex );
 
 private:
-    GCtrlListBoxPrivate *lbPriv;
+    GCtrlListBoxSelf *lbSpp;
 };
 
 #endif
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^
