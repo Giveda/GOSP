@@ -1,8 +1,15 @@
 # GOSP = Giveda® Open Source Project   
 example演示：   
 ![在doc/images/目录下](docs/images/DVB_768x432.gif)
+
+![在doc/images/目录下](docs/images/DVB_edit_chnl_768x432.gif)
+
+![在doc/images/目录下](docs/images/DVB_mainMenu_768x432_png.gif)
+
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif  
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432_large.gif  
+https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_edit_chnl_768x432.gif  
+https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_mainMenu_768x432_png.gif  
 
 
 # 一、简介和概述  
@@ -78,8 +85,14 @@ https://gitee.com/giveda/GOSP/blob/master/HowTo.md
 
 ![在docs/images/目录下](docs/images/DVB_768x432.gif)
 
+![在doc/images/目录下](docs/images/DVB_edit_chnl_768x432.gif)
+
+![在doc/images/目录下](docs/images/DVB_mainMenu_768x432_png.gif)
+
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif  
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432_large.gif  
+https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_edit_chnl_768x432.gif  
+https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_mainMenu_768x432_png.gif  
 
 
 # 六、写在最后  
