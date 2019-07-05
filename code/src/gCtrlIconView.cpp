@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlIconViewFles
+class GCtrlIconViewHmq
 {
 public:
-    GCtrlIconViewFles( GCtrlForm* frm, GMItem* parent, GCtrlIconView *ikv )
+    GCtrlIconViewHmq( GCtrlForm* frm, GMItem* parent, GCtrlIconView *ikv )
     : m_imgFocusIn ( frm, parent, "iconViewFocusIn" ), m_imgFocusOut ( frm, parent, "iconViewFocusOut" ), m_timerForShowItemInfo ( ikv )
     {}
     
@@ -44,22 +44,22 @@ public:
 GCtrlIconView::GCtrlIconView ( GCtrlForm* frm, GMItem* parent, const char* name )
     : GMContainerItem ( frm, parent, name )
 {
-    ikvFhl = new GCtrlIconViewFles(frm, parent, this);
+    ikvMqs = new GCtrlIconViewHmq(frm, parent, this);
     frm->appendItem ( this );
-    ikvFhl->m_nDrawFrom = 0;
-    ikvFhl->m_nRowNums = 3;
+    ikvMqs->m_nDrawFrom = 0;
+    ikvMqs->m_nRowNums = 3;
     setColumnNums ( 3 );
     setRowNums ( 3 );
 
-    connect ( &ikvFhl->m_timerForShowItemInfo,
-              ikvFhl->m_timerForShowItemInfo.timeout, this, &GCtrlIconView::slotFocusChangedTo );
+    connect ( &ikvMqs->m_timerForShowItemInfo,
+              ikvMqs->m_timerForShowItemInfo.timeout, this, &GCtrlIconView::slotFocusChangedTo );
     connect ( this, this->loseFocus, this, &GCtrlIconView::slotLoseFocus );
     connect ( this, this->getFocus, this, &GCtrlIconView::slotGetFocus );
 
-    ikvFhl->m_nCurItemIndex = 0;
-    ikvFhl->m_bIsNeedDoLayout = true;
-    ikvFhl->m_bIsNeedShowItemInfo = true;
-    ikvFhl->m_bSendHighLighted = false;
+    ikvMqs->m_nCurItemIndex = 0;
+    ikvMqs->m_bIsNeedDoLayout = true;
+    ikvMqs->m_bIsNeedShowItemInfo = true;
+    ikvMqs->m_bSendHighLighted = false;
 
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
@@ -68,52 +68,52 @@ GCtrlIconView::GCtrlIconView ( GCtrlForm* frm, GMItem* parent, const char* name 
         pAppStyle->appendIconViewStyle();
     }
 
-    ikvFhl->m_imgFocusIn.setImage ( pStyle->pixmap ( ikvFhl->m_imgFocusIn.name() ) );
-    ikvFhl->m_imgFocusOut.setImage ( pStyle->pixmap ( ikvFhl->m_imgFocusOut.name() ) );
+    ikvMqs->m_imgFocusIn.setImage ( pStyle->pixmap ( ikvMqs->m_imgFocusIn.name() ) );
+    ikvMqs->m_imgFocusOut.setImage ( pStyle->pixmap ( ikvMqs->m_imgFocusOut.name() ) );
 
-    ikvFhl->m_itemList.setAutoDelete ( true );
+    ikvMqs->m_itemList.setAutoDelete ( true );
 }
 
 GCtrlIconView::~GCtrlIconView()
 {
-    ikvFhl->m_itemList.clear();
-    delete ikvFhl;
+    ikvMqs->m_itemList.clear();
+    delete ikvMqs;
 }
 
 void GCtrlIconView::paintEvent ( GPainter& p )
 {
-    if ( ikvFhl->m_itemList.isEmpty() )
+    if ( ikvMqs->m_itemList.isEmpty() )
     {
         return;
     }
 
-    int nDrawTo = ikvFhl->m_itemList.count()-1<ikvFhl->m_nDrawTo ? ikvFhl->m_itemList.count()-1 : ikvFhl->m_nDrawTo;
+    int nDrawTo = ikvMqs->m_itemList.count()-1<ikvMqs->m_nDrawTo ? ikvMqs->m_itemList.count()-1 : ikvMqs->m_nDrawTo;
     GCtrlIconViewItem* pItem=NULL;
-    if ( ikvFhl->m_bIsNeedDoLayout )
+    if ( ikvMqs->m_bIsNeedDoLayout )
     {
-        ikvFhl->m_itemList.at ( ikvFhl->m_nDrawFrom )->setGeometry ( 0, 0, ikvFhl->m_nMaxWofItem, ikvFhl->m_nMaxHofItem );
-        int nRightEdge = ikvFhl->m_nMaxWofItem* ( ikvFhl->m_nColumnNums-1 );
-        for ( int j=ikvFhl->m_nDrawFrom; j<nDrawTo; j++ )
+        ikvMqs->m_itemList.at ( ikvMqs->m_nDrawFrom )->setGeometry ( 0, 0, ikvMqs->m_nMaxWofItem, ikvMqs->m_nMaxHofItem );
+        int nRightEdge = ikvMqs->m_nMaxWofItem* ( ikvMqs->m_nColumnNums-1 );
+        for ( int j=ikvMqs->m_nDrawFrom; j<nDrawTo; j++ )
         {
-            pItem = ikvFhl->m_itemList.at ( j+1 );
-            if ( ikvFhl->m_itemList.at ( j )->x() == nRightEdge )
+            pItem = ikvMqs->m_itemList.at ( j+1 );
+            if ( ikvMqs->m_itemList.at ( j )->x() == nRightEdge )
             {
-                pItem->setGeometry ( 0, ikvFhl->m_itemList.at ( j )->y() +ikvFhl->m_nMaxHofItem, ikvFhl->m_nMaxWofItem, ikvFhl->m_nMaxHofItem );
+                pItem->setGeometry ( 0, ikvMqs->m_itemList.at ( j )->y() +ikvMqs->m_nMaxHofItem, ikvMqs->m_nMaxWofItem, ikvMqs->m_nMaxHofItem );
             }
             else
             {
-                pItem->setGeometry ( ikvFhl->m_itemList.at ( j )->x() +ikvFhl->m_nMaxWofItem, ikvFhl->m_itemList.at ( j )->y(), ikvFhl->m_nMaxWofItem, ikvFhl->m_nMaxHofItem );
+                pItem->setGeometry ( ikvMqs->m_itemList.at ( j )->x() +ikvMqs->m_nMaxWofItem, ikvMqs->m_itemList.at ( j )->y(), ikvMqs->m_nMaxWofItem, ikvMqs->m_nMaxHofItem );
             }
         }
 
-        ikvFhl->m_bIsNeedDoLayout = false;
+        ikvMqs->m_bIsNeedDoLayout = false;
     }
 
-    ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->getTxt()->setVisible ( true );
+    ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->getTxt()->setVisible ( true );
 
-    for ( int j=ikvFhl->m_nDrawFrom; j<=nDrawTo; j++ )
+    for ( int j=ikvMqs->m_nDrawFrom; j<=nDrawTo; j++ )
     {
-        pItem = ikvFhl->m_itemList.at ( j );
+        pItem = ikvMqs->m_itemList.at ( j );
 
         p.save();
         p.translate ( pItem->x(), pItem->y() );
@@ -121,35 +121,35 @@ void GCtrlIconView::paintEvent ( GPainter& p )
         p.restore();
     }
 
-    GMImage* pIcon=ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->getIcon();
+    GMImage* pIcon=ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->getIcon();
     if ( hasFocus() )
     {
-        ikvFhl->m_imgFocusIn.setGeometry ( ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->x(), ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->y(), ikvFhl->m_nMaxWofItem, pIcon->height() );
-        ikvFhl->m_imgFocusIn.draw ( p );
+        ikvMqs->m_imgFocusIn.setGeometry ( ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->x(), ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->y(), ikvMqs->m_nMaxWofItem, pIcon->height() );
+        ikvMqs->m_imgFocusIn.draw ( p );
     }
     else
     {
-        ikvFhl->m_imgFocusOut.setGeometry ( ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->x(), ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->y(), ikvFhl->m_nMaxWofItem, pIcon->height() );
-        ikvFhl->m_imgFocusOut.draw ( p );
+        ikvMqs->m_imgFocusOut.setGeometry ( ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->x(), ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->y(), ikvMqs->m_nMaxWofItem, pIcon->height() );
+        ikvMqs->m_imgFocusOut.draw ( p );
     }
 
-    if ( ikvFhl->m_bSendHighLighted )
+    if ( ikvMqs->m_bSendHighLighted )
     {
-        highlighted_pI.emit ( ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex ) );
-        highlighted_pi.emit ( ikvFhl->m_nCurItemIndex );
-        ikvFhl->m_bSendHighLighted = false;
+        highlighted_pI.emit ( ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex ) );
+        highlighted_pi.emit ( ikvMqs->m_nCurItemIndex );
+        ikvMqs->m_bSendHighLighted = false;
     }
 
-    if ( ikvFhl->m_bIsNeedShowItemInfo )
+    if ( ikvMqs->m_bIsNeedShowItemInfo )
     {
-        ikvFhl->m_timerForShowItemInfo.start ( 1000, true );
-        ikvFhl->m_bIsNeedShowItemInfo = false;
+        ikvMqs->m_timerForShowItemInfo.start ( 1000, true );
+        ikvMqs->m_bIsNeedShowItemInfo = false;
     }
 }
 
 bool GCtrlIconView::fwKeyPressEvent ( GKeyEvent* e )
 {
-    mpFocus = ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex );
+    mpFocus = ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex );
     if ( mpFocus )
     {
         if ( true == mpFocus->fwKeyPress ( e ) )
@@ -186,135 +186,135 @@ void GCtrlIconView::insertItem ( GCtrlIconViewItem* pItem, int index )
 {
     if ( index<0 )
     {
-        ikvFhl->m_itemList.append ( pItem );
+        ikvMqs->m_itemList.append ( pItem );
     }
     else
     {
-        ikvFhl->m_itemList.insert ( index, pItem );
+        ikvMqs->m_itemList.insert ( index, pItem );
     }
 }
 
 void GCtrlIconView::removeItem ( int index )
 {
-    ikvFhl->m_itemList.remove ( index );
-    ikvFhl->m_bIsNeedDoLayout = true;
+    ikvMqs->m_itemList.remove ( index );
+    ikvMqs->m_bIsNeedDoLayout = true;
 }
 
 void GCtrlIconView::changeItem ( GCtrlIconViewItem *pItem, int  index )
 {
     if ( index == -1 )
     {
-        index = ikvFhl->m_nCurItemIndex;
+        index = ikvMqs->m_nCurItemIndex;
     }
 
-    ikvFhl->m_itemList.remove ( index );
-    ikvFhl->m_itemList.insert ( index, pItem );
+    ikvMqs->m_itemList.remove ( index );
+    ikvMqs->m_itemList.insert ( index, pItem );
 }
 
 void GCtrlIconView::setRowNums ( unsigned int num )
 {
-    ikvFhl->m_nRowNums = num;
-    ikvFhl->m_nMaxHofItem = height() /ikvFhl->m_nRowNums;
-    ikvFhl->m_nDrawTo = ikvFhl->m_nColumnNums*ikvFhl->m_nRowNums-1 + ikvFhl->m_nDrawFrom;
+    ikvMqs->m_nRowNums = num;
+    ikvMqs->m_nMaxHofItem = height() /ikvMqs->m_nRowNums;
+    ikvMqs->m_nDrawTo = ikvMqs->m_nColumnNums*ikvMqs->m_nRowNums-1 + ikvMqs->m_nDrawFrom;
 }
 
 void GCtrlIconView::setColumnNums ( unsigned int num )
 {
-    ikvFhl->m_nColumnNums = num;
-    ikvFhl->m_nMaxWofItem = width() /ikvFhl->m_nColumnNums;
-    ikvFhl->m_nDrawTo = ikvFhl->m_nColumnNums*ikvFhl->m_nRowNums-1 + ikvFhl->m_nDrawFrom;
+    ikvMqs->m_nColumnNums = num;
+    ikvMqs->m_nMaxWofItem = width() /ikvMqs->m_nColumnNums;
+    ikvMqs->m_nDrawTo = ikvMqs->m_nColumnNums*ikvMqs->m_nRowNums-1 + ikvMqs->m_nDrawFrom;
 }
 
 GCtrlIconViewItem* GCtrlIconView::item ( int index )
 {
-    return ikvFhl->m_itemList.at ( index );
+    return ikvMqs->m_itemList.at ( index );
 }
 
 unsigned int GCtrlIconView::count()
 {
-    return ikvFhl->m_itemList.count();
+    return ikvMqs->m_itemList.count();
 }
 
 void GCtrlIconView::clear()
 {
-    ikvFhl->m_nDrawFrom = 0;
-    ikvFhl->m_nDrawTo = ikvFhl->m_nColumnNums*ikvFhl->m_nRowNums-1 + ikvFhl->m_nDrawFrom;
-    ikvFhl->m_nCurItemIndex = 0;
-    ikvFhl->m_bIsNeedDoLayout = true;
-    ikvFhl->m_bIsNeedShowItemInfo = true;
-    ikvFhl->m_bSendHighLighted = true;
+    ikvMqs->m_nDrawFrom = 0;
+    ikvMqs->m_nDrawTo = ikvMqs->m_nColumnNums*ikvMqs->m_nRowNums-1 + ikvMqs->m_nDrawFrom;
+    ikvMqs->m_nCurItemIndex = 0;
+    ikvMqs->m_bIsNeedDoLayout = true;
+    ikvMqs->m_bIsNeedShowItemInfo = true;
+    ikvMqs->m_bSendHighLighted = true;
 
-    ikvFhl->m_itemList.clear();
+    ikvMqs->m_itemList.clear();
 }
 
 void GCtrlIconView::setCurItemIndex ( const int nIndex )
 {
-    ikvFhl->m_nCurItemIndex = nIndex;
-    int nCountsPerScreen=ikvFhl->m_nColumnNums*ikvFhl->m_nRowNums;
-    int nToScreen=ikvFhl->m_nCurItemIndex/nCountsPerScreen;
-    ikvFhl->m_nDrawFrom = nToScreen*nCountsPerScreen;
-    ikvFhl->m_nDrawTo = nCountsPerScreen-1 + ikvFhl->m_nDrawFrom;
-    ikvFhl->m_bIsNeedDoLayout = true;
-    ikvFhl->m_bIsNeedShowItemInfo = true;
-    ikvFhl->m_bSendHighLighted = true;
+    ikvMqs->m_nCurItemIndex = nIndex;
+    int nCountsPerScreen=ikvMqs->m_nColumnNums*ikvMqs->m_nRowNums;
+    int nToScreen=ikvMqs->m_nCurItemIndex/nCountsPerScreen;
+    ikvMqs->m_nDrawFrom = nToScreen*nCountsPerScreen;
+    ikvMqs->m_nDrawTo = nCountsPerScreen-1 + ikvMqs->m_nDrawFrom;
+    ikvMqs->m_bIsNeedDoLayout = true;
+    ikvMqs->m_bIsNeedShowItemInfo = true;
+    ikvMqs->m_bSendHighLighted = true;
 }
 
 void GCtrlIconView::emitSelected ( GCtrlIconViewItem* pItem )
 {
-    selected_pi.emit ( ikvFhl->m_nCurItemIndex );
+    selected_pi.emit ( ikvMqs->m_nCurItemIndex );
     selected_pI.emit ( pItem );
 }
 
 void GCtrlIconView::setFocusInImage ( const GImage& img )
 {
-    ikvFhl->m_imgFocusIn.setImage ( img );
+    ikvMqs->m_imgFocusIn.setImage ( img );
 }
 
 void GCtrlIconView::setFocusOutImage ( const GImage& img )
 {
-    ikvFhl->m_imgFocusOut.setImage ( img );
+    ikvMqs->m_imgFocusOut.setImage ( img );
 }
 
 void GCtrlIconView::slotFocusChangedTo()
 {
     if ( hasFocus() )
     {
-        focusChangedTo_pI.emit ( ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex ) );
-        focusChangedTo_pi.emit ( ikvFhl->m_nCurItemIndex );
-        ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->getTxt()->startScroll();
+        focusChangedTo_pI.emit ( ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex ) );
+        focusChangedTo_pi.emit ( ikvMqs->m_nCurItemIndex );
+        ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->getTxt()->startScroll();
     }
 }
 
 void GCtrlIconView::slotLoseFocus()
 {
-    ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->getTxt()->stopScroll();
+    ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->getTxt()->stopScroll();
 }
 
 void GCtrlIconView::slotGetFocus()
 {
-    if ( ikvFhl->m_itemList.isEmpty() )
+    if ( ikvMqs->m_itemList.isEmpty() )
         return;
-    ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex )->setFocus();
-    ikvFhl->m_bIsNeedShowItemInfo = true;
-    highlighted_pI.emit ( ikvFhl->m_itemList.at ( ikvFhl->m_nCurItemIndex ) );
-    highlighted_pi.emit ( ikvFhl->m_nCurItemIndex );
+    ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex )->setFocus();
+    ikvMqs->m_bIsNeedShowItemInfo = true;
+    highlighted_pI.emit ( ikvMqs->m_itemList.at ( ikvMqs->m_nCurItemIndex ) );
+    highlighted_pi.emit ( ikvMqs->m_nCurItemIndex );
 }
 
 void GCtrlIconView::slotItemClicked ( const GCtrlIconViewItem* pItem )
 {
-    int nCurItemIndex = ikvFhl->m_itemList.findRef ( pItem );
+    int nCurItemIndex = ikvMqs->m_itemList.findRef ( pItem );
     if ( -1 != nCurItemIndex )
     {
-        selected_pI.emit ( ikvFhl->m_itemList.at ( nCurItemIndex ) );
+        selected_pI.emit ( ikvMqs->m_itemList.at ( nCurItemIndex ) );
         selected_pi.emit ( nCurItemIndex );
     }
 }
 
 bool GCtrlIconView::moveFocusLeft()
 {
-    if ( ikvFhl->m_itemList.count() >1 && ikvFhl->m_nCurItemIndex>0 )
+    if ( ikvMqs->m_itemList.count() >1 && ikvMqs->m_nCurItemIndex>0 )
     {
-        moveFocus ( ikvFhl->m_nCurItemIndex-1 );
+        moveFocus ( ikvMqs->m_nCurItemIndex-1 );
         return true;
     }
     else
@@ -325,9 +325,9 @@ bool GCtrlIconView::moveFocusLeft()
 
 bool GCtrlIconView::moveFocusRight()
 {
-    if ( ikvFhl->m_itemList.count() >1 && ( unsigned int ) ikvFhl->m_nCurItemIndex<ikvFhl->m_itemList.count()-1 )
+    if ( ikvMqs->m_itemList.count() >1 && ( unsigned int ) ikvMqs->m_nCurItemIndex<ikvMqs->m_itemList.count()-1 )
     {
-        moveFocus ( ikvFhl->m_nCurItemIndex+1 );
+        moveFocus ( ikvMqs->m_nCurItemIndex+1 );
         return true;
     }
 
@@ -336,9 +336,9 @@ bool GCtrlIconView::moveFocusRight()
 
 bool GCtrlIconView::moveFocusUp()
 {
-    if ( (int)ikvFhl->m_nCurItemIndex -  ikvFhl->m_nColumnNums >=0 )
+    if ( (int)ikvMqs->m_nCurItemIndex -  ikvMqs->m_nColumnNums >=0 )
     {
-        moveFocus ( ikvFhl->m_nCurItemIndex-ikvFhl->m_nColumnNums );
+        moveFocus ( ikvMqs->m_nCurItemIndex-ikvMqs->m_nColumnNums );
         return true;
     }
 
@@ -347,16 +347,16 @@ bool GCtrlIconView::moveFocusUp()
 
 bool GCtrlIconView::moveFocusDown()
 {
-    if ( ikvFhl->m_nCurItemIndex + ikvFhl->m_nColumnNums <  ikvFhl->m_itemList.count() )
+    if ( ikvMqs->m_nCurItemIndex + ikvMqs->m_nColumnNums <  ikvMqs->m_itemList.count() )
     {
-        moveFocus ( ikvFhl->m_nCurItemIndex+ikvFhl->m_nColumnNums );
+        moveFocus ( ikvMqs->m_nCurItemIndex+ikvMqs->m_nColumnNums );
         return true;
     }
-    else if ( ikvFhl->m_nCurItemIndex !=  ikvFhl->m_itemList.count()-1
-              && ikvFhl->m_itemList.count()-ikvFhl->m_nCurItemIndex > ikvFhl->m_itemList.count() %ikvFhl->m_nColumnNums )
+    else if ( ikvMqs->m_nCurItemIndex !=  ikvMqs->m_itemList.count()-1
+              && ikvMqs->m_itemList.count()-ikvMqs->m_nCurItemIndex > ikvMqs->m_itemList.count() %ikvMqs->m_nColumnNums )
     {
 
-        moveFocus ( ikvFhl->m_itemList.count()-1 );
+        moveFocus ( ikvMqs->m_itemList.count()-1 );
         return true;
     }
 
@@ -365,46 +365,47 @@ bool GCtrlIconView::moveFocusDown()
 
 void GCtrlIconView::moveFocus ( int toIndex )
 {
-    int fromIndex = ikvFhl->m_nCurItemIndex;
-    int nCountsPerScreen=ikvFhl->m_nColumnNums*ikvFhl->m_nRowNums;
+    int fromIndex = ikvMqs->m_nCurItemIndex;
+    int nCountsPerScreen=ikvMqs->m_nColumnNums*ikvMqs->m_nRowNums;
     int nFromScreen=fromIndex/nCountsPerScreen;
     int nToScreen=toIndex/nCountsPerScreen;
     if ( nFromScreen != nToScreen )
     {
-        ikvFhl->m_bIsNeedDoLayout = true;
-        ikvFhl->m_nDrawFrom = nToScreen*nCountsPerScreen;
-        ikvFhl->m_nDrawTo = ikvFhl->m_nDrawFrom+nCountsPerScreen-1;
+        ikvMqs->m_bIsNeedDoLayout = true;
+        ikvMqs->m_nDrawFrom = nToScreen*nCountsPerScreen;
+        ikvMqs->m_nDrawTo = ikvMqs->m_nDrawFrom+nCountsPerScreen-1;
     }
 
-    ikvFhl->m_itemList.at ( fromIndex )->getTxt()->stopScroll();
-    ikvFhl->m_itemList.at ( fromIndex )->getTxt()->setVisible ( false );
+    ikvMqs->m_itemList.at ( fromIndex )->getTxt()->stopScroll();
+    ikvMqs->m_itemList.at ( fromIndex )->getTxt()->setVisible ( false );
 
-    if ( !ikvFhl->m_bIsNeedDoLayout )
+    if ( !ikvMqs->m_bIsNeedDoLayout )
     {
-        ikvFhl->m_itemList.at ( fromIndex )->update();
-        ikvFhl->m_itemList.at ( toIndex )->update();
+        ikvMqs->m_itemList.at ( fromIndex )->update();
+        ikvMqs->m_itemList.at ( toIndex )->update();
     }
     else
     {
         update();
     }
 
-    highlighted_pI.emit ( ikvFhl->m_itemList.at ( toIndex ) );
+    highlighted_pI.emit ( ikvMqs->m_itemList.at ( toIndex ) );
     
     highlighted_pi.emit ( toIndex );
-    ikvFhl->m_nCurItemIndex = toIndex;
-    ikvFhl->m_bIsNeedShowItemInfo = true;
+    ikvMqs->m_nCurItemIndex = toIndex;
+    ikvMqs->m_bIsNeedShowItemInfo = true;
 }
 
 int GCtrlIconView::getMaxIconHeight()
 {
-    return ikvFhl->m_nMaxHofItem;
+    return ikvMqs->m_nMaxHofItem;
 }
 
 int GCtrlIconView::getMaxIconWidth()
 {
-    return ikvFhl->m_nMaxWofItem;
+    return ikvMqs->m_nMaxWofItem;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
