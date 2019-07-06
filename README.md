@@ -1,5 +1,6 @@
 # GOSP = Giveda® Open Source Project   
-example演示：   
+最容易理解的GUI框架，史上最简单，没有之一。   
+example效果演示：   
 ![在doc/images/目录下](docs/images/DVB_768x432.gif)
 
 ![在doc/images/目录下](docs/images/DVB_edit_chnl_768x432.gif)
@@ -13,8 +14,8 @@ https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_mainMenu_768x432_png.g
 
 
 # 一、简介和概述  
+最容易理解的GUI框架，史上最简单，没有之一。   
   **2019-06-03，发表v1.0，版本代号为：沉默的蓝色幽灵。**    
-  **这是一个处于筹划过程中的项目，视情况而定。**   
 
 Qt是芬兰人做的一个优秀的c++开发框架，API简单易用、远远超越了那些还在使用win32API&callback的同类产品。  
 2018年，Qt公司内部立项了一个将Qt移植到MCU的研发新项目，资源占用情况如下：  
@@ -23,6 +24,7 @@ Qt是芬兰人做的一个优秀的c++开发框架，API简单易用、远远超
 Qt实在太庞大了！  
 基于上述原因，在汲取了Qt精华的基础上，我做了这个软件， **本软件在尊重、不侵犯Qt知识产权的前提下，尽量提供类似Qt的API接口，仅需要几百KB的RAM和ROM，能运行在Qt不支持的低性能低功耗领域。**    
 
+  **如下功能处于筹划过程，视情况而定。**   
 目前市场上常见的RTOS有如下：FreeRTOS、Vxworks、ReWorks、DeltaOS、SylixOS、华为liteOS、阿里AliOS、RT-Thread、RTEMS等，这些RTOS可以像linux/windows一样实现远程桌面吗？这是一个在RTOS上实现远程桌面的技术方案。  
 在这里，我们首先要区分界面和桌面的关系，图形界面的含义非常广泛，几乎涵盖了所有的计算机信息展示界面。而桌面则是基于界面的概念，将一些普遍适用的常用基本功能打包在一起，方便二次开发，避免重复开发，我们则称之为桌面环境。  
 在嵌入式领域，一个嵌入式远程桌面，我想更多的是指能够通过远程界面来实现对电子设备的交互控制吧。  
@@ -35,6 +37,7 @@ http://giveda.com/
 
 # 二、主要特色
 
+* 最容易理解的GUI框架，史上最简单，没有之一。   
 * 100%使用图片来实现个性化的控件和界面。（见下文的截图）
 * 提供了类似Qt的API，未来可提供基于qt creator的集成开发环境。
 * 基于别具一格的Giveda信号槽技术，各个模块代码之间无耦合。
