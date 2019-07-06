@@ -24,7 +24,6 @@
 GSize::GSize()
 {
     m_data.w = m_data.h = -1;
-    
 }
 
 GSize::GSize ( T_OFFSET w, T_OFFSET h )
@@ -167,6 +166,4 @@ void GSize::transpose()
     
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

@@ -24,7 +24,6 @@
 GRect::GRect()
 {
     m_rectData.left = m_rectData.top = 0;
-    
     m_rectData.right = m_rectData.bottom = -1;
 }
 
@@ -38,42 +37,63 @@ GRect GRect::operator& ( const GRect &r ) const
     T_OFFSET l1 = m_rectData.left;
     T_OFFSET r1 = m_rectData.left;
     if ( m_rectData.right - m_rectData.left + 1 < 0 )
+    {
         l1 = m_rectData.right;
+    }
     else
+    {
         r1 = m_rectData.right;
+    }
 
     T_OFFSET l2 = r.m_rectData.left;
     T_OFFSET r2 = r.m_rectData.left;
     if ( r.m_rectData.right - r.m_rectData.left + 1 < 0 )
+    {
         l2 = r.m_rectData.right;
+    }
     else
+    {
         r2 = r.m_rectData.right;
+    }
 
     if ( l1 > r2 || l2 > r1 )
+    {
         return GRect();
+    }
 
     T_OFFSET t1 = m_rectData.top;
     T_OFFSET b1 = m_rectData.top;
     if ( m_rectData.bottom - m_rectData.top + 1 < 0 )
+    {
         t1 = m_rectData.bottom;
+    }
     else
+    {
         b1 = m_rectData.bottom;
+    }
 
     T_OFFSET t2 = r.m_rectData.top;
     T_OFFSET b2 = r.m_rectData.top;
     if ( r.m_rectData.bottom - r.m_rectData.top + 1 < 0 )
+    {
         t2 = r.m_rectData.bottom;
+    }
     else
+    {
         b2 = r.m_rectData.bottom;
+    }
 
     if ( t1 > b2 || t2 > b1 )
+    {
         return GRect();
+    }
 
     GRect tmp;
     tmp.m_rectData.left = gMax ( l1, l2 );
     tmp.m_rectData.right = gMin ( r1, r2 );
     tmp.m_rectData.top = gMax ( t1, t2 );
     tmp.m_rectData.bottom = gMin ( b1, b2 );
+
     return tmp;
 }
 
@@ -226,18 +246,18 @@ void GRect::moveTopLeft ( const GPoint &p )
 
 void GRect::setWidth ( T_OFFSET w )
 {
-    m_rectData.right = ( m_rectData.left + w - 1 );
+    m_rectData.right = m_rectData.left + w - 1;
 }
 
 void GRect::setHeight ( T_OFFSET h )
 {
-    m_rectData.bottom = ( m_rectData.top + h - 1 );
+    m_rectData.bottom = m_rectData.top + h - 1;
 }
 
 void GRect::setSize ( const GSize &s )
 {
-    m_rectData.right = ( s.width()  + m_rectData.left - 1 );
-    m_rectData.bottom = ( s.height() + m_rectData.top - 1 );
+    m_rectData.right = s.width()  + m_rectData.left - 1;
+    m_rectData.bottom = s.height() + m_rectData.top - 1;
 }
 
 GRect GRect::intersect ( const GRect &r ) const
@@ -255,140 +275,215 @@ void GRect::moveBy ( const GPoint& p )
     translate ( p );
 }
 
-void GRect::setRect(T_OFFSET ax, T_OFFSET ay, T_OFFSET aw, T_OFFSET ah)
+void GRect::setRect ( T_OFFSET ax, T_OFFSET ay, T_OFFSET aw, T_OFFSET ah )
 {
     m_rectData.left = ax;
     m_rectData.top = ay;
-    m_rectData.right = (ax + aw - 1);
-    m_rectData.bottom = (ay + ah - 1);
+    m_rectData.right = ax + aw - 1;
+    m_rectData.bottom = ay + ah - 1;
 }
 
-bool GRect::contains(const GRect &r, bool proper) const
+bool GRect::contains ( const GRect &r, bool proper ) const
 {
-    if (isNull() || r.isNull())
+    if ( isNull() || r.isNull() )
+    {
         return false;
-    
+    }
+
     T_OFFSET l1 = m_rectData.left;
     T_OFFSET r1 = m_rectData.left;
-    if (m_rectData.right - m_rectData.left + 1 < 0)
+    if ( m_rectData.right - m_rectData.left + 1 < 0 )
+    {
         l1 = m_rectData.right;
+    }
     else
+    {
         r1 = m_rectData.right;
-    
+    }
+
     T_OFFSET l2 = r.m_rectData.left;
     T_OFFSET r2 = r.m_rectData.left;
-    if (r.m_rectData.right - r.m_rectData.left + 1 < 0)
+    if ( r.m_rectData.right - r.m_rectData.left + 1 < 0 )
+    {
         l2 = r.m_rectData.right;
-    else
-        r2 = r.m_rectData.right;
-    
-    if (proper) {
-        if (l2 <= l1 || r2 >= r1)
-            return false;
-    } else {
-        if (l2 < l1 || r2 > r1)
-            return false;
     }
-    
+    else
+    {
+        r2 = r.m_rectData.right;
+    }
+
+    if ( proper )
+    {
+        if ( l2 <= l1 || r2 >= r1 )
+        {
+            return false;
+        }
+    }
+    else
+    {
+        if ( l2 < l1 || r2 > r1 )
+        {
+            return false;
+        }
+    }
+
     T_OFFSET t1 = m_rectData.top;
     T_OFFSET b1 = m_rectData.top;
-    if (m_rectData.bottom - m_rectData.top + 1 < 0)
+    if ( m_rectData.bottom - m_rectData.top + 1 < 0 )
+    {
         t1 = m_rectData.bottom;
+    }
     else
+    {
         b1 = m_rectData.bottom;
-    
+    }
+
     T_OFFSET t2 = r.m_rectData.top;
     T_OFFSET b2 = r.m_rectData.top;
-    if (r.m_rectData.bottom - r.m_rectData.top + 1 < 0)
+    if ( r.m_rectData.bottom - r.m_rectData.top + 1 < 0 )
+    {
         t2 = r.m_rectData.bottom;
-    else
-        b2 = r.m_rectData.bottom;
-    
-    if (proper) {
-        if (t2 <= t1 || b2 >= b1)
-            return false;
-    } else {
-        if (t2 < t1 || b2 > b1)
-            return false;
     }
-    
+    else
+    {
+        b2 = r.m_rectData.bottom;
+    }
+
+    if ( proper )
+    {
+        if ( t2 <= t1 || b2 >= b1 )
+        {
+            return false;
+        }
+    }
+    else
+    {
+        if ( t2 < t1 || b2 > b1 )
+        {
+            return false;
+        }
+    }
+
     return true;
 }
 
-bool GRect::intersects(const GRect &r) const
+bool GRect::intersects ( const GRect &r ) const
 {
-    if (isNull() || r.isNull())
+    if ( isNull() || r.isNull() )
+    {
         return false;
-    
+    }
+
     T_OFFSET l1 = m_rectData.left;
     T_OFFSET r1 = m_rectData.left;
-    if (m_rectData.right - m_rectData.left + 1 < 0)
+    if ( m_rectData.right - m_rectData.left + 1 < 0 )
+    {
         l1 = m_rectData.right;
+    }
     else
+    {
         r1 = m_rectData.right;
-    
+    }
+
     T_OFFSET l2 = r.m_rectData.left;
     T_OFFSET r2 = r.m_rectData.left;
-    if (r.m_rectData.right - r.m_rectData.left + 1 < 0)
+    if ( r.m_rectData.right - r.m_rectData.left + 1 < 0 )
+    {
         l2 = r.m_rectData.right;
+    }
     else
+    {
         r2 = r.m_rectData.right;
-    
-    if (l1 > r2 || l2 > r1)
+    }
+
+    if ( l1 > r2 || l2 > r1 )
+    {
         return false;
-    
+    }
+
     T_OFFSET t1 = m_rectData.top;
     T_OFFSET b1 = m_rectData.top;
-    if (m_rectData.bottom - m_rectData.top + 1 < 0)
+    if ( m_rectData.bottom - m_rectData.top + 1 < 0 )
+    {
         t1 = m_rectData.bottom;
+    }
     else
+    {
         b1 = m_rectData.bottom;
-    
+    }
+
     T_OFFSET t2 = r.m_rectData.top;
     T_OFFSET b2 = r.m_rectData.top;
-    if (r.m_rectData.bottom - r.m_rectData.top + 1 < 0)
+    if ( r.m_rectData.bottom - r.m_rectData.top + 1 < 0 )
+    {
         t2 = r.m_rectData.bottom;
+    }
     else
+    {
         b2 = r.m_rectData.bottom;
-    
-    if (t1 > b2 || t2 > b1)
+    }
+
+    if ( t1 > b2 || t2 > b1 )
+    {
         return false;
-    
+    }
+
     return true;
 }
 
-bool GRect::contains(const GPoint &p, bool proper) const
+bool GRect::contains ( const GPoint &p, bool proper ) const
 {
     T_OFFSET l, r;
-    if (m_rectData.right < m_rectData.left - 1) {
+    if ( m_rectData.right < m_rectData.left - 1 )
+    {
         l = m_rectData.right;
         r = m_rectData.left;
-    } else {
+    }
+    else
+    {
         l = m_rectData.left;
         r = m_rectData.right;
     }
-    if (proper) {
-        if (p.x() <= l || p.x() >= r)
+    if ( proper )
+    {
+        if ( p.x() <= l || p.x() >= r )
+        {
             return false;
-    } else {
-        if (p.x() < l || p.x() > r)
+        }
+    }
+    else
+    {
+        if ( p.x() < l || p.x() > r )
+        {
             return false;
+        }
     }
     T_OFFSET t, b;
-    if (m_rectData.bottom < m_rectData.top - 1) {
+    if ( m_rectData.bottom < m_rectData.top - 1 )
+    {
         t = m_rectData.bottom;
         b = m_rectData.top;
-    } else {
+    }
+    else
+    {
         t = m_rectData.top;
         b = m_rectData.bottom;
     }
-    if (proper) {
-        if (p.y() <= t || p.y() >= b)
+    if ( proper )
+    {
+        if ( p.y() <= t || p.y() >= b )
+        {
             return false;
-    } else {
-        if (p.y() < t || p.y() > b)
-            return false;
+        }
     }
+    else
+    {
+        if ( p.y() < t || p.y() > b )
+        {
+            return false;
+        }
+    }
+
     return true;
 }
 
@@ -415,31 +510,27 @@ void GRect::setBottom ( T_OFFSET pos )
 const T_RECT GRect::toT_RECT() const
 {
     T_RECT nr;
-    nr.left = htons(m_rectData.left);
-    nr.top = htons(m_rectData.top);
-    nr.right = htons(m_rectData.right);
-    nr.bottom = htons(m_rectData.bottom);
+    nr.left = htons ( m_rectData.left );
+    nr.top = htons ( m_rectData.top );
+    nr.right = htons ( m_rectData.right );
+    nr.bottom = htons ( m_rectData.bottom );
     return nr;
 }
 
-/*DLL_PUBLIC*/ bool operator==(const GRect &r1, const GRect &r2)
+/*DLL_PUBLIC*/ bool operator== ( const GRect &r1, const GRect &r2 )
 {
     return r1.m_rectData.left == r2.m_rectData.left
-            && r1.m_rectData.right == r2.m_rectData.right
-            && r1.m_rectData.top == r2.m_rectData.top
-            && r1.m_rectData.bottom == r2.m_rectData.bottom;
+           && r1.m_rectData.right == r2.m_rectData.right
+           && r1.m_rectData.top == r2.m_rectData.top
+           && r1.m_rectData.bottom == r2.m_rectData.bottom;
 }
 
-GRect::GRect(const T_RECT& tr) 
+GRect::GRect ( const T_RECT& tr )
 {
-    m_rectData.left = ntohs( tr.left );
-    m_rectData.right = ntohs( tr.right );
-    m_rectData.top = ntohs( tr.top );
-    m_rectData.bottom = ntohs( tr.bottom );
-    
+    m_rectData.left = ntohs ( tr.left );
+    m_rectData.right = ntohs ( tr.right );
+    m_rectData.top = ntohs ( tr.top );
+    m_rectData.bottom = ntohs ( tr.bottom );
 }
 
-
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^

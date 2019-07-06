@@ -25,7 +25,6 @@
 GPoint::GPoint()
 {
     m_pointData.x=0;
-    
     m_pointData.y=0;
 }
 
@@ -112,10 +111,10 @@ GPoint &GPoint::operator/= ( double c )
     return *this;
 }
 
-GPoint::GPoint(const T_POINT& tp)
+GPoint::GPoint ( const T_POINT& tp )
 {
-    m_pointData.x = ntohs(tp.x);
-    m_pointData.y = ntohs(tp.y);
+    m_pointData.x = ntohs ( tp.x );
+    m_pointData.y = ntohs ( tp.y );
 }
 
 bool operator== ( const GPoint &p1, const GPoint &p2 )
@@ -140,7 +139,7 @@ const GPoint operator- ( const GPoint &p1, const GPoint &p2 )
 
 const GPoint operator- ( const GPoint &p )
 {
-    return GPoint ( -p.m_pointData.x, -p.m_pointData.y );
+    return GPoint ( 0-p.m_pointData.x, 0-p.m_pointData.y );
 }
 
 const GPoint operator* ( const GPoint &p, float c )
@@ -175,10 +174,7 @@ const GPoint operator* ( int c, const GPoint &p )
 
 const GPoint operator/ ( const GPoint &p, double c )
 {
-    
     return GPoint ( gRound ( p.m_pointData.x/c ), gRound ( p.m_pointData.y/c ) );
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^
