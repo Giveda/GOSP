@@ -28,7 +28,7 @@
 
 using namespace std;
 
-class GObjectLMQ;
+class GObjectSelf;
 class GObject;
 
 #define slots
@@ -244,7 +244,7 @@ signals:
     GSignal<void(void)> sigDestroyed;
 
 private:
-    GObjectLMQ *m_priv;
+    GObjectSelf *m_priv;
 
 public:
     /**
@@ -252,9 +252,8 @@ public:
      *
      * @param parent ...
      * @param name ...
-     * @param reserved 不要改变此参数，除非你是专家，并且你真的知道自己在做什么
      */
-    explicit GObject ( GObject *parent=NULL,  const char *name=NULL, bool reserved = true );
+    explicit GObject ( GObject *parent=NULL,  const char *name=NULL );
 
     GObject ( const GObject & src );
     GObject & operator= ( const GObject & src );
@@ -348,4 +347,5 @@ int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Rece
 #endif 
 
 
+// have a nice day ^_^
 // have a nice day ^_^

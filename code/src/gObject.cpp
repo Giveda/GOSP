@@ -35,13 +35,12 @@ struct SenderPair
     SIGNAL_POINTER(void*) signal;
 };
 
-class GObjectLMQ
+class GObjectSelf
 {
 public:
-    GObjectLMQ ( GObject *p, const char* nm, bool r )
+    GObjectSelf ( GObject *p, const char* nm )
         :m_parent ( p ),
-         strName ( nm ),
-         reserved(r)
+         strName ( nm )
     {
         tid = pthread_self();
 
@@ -49,7 +48,7 @@ public:
         rLst.clear();
     }
 
-    ~GObjectLMQ()
+    ~GObjectSelf()
     {
         sLst.clear();
         rLst.clear();
@@ -57,7 +56,6 @@ public:
 
     GObject *m_parent;
     string   strName;
-    bool reserved;
     pthread_t  tid;
 
     list<SenderPair>  sLst;
@@ -65,13 +63,9 @@ public:
     
 };
 
-GObject::GObject ( GObject *p,  const char *n, bool reserved )
-    :m_priv ( new GObjectLMQ ( p, NULL==n?"":n, reserved ) )
+GObject::GObject ( GObject *p,  const char *n )
+    :m_priv ( new GObjectSelf ( p, NULL==n?"":n ) )
 {
-    if(false == reserved)
-    {
-        return ;
-    }
 }
 
 GObject::~GObject()
@@ -175,7 +169,7 @@ void GObject::destructAsReceiver()
     {
         it->signal->remove_if( Receiver_Is(this) );
         it->sender->m_priv->rLst.remove_if( Receiver_Is(this) );
-        ++it;
+        it++;
     }
 }
 
@@ -267,7 +261,7 @@ GObject& GObject::operator= ( const GObject&  )
 }
 
 GObject::GObject ( const GObject& src )
-    :m_priv ( new GObjectLMQ ( NULL, "", src.m_priv->reserved ) )
+    :m_priv ( new GObjectSelf ( NULL, "" ) )
 {
 }
 
@@ -286,4 +280,5 @@ void GSlot::operator() ( const GSlot& )
     
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
