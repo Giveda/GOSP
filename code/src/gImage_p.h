@@ -50,7 +50,7 @@ GImageHandler *get_image_handler( const string& format );
 void   defineIOHandler( const string& format, const string& header, const string& flags, image_io_handler read_image, image_io_handler write_image );
 
 #ifdef CONFIG_ENABLE_IMAGE_SMOOTHSCALE
-class GImageSmoothScalerFles;
+class GImageSmoothScalerHmq;
 class GImageSmoothScaler
 {
 public:
@@ -65,7 +65,7 @@ protected:
     int scaledWidth(void) const;
 
 private:
-    GImageSmoothScalerFles	*d;
+    GImageSmoothScalerHmq	*d;
     virtual GRgb* scanLine(const int line = 0, const GImage *src = 0);
 };
 
@@ -73,6 +73,4 @@ private:
 
 #endif 
 
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^
