@@ -1,8 +1,11 @@
 # 简易指导
 #### 在linux下编译   
 #请先安装依赖。本软件依赖libjpeg-dev/libpng-dev/freetype-dev/qt4-dev等。本软件在ubuntu/qt4环境下测试通过。移植到fedora/qt5也不会有什么工作量。    
+sudo apt-get install libjpeg-dev libpng-dev libfreetype6-dev    
+
 #接着进入/path/to/GOSP/code目录，在此目录下能找到configure这个可执行文件。  
-cd /path/to/GOSP/code
+cd /path/to/GOSP/code    
+
 sudo cp lib/Giveda.pc /usr/lib/pkgconfig/   #安装pkg-config包管理文件   
 export GIVEDA_DIR=/path/to/GOSP/code        #设置环境变量  
 ./configure    #执行configure，选择目标设备，效果如下    
