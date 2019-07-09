@@ -8,6 +8,8 @@ cd /path/to/GOSP/code
 
 sudo cp lib/Giveda.pc /usr/lib/pkgconfig/   #安装pkg-config包管理文件   
 export GIVEDA_DIR=/path/to/GOSP/code        #设置环境变量  
+
+#请确保此刻你的系统中存在qmake-qt4命令，如果你想使用qmake-qt5，请自行修改configure脚本中的qmake-qt4至qmake-qt5  
 ./configure    #执行configure，选择目标设备，效果如下    
 ![Giveda](docs/images/configureResult.jpeg)
 
