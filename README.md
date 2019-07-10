@@ -1,5 +1,6 @@
 # GOSP = Giveda® Open Source Project   
 最容易理解的GUI框架，史上最简单，没有之一。   
+在尊重Qt知识产权的前提下，本GUI框架提供了类似Qt的API接口，使用c++，仅需要几百KB的硬件资源，适用于嵌入式软件。   
 example效果演示：   
 ![在doc/images/目录下](docs/images/DVB_768x432.gif)
 
@@ -15,6 +16,7 @@ https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_mainMenu_768x432_png.g
 
 # 一、简介和概述  
 最容易理解的GUI框架，史上最简单，没有之一。   
+在尊重Qt知识产权的前提下，本GUI框架提供了类似Qt的API接口，使用c++，仅需要几百KB的硬件资源，适用于嵌入式软件。   
   **2019-06-03，发表v1.0，版本代号为：沉默的蓝色幽灵。**    
 
 Qt是芬兰人做的一个优秀的c++开发框架，API简单易用、远远超越了那些还在使用win32API&callback的同类产品。  
