@@ -20,7 +20,7 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlLineEditLMQ;
+class GCtrlLineEditMhL;
 
 class GCtrlLineEdit : public GMCtrlItem
 {
@@ -57,11 +57,12 @@ private slots:
     void slotLoseFocus();
 
 private:
-    GCtrlLineEditLMQ *leHlo;
+    GCtrlLineEditMhL *leLqH;
 };
 
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
