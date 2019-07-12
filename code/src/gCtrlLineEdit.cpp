@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlLineEditMhL
+class GCtrlLineEditSelf
 {
 public:
-    GCtrlLineEditMhL ( GCtrlForm* frm,  GCtrlLineEdit* le ):m_pixBg ( frm, le, "lineEditBg" ), m_txtDisplay ( frm, le, "lineEditText" ), m_timer ( le )
+    GCtrlLineEditSelf ( GCtrlForm* frm,  GCtrlLineEdit* le ):m_pixBg ( frm, le, "lineEditBg" ), m_txtDisplay ( frm, le, "lineEditText" ), m_timer ( le )
     {}
     
     GMPixmap m_pixBg;
@@ -35,7 +35,7 @@ public:
 };
 
 GCtrlLineEdit::GCtrlLineEdit ( GCtrlForm* frm, GMItem* parent, const char* name )
-    : GMCtrlItem ( frm, parent, name ), leLqH ( new GCtrlLineEditMhL ( frm, this ) )
+    : GMCtrlItem ( frm, parent, name ), leSpp ( new GCtrlLineEditSelf ( frm, this ) )
 {
     frm->appendItem ( this );
     initAttributes();
@@ -43,21 +43,21 @@ GCtrlLineEdit::GCtrlLineEdit ( GCtrlForm* frm, GMItem* parent, const char* name 
 
 GCtrlLineEdit::~GCtrlLineEdit()
 {
-    delete leLqH;
+    delete leSpp;
 }
 
 void GCtrlLineEdit::initAttributes()
 {
-    connect ( &leLqH->m_timer, leLqH->m_timer.timeout, this, &GCtrlLineEdit::slotTimeOut );
+    connect ( &leSpp->m_timer, leSpp->m_timer.timeout, this, &GCtrlLineEdit::slotTimeOut );
     connect ( this, this->loseFocus, this, &GCtrlLineEdit::slotLoseFocus );
     connect ( this, this->getFocus, this, &GCtrlLineEdit::slotGetFocus );
     
-    leLqH->m_bIsShowCursor = false;
-    leLqH->m_echoMode = Normal;
-    leLqH->m_nKey_Backspace = Giveda::Key_Backspace;
-    leLqH->m_txtDisplay.setTextFlags ( Giveda::AlignVCenter );
-    leLqH->m_strData = "";
-    leLqH->m_nCursorPos = 0;
+    leSpp->m_bIsShowCursor = false;
+    leSpp->m_echoMode = Normal;
+    leSpp->m_nKey_Backspace = Giveda::Key_Backspace;
+    leSpp->m_txtDisplay.setTextFlags ( Giveda::AlignVCenter );
+    leSpp->m_strData = "";
+    leSpp->m_nCursorPos = 0;
 
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
@@ -65,60 +65,60 @@ void GCtrlLineEdit::initAttributes()
     {
         pAppStyle->appendLineEditStyle();
     }
-    leLqH->m_pixBg.setPixmap ( pStyle->pixmap ( leLqH->m_pixBg.name() ) );
-    leLqH->m_txtDisplay.setFont ( pStyle->font ( leLqH->m_txtDisplay.name() ) );
-    leLqH->m_txtDisplay.setColor ( pStyle->color ( leLqH->m_txtDisplay.name() ) );
-    setSize ( leLqH->m_pixBg.width(), leLqH->m_pixBg.height() );
-    leLqH->m_txtDisplay.setSize ( leLqH->m_pixBg.width(), leLqH->m_pixBg.height() );
+    leSpp->m_pixBg.setPixmap ( pStyle->pixmap ( leSpp->m_pixBg.name() ) );
+    leSpp->m_txtDisplay.setFont ( pStyle->font ( leSpp->m_txtDisplay.name() ) );
+    leSpp->m_txtDisplay.setColor ( pStyle->color ( leSpp->m_txtDisplay.name() ) );
+    setSize ( leSpp->m_pixBg.width(), leSpp->m_pixBg.height() );
+    leSpp->m_txtDisplay.setSize ( leSpp->m_pixBg.width(), leSpp->m_pixBg.height() );
 }
 
 void GCtrlLineEdit::slotTimeOut()
 {
-    leLqH->m_bIsShowCursor = !leLqH->m_bIsShowCursor;
+    leSpp->m_bIsShowCursor = !leSpp->m_bIsShowCursor;
     update();
 }
 
 void GCtrlLineEdit::slotGetFocus()
 {
-    leLqH->m_bIsShowCursor = true;
-    leLqH->m_timer.start ( 1000 );
+    leSpp->m_bIsShowCursor = true;
+    leSpp->m_timer.start ( 1000 );
 }
 
 void GCtrlLineEdit::slotLoseFocus()
 {
-    leLqH->m_bIsShowCursor = false;
-    leLqH->m_timer.stop();
+    leSpp->m_bIsShowCursor = false;
+    leSpp->m_timer.stop();
 }
 
 void GCtrlLineEdit::paintEvent ( GPainter& p )
 {
-    leLqH->m_pixBg.draw ( p );
+    leSpp->m_pixBg.draw ( p );
 
-    GString str = leLqH->m_strData;
-    if ( leLqH->m_echoMode == Password )
+    GString str = leSpp->m_strData;
+    if ( leSpp->m_echoMode == Password )
     {
         str.fill ( '*' );
     }
-    if ( leLqH->m_bIsShowCursor )
+    if ( leSpp->m_bIsShowCursor )
     {
-        str.insert ( leLqH->m_nCursorPos, "|" );
+        str.insert ( leSpp->m_nCursorPos, "|" );
     }
-    leLqH->m_txtDisplay.setText ( str );
-    leLqH->m_txtDisplay.draw ( p );
+    leSpp->m_txtDisplay.setText ( str );
+    leSpp->m_txtDisplay.draw ( p );
 }
 
 bool GCtrlLineEdit::fwKeyPressEvent ( GKeyEvent* e )
 {
-    if ( leLqH->m_nKey_Backspace == e->key() )
+    if ( leSpp->m_nKey_Backspace == e->key() )
     {
-        leLqH->m_nCursorPos--;
-        if ( leLqH->m_nCursorPos<0 )
+        leSpp->m_nCursorPos--;
+        if ( leSpp->m_nCursorPos<0 )
         {
-            leLqH->m_nCursorPos = 0;
+            leSpp->m_nCursorPos = 0;
         }
         else
         {
-            leLqH->m_strData.remove ( leLqH->m_nCursorPos, 1 );
+            leSpp->m_strData.remove ( leSpp->m_nCursorPos, 1 );
         }
         update();
         return true;
@@ -131,18 +131,18 @@ bool GCtrlLineEdit::fwKeyPressEvent ( GKeyEvent* e )
     case Giveda::Key_Up:
         return false;
     case Giveda::Key_Left:
-        leLqH->m_nCursorPos--;
-        if ( leLqH->m_nCursorPos<0 )
+        leSpp->m_nCursorPos--;
+        if ( leSpp->m_nCursorPos<0 )
         {
-            leLqH->m_nCursorPos = 0;
+            leSpp->m_nCursorPos = 0;
         }
         update();
         return true;
     case Giveda::Key_Right:
-        leLqH->m_nCursorPos++;
-        if ( ( unsigned int ) leLqH->m_nCursorPos>leLqH->m_strData.length() )
+        leSpp->m_nCursorPos++;
+        if ( ( unsigned int ) leSpp->m_nCursorPos>leSpp->m_strData.length() )
         {
-            leLqH->m_nCursorPos = leLqH->m_strData.length();
+            leSpp->m_nCursorPos = leSpp->m_strData.length();
         }
         update();
         return true;
@@ -157,51 +157,52 @@ bool GCtrlLineEdit::fwKeyPressEvent ( GKeyEvent* e )
         return bRet;
     }
 
-    leLqH->m_strData.insert ( leLqH->m_nCursorPos, s );
-    leLqH->m_nCursorPos++;
+    leSpp->m_strData.insert ( leSpp->m_nCursorPos, s );
+    leSpp->m_nCursorPos++;
     update();
     return true;
 }
 void GCtrlLineEdit::setEchoMode ( GCtrlLineEdit::EchoMode mode )
 {
-    leLqH->m_echoMode = mode;
+    leSpp->m_echoMode = mode;
 }
 GCtrlLineEdit::EchoMode GCtrlLineEdit::echoMode() const
 {
-    return leLqH->m_echoMode;
+    return leSpp->m_echoMode;
 }
 void GCtrlLineEdit::setTextGeometry ( int x, int y, int w, int h )
 {
-    leLqH->m_txtDisplay.setGeometry ( x, y, w, h );
+    leSpp->m_txtDisplay.setGeometry ( x, y, w, h );
 }
 void GCtrlLineEdit::setFont ( const GFont& font )
 {
-    leLqH->m_txtDisplay.setFont ( font );
+    leSpp->m_txtDisplay.setFont ( font );
 }
 void GCtrlLineEdit::setColor ( const GColor& color )
 {
-    leLqH->m_txtDisplay.setColor ( color );
+    leSpp->m_txtDisplay.setColor ( color );
 }
 void GCtrlLineEdit::setText ( const GString& str )
 {
-    leLqH->m_strData = str;
+    leSpp->m_strData = str;
 }
 
 GString GCtrlLineEdit::text()
 {
-    return leLqH->m_strData;
+    return leSpp->m_strData;
 }
 
 void GCtrlLineEdit::clear()
 {
-    leLqH->m_strData = "";
+    leSpp->m_strData = "";
 }
 
 void GCtrlLineEdit::setBackspaceKey ( int nKey )
 {
-    leLqH->m_nKey_Backspace = nKey;
+    leSpp->m_nKey_Backspace = nKey;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

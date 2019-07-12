@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMProgressBarMhL
+class GMProgressBarSelf
 {
 public:
-    GMProgressBarMhL(GCtrlForm* form, GMItem* bar,  int totalSteps=100 )
+    GMProgressBarSelf(GCtrlForm* form, GMItem* bar,  int totalSteps=100 )
         : m_progressColor ( 250, 0, 0 ), 
         m_imgProgressBg ( form, bar, "progressBg" ), m_imgProgress ( form, bar, "progress" ), m_imgProgressCursor ( form, bar, "progressCursor" ), m_nProgress ( 0 ), m_nTotalSteps ( totalSteps ), m_nStepLength ( 1 )
     {}
@@ -38,7 +38,7 @@ public:
 GMProgressBar::GMProgressBar ( GCtrlForm* form, GMItem* parent, const char* name )
     :GMItem ( form, parent, name )
 {
-    pbLqH = new GMProgressBarMhL(form, this);
+    pbSpp = new GMProgressBarSelf(form, this);
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
     while ( NULL== ( pStyle=pAppStyle->itemStyle ( "GCtrlProgressBar" ) ) )
@@ -46,20 +46,20 @@ GMProgressBar::GMProgressBar ( GCtrlForm* form, GMItem* parent, const char* name
         pAppStyle->appendProgressStyle();
     }
 
-    pbLqH->m_imgProgressBg.setImage ( pStyle->pixmap ( pbLqH->m_imgProgressBg.name() ) );
-    pbLqH->m_imgProgress.setImage ( pStyle->pixmap ( pbLqH->m_imgProgress.name() ) );
-    setProgressCursorImage ( GImage ( pStyle->pixmap ( pbLqH->m_imgProgressCursor.name() ) ) );
+    pbSpp->m_imgProgressBg.setImage ( pStyle->pixmap ( pbSpp->m_imgProgressBg.name() ) );
+    pbSpp->m_imgProgress.setImage ( pStyle->pixmap ( pbSpp->m_imgProgress.name() ) );
+    setProgressCursorImage ( GImage ( pStyle->pixmap ( pbSpp->m_imgProgressCursor.name() ) ) );
 
-    pbLqH->m_imgProgressBg.setWidth ( pbLqH->m_nTotalSteps*pbLqH->m_nStepLength +pbLqH->m_imgProgressCursor.width() );
-    pbLqH->m_imgProgress.setWidth ( pbLqH->m_nProgress*pbLqH->m_nStepLength );
-    pbLqH->m_imgProgressCursor.setX ( pbLqH->m_imgProgress.width() );
-    setWidth ( pbLqH->m_imgProgressBg.width() );
+    pbSpp->m_imgProgressBg.setWidth ( pbSpp->m_nTotalSteps*pbSpp->m_nStepLength +pbSpp->m_imgProgressCursor.width() );
+    pbSpp->m_imgProgress.setWidth ( pbSpp->m_nProgress*pbSpp->m_nStepLength );
+    pbSpp->m_imgProgressCursor.setX ( pbSpp->m_imgProgress.width() );
+    setWidth ( pbSpp->m_imgProgressBg.width() );
 }
 
 GMProgressBar::GMProgressBar ( int totalSteps, GCtrlForm* form, GMItem* parent, const char* name )
     :GMItem ( form, parent, name )
 {
-    pbLqH = new GMProgressBarMhL(form, this, totalSteps);
+    pbSpp = new GMProgressBarSelf(form, this, totalSteps);
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
     while ( NULL== ( pStyle=pAppStyle->itemStyle ( "GCtrlProgressBar" ) ) )
@@ -67,36 +67,36 @@ GMProgressBar::GMProgressBar ( int totalSteps, GCtrlForm* form, GMItem* parent, 
         pAppStyle->appendProgressStyle();
     }
 
-    pbLqH->m_imgProgressBg.setImage ( pStyle->pixmap ( pbLqH->m_imgProgressBg.name() ) );
-    pbLqH->m_imgProgress.setImage ( pStyle->pixmap ( pbLqH->m_imgProgress.name() ) );
-    setProgressCursorImage ( GImage ( pStyle->pixmap ( pbLqH->m_imgProgressCursor.name() ) ) );
+    pbSpp->m_imgProgressBg.setImage ( pStyle->pixmap ( pbSpp->m_imgProgressBg.name() ) );
+    pbSpp->m_imgProgress.setImage ( pStyle->pixmap ( pbSpp->m_imgProgress.name() ) );
+    setProgressCursorImage ( GImage ( pStyle->pixmap ( pbSpp->m_imgProgressCursor.name() ) ) );
 
-    pbLqH->m_imgProgressBg.setWidth ( pbLqH->m_nTotalSteps*pbLqH->m_nStepLength +pbLqH->m_imgProgressCursor.width() );
-    pbLqH->m_imgProgress.setWidth ( pbLqH->m_nProgress*pbLqH->m_nStepLength );
-    pbLqH->m_imgProgressCursor.setX ( pbLqH->m_imgProgress.width() );
-    setWidth ( pbLqH->m_imgProgressBg.width() );
+    pbSpp->m_imgProgressBg.setWidth ( pbSpp->m_nTotalSteps*pbSpp->m_nStepLength +pbSpp->m_imgProgressCursor.width() );
+    pbSpp->m_imgProgress.setWidth ( pbSpp->m_nProgress*pbSpp->m_nStepLength );
+    pbSpp->m_imgProgressCursor.setX ( pbSpp->m_imgProgress.width() );
+    setWidth ( pbSpp->m_imgProgressBg.width() );
 }
 
 GMProgressBar::~GMProgressBar()
 {
-    delete pbLqH;
+    delete pbSpp;
 }
 
 int GMProgressBar::totalSteps() const
 {
-    return pbLqH->m_nTotalSteps;
+    return pbSpp->m_nTotalSteps;
 }
 int GMProgressBar::progress() const
 {
-    return pbLqH->m_nProgress;
+    return pbSpp->m_nProgress;
 }
 int GMProgressBar::stepLength() const
 {
-    return pbLqH->m_nStepLength;
+    return pbSpp->m_nStepLength;
 }
 void GMProgressBar::setProgressColor ( GColor& c )
 {
-    pbLqH->m_progressColor=c;
+    pbSpp->m_progressColor=c;
 }
 void GMProgressBar::setProgressBgColor ( GColor& c )
 {
@@ -104,68 +104,68 @@ void GMProgressBar::setProgressBgColor ( GColor& c )
 }
 void GMProgressBar::setProgressBgImage ( const GImage& p )
 {
-    pbLqH->m_imgProgressBg.setImage ( p );
+    pbSpp->m_imgProgressBg.setImage ( p );
 }
 void GMProgressBar::setProgressImage ( const GImage& p )
 {
-    pbLqH->m_imgProgress.setImage ( p );
+    pbSpp->m_imgProgress.setImage ( p );
 }
 
 void GMProgressBar::draw ( GPainter& p )
 {
-    pbLqH->m_imgProgressBg.draw ( p );
-    pbLqH->m_imgProgress.draw ( p );
-    pbLqH->m_imgProgressCursor.draw ( p );
+    pbSpp->m_imgProgressBg.draw ( p );
+    pbSpp->m_imgProgress.draw ( p );
+    pbSpp->m_imgProgressCursor.draw ( p );
 }
 
 void GMProgressBar::setProgressCursorImage ( const GImage& p )
 {
-    pbLqH->m_imgProgressCursor.setImage ( p );
-    setHeight ( pbLqH->m_imgProgressCursor.height() );
-    pbLqH->m_imgProgressBg.setY ( ( height()-pbLqH->m_imgProgressBg.height() ) /2 );
-    pbLqH->m_imgProgress.setY ( ( height()-pbLqH->m_imgProgress.height() ) /2 );
+    pbSpp->m_imgProgressCursor.setImage ( p );
+    setHeight ( pbSpp->m_imgProgressCursor.height() );
+    pbSpp->m_imgProgressBg.setY ( ( height()-pbSpp->m_imgProgressBg.height() ) /2 );
+    pbSpp->m_imgProgress.setY ( ( height()-pbSpp->m_imgProgress.height() ) /2 );
 }
 
 void GMProgressBar::setProgressBgHeight ( const int h )
 {
-    pbLqH->m_imgProgressBg.setHeight ( h );
-    pbLqH->m_imgProgress.setHeight ( h );
-    pbLqH->m_imgProgressBg.setY ( ( height()-pbLqH->m_imgProgressBg.height() ) /2 );
-    pbLqH->m_imgProgress.setY ( ( height()-pbLqH->m_imgProgress.height() ) /2 );
+    pbSpp->m_imgProgressBg.setHeight ( h );
+    pbSpp->m_imgProgress.setHeight ( h );
+    pbSpp->m_imgProgressBg.setY ( ( height()-pbSpp->m_imgProgressBg.height() ) /2 );
+    pbSpp->m_imgProgress.setY ( ( height()-pbSpp->m_imgProgress.height() ) /2 );
 }
 
 void GMProgressBar::slotSetProgress ( int progress )
 {
-    if ( pbLqH->m_nProgress == progress )
+    if ( pbSpp->m_nProgress == progress )
     {
         return ;
     }
-    if ( 0>progress || progress > pbLqH->m_nTotalSteps )
+    if ( 0>progress || progress > pbSpp->m_nTotalSteps )
     {
         return ;
     }
-    pbLqH->m_nProgress = progress;
-    pbLqH->m_imgProgress.setWidth ( pbLqH->m_nProgress*pbLqH->m_nStepLength );
-    pbLqH->m_imgProgressCursor.setX ( pbLqH->m_imgProgress.width() );
+    pbSpp->m_nProgress = progress;
+    pbSpp->m_imgProgress.setWidth ( pbSpp->m_nProgress*pbSpp->m_nStepLength );
+    pbSpp->m_imgProgressCursor.setX ( pbSpp->m_imgProgress.width() );
     update();
-    sigProgressChanged.emit ( pbLqH->m_nProgress );
+    sigProgressChanged.emit ( pbSpp->m_nProgress );
 }
 
 void GMProgressBar::slotSetTotalSteps ( int totalSteps )
 {
-    pbLqH->m_nTotalSteps = totalSteps;
-    pbLqH->m_imgProgressBg.setWidth ( pbLqH->m_nTotalSteps*pbLqH->m_nStepLength +pbLqH->m_imgProgressCursor.width() );
-    setWidth ( pbLqH->m_imgProgressBg.width() );
+    pbSpp->m_nTotalSteps = totalSteps;
+    pbSpp->m_imgProgressBg.setWidth ( pbSpp->m_nTotalSteps*pbSpp->m_nStepLength +pbSpp->m_imgProgressCursor.width() );
+    setWidth ( pbSpp->m_imgProgressBg.width() );
 }
 
 void GMProgressBar::slotSetStepLength ( int nStepLen )
 {
-    pbLqH->m_nStepLength = nStepLen;
-    pbLqH->m_imgProgressBg.setWidth ( pbLqH->m_nTotalSteps*pbLqH->m_nStepLength +pbLqH->m_imgProgressCursor.width() );
-    pbLqH->m_imgProgress.setWidth ( pbLqH->m_nProgress*pbLqH->m_nStepLength );
-    pbLqH->m_imgProgressCursor.setX ( pbLqH->m_imgProgress.width() );
+    pbSpp->m_nStepLength = nStepLen;
+    pbSpp->m_imgProgressBg.setWidth ( pbSpp->m_nTotalSteps*pbSpp->m_nStepLength +pbSpp->m_imgProgressCursor.width() );
+    pbSpp->m_imgProgress.setWidth ( pbSpp->m_nProgress*pbSpp->m_nStepLength );
+    pbSpp->m_imgProgressCursor.setX ( pbSpp->m_imgProgress.width() );
     
-    setWidth ( pbLqH->m_imgProgressBg.width() );
+    setWidth ( pbSpp->m_imgProgressBg.width() );
 }
 
 GCtrlProgressBar::GCtrlProgressBar ( GCtrlForm* form, GMItem* parent, const char* name )
@@ -181,6 +181,7 @@ GCtrlProgressBar::GCtrlProgressBar ( int totalSteps, GCtrlForm* form, GMItem* pa
 }
 
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
