@@ -77,6 +77,7 @@ GCtrlScrollText::GCtrlScrollText ( const GString & str, GCtrlForm* form, GMItem*
 {
     form->appendItem ( this );
 }
+
 bool GCtrlImage::isComplex()
 {
     return false;
@@ -97,7 +98,4 @@ bool GCtrlScrollText::isComplex()
     return false;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
 // have a nice day ^_^
