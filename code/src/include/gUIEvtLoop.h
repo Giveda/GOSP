@@ -88,3 +88,4 @@ extern GPaintDevice    *g_screen;
 // have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
+// have a nice day ^_^
