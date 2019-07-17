@@ -37,7 +37,3 @@ int qt_thread_entry(int argc, char **argv)
     
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

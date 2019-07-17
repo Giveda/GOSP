@@ -28,7 +28,7 @@
 
 using namespace std;
 
-class GObjectMhL;
+class GObjectSelf;
 class GObject;
 
 #define slots
@@ -244,7 +244,7 @@ signals:
     GSignal<void(void)> sigDestroyed;
 
 private:
-    GObjectMhL *m_priv;
+    GObjectSelf *m_priv;
 
 public:
     /**
@@ -347,7 +347,3 @@ int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Rece
 #endif 
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
