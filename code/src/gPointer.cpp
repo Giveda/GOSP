@@ -42,3 +42,4 @@ void GPointerData::slotDestroyed()
 
 
 
+// have a nice day ^_^
