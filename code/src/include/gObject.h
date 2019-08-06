@@ -28,7 +28,7 @@
 
 using namespace std;
 
-class GObjectFles;
+class GObjectHmq;
 class GObject;
 
 #define slots
@@ -160,8 +160,7 @@ public:
      */
     void emit( Args... args )
     {
-        auto t = _slotLst;
-        for ( auto it = t.begin(); it != t.end(); ++it )
+        for ( auto it = _slotLst.begin(); it != _slotLst.end(); ++it )
         {
             ( * ( *it ) ) ( args... );
         }
@@ -244,7 +243,7 @@ signals:
     GSignal<void(void)> sigDestroyed;
 
 private:
-    GObjectFles *m_priv;
+    GObjectHmq *m_priv;
 
 public:
     /**
@@ -347,5 +346,6 @@ int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Rece
 #endif 
 
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
