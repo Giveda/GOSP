@@ -236,10 +236,6 @@ void GUIEvtLoop::exitLoop()
     EvtLoop *loop = loopLst.back();
     loop->bRun = false;
     pthread_t id = pthread_self();
-    if(id != loop->id)
-    {
-        WARNING("should not call  enterLoop/exitLoop from different thread, may cause  dead lock\n");
-    }
     pthread_mutex_unlock ( &loop->mutex );
 }
 
@@ -327,4 +323,5 @@ void GUIEvtLoop::setSize(int w, int h)
 }
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^

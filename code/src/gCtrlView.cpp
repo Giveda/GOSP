@@ -118,7 +118,6 @@ bool GCtrlView::fwKeyPressEvent ( GKeyEvent* e )
 
     if ( !m_pFocusForm )
     {
-        WARNING ( "there is no form with focus!!!!\n" );
         return false;
     }
 
@@ -238,4 +237,5 @@ int GCtrlView::width() const
     
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
