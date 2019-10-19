@@ -35,10 +35,11 @@ public:
     int ascent(const GString& str);
 
 private:
-    GFontMetricsData   *fmMqs;
+    GFontMetricsData   *fmHlo;
 };
 
 #endif 
 
 
+// have a nice day ^_^
 // have a nice day ^_^
