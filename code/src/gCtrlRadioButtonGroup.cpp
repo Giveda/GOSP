@@ -18,10 +18,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlRadioButtonMhL
+class GCtrlRadioButtonSelf
 {
 public:
-    GCtrlRadioButtonMhL( const GString& str, GCtrlForm* frm, GCtrlRadioButton* parent, bool check)
+    GCtrlRadioButtonSelf( const GString& str, GCtrlForm* frm, GCtrlRadioButton* parent, bool check)
         :     m_pixBg ( frm, parent, "radioButtonUnchecked" ),
               m_pixTop ( frm, parent, "radioButtonChecked" ),
               m_txt ( str, frm, parent, "radioButtonTxt" ),
@@ -38,58 +38,58 @@ public:
 
 GCtrlRadioButton::GCtrlRadioButton ( const GString& str, GCtrlForm* frm, GCtrlRadioButtonGroup* parent, const char* name, bool check )
     :GMCtrlItem ( frm, parent, name ),
-     rbLqH( new GCtrlRadioButtonMhL(str, frm, this, check) )
+     rbSpp( new GCtrlRadioButtonSelf(str, frm, this, check) )
 {
     parent->appendItem ( this );
-    rbLqH->m_txt.setTextFlags ( Giveda::AlignVCenter );
+    rbSpp->m_txt.setTextFlags ( Giveda::AlignVCenter );
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
     while ( NULL== ( pStyle=pAppStyle->itemStyle ( className() ) ) )
     {
         pAppStyle->appendRadioButtonStyle();
     }
-    rbLqH->m_pixBg.setPixmap ( pStyle->pixmap ( rbLqH->m_pixBg.name() ) );
-    rbLqH->m_pixTop.setPixmap ( pStyle->pixmap ( rbLqH->m_pixTop.name() ) );
-    rbLqH->m_txt.moveBy ( rbLqH->m_pixBg.width(), 0 );
+    rbSpp->m_pixBg.setPixmap ( pStyle->pixmap ( rbSpp->m_pixBg.name() ) );
+    rbSpp->m_pixTop.setPixmap ( pStyle->pixmap ( rbSpp->m_pixTop.name() ) );
+    rbSpp->m_txt.moveBy ( rbSpp->m_pixBg.width(), 0 );
 
-    int nH = rbLqH->m_txt.getSingleLineSize().height();
-    if ( rbLqH->m_pixBg.height() > nH )
+    int nH = rbSpp->m_txt.getSingleLineSize().height();
+    if ( rbSpp->m_pixBg.height() > nH )
     {
-        nH = rbLqH->m_pixBg.height();
-        rbLqH->m_txt.setHeight(nH);
+        nH = rbSpp->m_pixBg.height();
+        rbSpp->m_txt.setHeight(nH);
     }
     else
     {
-        int nTmp = ( nH-rbLqH->m_pixBg.height() ) /2;
-        rbLqH->m_pixBg.setY ( nTmp );
-        rbLqH->m_pixTop.setY ( nTmp );
+        int nTmp = ( nH-rbSpp->m_pixBg.height() ) /2;
+        rbSpp->m_pixBg.setY ( nTmp );
+        rbSpp->m_pixTop.setY ( nTmp );
     }
     setHeight ( nH );
 }
 
 GCtrlRadioButton::~GCtrlRadioButton()
 {
-    delete rbLqH;
+    delete rbSpp;
 }
 
 bool GCtrlRadioButton::isChecked()
 {
-    return rbLqH->m_bIsChecked;
+    return rbSpp->m_bIsChecked;
 }
 
 void GCtrlRadioButton::setChecked ( bool b )
 {
-    rbLqH->m_bIsChecked=b;
+    rbSpp->m_bIsChecked=b;
 }
 
 void GCtrlRadioButton::paintEvent ( GPainter& p )
 {
-    rbLqH->m_pixBg.draw ( p );
-    if ( rbLqH->m_bIsChecked )
+    rbSpp->m_pixBg.draw ( p );
+    if ( rbSpp->m_bIsChecked )
     {
-        rbLqH->m_pixTop.draw ( p );
+        rbSpp->m_pixTop.draw ( p );
     }
-    rbLqH->m_txt.draw ( p );
+    rbSpp->m_txt.draw ( p );
 }
 
 bool GCtrlRadioButton::fwKeyPressEvent ( GKeyEvent* e )
@@ -98,7 +98,7 @@ bool GCtrlRadioButton::fwKeyPressEvent ( GKeyEvent* e )
     switch ( e->key() )
     {
     case Giveda::Key_Return:
-        if ( !rbLqH->m_bIsChecked )
+        if ( !rbSpp->m_bIsChecked )
         {
             GCtrlRadioButtonGroup* pBtnGroup = ( GCtrlRadioButtonGroup* ) parent();
             pBtnGroup->uncheckedOther ( this );
@@ -120,10 +120,10 @@ void GCtrlRadioButton::emitCheckedChanged()
     update();
 }
 
-class GCtrlRadioButtonGroupMhL
+class GCtrlRadioButtonGroupSelf
 {
 public:
-    GCtrlRadioButtonGroupMhL( const GString& title, GCtrlForm* frm, GCtrlRadioButtonGroup* parent)
+    GCtrlRadioButtonGroupSelf( const GString& title, GCtrlForm* frm, GCtrlRadioButtonGroup* parent)
         :     m_imgFocusIn ( frm, parent, "radioButtonGroupFocusIn" ),
               m_imgFocusOut ( frm, parent, "radioButtonGroupFocusOut" ),
               m_txtTitle ( title, frm, parent, "radioButtonGroupTitle" ),
@@ -138,7 +138,7 @@ public:
 
 GCtrlRadioButtonGroup::GCtrlRadioButtonGroup ( const GString& title, GCtrlForm* frm, GMItem* parent, const char* name )
     :GMContainerItem ( frm, parent, name ),
-     rbgLqH( new GCtrlRadioButtonGroupMhL(title, frm, this) )
+     rbgSpp( new GCtrlRadioButtonGroupSelf(title, frm, this) )
 {
     frm->appendItem ( this );
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
@@ -147,20 +147,20 @@ GCtrlRadioButtonGroup::GCtrlRadioButtonGroup ( const GString& title, GCtrlForm* 
     {
         pAppStyle->appendRadioButtonGroupStyle();
     }
-    rbgLqH->m_imgFocusIn.setImage ( pStyle->pixmap ( rbgLqH->m_imgFocusIn.name() ) );
-    rbgLqH->m_imgFocusOut.setImage ( pStyle->pixmap ( rbgLqH->m_imgFocusOut.name() ) );
+    rbgSpp->m_imgFocusIn.setImage ( pStyle->pixmap ( rbgSpp->m_imgFocusIn.name() ) );
+    rbgSpp->m_imgFocusOut.setImage ( pStyle->pixmap ( rbgSpp->m_imgFocusOut.name() ) );
 }
 
 GCtrlRadioButtonGroup::~GCtrlRadioButtonGroup()
 {
-    delete rbgLqH;
+    delete rbgSpp;
 }
 
 void GCtrlRadioButtonGroup::paintEvent ( GPainter& p )
 {
-    rbgLqH->m_txtTitle.draw ( p );
+    rbgSpp->m_txtTitle.draw ( p );
 
-    for ( GCtrlRadioButton* pItem = rbgLqH->m_itemList.first(); pItem; pItem=rbgLqH->m_itemList.next() )
+    for ( GCtrlRadioButton* pItem = rbgSpp->m_itemList.first(); pItem; pItem=rbgSpp->m_itemList.next() )
     {
         pItem->setWidth ( width()-pItem->x() );
 
@@ -172,19 +172,19 @@ void GCtrlRadioButtonGroup::paintEvent ( GPainter& p )
 
     if ( hasFocus() )
     {
-        rbgLqH->m_imgFocusIn.setGeometry ( rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->x(), rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->y(), rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->width(), rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->height() );
-        rbgLqH->m_imgFocusIn.draw ( p );
+        rbgSpp->m_imgFocusIn.setGeometry ( rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->x(), rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->y(), rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->width(), rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->height() );
+        rbgSpp->m_imgFocusIn.draw ( p );
     }
     else
     {
-        rbgLqH->m_imgFocusOut.setGeometry ( rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->x(), rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->y(), rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->width(), rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->height() );
-        rbgLqH->m_imgFocusOut.draw ( p );
+        rbgSpp->m_imgFocusOut.setGeometry ( rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->x(), rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->y(), rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->width(), rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->height() );
+        rbgSpp->m_imgFocusOut.draw ( p );
     }
 }
 
 bool GCtrlRadioButtonGroup::fwKeyPressEvent ( GKeyEvent *e )
 {
-    mpFocus = rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex );
+    mpFocus = rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex );
     if ( mpFocus )
     {
         if ( true == mpFocus->fwKeyPress ( e ) )
@@ -212,7 +212,7 @@ bool GCtrlRadioButtonGroup::fwKeyPressEvent ( GKeyEvent *e )
 
 void GCtrlRadioButtonGroup::uncheckedOther ( GCtrlRadioButton* pBtn )
 {
-    for ( GCtrlRadioButton* pItem = rbgLqH->m_itemList.first(); pItem; pItem=rbgLqH->m_itemList.next() )
+    for ( GCtrlRadioButton* pItem = rbgSpp->m_itemList.first(); pItem; pItem=rbgSpp->m_itemList.next() )
     {
         if ( pBtn != pItem && pItem->isChecked() )
         {
@@ -224,7 +224,7 @@ void GCtrlRadioButtonGroup::uncheckedOther ( GCtrlRadioButton* pBtn )
 
 void GCtrlRadioButtonGroup::appendItem ( GCtrlRadioButton* pItem )
 {
-    rbgLqH->m_itemList.append ( pItem );
+    rbgSpp->m_itemList.append ( pItem );
 }
 
 void GCtrlRadioButtonGroup::slotLoseFocus()
@@ -233,13 +233,13 @@ void GCtrlRadioButtonGroup::slotLoseFocus()
 
 void GCtrlRadioButtonGroup::slotGetFocus()
 {
-    rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->setFocus();
+    rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->setFocus();
 }
 
 bool GCtrlRadioButtonGroup::moveFocusUp()
 {
-    int nIndex = rbgLqH->m_nCurItemIndex -1;
-    if ( rbgLqH->m_itemList.at ( nIndex ) )
+    int nIndex = rbgSpp->m_nCurItemIndex -1;
+    if ( rbgSpp->m_itemList.at ( nIndex ) )
     {
         moveFocus ( nIndex );
         return true;
@@ -250,8 +250,8 @@ bool GCtrlRadioButtonGroup::moveFocusUp()
 
 bool GCtrlRadioButtonGroup::moveFocusDown()
 {
-    int nIndex = rbgLqH->m_nCurItemIndex +1;
-    if ( rbgLqH->m_itemList.at ( nIndex ) )
+    int nIndex = rbgSpp->m_nCurItemIndex +1;
+    if ( rbgSpp->m_itemList.at ( nIndex ) )
     {
         moveFocus ( nIndex );
         return true;
@@ -262,19 +262,20 @@ bool GCtrlRadioButtonGroup::moveFocusDown()
 
 void GCtrlRadioButtonGroup::moveFocus ( int toIndex )
 {
-    rbgLqH->m_itemList.at ( toIndex )->setFocus();
+    rbgSpp->m_itemList.at ( toIndex )->setFocus();
 
-    rbgLqH->m_itemList.at ( rbgLqH->m_nCurItemIndex )->update();
-    rbgLqH->m_itemList.at ( toIndex )->update();
+    rbgSpp->m_itemList.at ( rbgSpp->m_nCurItemIndex )->update();
+    rbgSpp->m_itemList.at ( toIndex )->update();
 
-    rbgLqH->m_nCurItemIndex = toIndex;
+    rbgSpp->m_nCurItemIndex = toIndex;
 }
 
 GMText* GCtrlRadioButtonGroup::getTitle()
 {
-    return &rbgLqH->m_txtTitle;
+    return &rbgSpp->m_txtTitle;
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
