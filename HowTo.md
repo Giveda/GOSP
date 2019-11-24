@@ -1,6 +1,6 @@
 # 简易指导
 #### 在linux下编译   
-#请先安装依赖。本软件依赖libjpeg-dev/libpng-dev/freetype-dev/qmake-qt4等。本软件在ubuntu/qmake-qt4环境下测试通过。移植到fedora/qmake-qt5也不会有什么工作量。    
+#请先安装依赖。本软件依赖libjpeg-dev/libpng-dev/freetype-dev/qmake等，不依赖Qt。本软件在ubuntu环境下测试通过。移植到fedora也不会有什么工作量。    
 sudo apt-get install libjpeg-dev libpng-dev libfreetype6-dev    
 
 #接着进入/path/to/GOSP/code目录，在此目录下能找到configure这个可执行文件。  
