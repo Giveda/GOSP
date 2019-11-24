@@ -66,7 +66,8 @@ http://giveda.com/
 # 四、如何使用
 查看如下《简易指导文档》：   
 https://gitee.com/giveda/GOSP/blob/master/HowTo.md  
-到  http://giveda.com/  获取更多有用信息   
+《HTML文档》：   
+http://giveda.com/gui_engine/html/index.html    
 欢迎加入QQ交流群：914464844    
 
 
