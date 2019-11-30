@@ -1,5 +1,5 @@
 # GOSP = Giveda® Open Source Project   
-在尊重Qt知识产权的前提下，本GUI框架提供了类似Qt的API接口，使用c++，仅需要几百KB的硬件资源，适用于嵌入式软件。    
+在不依赖Qt的前提下，本GUI框架提供了类似Qt的API接口，使用c++，仅需要几百KB的硬件资源，适用于嵌入式软件。    
 最容易理解的GUI框架，史上最简单，没有之一。   
 example效果演示：   
 ![在doc/images/目录下](docs/images/DVB_edit_chnl_768x432.gif)
