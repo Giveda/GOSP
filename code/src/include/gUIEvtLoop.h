@@ -67,7 +67,7 @@ public:
      * @param h 高
      * @return void
      */
-    void setSize(int w, int h);
+    void setViewSize(int w, int h);
 #endif
     
 private:
@@ -85,4 +85,5 @@ extern GPaintDevice    *g_screen;
 #endif  
 
 
+// have a nice day ^_^
 // have a nice day ^_^

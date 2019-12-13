@@ -20,18 +20,18 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlLineEditFles;
+class GCtrlLineEditHmq;
 
 class GCtrlLineEdit : public GMCtrlItem
 {
     SET_CLASS_NAME(GCtrlLineEdit)
     G_DISABLE_ASSIGN(GCtrlLineEdit)
 public:
-    enum	EchoMode { Normal, Password };
+    enum EchoMode { Normal, Password };
     GCtrlLineEdit ( GCtrlForm* form, GMItem* parent=0, const char* name=0 );
     virtual ~GCtrlLineEdit();
     void setEchoMode( EchoMode mode );
-    EchoMode 	echoMode() const;
+    EchoMode echoMode() const;
     void setTextGeometry (int x, int y, int w, int h );
 
     void setFont (const GFont& font );
@@ -57,10 +57,11 @@ private slots:
     void slotLoseFocus();
 
 private:
-    GCtrlLineEditFles *leFhl;
+    GCtrlLineEditHmq *leMqs;
 };
 
 #endif
 
 
+// have a nice day ^_^
 // have a nice day ^_^

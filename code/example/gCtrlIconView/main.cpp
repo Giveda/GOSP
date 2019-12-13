@@ -17,18 +17,19 @@
 
 #include "gMyForm.h"
 
-int main( int argc, char** argv )
+int main ( int argc, char** argv )
 {
-    GUIEvtLoop a( argc, argv );
-    a.setSize(500, 500);
-    
-    GMyForm frm( NULL, "testForm" );
-	frm.setPaletteBackgroundColor( GColor(200, 200, 200) );
-	frm.setSize( 500, 500 );
+    GUIEvtLoop a ( argc, argv );
+    a.setViewSize ( 500, 500 );
+
+    GMyForm frm ( NULL, "testForm" );
+    frm.setPaletteBackgroundColor ( GColor ( 200, 200, 200 ) );
+    frm.setSize ( 500, 500 );
 
     frm.show();
 
     return a.exec();
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

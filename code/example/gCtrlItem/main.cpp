@@ -20,14 +20,15 @@
 int main( int argc, char** argv )
 {
     GUIEvtLoop a( argc, argv );
-	a.setSize(700, 600);
+    a.setViewSize(700, 600);
 
     GMyForm frm( NULL, "testForm2" );
     frm.setGeometry( 0, 0, 700, 600 );
-	frm.setPaletteBackgroundColor( GColor(200, 200, 200) );
+    frm.setPaletteBackgroundColor( GColor(200, 200, 200) );
     frm.show();
 
     return a.exec();
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

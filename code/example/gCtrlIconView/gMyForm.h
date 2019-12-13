@@ -24,15 +24,15 @@ class GCtrlButton;
 class GMyForm : public GCtrlForm
 {
 public:
-    GMyForm(GCtrlForm* parent=0, const char* name=0 );
+    GMyForm ( GCtrlForm* parent=0, const char* name=0 );
     ~GMyForm();
 private slots:
-    void slotHighLighted(int);
+    void slotHighLighted ( int );
     void slotBtn1BeenClicked();
-    void slotSelected(int);
-    void slotFocusChangedTo(int);
+    void slotSelected ( int );
+    void slotFocusChangedTo ( int );
 protected:
-    virtual bool keyPressEvent(GKeyEvent* );
+    virtual bool keyPressEvent ( GKeyEvent* );
 private:
     GCtrlIconView* m_pIconView;
     GCtrlButton* m_pBtn1;
@@ -40,4 +40,5 @@ private:
 
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^
