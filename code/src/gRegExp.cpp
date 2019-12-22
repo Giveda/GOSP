@@ -60,3 +60,4 @@ int GRegExp::match ( const string& src )
 
 // have a nice day ^_^
 // have a nice day ^_^
+// have a nice day ^_^
