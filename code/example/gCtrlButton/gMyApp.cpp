@@ -18,6 +18,7 @@
 GMyApp::GMyApp ( int argc, char** argv )
     :GUIEvtLoop(argc, argv)
 {
+    // setViewSize
     setViewSize(900, 600);
     form2 = new GMyForm( NULL, "testForm2" );
     form2->setPosition(50, 50 );
