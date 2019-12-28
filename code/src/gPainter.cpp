@@ -38,10 +38,10 @@ public:
 
 typedef vector<GPainterState>   STATE_STACK_T;
 
-class GPainterFles
+class GPainterHmq
 {
 public:
-    GPainterFles ( GPaintDevice* p );
+    GPainterHmq ( GPaintDevice* p );
     GPaintDevice *d;
     GPainterState  state;
     STATE_STACK_T  stack;
@@ -49,7 +49,7 @@ public:
     void drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y );
 };
 
-GPainterFles::GPainterFles ( GPaintDevice* p ) :d ( p )
+GPainterHmq::GPainterHmq ( GPaintDevice* p ) :d ( p )
 {
     state.brush = GBrush ( GColor ( 250, 0, 0 ) );
     state.pen = GColor ( 0, 250, 0 );
@@ -86,7 +86,7 @@ void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterO
     return ;
 }
 
-inline void GPainterFles::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y )
+inline void GPainterHmq::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y )
 {
     int x=0;
     int h, w;
@@ -136,7 +136,7 @@ inline void GPainterFles::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y
 }
 
 GPainter::GPainter()
-    :m_priv ( new GPainterFles ( NULL ) )
+    :m_priv ( new GPainterHmq ( NULL ) )
 {
 
 }
@@ -147,7 +147,7 @@ GPainter::~GPainter()
 }
 
 GPainter::GPainter ( GPaintDevice* p )
-    :m_priv ( new GPainterFles ( p ) )
+    :m_priv ( new GPainterHmq ( p ) )
 {
 
 }
@@ -235,12 +235,12 @@ void GPainter::drawText ( int dX, int dY, int dW, int dH, int flags, const GStri
     GPixmap  dev = grabWidget(m_priv->d, dR );
     m_priv->pTxtBg = &dev;
     GRect  bR(GPoint(0, 0), dR.size() );
-    drawTextFles ( bR, str, flags );
+    drawTextHmq ( bR, str, flags );
 
     bitBlt(m_priv->d, dR.topLeft(), m_priv->pTxtBg, bR, CopyROP, true );
 }
 
-void GPainter::drawTextFles ( GRect dR, const GString& str, int flags )
+void GPainter::drawTextHmq ( GRect dR, const GString& str, int flags )
 {
     FT_GlyphSlot slot;
     uint16_t result=0, part1=0, part2=0, part3=0;
@@ -389,4 +389,5 @@ void GPainter::bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect s
     engine->blt ( dP,  sR );
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
