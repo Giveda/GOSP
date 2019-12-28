@@ -35,10 +35,10 @@ struct SenderPair
     SIGNAL_POINTER(void*) signal;
 };
 
-class GObjectMhL
+class GObjectSelf
 {
 public:
-    GObjectMhL ( GObject *p, const char* nm )
+    GObjectSelf ( GObject *p, const char* nm )
         :m_parent ( p ),
          strName ( nm )
     {
@@ -48,7 +48,7 @@ public:
         rLst.clear();
     }
 
-    ~GObjectMhL()
+    ~GObjectSelf()
     {
         sLst.clear();
         rLst.clear();
@@ -64,7 +64,7 @@ public:
 };
 
 GObject::GObject ( GObject *p,  const char *n )
-    :m_priv ( new GObjectMhL ( p, NULL==n?"":n ) )
+    :m_priv ( new GObjectSelf ( p, NULL==n?"":n ) )
 {
 }
 
@@ -261,7 +261,7 @@ GObject& GObject::operator= ( const GObject&  )
 }
 
 GObject::GObject ( const GObject& src )
-    :m_priv ( new GObjectMhL ( NULL, "" ) )
+    :m_priv ( new GObjectSelf ( NULL, "" ) )
 {
 }
 
@@ -280,5 +280,6 @@ void GSlot::operator() ( const GSlot& )
     
 }
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^

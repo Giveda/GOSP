@@ -195,52 +195,49 @@ GUIEvtLoop::~GUIEvtLoop()
 
 int GUIEvtLoop::exec()
 {
-    int ret = enterLoop();
-    return ret;
-}
-
-int GUIEvtLoop::enterLoop()
-{
-    GEvtLoopPriv *priv = uiPriv();
-
-    EvtLoop *newLoop = new EvtLoop();
-    priv->curLoop = newLoop;
-    priv->loopLst.push_back( newLoop );
-
-    int ret = exec_cb(priv);
-
-    priv->loopLst.pop_back();
-    priv->curLoop = priv->loopLst.back();
-    delete newLoop;
-
-    if( priv->loopLst.isEmpty() )
+    g_curLoop = loopLst.back();
+    g_curLoop->id = pthread_self();
+    GEvent *evt = NULL;
+    while(g_curLoop->bRun)
     {
-        ret = priv->exitCode;
+        evt = getEvt();
+        dispatchEvent(evt);
     }
-
-    return ret;
-}
-
-int GUIEvtLoop::exitLoop( int level, int code )
-{
-    if( uiPriv()->loopLst.empty() )
-    {
-        return 0;
-    }
-
-    if( (int)uiPriv()->loopLst.count() <= level )
-    {
-        return -1;
-    }
-
-    EvtLoop *loop = uiPriv()->loopLst.at( level );
-    loop->bRun = false;
-    loop->exitCode = code;
 
     return 0;
 }
 
+int GUIEvtLoop::enterLoop()
+{
+    pthread_mutex_t   mutex;
+    pthread_mutex_init(&mutex,NULL);
 
+    pthread_t id;
+    EvtLoop *newLoop = new EvtLoop(mutex, id);
+    loopLst.push_back( newLoop );
+    if ( ( pthread_create ( &id, NULL, ( void * ( * ) ( void* ) ) exec, NULL ) ) != 0 )
+    {
+        ERROR ( "Create loop thread error!\n" );
+        return -1;
+    }
+
+    pthread_mutex_lock ( &mutex );
+    pthread_join(id, NULL);
+    pthread_mutex_destroy(&mutex);
+
+    loopLst.pop_back();
+    g_curLoop =loopLst.back();
+
+    return 0;
+}
+
+void GUIEvtLoop::exitLoop()
+{
+    EvtLoop *loop = loopLst.back();
+    loop->bRun = false;
+    pthread_t id = pthread_self();
+    pthread_mutex_unlock ( &loop->mutex );
+}
 
 void dispatchEvent ( GEvent* evt )
 {
@@ -326,5 +323,6 @@ void GUIEvtLoop::setViewSize(int w, int h)
 }
 #endif
 
+// have a nice day ^_^
 // have a nice day ^_^
 // have a nice day ^_^
