@@ -42,10 +42,10 @@ int init_input_handlers()
     return ret;
 }
 
-class  GInputHandlerLMQ
+class  GInputHandlerMhL
 {
 public:
-    GInputHandlerLMQ ( const string & d=string() ) :run ( true ), dev ( d ) {}
+    GInputHandlerMhL ( const string & d=string() ) :run ( true ), dev ( d ) {}
     bool  run;
     string  dev;
     pthread_t id;
@@ -53,7 +53,7 @@ public:
 };
 
 GInputHandler::GInputHandler()
-    :m_priv ( new GInputHandlerLMQ() )
+    :m_priv ( new GInputHandlerMhL() )
 {
 
 }
@@ -134,7 +134,7 @@ string GInputHandler::getEvtDevice()
     return dev;
 }
 
-int GInputHandler::exec ( GInputHandlerLMQ* data )
+int GInputHandler::exec ( GInputHandlerMhL* data )
 {
     pthread_setcancelstate ( PTHREAD_CANCEL_ENABLE, NULL );
     pthread_setcanceltype ( PTHREAD_CANCEL_DEFERRED, NULL );
@@ -344,4 +344,5 @@ Giveda::Key scanCode2KeyCode ( const int scanCode )
     
 }
 
+// have a nice day ^_^
 // have a nice day ^_^

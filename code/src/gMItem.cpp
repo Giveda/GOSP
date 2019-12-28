@@ -19,10 +19,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMItemLMQ
+class GMItemMhL
 {
 public:
-    GMItemLMQ(): m_bgColor ( gRgba ( 0, 0, 0, 0 ) ) 
+    GMItemMhL(): m_bgColor ( gRgba ( 0, 0, 0, 0 ) ) 
     {}
     
     GRect m_rect;
@@ -34,12 +34,12 @@ public:
 };
 
 GMItem::GMItem ( GCtrlForm* form, GMItem* parent, const char* name )
-    :GObject ( parent, name ), iHlo( new GMItemLMQ )
+    :GObject ( parent, name ), iLqH( new GMItemMhL )
 {
     setGeometry ( 0, 0, form->width() /2, form->height() /2 );
-    iHlo->m_pForm = form;
+    iLqH->m_pForm = form;
     setVisible ( true );
-    iHlo->m_nZ = 1;
+    iLqH->m_nZ = 1;
 #if 0
     if ( parent )
     {
@@ -50,7 +50,7 @@ GMItem::GMItem ( GCtrlForm* form, GMItem* parent, const char* name )
 
 GMItem::~GMItem()
 {
-    delete iHlo;
+    delete iLqH;
 }
 
 GCtrlDefaultAppStyle* GMItem::getDefaultAppStyle()
@@ -59,47 +59,47 @@ GCtrlDefaultAppStyle* GMItem::getDefaultAppStyle()
 }
 void GMItem::setWidth ( int w )
 {
-    iHlo->m_rect.setWidth ( w );
+    iLqH->m_rect.setWidth ( w );
 }
 void GMItem::setHeight ( int h )
 {
-    iHlo->m_rect.setHeight ( h );
+    iLqH->m_rect.setHeight ( h );
 }
 int GMItem::width() const
 {
-    return iHlo->m_rect.width();
+    return iLqH->m_rect.width();
 }
 int GMItem::z() const
 {
-    return iHlo->m_nZ;
+    return iLqH->m_nZ;
 }
 int GMItem::y() const
 {
-    return iHlo->m_rect.y();
+    return iLqH->m_rect.y();
 }
 int GMItem::x() const
 {
-    return iHlo->m_rect.x();
+    return iLqH->m_rect.x();
 }
 int GMItem::height() const
 {
-    return iHlo->m_rect.height();
+    return iLqH->m_rect.height();
 }
 int GMItem::right() const
 {
-    return iHlo->m_rect.right();
+    return iLqH->m_rect.right();
 }
 int GMItem::bottom() const
 {
-    return iHlo->m_rect.bottom();
+    return iLqH->m_rect.bottom();
 }
 GRect GMItem::rect() const
 {
-    return iHlo->m_rect;
+    return iLqH->m_rect;
 }
 void GMItem::setSize ( int w, int h )
 {
-    iHlo->m_rect.setSize ( GSize ( w, h ) );
+    iLqH->m_rect.setSize ( GSize ( w, h ) );
 }
 bool GMItem::isCtrlItem()
 {
@@ -107,19 +107,19 @@ bool GMItem::isCtrlItem()
 }
 GCtrlForm* GMItem::form()
 {
-    return iHlo->m_pForm;
+    return iLqH->m_pForm;
 }
 bool GMItem::isVisible()
 {
-    return iHlo->m_bIsVisible;
+    return iLqH->m_bIsVisible;
 }
 void GMItem::setVisible ( bool b )
 {
-    iHlo->m_bIsVisible = b;
+    iLqH->m_bIsVisible = b;
 }
 void GMItem::setPaletteBackgroundColor ( const GColor& c )
 {
-    iHlo->m_bgColor = c;
+    iLqH->m_bgColor = c;
 }
 bool GMItem::isComplex()
 {
@@ -141,14 +141,14 @@ void GMItem::hide()
 
 void GMItem::draw ( GPainter& p )
 {
-    if ( !iHlo->m_pixBg.isNull() )
+    if ( !iLqH->m_pixBg.isNull() )
     {
-        p.drawPixmap ( 0, 0, iHlo->m_pixBg );
+        p.drawPixmap ( 0, 0, iLqH->m_pixBg );
     }
 #if 0
     else
     {
-        p.fillRect ( 0, 0, width(), height(), GBrush ( iHlo->m_bgColor ) );
+        p.fillRect ( 0, 0, width(), height(), GBrush ( iLqH->m_bgColor ) );
     }
 #endif
 
@@ -157,32 +157,32 @@ void GMItem::draw ( GPainter& p )
 
 void GMItem::loadBackgroundPixmap ( const GString& strPic )
 {
-    iHlo->m_pixBg.load ( strPic );
+    iLqH->m_pixBg.load ( strPic );
 }
 
 void GMItem::setX ( int x )
 {
-    iHlo->m_rect.moveBy ( x-this->x(), 0 );
+    iLqH->m_rect.moveBy ( x-this->x(), 0 );
 }
 
 void GMItem::setY ( int y )
 {
-    iHlo->m_rect.moveBy ( 0, y-this->y() );
+    iLqH->m_rect.moveBy ( 0, y-this->y() );
 }
 
 void GMItem::setZ ( int z )
 {
-    iHlo->m_nZ = z;
+    iLqH->m_nZ = z;
 }
 
 void GMItem::setPosition ( int x, int y )
 {
-    iHlo->m_rect.moveTopLeft ( GPoint ( x,y ) );
+    iLqH->m_rect.moveTopLeft ( GPoint ( x,y ) );
 }
 
 void GMItem::setGeometry ( int x, int y, int w, int h )
 {
-    iHlo->m_rect.setRect ( x, y, w, h );
+    iLqH->m_rect.setRect ( x, y, w, h );
 #if 0
     for ( GMItem* pItem = m_listChildren.first(); pItem!=NULL; pItem = m_listChildren.next() )
     {
@@ -193,7 +193,7 @@ void GMItem::setGeometry ( int x, int y, int w, int h )
 
 void GMItem::moveBy ( int x, int y )
 {
-    iHlo->m_rect.moveBy ( x, y );
+    iLqH->m_rect.moveBy ( x, y );
 #if 0
     for ( GMItem* pItem = m_listChildren.first(); pItem!=NULL; pItem = m_listChildren.next() )
     {
@@ -214,17 +214,17 @@ void GMItem::update()
     form()->update ( r );
 }
 
-class GMCtrlItemLMQ
+class GMCtrlItemMhL
 {
 public:
-    GMCtrlItemLMQ() : m_bIsHasFocus ( false ), m_bIsFocusEnabled ( true ) {}
+    GMCtrlItemMhL() : m_bIsHasFocus ( false ), m_bIsFocusEnabled ( true ) {}
     bool m_bIsHasFocus;
     bool m_bIsFocusEnabled;
     unsigned int m_nTabIndex;
 };
 
 GMCtrlItem::GMCtrlItem ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), ciHlo( new GMCtrlItemLMQ )
+    : GMItem ( form, parent, name ), ciLqH( new GMCtrlItemMhL )
 {
     if ( parent )
     {
@@ -235,13 +235,13 @@ GMCtrlItem::GMCtrlItem ( GCtrlForm* form, GMItem* parent, const char* name )
         setTabIndex ( form->getMaxTabIndex() +1 );
     }
     
-    ciHlo->m_bIsHasFocus = false;
+    ciLqH->m_bIsHasFocus = false;
     setFocusEnabled( true );
 }
 
 GMCtrlItem::~GMCtrlItem()
 {
-    delete ciHlo;
+    delete ciLqH;
 }
 
 bool GMCtrlItem::isCtrlItem()
@@ -250,19 +250,19 @@ bool GMCtrlItem::isCtrlItem()
 }
 bool GMCtrlItem::isFocusEnabled()
 {
-    return ciHlo->m_bIsFocusEnabled;
+    return ciLqH->m_bIsFocusEnabled;
 }
 void GMCtrlItem::setFocusEnabled ( bool b )
 {
-    ciHlo->m_bIsFocusEnabled = b;
+    ciLqH->m_bIsFocusEnabled = b;
 }
 void GMCtrlItem::setTabIndex ( unsigned int index )
 {
-    ciHlo->m_nTabIndex = index;
+    ciLqH->m_nTabIndex = index;
 }
 unsigned int GMCtrlItem::tabIndex()
 {
-    return ciHlo->m_nTabIndex;
+    return ciLqH->m_nTabIndex;
 }
 bool GMCtrlItem::keyPressEvent ( GKeyEvent* )
 {
@@ -293,7 +293,7 @@ void GMCtrlItem::setFocus()
 
 bool GMCtrlItem::hasFocus()
 {
-    return ciHlo->m_bIsHasFocus;
+    return ciLqH->m_bIsHasFocus;
 }
 
 bool GMCtrlItem::fwKeyPress ( GKeyEvent *e )
@@ -311,13 +311,13 @@ bool GMCtrlItem::fwKeyPress ( GKeyEvent *e )
 
 void GMCtrlItem::emitLoseFocus()
 {
-    ciHlo->m_bIsHasFocus = false;
+    ciLqH->m_bIsHasFocus = false;
     loseFocus.emit();
 }
 
 void GMCtrlItem::emitGetFocus()
 {
-    ciHlo->m_bIsHasFocus = true;
+    ciLqH->m_bIsHasFocus = true;
     getFocus.emit();
 }
 
@@ -360,72 +360,72 @@ void GMContainerItem::setFocusToItem ( GMCtrlItem* pItem )
     }
 }
 
-class GMPixmapLMQ
+class GMPixmapMhL
 {
 public:
     GPixmap m_pixmap;
 };
 
 GMPixmap::GMPixmap ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), pixHlo( new GMPixmapLMQ )
+    : GMItem ( form, parent, name ), pixLqH( new GMPixmapMhL )
 {
 }
 
 GMPixmap::GMPixmap ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), pixHlo( new GMPixmapLMQ )
+    : GMItem ( form, parent, name ), pixLqH( new GMPixmapMhL )
 {
     load ( strPath );
 }
 
 GMPixmap::GMPixmap ( const GPixmap & pm, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), pixHlo( new GMPixmapLMQ )
+    : GMItem ( form, parent, name ), pixLqH( new GMPixmapMhL )
 {
     setPixmap ( pm );
 }
 
 GMPixmap::~GMPixmap()
 {
-    delete pixHlo;
+    delete pixLqH;
 }
 
 void GMPixmap::load ( const GString& strPath )
 {
-    pixHlo->m_pixmap.load ( strPath );
-    setSize ( pixHlo->m_pixmap.width(), pixHlo->m_pixmap.height() );
+    pixLqH->m_pixmap.load ( strPath );
+    setSize ( pixLqH->m_pixmap.width(), pixLqH->m_pixmap.height() );
 }
 
 void GMPixmap::setPixmap ( const GPixmap &pm )
 {
-    pixHlo->m_pixmap = pm;
-    setSize ( pixHlo->m_pixmap.width(), pixHlo->m_pixmap.height() );
+    pixLqH->m_pixmap = pm;
+    setSize ( pixLqH->m_pixmap.width(), pixLqH->m_pixmap.height() );
 }
 
 void GMPixmap::loadButNotAdjustSize ( const GString& strPath )
 {
-    pixHlo->m_pixmap.load ( strPath );
+    pixLqH->m_pixmap.load ( strPath );
 }
 
 void GMPixmap::setPixmapButNotAdjustSize ( const GPixmap &pm )
 {
-    pixHlo->m_pixmap = pm;
+    pixLqH->m_pixmap = pm;
 }
 
 void GMPixmap::paintEvent ( GPainter& p )
 {
     int nX = x(), nY = y();
-    if ( width() > pixHlo->m_pixmap.width() +1 )
+    if ( width() > pixLqH->m_pixmap.width() +1 )
     {
-        nX += ( width()-pixHlo->m_pixmap.width() ) /2;
+        nX += ( width()-pixLqH->m_pixmap.width() ) /2;
     }
-    if ( height() > pixHlo->m_pixmap.height() +1 )
+    if ( height() > pixLqH->m_pixmap.height() +1 )
     {
-        nY += ( height()-pixHlo->m_pixmap.height() ) /2;
+        nY += ( height()-pixLqH->m_pixmap.height() ) /2;
     }
-    p.drawPixmap ( nX, nY, pixHlo->m_pixmap );
+    p.drawPixmap ( nX, nY, pixLqH->m_pixmap );
 }
 
 
-class GMImageLMQ
+class GMImageMhL
 {
 public:
     GImage m_imageOrg;
@@ -433,67 +433,67 @@ public:
 };
 
 GMImage::GMImage ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), imgHlo( new GMImageLMQ )
+    : GMItem ( form, parent, name ), imgLqH( new GMImageMhL )
 {
 }
 
 GMImage::GMImage ( const GString & strPath, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), imgHlo( new GMImageLMQ )
+    : GMItem ( form, parent, name ), imgLqH( new GMImageMhL )
 {
     load ( strPath );
 }
 
 GMImage::GMImage ( const GImage & img, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), imgHlo( new GMImageLMQ )
+    : GMItem ( form, parent, name ), imgLqH( new GMImageMhL )
 {
     setImage ( img );
 }
 
 GMImage::~GMImage()
 {
-    delete imgHlo;
+    delete imgLqH;
 }
 
 void GMImage::load ( const GString& strPath )
 {
-    imgHlo->m_imageOrg.load ( strPath );
-    imgHlo->m_imageScaled.load ( strPath );
-    GMItem::setSize ( imgHlo->m_imageOrg.width(), imgHlo->m_imageOrg.height() );
+    imgLqH->m_imageOrg.load ( strPath );
+    imgLqH->m_imageScaled.load ( strPath );
+    GMItem::setSize ( imgLqH->m_imageOrg.width(), imgLqH->m_imageOrg.height() );
 }
 
 void GMImage::setImage ( const GImage &img )
 {
-    imgHlo->m_imageOrg = img;
-    imgHlo->m_imageScaled = img;
-    GMItem::setSize ( imgHlo->m_imageOrg.width(), imgHlo->m_imageOrg.height() );
+    imgLqH->m_imageOrg = img;
+    imgLqH->m_imageScaled = img;
+    GMItem::setSize ( imgLqH->m_imageOrg.width(), imgLqH->m_imageOrg.height() );
 }
 
 void GMImage::paintEvent ( GPainter& p )
 {
-    if ( width() > imgHlo->m_imageScaled.width()
-            || height() > imgHlo->m_imageScaled.height() )
+    if ( width() > imgLqH->m_imageScaled.width()
+            || height() > imgLqH->m_imageScaled.height() )
     {
-        imgHlo->m_imageScaled = imgHlo->m_imageOrg.smoothScale ( width(), height() );
+        imgLqH->m_imageScaled = imgLqH->m_imageOrg.smoothScale ( width(), height() );
     }
 
     int nX = x(), nY = y();
-    int off = width()-imgHlo->m_imageScaled.width();
+    int off = width()-imgLqH->m_imageScaled.width();
     if ( 1 < off )
     {
         nX += off /2;
     }
-    off =  height()-imgHlo->m_imageScaled.height();
+    off =  height()-imgLqH->m_imageScaled.height();
     if ( 1 < off )
     {
         nY += off /2;
     }
-    p.drawImage ( nX, nY, imgHlo->m_imageScaled, 0, 0, width(), height() );
+    p.drawImage ( nX, nY, imgLqH->m_imageScaled, 0, 0, width(), height() );
 }
 
-class GMTextLMQ
+class GMTextMhL
 {
 public:
-    GMTextLMQ() : m_singleLineSize ( 0, 0 ) {}
+    GMTextMhL() : m_singleLineSize ( 0, 0 ) {}
     GString m_str;
     GFont m_font;
     GColor m_color;
@@ -502,71 +502,71 @@ public:
 };
 
 GMText::GMText ( GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), txtHlo( new GMTextLMQ )
+    : GMItem ( form, parent, name ), txtLqH( new GMTextMhL )
 {
-    txtHlo->m_font = GFont ( "Sans", 20 );
-    txtHlo->m_color = GColor ( 0x10, 0x10, 0x10 );
-    txtHlo->m_nFlags = Giveda::AlignLeft | Giveda::WordBreak;
+    txtLqH->m_font = GFont ( "Sans", 20 );
+    txtLqH->m_color = GColor ( 0x10, 0x10, 0x10 );
+    txtLqH->m_nFlags = Giveda::AlignLeft | Giveda::WordBreak;
 }
 
 GMText::GMText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
-    : GMItem ( form, parent, name ), txtHlo( new GMTextLMQ )
+    : GMItem ( form, parent, name ), txtLqH( new GMTextMhL )
 {
-    txtHlo->m_str = str;
-    txtHlo->m_font = GFont ( "Sans", 20 );
-    txtHlo->m_color = GColor ( 0x10, 0x10, 0x10 );
-    txtHlo->m_nFlags = Giveda::AlignLeft | Giveda::WordBreak;
+    txtLqH->m_str = str;
+    txtLqH->m_font = GFont ( "Sans", 20 );
+    txtLqH->m_color = GColor ( 0x10, 0x10, 0x10 );
+    txtLqH->m_nFlags = Giveda::AlignLeft | Giveda::WordBreak;
 
-    GFontMetrics fontMetrics ( txtHlo->m_font );
-    txtHlo->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtHlo->m_str );
-    setSize ( txtHlo->m_singleLineSize.width(), txtHlo->m_singleLineSize.height() );
+    GFontMetrics fontMetrics ( txtLqH->m_font );
+    txtLqH->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtLqH->m_str );
+    setSize ( txtLqH->m_singleLineSize.width(), txtLqH->m_singleLineSize.height() );
 }
 
 GMText::~GMText()
 {
-    delete txtHlo;
+    delete txtLqH;
 }
 
 void GMText::setColor ( const GColor& color )
 {
-    txtHlo->m_color = color;
+    txtLqH->m_color = color;
 }
 void GMText::setTextFlags ( int nFlags )
 {
-    txtHlo->m_nFlags = nFlags;
+    txtLqH->m_nFlags = nFlags;
 }
 GString GMText::text()
 {
-    return txtHlo->m_str;
+    return txtLqH->m_str;
 }
 
 GSize GMText::getSingleLineSize()
 {
-    return txtHlo->m_singleLineSize;
+    return txtLqH->m_singleLineSize;
 }
 
 void GMText::paintEvent ( GPainter& p )
 {
-    p.setFont ( txtHlo->m_font );
-    p.setPen ( txtHlo->m_color );
-    p.drawText ( x(), y(), width(), height(), txtHlo->m_nFlags, txtHlo->m_str );
+    p.setFont ( txtLqH->m_font );
+    p.setPen ( txtLqH->m_color );
+    p.drawText ( x(), y(), width(), height(), txtLqH->m_nFlags, txtLqH->m_str );
 }
 
 void GMText::setText ( const GString& str )
 {
-    txtHlo->m_str = str;
-    GFontMetrics fontMetrics ( txtHlo->m_font );
-    txtHlo->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtHlo->m_str );
+    txtLqH->m_str = str;
+    GFontMetrics fontMetrics ( txtLqH->m_font );
+    txtLqH->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtLqH->m_str );
 }
 
 void GMText::setFont ( const GFont & font )
 {
-    txtHlo->m_font = font;
-    GFontMetrics fontMetrics ( txtHlo->m_font );
-    txtHlo->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtHlo->m_str );
+    txtLqH->m_font = font;
+    GFontMetrics fontMetrics ( txtLqH->m_font );
+    txtLqH->m_singleLineSize = fontMetrics.size ( Giveda::SingleLine, txtLqH->m_str );
 }
 
-class GMScrollTextLMQ
+class GMScrollTextMhL
 {
 public:
     GTimer* m_pTimer;
@@ -577,34 +577,34 @@ public:
 };
 
 GMScrollText::GMScrollText ( GCtrlForm* form, GMItem* parent, const char* name )
-    :GMText ( form, parent, name ), stHlo( new GMScrollTextLMQ )
+    :GMText ( form, parent, name ), stLqH( new GMScrollTextMhL )
 {
-    stHlo->m_pTimer = new GTimer ( this );
-    connect ( stHlo->m_pTimer, stHlo->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
-    stHlo->m_bIsResetX = true;
-    stHlo->m_bShouldSroll = false;
+    stLqH->m_pTimer = new GTimer ( this );
+    connect ( stLqH->m_pTimer, stLqH->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
+    stLqH->m_bIsResetX = true;
+    stLqH->m_bShouldSroll = false;
 }
 
 GMScrollText::GMScrollText ( const GString & str, GCtrlForm* form, GMItem* parent, const char* name )
-    :GMText ( str, form, parent, name ), stHlo( new GMScrollTextLMQ )
+    :GMText ( str, form, parent, name ), stLqH( new GMScrollTextMhL )
 {
-    stHlo->m_pTimer = new GTimer ( this );
-    connect ( stHlo->m_pTimer, stHlo->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
-    stHlo->m_bIsResetX = true;
-    stHlo->m_bShouldSroll = false;
+    stLqH->m_pTimer = new GTimer ( this );
+    connect ( stLqH->m_pTimer, stLqH->m_pTimer->timeout, this, &GMScrollText::slotUpdate );
+    stLqH->m_bIsResetX = true;
+    stLqH->m_bShouldSroll = false;
 }
 
 GMScrollText::~GMScrollText()
 {
-    delete stHlo;
+    delete stLqH;
 }
 
 void GMScrollText::startScroll ( unsigned int msec )
 {
     if ( !isScroll() && isNeedScroll() )
     {
-        stHlo->m_pTimer->start ( msec );
-        stHlo->m_bShouldSroll = true;
+        stLqH->m_pTimer->start ( msec );
+        stLqH->m_bShouldSroll = true;
     }
 }
 
@@ -612,21 +612,21 @@ void GMScrollText::stopScroll()
 {
     if ( isScroll() )
     {
-        stHlo->m_pTimer->stop();
-        stHlo->m_bIsResetX = true;
+        stLqH->m_pTimer->stop();
+        stLqH->m_bIsResetX = true;
         update();
-        stHlo->m_bShouldSroll = false;
+        stLqH->m_bShouldSroll = false;
     }
 }
 
 bool GMScrollText::isScroll()
 {
-    return stHlo->m_pTimer->isActive();
+    return stLqH->m_pTimer->isActive();
 }
 
 bool GMScrollText::isNeedScroll()
 {
-    if ( txtHlo->m_singleLineSize.width() >width() )
+    if ( txtLqH->m_singleLineSize.width() >width() )
     {
         return true;
     }
@@ -640,7 +640,7 @@ void GMScrollText::slotUpdate()
 {
     if ( !isVisible()
             || !form()->isVisible() 
-            || stHlo->m_bShouldSroll == false )
+            || stLqH->m_bShouldSroll == false )
     {
         return ;
     }
@@ -649,4 +649,5 @@ void GMScrollText::slotUpdate()
 }
 
 
+// have a nice day ^_^
 // have a nice day ^_^
