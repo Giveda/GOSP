@@ -12,7 +12,7 @@ Here is some applications(examples):
 QT is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too heavy(big, large, complex, and Qt needs a lot RAM/ROM), so I wrote this framework, named it GOSP.  
 On the premise of respecting(not infringing) Qt's IPR(Intellectual Property Right), on the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM, so, GOSP is suitable for developing embedded software.  
   **2019-06-03, v1.0 was released, Codename is the Silent Blue Ghost.**    
-  **I hope it can form a supplement to QT, and wish it can be a member of Qt's ecosystem in the future. **    
+  **I hope it can form a supplement to QT, and wish it can be a member of Qt's ecosystem in the future.**    
 
 Reference:  
 http://blog.qt.io/cn/2018/08/15/qt_on_microcontrollers_mcu/  
@@ -22,7 +22,7 @@ http://giveda.com/
 # 2. Main Features
 * 100% use pictures to realize personalized GUI. (see screenshot below)   
 * provides Qt-style APIs, In the future, we can provide an IDE based on Qt creator.  
-* based on Giveda signal/slot technology, and there is no coupling between modules。  
+* based on Giveda signal/slot technology, and there is no coupling between modules.  
 
 
 # 3. Open source collaboration and License  
@@ -54,15 +54,13 @@ If any commercial behavior or purpose is involved, we will adopt the following c
  **You can use the software only if you fully agree to the above agreement.**  
  **If you do not agree with the above agreement, do not use the software.**    
 
-## 3-3 筹划
-  **视情况而定。**   
+## 3-3 New Features
+  **To be determined.**   
 
 
 # 4. How to Use
-Read the following easy guide document:   
-https://gitee.com/giveda/GOSP/blob/master/HowTo.md  
-Read the following HTML document：   
-http://giveda.com/gui_engine/html/index.html    
+Read the following easy guide document: https://gitee.com/giveda/GOSP/blob/master/HowTo.md  
+Read the following HTML document: http://giveda.com/gui_engine/html/index.html    
 Welcode to join in QQ group: 914464844    
 
 
