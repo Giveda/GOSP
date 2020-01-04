@@ -1,6 +1,8 @@
 # GOSP = Giveda® Open Source Project   
-On the premise of respecting(not infringing) Qt's IPR(Intellectual Property Right), on the premise of not depending on Qt, this framework provides Qt-Like APIs, and it only needs a few hundred KB of ROM&RAM.  
-This is some applications(examples):   
+中文版本： https://gitee.com/giveda/GOSP/blob/master/README.md  
+
+On the premise of respecting(not infringing) Qt's IPR(Intellectual Property Right), on the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM.  
+Here is some applications(examples):   
 ![doc/images/](docs/images/DVB_edit_chnl_768x432.gif)
 
 ![doc/images/](docs/images/DVB_mainMenu_768x432_png.gif)
@@ -8,9 +10,9 @@ This is some applications(examples):
 
 # 1. Description  
 QT is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too heavy(big, large, complex, and Qt needs a lot RAM/ROM), so I wrote this framework, named it GOSP.  
-On the premise of respecting(not infringing) Qt's IPR(Intellectual Property Right), on the premise of not depending on Qt, this framework provides Qt-Like APIs, and it only needs a few hundred KB of ROM&RAM.  
-I hope it can form a supplement to QT, I wish it can be a member of Qt's ecosystem.  
-  **2019-06-03, v1.0 was released, Codename is the Silent Blue Ghost.  **    
+On the premise of respecting(not infringing) Qt's IPR(Intellectual Property Right), on the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM, so, GOSP is suitable for developing embedded software.  
+  **2019-06-03, v1.0 was released, Codename is the Silent Blue Ghost.**    
+  **I hope it can form a supplement to QT, and wish it can be a member of Qt's ecosystem in the future. **    
 
 Reference:  
 http://blog.qt.io/cn/2018/08/15/qt_on_microcontrollers_mcu/  
@@ -23,48 +25,48 @@ http://giveda.com/
 * based on Giveda signal/slot technology, and there is no coupling between modules。  
 
 
-# 三、开源协作、授权许可  
-## 3-1 开源协作模型  
-在本项目中，参与者被划分为如下角色：   
-*) 会员：凡为本项目提供资源支持和/或人力支持的个人或实体，皆为本项目会员。   
-*) 常务理事：负责项目的演进、整体目标、组织架构、日常事务。常务理事暂由发起人担任，随着项目发展，要吸收其他会员共同作为常务理事。   
-*) 普通参与者：除了会员和常务理事外的其他参与者，皆为普通参与者。   
+# 3. Open source collaboration and License  
+## 3-1 Open source collaboration model  
+In this project, participants are divided into the following roles:   
+*) member: Any person or entity providing resource support and/or human support for this project will be a member of this project。   
+*) GP: GP is responsible for the evolution, overall objectives, organizational structure and daily affairs of the project. GP is temporarily held by the sponsor. With the development of the project, other members should be recruited as GP.   
+*) ordinary participants: All participants except members and GP are ordinary participants.   
 
-会员可获得如下收益：   
-*) 授权许可费的免除或优惠。   
-*) 深度参与本项目开发过程，缩短自身产品的开发周期。   
-*) 人才培养、社区荣誉。   
-*) 会员间的知识产权共享。    
-*) 本项目的知识产权归全体会员共有，会员根据自身对项目的不同贡献而享有不等比例的产权。    
+Members have the following benefits:   
+*) Exemption or preference of licensing fee。   
+*) Deeply participate in the development process of the project and shorten the development cycle of your own products.   
+*) Talent training, community honor.   
+*) Intellectual property sharing among members.    
+*) The intellectual property of the project belongs to all members, and members own different proportion of property rights according to their different contributions to the project.    
 
-## 3-2 授权许可协议（适用于普通参与者）  
- **本协议适用于未被列入《exceptions/black list》的普通参与者，被列入《exceptions/black list》的个人和实体不适用本协议。**  
-对于那些不涉及任何商业目的或商业行为的个人学习用途，在没有分发的情况下，使用者遵守 **GNU AGPL v3.0** 即可。  
-如果涉及任何商业行为或商业目的，那么大家在商言商，采用如下商业许可协议，以保护开源生态中各方的合法权益：  
-*) 这是一个开源软件，你可以自由修改；我们希望它有用，但不提供质量保证（哪怕是隐含的或显而易见的质量保证）。虽然不提供质量保证，但并不意味着你能利用此点去侵害我们的商誉；如果需要质量保证，你可以购买商业版本。作为著作权人（以下简称我们），我们已经尽到了告知义务。一旦发现有人侵犯或者试图侵犯我们商誉，我们必将利用行政和法律手段死磕到底。   
-*) 除了法律允许免费使用的情形，任何用到本软件全部或部分代码的行为，都需要向我们付费购买许可；分发权不能免费获得，禁止在未经许可的情况下以任何形式（包括但不限于源码形式、二进制形式等）私下或公开向别人分发本软件全部或部分代码。   
-*) 除非交易双方在《许可合同》中另有约定，否则的话，对本软件的任何修改、任何基于本软件全部或部分代码的衍生品、任何基于本软件全部或部分代码开发得到的作品、（通过任何形式）引用了本软件全部或部分代码的作品等都需要及时向我们定向开源，并同时向我们授权，允许我们以此相同协议对外公开以上软件代码和/或作品，允许我们自由使用以上软件代码和/或作品，允许我们将其授权给我们的客户进行自由使用。基于我们并不知道是谁在使用本开源软件，为了保护你的权益，你应当及时与我方商谈、签订《许可合同》。及时主动联系我方商谈签订《许可合同》是你的义务。   
-*)  **商业许可实行按年对公司（老板）收费。主动联系我们并付费的价格为市场价格。被人举报的被动付费价格为惩罚性价格（市场价格的10倍）。举报情形包括但不限于：违反本授权协议等。**     
-*)  **举报者可获得不低于成交额30%的现金奖励。**       
-*)  **软件工程师是我们最尊敬的合作伙伴，他们能免费得到技术支持。**   
-*) 中国的出口法律和法规适用于我们的发行版，并且随着产品和技术再出口到其它地区依旧保持有效。我们保留禁止任一用户使用以上开源软件的权利。  
-*) 解释权归我方所有。因你方违反本协议造成我方损失的，你方负完全责任。  
- **只有完全同意以上协议，你才可以使用本软件。**  
- **如果不同意以上协议，不要使用本软件。**    
+## 3-2 License (For ordinary participants)  
+ **This agreement is applicable to ordinary participants who are not listed in the exceptions / black list, while this agreement is not applicable to individuals and entities listed in the exceptions / black list.**  
+For those personal learning purposes that do not involve any commercial purpose or commercial behavior, the user can comply with  **GNU AGPL v3.0** .  
+If any commercial behavior or purpose is involved, we will adopt the following commercial license agreement to protect the legitimate rights and interests of all parties in the open source ecosystem:  
+*) This program is an open-source software; and it is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.Although no quality assurance is provided, it does not mean that you can use this to infringe our goodwill; If you need quality assurance, you can buy a commercial version.As the copyright owner (hereinafter referred to as US), we have fulfilled the obligation of disclosure. Once we find that someone infringes or attempts to infringe on our goodwill, we will use administrative and legal means to fight to the end.   
+*) In addition to the free use allowed by law, any use of all or part of the code needs to pay us for the license; The distribution right cannot be obtained free of charge. It is prohibited to distribute all or part of the code of the software to others in any form (including but not limited to source form, binary form, etc.) privately or publicly without permission.   
+*) Unless Both parties of the transaction agree in the license contract, otherwise, Any modification to the software, any derivative based on all or part of the code of the software, any work developed based on all or part of the code of the software, and any work that references all or part of the code of the software in any form, etc, all of the above need open source to us in time, At the same time, allow us to disclose the above software codes and/or works to the public under this same agreement, Allow us to freely use the above software codes and/or works, and allow us to authorize them to our customers for free use. Since we do not know who is using the open source software, in order to protect your rights and interests, you should negotiate and sign the license contract with us in a timely manner. It is your obligation to contact us in time to negotiate and sign the license contract.   
+*)  **The business license is charged annually to the company (boss). Take the initiative to contact us and pay the market price. The reported passive payment price is punitive (10 times the market price). The reporting situation includes but is not limited to: violation of this authorization agreement, etc.**     
+*)  **The informant can get a cash reward of no less than 30% of the turnover.**       
+*)  **Software engineers are our most respected partners, they can get free technical support.**   
+*) China's export laws and regulations apply to our distribution and remain in effect as products and technologies are re exported to other regions. We reserve the right to prohibit any user from using the this open source software.  
+*) The right of interpretation belongs to us. You are fully responsible for any loss caused to us by your breach of this agreement.  
+ **You can use the software only if you fully agree to the above agreement.**  
+ **If you do not agree with the above agreement, do not use the software.**    
 
 ## 3-3 筹划
   **视情况而定。**   
 
 
-# 四、如何使用
-查看如下《简易指导文档》：   
+# 4. How to Use
+Read the following easy guide document:   
 https://gitee.com/giveda/GOSP/blob/master/HowTo.md  
-《HTML文档》：   
+Read the following HTML document：   
 http://giveda.com/gui_engine/html/index.html    
-欢迎加入QQ交流群：914464844    
+Welcode to join in QQ group: 914464844    
 
 
-# 五、效果演示  
+# 5. Demos and Examples  
 
 ![Giveda](docs/images/configureResult1.jpeg)
 
@@ -86,11 +88,11 @@ http://giveda.com/gui_engine/html/index.html
 
 ![Giveda](docs/images/debugInfo.jpeg)
 
-![在docs/images/目录下](docs/images/DVB_768x432.gif)
+![docs/images/](docs/images/DVB_768x432.gif)
 
-![在doc/images/目录下](docs/images/DVB_edit_chnl_768x432.gif)
+![doc/images/](docs/images/DVB_edit_chnl_768x432.gif)
 
-![在doc/images/目录下](docs/images/DVB_mainMenu_768x432_png.gif)
+![doc/images/](docs/images/DVB_mainMenu_768x432_png.gif)
 
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432.gif  
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_768x432_large.gif  
@@ -98,6 +100,6 @@ https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_edit_chnl_768x432.gif
 https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_mainMenu_768x432_png.gif  
 
 
-# 六、写在最后  
-  **这是一个处于筹划过程中的项目，我只是在有兴趣的时候，做一点自己感兴趣的事情。如果你觉得本软件有用，你可以按照上述第三章节的指引，加入本软件的开源协作模型，支持本项目向你期望的方向发展。**   
-  **作者的联系电话：18676768949（加微信时请备注你自己）**   
+# 6. The End  
+  **This is a project in the process of planning. I just do something I am interested in when I am interested. If you think the software is useful, you can join in the open source collaboration model of the software in accordance with the guidance of the third chapter above to support the development of the project in the direction you expect.**   
+  **contact: lei@giveda.com**   
