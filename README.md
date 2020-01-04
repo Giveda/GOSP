@@ -16,7 +16,7 @@ Qt是挪威人和芬兰人做的一个优秀的c++开发框架，API简单易用
 *) RAM占用情况：从4MB到10MB  
  **综上，Qt实在太庞大了，因此我开发了GOSP这个框架。GOSP在不依赖Qt的前提下，提供了类似Qt的API接口，仅需要几百KB的硬件资源（比Qt小的多），能运行在Qt不支持的低性能领域（对Qt形成补充），适用于嵌入式开发。**      
   **2019-06-03，发表v1.0，版本代号为：沉默的蓝色幽灵。**    
-  **I wish it can be a member of Qt's ecosystem in the future.  **    
+  **I wish it can be a member of Qt's ecosystem in the future.**    
 
 参考文献：  
 http://blog.qt.io/cn/2018/08/15/qt_on_microcontrollers_mcu/  
