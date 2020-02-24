@@ -75,7 +75,6 @@ GCtrlMsgBox::GCtrlMsgBox ( GString strTitle, GString strInfo, int nBtnNums,
 
 GCtrlMsgBox::~GCtrlMsgBox()
 {
-    m_btnList.setAutoDelete ( true );
     m_btnList.clear();
 }
 
@@ -112,6 +111,3 @@ void GCtrlMsgBox::slotBtnClicked()
     }
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

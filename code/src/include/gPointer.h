@@ -18,11 +18,10 @@
 #define GGUARDEDPTR_H
 
 #include <gObject.h>
-#include <gShared.h>
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class  GPointerData : public  GObject, public GShared
+class  GPointerData
 {
 public:
     GPointerData ( GObject* );
@@ -32,8 +31,6 @@ public:
     {
         return m_pObject;
     }
-private slots:
-    void slotDestroyed();
 private:
     GObject* m_pObject;
 };
@@ -52,27 +49,22 @@ public:
     GPointer ( const GPointer<T> &p )
     {
         m_pData = p.priv;
-        privRef();
     }
     ~GPointer()
     {
-        privDeref();
     }
 
     GPointer<T> &operator= ( const GPointer<T> &p )
     {
         if ( m_pData != p.priv )
         {
-            privDeref();
             m_pData = p.priv;
-            privRef();
         }
         return *this;
     }
 
     GPointer<T> &operator= ( T* o )
     {
-        privDeref();
         m_pData = new GPointerData ( o );
 
         return *this;
@@ -110,20 +102,9 @@ public:
 
 
 private:
-    void privRef()
-    {
-        m_pData->ref();
-    }
-    void privDeref()
-    {
-        m_pData->deref();
-    }
     GPointerData* m_pData;
 };
 
 #endif
 
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

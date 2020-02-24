@@ -27,14 +27,14 @@ public:
 };
 
 GFontMetrics::GFontMetrics ( const GFont&  f )
-    :fmHlo( new GFontMetricsData)
+    :fmLqH( new GFontMetricsData)
 {
-    fmHlo->f = f;
+    fmLqH->f = f;
 }
 
 GFontMetrics::~GFontMetrics()
 {
-    delete fmHlo;
+    delete fmLqH;
 }
 
 GSize GFontMetrics::size ( int , const GString& str, int , int , int* , char** )
@@ -44,7 +44,7 @@ GSize GFontMetrics::size ( int , const GString& str, int , int , int* , char** )
 
     FT_Pos w = 0;
     char* pChar = str.utf8();
-    FT_Face face = fmHlo->f.face();
+    FT_Face face = fmLqH->f.face();
     FT_Error err;
     
     while ( *pChar != '\0' )
@@ -88,7 +88,7 @@ int GFontMetrics::ascent ( const GString& str )
 
     FT_Pos ascent = 0;
     char* pChar = str.utf8();
-    FT_Face face = fmHlo->f.face();
+    FT_Face face = fmLqH->f.face();
     FT_Error err;
     while ( *pChar != '\0' )
     {
@@ -124,20 +124,17 @@ int GFontMetrics::ascent ( const GString& str )
 
 GFontMetrics::GFontMetrics ( const GFontMetrics& src)
 {
-    fmHlo = new GFontMetricsData;
-    *fmHlo = *src.fmHlo;
+    fmLqH = new GFontMetricsData;
+    *fmLqH = *src.fmLqH;
 }
 
 GFontMetrics& GFontMetrics::operator= ( const GFontMetrics& r)
 {
-    if(fmHlo != r.fmHlo)
+    if(fmLqH != r.fmLqH)
     {
-        *fmHlo = *r.fmHlo;
+        *fmLqH = *r.fmLqH;
     }
 
     return *this;
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^

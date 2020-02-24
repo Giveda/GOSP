@@ -102,6 +102,3 @@ char* GString::utf8() const
     
 }
 
-// have a nice day ^_^
-// have a nice day ^_^
-// have a nice day ^_^
