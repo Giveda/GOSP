@@ -38,3 +38,4 @@ GPixmap::~GPixmap()
     
 }
 
+// have a nice day ^_^

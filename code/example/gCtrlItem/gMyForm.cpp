@@ -64,3 +64,4 @@ bool GMyForm::keyPressEvent( GKeyEvent* e )
 }
 
 
+// have a nice day ^_^

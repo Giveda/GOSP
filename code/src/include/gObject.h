@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019  明心  <imleizhang@qq.com>
+ * Copyright (C) 2020  明心  <imleizhang@qq.com>
  * All rights reserved.
  *
  * This program is an open-source software; and it is distributed in the hope
@@ -17,19 +17,24 @@
 #define GOBJECT_CPP11_H
 
 #include <gEvent.h>
+#include <stddef.h>
+#include <pthread.h>
 #include <string.h>
 #include <string>
+#include <pthread.h>
 
 #include <cxxabi.h>
 #include <stdlib.h>
 #include <list>
+#include <stdio.h>
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
 using namespace std;
 
-class GObjectMhL;
+class GObjectSelf;
 class GObject;
+class GEvent;
 
 #define slots
 #define signals public
@@ -209,9 +214,9 @@ private:
     E_SLOT_TYPE m_type;
 };
 
-#define SIGNAL_TYPE(SlotFuncType)  list<GSlot*>
-#define SIGNAL_POINTER(SlotFuncType)  list<GSlot*>*
-#define SIGNAL_TYPE_ITERATOR(SlotFuncType)  list<GSlot*>::iterator
+#define SIGNAL_TYPE  list<GSlot*>
+#define SIGNAL_POINTER  list<GSlot*>*
+#define SIGNAL_TYPE_ITERATOR  list<GSlot*>::iterator
 
 #define SET_CLASS_NAME(any_type) \
 public: \
@@ -243,7 +248,7 @@ signals:
     GSignal<void(void)> sigDestroyed;
 
 private:
-    GObjectMhL *m_priv;
+    GObjectSelf *m_priv;
 
 public:
     /**
@@ -318,31 +323,28 @@ public:
     pthread_t  tid();
 
 private:
-    static int  privConnect(GObject* sender, SIGNAL_POINTER(void*) signal, GObject* receiver, void* slot);
-    static int  privDisconnect(GObject* sender, SIGNAL_POINTER(void*) signal, GObject* receiver, void* slot);
-    void saveSenderPair(GObject* sender, SIGNAL_POINTER(void*) signal);
-    void deleteSenderPair(GObject* sender, SIGNAL_POINTER(void*) signal);
-    void destructAsReceiver();
-    void destructAsSender();
-    void saveReceiver ( GObject* receiver );
-    void deleteReceiver ( GObject* receiver );
+    static int  privConnect(GObject* sender, SIGNAL_POINTER signal, GObject* receiver, void* slot);
+    static int  privDisconnect(GObject* sender, SIGNAL_POINTER signal, GObject* receiver, void* slot);
+    void saveSender(SIGNAL_POINTER signal);
+    void deleteSender(SIGNAL_POINTER signal);
+    void disconnectFromAllSignal();
+
 };
 
 template<class Receiver, typename ...Args>
 int  GObject::connect ( GObject* sender, GSignal<void(Args...)>& signal, Receiver* receiver, void ( Receiver::*SlotFunc ) ( Args... ) )
 {
     GSlotCpp<Receiver, void(Args...)> *vslot = new GSlotCpp<Receiver, void(Args...)>(receiver, SlotFunc);
-    int ret = privConnect(sender, reinterpret_cast<SIGNAL_POINTER(void*)>(&(signal._slotLst)), (GObject*)receiver, (void*)vslot);
+    int ret = privConnect(sender, reinterpret_cast<SIGNAL_POINTER>(&(signal._slotLst)), (GObject*)receiver, (void*)vslot);
     return ret;
 }
 
 template<class Receiver, typename ...Args>
 int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Receiver* receiver, void ( Receiver::*SlotFunc ) ( Args... ) )
 {
-    int ret = privDisconnect(sender, reinterpret_cast<SIGNAL_POINTER(void*)>(&(signal._slotLst)), (GObject*)receiver, (void*)SlotFunc);
+    int ret = privDisconnect(sender, reinterpret_cast<SIGNAL_POINTER>(&(signal._slotLst)), (GObject*)receiver, (void*)SlotFunc);
     return ret;
 }
 
 #endif 
-
-
+// have a nice day ^_^

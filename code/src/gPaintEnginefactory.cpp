@@ -34,3 +34,4 @@ GPaintEngine* GPaintEngineFactory::createPaintEngine ( const string &  )
 }
 
 
+// have a nice day ^_^
