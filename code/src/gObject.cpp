@@ -23,10 +23,10 @@
 #include <gGlobal.h>
 
 
-class GObjectSelf
+class GObjectFles
 {
 public:
-    GObjectSelf ( GObject *p, const char* nm ) :m_parent ( p ), strName ( nm ) 
+    GObjectFles ( GObject *p, const char* nm ) :m_parent ( p ), strName ( nm ) 
     {
         tid = pthread_self();
     }
@@ -38,7 +38,7 @@ public:
 };
 
 GObject::GObject ( GObject *p,  const char *n )
-    :m_priv ( new GObjectSelf ( p, NULL==n?"":n ) )
+    :m_priv ( new GObjectFles ( p, NULL==n?"":n ) )
 {
 
 }
@@ -200,7 +200,7 @@ GObject& GObject::operator= ( const GObject&  )
 }
 
 GObject::GObject ( const GObject&  )
-    :m_priv ( new GObjectSelf ( NULL, "" ) )
+    :m_priv ( new GObjectFles ( NULL, "" ) )
 {
 }
 

@@ -20,7 +20,7 @@
 #include <gGlobal.h>
 #include "gMItem.h"
 
-class GMButtonSelf;
+class GMButtonFles;
 
 class GMButton : public GMCtrlItem
 {
@@ -40,7 +40,7 @@ protected:
 signals:
     GSignal<void(void)> clicked;
 private:
-    GMButtonSelf *btnSpp;
+    GMButtonFles *btnFhl;
 };
 
 class GCtrlButton : public GMButton

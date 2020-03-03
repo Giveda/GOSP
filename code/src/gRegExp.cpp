@@ -19,10 +19,10 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GRegExpSelf
+class GRegExpFles
 {
 public:
-    GRegExpSelf(const string  &s):pattern(s)
+    GRegExpFles(const string  &s):pattern(s)
     {
         regex_t treg;
         int ret = regcomp(&treg, pattern.c_str(), REG_NEWLINE|REG_EXTENDED);
@@ -37,7 +37,7 @@ public:
 };
 
 GRegExp::GRegExp(const string  &s)
-    :m_priv( new GRegExpSelf(s) )
+    :m_priv( new GRegExpFles(s) )
 {
 }
 

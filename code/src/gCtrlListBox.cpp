@@ -78,10 +78,10 @@ void GCtrlListBoxPixmap::setGeometry ( int x, int y, int w, int h )
     m_txt.setGeometry ( m_pix.width(), 0,  width()-m_pix.width(), height() );
 }
 
-class GCtrlListBoxSelf
+class GCtrlListBoxFles
 {
 public:
-    GCtrlListBoxSelf ( GCtrlForm* frm, GMItem* parent, GCtrlListBox *lb)
+    GCtrlListBoxFles ( GCtrlForm* frm, GMItem* parent, GCtrlListBox *lb)
         :m_imgFocusIn ( frm, parent, "listBoxFocusIn" ), m_imgFocusOut ( frm, parent, "listBoxFocusOut" ), m_timerForShowItemInfo ( lb ), m_itemTxtColor ( 255,255,255 ), m_itemTxtFont ( "Sans", 20 )
     {}
     GPtrList<GCtrlListBoxItem> m_itemList;
@@ -108,21 +108,21 @@ public:
 GCtrlListBox::GCtrlListBox ( GCtrlForm* frm, GMItem* parent, const char* name )
     :GMContainerItem ( frm, parent, name )
 {
-    lbSpp = new GCtrlListBoxSelf(frm, parent, this );
+    lbFhl = new GCtrlListBoxFles(frm, parent, this );
     frm->appendItem ( this );
-    lbSpp->m_nDrawFrom = 0;
-    lbSpp->m_nColumnNums = 1;
+    lbFhl->m_nDrawFrom = 0;
+    lbFhl->m_nColumnNums = 1;
     setRowNums ( 3 );
 
-    connect ( &lbSpp->m_timerForShowItemInfo,
-              lbSpp->m_timerForShowItemInfo.timeout, this, &GCtrlListBox::slotFocusChangedTo );
+    connect ( &lbFhl->m_timerForShowItemInfo,
+              lbFhl->m_timerForShowItemInfo.timeout, this, &GCtrlListBox::slotFocusChangedTo );
     connect ( this, this->loseFocus, this, &GCtrlListBox::slotLoseFocus );
     connect ( this, this->getFocus, this, &GCtrlListBox::slotGetFocus );
 
-    lbSpp->m_nCurItemIndex = 0;
-    lbSpp->m_bIsNeedDoLayout = true;
-    lbSpp->m_bIsNeedShowItemInfo = true;
-    lbSpp->m_bSendHighLighted = false;
+    lbFhl->m_nCurItemIndex = 0;
+    lbFhl->m_bIsNeedDoLayout = true;
+    lbFhl->m_bIsNeedShowItemInfo = true;
+    lbFhl->m_bSendHighLighted = false;
 
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
@@ -130,69 +130,69 @@ GCtrlListBox::GCtrlListBox ( GCtrlForm* frm, GMItem* parent, const char* name )
     {
         pAppStyle->appendListBoxStyle();
     }
-    lbSpp->m_imgFocusIn.setImage ( pStyle->pixmap ( lbSpp->m_imgFocusIn.name() ) );
-    lbSpp->m_imgFocusOut.setImage ( pStyle->pixmap ( lbSpp->m_imgFocusOut.name() ) );
+    lbFhl->m_imgFocusIn.setImage ( pStyle->pixmap ( lbFhl->m_imgFocusIn.name() ) );
+    lbFhl->m_imgFocusOut.setImage ( pStyle->pixmap ( lbFhl->m_imgFocusOut.name() ) );
     
 
 
-    lbSpp->m_bScrollEnabled = true;
-    lbSpp->m_nPreviousItemKey = Giveda::Key_Up;
-    lbSpp->m_nNextItemKey = Giveda::Key_Down;
+    lbFhl->m_bScrollEnabled = true;
+    lbFhl->m_nPreviousItemKey = Giveda::Key_Up;
+    lbFhl->m_nNextItemKey = Giveda::Key_Down;
 }
 
 GCtrlListBox::~GCtrlListBox()
 {
-    lbSpp->m_itemList.clear();
-    delete lbSpp;
+    lbFhl->m_itemList.clear();
+    delete lbFhl;
 }
 
 void GCtrlListBox::paintEvent ( GPainter& p )
 {
-    if ( lbSpp->m_itemList.isEmpty() )
+    if ( lbFhl->m_itemList.isEmpty() )
     {
         return;
     }
 
-    int nDrawTo = lbSpp->m_itemList.count()-1<lbSpp->m_nDrawTo ? lbSpp->m_itemList.count()-1 : lbSpp->m_nDrawTo;
+    int nDrawTo = lbFhl->m_itemList.count()-1<lbFhl->m_nDrawTo ? lbFhl->m_itemList.count()-1 : lbFhl->m_nDrawTo;
     GCtrlListBoxItem* pItem=NULL;
-    if ( lbSpp->m_bIsNeedDoLayout )
+    if ( lbFhl->m_bIsNeedDoLayout )
     {
-        lbSpp->m_itemList.at ( lbSpp->m_nDrawFrom )->setGeometry ( 0, 0, lbSpp->m_nMaxWofItem, lbSpp->m_nMaxHofItem );
-        lbSpp->m_itemList.at ( lbSpp->m_nDrawFrom )->getTxt()->setColor ( lbSpp->m_itemTxtColor );
-        lbSpp->m_itemList.at ( lbSpp->m_nDrawFrom )->getTxt()->setFont ( lbSpp->m_itemTxtFont );
-        int nBottomEdge = lbSpp->m_nMaxHofItem* ( lbSpp->m_nRowNums-1 );
-        for ( int j=lbSpp->m_nDrawFrom; j<nDrawTo; j++ )
+        lbFhl->m_itemList.at ( lbFhl->m_nDrawFrom )->setGeometry ( 0, 0, lbFhl->m_nMaxWofItem, lbFhl->m_nMaxHofItem );
+        lbFhl->m_itemList.at ( lbFhl->m_nDrawFrom )->getTxt()->setColor ( lbFhl->m_itemTxtColor );
+        lbFhl->m_itemList.at ( lbFhl->m_nDrawFrom )->getTxt()->setFont ( lbFhl->m_itemTxtFont );
+        int nBottomEdge = lbFhl->m_nMaxHofItem* ( lbFhl->m_nRowNums-1 );
+        for ( int j=lbFhl->m_nDrawFrom; j<nDrawTo; j++ )
         {
-            pItem = lbSpp->m_itemList.at ( j+1 );
-            if ( lbSpp->m_itemList.at ( j )->y() == nBottomEdge )
+            pItem = lbFhl->m_itemList.at ( j+1 );
+            if ( lbFhl->m_itemList.at ( j )->y() == nBottomEdge )
             {
-                pItem->setGeometry ( lbSpp->m_itemList.at ( j )->x() +lbSpp->m_nMaxWofItem, 0,  lbSpp->m_nMaxWofItem, lbSpp->m_nMaxHofItem );
+                pItem->setGeometry ( lbFhl->m_itemList.at ( j )->x() +lbFhl->m_nMaxWofItem, 0,  lbFhl->m_nMaxWofItem, lbFhl->m_nMaxHofItem );
             }
             else
             {
-                pItem->setGeometry ( lbSpp->m_itemList.at ( j )->x(), lbSpp->m_itemList.at ( j )->y() +lbSpp->m_nMaxHofItem, lbSpp->m_nMaxWofItem, lbSpp->m_nMaxHofItem );
+                pItem->setGeometry ( lbFhl->m_itemList.at ( j )->x(), lbFhl->m_itemList.at ( j )->y() +lbFhl->m_nMaxHofItem, lbFhl->m_nMaxWofItem, lbFhl->m_nMaxHofItem );
             }
-            pItem->getTxt()->setColor ( lbSpp->m_itemTxtColor );
-            pItem->getTxt()->setFont ( lbSpp->m_itemTxtFont );
+            pItem->getTxt()->setColor ( lbFhl->m_itemTxtColor );
+            pItem->getTxt()->setFont ( lbFhl->m_itemTxtFont );
         }
 
-        lbSpp->m_bIsNeedDoLayout = false;
+        lbFhl->m_bIsNeedDoLayout = false;
     }
 
     if ( hasFocus() )
     {
-        lbSpp->m_imgFocusIn.setGeometry ( lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->x(), lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->y(), lbSpp->m_nMaxWofItem, lbSpp->m_nMaxHofItem );
-        lbSpp->m_imgFocusIn.draw ( p );
+        lbFhl->m_imgFocusIn.setGeometry ( lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->x(), lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->y(), lbFhl->m_nMaxWofItem, lbFhl->m_nMaxHofItem );
+        lbFhl->m_imgFocusIn.draw ( p );
     }
     else
     {
-        lbSpp->m_imgFocusOut.setGeometry ( lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->x(), lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->y(), lbSpp->m_nMaxWofItem, lbSpp->m_nMaxHofItem );
-        lbSpp->m_imgFocusOut.draw ( p );
+        lbFhl->m_imgFocusOut.setGeometry ( lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->x(), lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->y(), lbFhl->m_nMaxWofItem, lbFhl->m_nMaxHofItem );
+        lbFhl->m_imgFocusOut.draw ( p );
     }
 
-    for ( int j=lbSpp->m_nDrawFrom; j<=nDrawTo; j++ )
+    for ( int j=lbFhl->m_nDrawFrom; j<=nDrawTo; j++ )
     {
-        pItem = lbSpp->m_itemList.at ( j );
+        pItem = lbFhl->m_itemList.at ( j );
 
         p.save();
         p.translate ( pItem->x(), pItem->y() );
@@ -200,23 +200,23 @@ void GCtrlListBox::paintEvent ( GPainter& p )
         p.restore();
     }
 
-    if ( lbSpp->m_bSendHighLighted )
+    if ( lbFhl->m_bSendHighLighted )
     {
-        highlighted_pI.emit ( lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex ) );
-        highlighted_pi.emit ( lbSpp->m_nCurItemIndex );
-        lbSpp->m_bSendHighLighted = false;
+        highlighted_pI.emit ( lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex ) );
+        highlighted_pi.emit ( lbFhl->m_nCurItemIndex );
+        lbFhl->m_bSendHighLighted = false;
     }
 
-    if ( lbSpp->m_bIsNeedShowItemInfo )
+    if ( lbFhl->m_bIsNeedShowItemInfo )
     {
-        lbSpp->m_timerForShowItemInfo.start ( 1000, true );
-        lbSpp->m_bIsNeedShowItemInfo = false;
+        lbFhl->m_timerForShowItemInfo.start ( 1000, true );
+        lbFhl->m_bIsNeedShowItemInfo = false;
     }
 }
 
 bool GCtrlListBox::fwKeyPressEvent ( GKeyEvent* e )
 {
-    mpFocus = lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex );
+    mpFocus = lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex );
     if ( mpFocus )
     {
         if ( true == mpFocus->fwKeyPress ( e ) )
@@ -227,7 +227,7 @@ bool GCtrlListBox::fwKeyPressEvent ( GKeyEvent* e )
 
     int nKey=e->key();
     bool bRetVal = true;
-    if ( nKey == lbSpp->m_nPreviousItemKey )
+    if ( nKey == lbFhl->m_nPreviousItemKey )
     {
         bRetVal = moveFocusUp();
         if ( true == bRetVal )
@@ -235,7 +235,7 @@ bool GCtrlListBox::fwKeyPressEvent ( GKeyEvent* e )
             return true;
         }
     }
-    if ( nKey == lbSpp->m_nNextItemKey )
+    if ( nKey == lbFhl->m_nNextItemKey )
     {
         bRetVal = moveFocusDown();
         if ( true == bRetVal )
@@ -263,96 +263,96 @@ void GCtrlListBox::insertItem ( GCtrlListBoxItem* pItem, int index )
 {
     if ( index<0 )
     {
-        lbSpp->m_itemList.append ( pItem );
+        lbFhl->m_itemList.append ( pItem );
     }
     else
     {
-        lbSpp->m_itemList.insert ( index, pItem );
+        lbFhl->m_itemList.insert ( index, pItem );
     }
 }
 
 void GCtrlListBox::removeItem ( int index )
 {
-    lbSpp->m_itemList.remove(index);
-    lbSpp->m_bIsNeedDoLayout = true;
+    lbFhl->m_itemList.remove(index);
+    lbFhl->m_bIsNeedDoLayout = true;
 }
 
 void GCtrlListBox::changeItem ( GCtrlListBoxItem *pItem, int  index )
 {
     if ( index == -1 )
     {
-        index = lbSpp->m_nCurItemIndex;
+        index = lbFhl->m_nCurItemIndex;
     }
 
-    lbSpp->m_itemList.remove ( index );
-    lbSpp->m_itemList.insert ( index, pItem );
+    lbFhl->m_itemList.remove ( index );
+    lbFhl->m_itemList.insert ( index, pItem );
 }
 
 void GCtrlListBox::setRowNums ( unsigned int num )
 {
-    lbSpp->m_nRowNums = num;
-    lbSpp->m_nMaxHofItem = height() /lbSpp->m_nRowNums;
-    lbSpp->m_nDrawTo = lbSpp->m_nColumnNums*lbSpp->m_nRowNums-1 + lbSpp->m_nDrawFrom;
+    lbFhl->m_nRowNums = num;
+    lbFhl->m_nMaxHofItem = height() /lbFhl->m_nRowNums;
+    lbFhl->m_nDrawTo = lbFhl->m_nColumnNums*lbFhl->m_nRowNums-1 + lbFhl->m_nDrawFrom;
 }
 
 void GCtrlListBox::setColumnNums ( unsigned int num )
 {
-    lbSpp->m_nColumnNums = num;
-    lbSpp->m_nMaxWofItem = width() /lbSpp->m_nColumnNums;
-    lbSpp->m_nDrawTo = lbSpp->m_nColumnNums*lbSpp->m_nRowNums-1 + lbSpp->m_nDrawFrom;
+    lbFhl->m_nColumnNums = num;
+    lbFhl->m_nMaxWofItem = width() /lbFhl->m_nColumnNums;
+    lbFhl->m_nDrawTo = lbFhl->m_nColumnNums*lbFhl->m_nRowNums-1 + lbFhl->m_nDrawFrom;
 }
 
 GCtrlListBoxItem* GCtrlListBox::item ( int index )
 {
     if ( -1 == index )
     {
-        index = lbSpp->m_nCurItemIndex;
+        index = lbFhl->m_nCurItemIndex;
     }
-    return lbSpp->m_itemList.at ( index );
+    return lbFhl->m_itemList.at ( index );
 }
 
 unsigned int GCtrlListBox::count()
 {
-    return lbSpp->m_itemList.count();
+    return lbFhl->m_itemList.count();
 }
 
 void GCtrlListBox::clear()
 {
-    lbSpp->m_nDrawFrom = 0;
-    lbSpp->m_nDrawTo = lbSpp->m_nColumnNums*lbSpp->m_nRowNums-1 + lbSpp->m_nDrawFrom;
-    lbSpp->m_nCurItemIndex = 0;
-    lbSpp->m_bIsNeedDoLayout = true;
-    lbSpp->m_bIsNeedShowItemInfo = true;
-    lbSpp->m_bSendHighLighted = true;
+    lbFhl->m_nDrawFrom = 0;
+    lbFhl->m_nDrawTo = lbFhl->m_nColumnNums*lbFhl->m_nRowNums-1 + lbFhl->m_nDrawFrom;
+    lbFhl->m_nCurItemIndex = 0;
+    lbFhl->m_bIsNeedDoLayout = true;
+    lbFhl->m_bIsNeedShowItemInfo = true;
+    lbFhl->m_bSendHighLighted = true;
 
-    lbSpp->m_itemList.clear();
+    lbFhl->m_itemList.clear();
 }
 
 void GCtrlListBox::setFocusInImage ( const GImage& img )
 {
-    lbSpp->m_imgFocusIn.setImage ( img );
+    lbFhl->m_imgFocusIn.setImage ( img );
 }
 
 void GCtrlListBox::setFocusOutImage ( const GImage& img )
 {
-    lbSpp->m_imgFocusOut.setImage ( img );
+    lbFhl->m_imgFocusOut.setImage ( img );
 }
 
 void GCtrlListBox::setCurItemIndex ( const int nIndex )
 {
-    lbSpp->m_nCurItemIndex = nIndex;
-    int nCountsPerScreen=lbSpp->m_nColumnNums*lbSpp->m_nRowNums;
-    int nToScreen=lbSpp->m_nCurItemIndex/nCountsPerScreen;
-    lbSpp->m_nDrawFrom = nToScreen*nCountsPerScreen;
-    lbSpp->m_nDrawTo = nCountsPerScreen-1 + lbSpp->m_nDrawFrom;
-    lbSpp->m_bIsNeedDoLayout = true;
-    lbSpp->m_bIsNeedShowItemInfo = true;
-    lbSpp->m_bSendHighLighted = true;
+    lbFhl->m_nCurItemIndex = nIndex;
+    int nCountsPerScreen=lbFhl->m_nColumnNums*lbFhl->m_nRowNums;
+    int nToScreen=lbFhl->m_nCurItemIndex/nCountsPerScreen;
+    lbFhl->m_nDrawFrom = nToScreen*nCountsPerScreen;
+    lbFhl->m_nDrawTo = nCountsPerScreen-1 + lbFhl->m_nDrawFrom;
+    lbFhl->m_bIsNeedDoLayout = true;
+    lbFhl->m_bIsNeedShowItemInfo = true;
+    lbFhl->m_bSendHighLighted = true;
 }
 
 void GCtrlListBox::emitSelected ( GCtrlListBoxItem* pItem )
 {
-    selected_pi.emit ( lbSpp->m_nCurItemIndex );
+    selected_pi.emit ( lbFhl->m_nCurItemIndex );
     selected_pI.emit ( pItem );
 }
 
@@ -360,45 +360,45 @@ void GCtrlListBox::slotFocusChangedTo()
 {
     if ( hasFocus() )
     {
-        focusChangedTo_pi.emit ( lbSpp->m_nCurItemIndex );
-        focusChangedTo_pI.emit ( lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex ) );
-        if ( lbSpp->m_bScrollEnabled )
+        focusChangedTo_pi.emit ( lbFhl->m_nCurItemIndex );
+        focusChangedTo_pI.emit ( lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex ) );
+        if ( lbFhl->m_bScrollEnabled )
         {
-            lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->getTxt()->startScroll();
+            lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->getTxt()->startScroll();
         }
     }
 }
 
 void GCtrlListBox::slotLoseFocus()
 {
-    if ( lbSpp->m_itemList.isEmpty() )
+    if ( lbFhl->m_itemList.isEmpty() )
     {
         return;
     }
     
-    if ( lbSpp->m_bScrollEnabled )
+    if ( lbFhl->m_bScrollEnabled )
     {
-        lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->getTxt()->stopScroll();
+        lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->getTxt()->stopScroll();
     }
 }
 
 void GCtrlListBox::slotGetFocus()
 {
-    if ( lbSpp->m_itemList.isEmpty() )
+    if ( lbFhl->m_itemList.isEmpty() )
     {
         return;
     }
     
-    lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex )->setFocus();
-    lbSpp->m_bIsNeedShowItemInfo = true;
-    highlighted_pI.emit ( lbSpp->m_itemList.at ( lbSpp->m_nCurItemIndex ) );
-    highlighted_pi.emit ( lbSpp->m_nCurItemIndex );
+    lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex )->setFocus();
+    lbFhl->m_bIsNeedShowItemInfo = true;
+    highlighted_pI.emit ( lbFhl->m_itemList.at ( lbFhl->m_nCurItemIndex ) );
+    highlighted_pi.emit ( lbFhl->m_nCurItemIndex );
 }
 
 bool GCtrlListBox::moveFocusLeft()
 {
-    int nIndex = lbSpp->m_nCurItemIndex -lbSpp->m_nRowNums;
-    if ( lbSpp->m_itemList.at ( nIndex ) )
+    int nIndex = lbFhl->m_nCurItemIndex -lbFhl->m_nRowNums;
+    if ( lbFhl->m_itemList.at ( nIndex ) )
     {
         moveFocus ( nIndex );
         return true;
@@ -409,8 +409,8 @@ bool GCtrlListBox::moveFocusLeft()
 
 bool GCtrlListBox::moveFocusRight()
 {
-    int nIndex = lbSpp->m_nCurItemIndex +lbSpp->m_nRowNums;
-    if ( lbSpp->m_itemList.at ( nIndex ) )
+    int nIndex = lbFhl->m_nCurItemIndex +lbFhl->m_nRowNums;
+    if ( lbFhl->m_itemList.at ( nIndex ) )
     {
         moveFocus ( nIndex );
         return true;
@@ -421,8 +421,8 @@ bool GCtrlListBox::moveFocusRight()
 
 bool GCtrlListBox::moveFocusUp()
 {
-    int nIndex = lbSpp->m_nCurItemIndex -1;
-    if ( lbSpp->m_itemList.at ( nIndex ) )
+    int nIndex = lbFhl->m_nCurItemIndex -1;
+    if ( lbFhl->m_itemList.at ( nIndex ) )
     {
         moveFocus ( nIndex );
         return true;
@@ -433,8 +433,8 @@ bool GCtrlListBox::moveFocusUp()
 
 bool GCtrlListBox::moveFocusDown()
 {
-    int nIndex = lbSpp->m_nCurItemIndex +1;
-    if( lbSpp->m_itemList.at(nIndex) )
+    int nIndex = lbFhl->m_nCurItemIndex +1;
+    if( lbFhl->m_itemList.at(nIndex) )
     {
         moveFocus( nIndex );
         return true;
@@ -445,71 +445,71 @@ bool GCtrlListBox::moveFocusDown()
 
 void GCtrlListBox::moveFocus ( int toIndex )
 {
-    int fromIndex = lbSpp->m_nCurItemIndex;
-    int nCountsPerScreen=lbSpp->m_nColumnNums*lbSpp->m_nRowNums;
+    int fromIndex = lbFhl->m_nCurItemIndex;
+    int nCountsPerScreen=lbFhl->m_nColumnNums*lbFhl->m_nRowNums;
     int nFromScreen=fromIndex/nCountsPerScreen;
     int nToScreen=toIndex/nCountsPerScreen;
     if ( nFromScreen != nToScreen )
     {
-        lbSpp->m_bIsNeedDoLayout = true;
-        lbSpp->m_nDrawFrom = nToScreen*nCountsPerScreen;
-        lbSpp->m_nDrawTo = lbSpp->m_nDrawFrom+nCountsPerScreen-1;
+        lbFhl->m_bIsNeedDoLayout = true;
+        lbFhl->m_nDrawFrom = nToScreen*nCountsPerScreen;
+        lbFhl->m_nDrawTo = lbFhl->m_nDrawFrom+nCountsPerScreen-1;
     }
 
-    lbSpp->m_itemList.at ( fromIndex )->getTxt()->stopScroll();
-    lbSpp->m_itemList.at ( toIndex )->setFocus();
-    if ( lbSpp->m_bIsNeedDoLayout )
+    lbFhl->m_itemList.at ( fromIndex )->getTxt()->stopScroll();
+    lbFhl->m_itemList.at ( toIndex )->setFocus();
+    if ( lbFhl->m_bIsNeedDoLayout )
     {
         update();
     }
 
-    highlighted_pI.emit ( lbSpp->m_itemList.at ( toIndex ) );
+    highlighted_pI.emit ( lbFhl->m_itemList.at ( toIndex ) );
     highlighted_pi.emit ( toIndex );
-    lbSpp->m_nCurItemIndex = toIndex;
-    lbSpp->m_bIsNeedShowItemInfo = true;
+    lbFhl->m_nCurItemIndex = toIndex;
+    lbFhl->m_bIsNeedShowItemInfo = true;
 }
 int GCtrlListBox::getMaxIconHeight()
 {
-    return lbSpp->m_nMaxHofItem;
+    return lbFhl->m_nMaxHofItem;
 }
 int GCtrlListBox::getMaxIconWidth()
 {
-    return lbSpp->m_nMaxWofItem;
+    return lbFhl->m_nMaxWofItem;
 }
 int GCtrlListBox::getCurItemIndex()
 {
-    return lbSpp->m_nCurItemIndex;
+    return lbFhl->m_nCurItemIndex;
 }
 void GCtrlListBox::setItemTextColor ( GColor& c )
 {
-    lbSpp->m_itemTxtColor=c;
+    lbFhl->m_itemTxtColor=c;
 }
 void GCtrlListBox::setItemTextFont ( GFont f )
 {
-    lbSpp->m_itemTxtFont = f;
+    lbFhl->m_itemTxtFont = f;
 }
 GColor GCtrlListBox::getItemTextColor()
 {
-    return lbSpp->m_itemTxtColor;
+    return lbFhl->m_itemTxtColor;
 }
 GFont GCtrlListBox::getItemTextFont()
 {
-    return lbSpp->m_itemTxtFont;
+    return lbFhl->m_itemTxtFont;
 }
 
 void GCtrlListBox::setItemScrollEnabled ( bool enabled )
 {
-    lbSpp->m_bScrollEnabled = enabled;
+    lbFhl->m_bScrollEnabled = enabled;
 }
 
 void GCtrlListBox::setPreviousItemKey ( int nKey )
 {
-    lbSpp->m_nPreviousItemKey = nKey;
+    lbFhl->m_nPreviousItemKey = nKey;
 }
 
 void GCtrlListBox::setNextItemKey ( int nKey )
 {
-    lbSpp->m_nNextItemKey = nKey;
+    lbFhl->m_nNextItemKey = nKey;
 }
 
 // have a nice day ^_^
