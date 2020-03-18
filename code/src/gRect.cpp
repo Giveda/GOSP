@@ -533,4 +533,4 @@ GRect::GRect ( const T_RECT& tr )
     m_rectData.bottom = ntohs ( tr.bottom );
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

@@ -102,4 +102,4 @@ char* GString::utf8() const
     
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

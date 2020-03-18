@@ -66,10 +66,10 @@ int GMCtrlItemList::compareItems ( GMCtrlItem* p1, GMCtrlItem* p2 )
     }
 }
 
-class GCtrlFormFles
+class GCtrlFormHmq
 {
 public:
-    GCtrlFormFles() 
+    GCtrlFormHmq() 
     : m_pItemWithFocus ( NULL ), m_bgColor ( gRgba ( 0, 0, 0, 0 ) ), m_bIsVisible ( true ), m_eFocusMode ( GCtrlForm::Auto_Focus ), m_bIsFocusEnabled ( true )
     {}
 
@@ -86,12 +86,12 @@ public:
 };
 
 GCtrlForm::GCtrlForm ( GCtrlForm* parent, const char* name )
-    :GObject ( parent, name ),  frmFhl ( new GCtrlFormFles )
+    :GObject ( parent, name ),  frmMqs ( new GCtrlFormHmq )
 {
     g_ws->appendForm ( this );
     setGeometry ( 0, 0, g_ws->width(), g_ws->height() );
-    frmFhl->m_nZ = 1;
-    frmFhl->m_pItemWithFocus = NULL;
+    frmMqs->m_nZ = 1;
+    frmMqs->m_pItemWithFocus = NULL;
     setVisible ( true );
     setFocusMode ( Auto_Focus );
 }
@@ -100,20 +100,20 @@ GCtrlForm::~GCtrlForm()
 {
     g_ws->removeForm ( this );
 
-    delete frmFhl;
+    delete frmMqs;
 }
 
 bool GCtrlForm::fwKeyPress ( GKeyEvent* e )
 {
-    if ( frmFhl->m_pItemWithFocus )
+    if ( frmMqs->m_pItemWithFocus )
     {
-        if ( true == frmFhl->m_pItemWithFocus->fwKeyPress ( e ) )
+        if ( true == frmMqs->m_pItemWithFocus->fwKeyPress ( e ) )
         {
             return true;
         }
 
 #if 1
-        GMCtrlItem* pParent = ( GMCtrlItem* ) ( frmFhl->m_pItemWithFocus->parent() );
+        GMCtrlItem* pParent = ( GMCtrlItem* ) ( frmMqs->m_pItemWithFocus->parent() );
         while ( pParent )
         {
             if ( true == pParent->fwKeyPress ( e ) )
@@ -127,8 +127,8 @@ bool GCtrlForm::fwKeyPress ( GKeyEvent* e )
 
         if ( Auto_Focus == getFocusMode() )
         {
-            int nIndex = frmFhl->m_pItemWithFocus->tabIndex()-1;
-            GMCtrlItem* pFrom = frmFhl->m_ctrlItemList.at ( nIndex );
+            int nIndex = frmMqs->m_pItemWithFocus->tabIndex()-1;
+            GMCtrlItem* pFrom = frmMqs->m_ctrlItemList.at ( nIndex );
 
             switch ( e->key() )
             {
@@ -137,9 +137,9 @@ bool GCtrlForm::fwKeyPress ( GKeyEvent* e )
                 nIndex--;
                 while ( nIndex>=0 )
                 {
-                    if ( frmFhl->m_ctrlItemList.at ( nIndex )->isVisible() && frmFhl->m_ctrlItemList.at ( nIndex )->isFocusEnabled() )
+                    if ( frmMqs->m_ctrlItemList.at ( nIndex )->isVisible() && frmMqs->m_ctrlItemList.at ( nIndex )->isFocusEnabled() )
                     {
-                        changeFocus ( pFrom, frmFhl->m_ctrlItemList.at ( nIndex ) );
+                        changeFocus ( pFrom, frmMqs->m_ctrlItemList.at ( nIndex ) );
                         break;
                     }
 
@@ -149,11 +149,11 @@ bool GCtrlForm::fwKeyPress ( GKeyEvent* e )
             case Giveda::Key_Down:
             case Giveda::Key_Right:
                 nIndex++;
-                while ( ( unsigned int ) nIndex<frmFhl->m_ctrlItemList.count() )
+                while ( ( unsigned int ) nIndex<frmMqs->m_ctrlItemList.count() )
                 {
-                    if ( frmFhl->m_ctrlItemList.at ( nIndex )->isVisible() && frmFhl->m_ctrlItemList.at ( nIndex )->isFocusEnabled() )
+                    if ( frmMqs->m_ctrlItemList.at ( nIndex )->isVisible() && frmMqs->m_ctrlItemList.at ( nIndex )->isFocusEnabled() )
                     {
-                        changeFocus ( pFrom, frmFhl->m_ctrlItemList.at ( nIndex ) );
+                        changeFocus ( pFrom, frmMqs->m_ctrlItemList.at ( nIndex ) );
                         break;
                     }
 
@@ -168,11 +168,11 @@ bool GCtrlForm::fwKeyPress ( GKeyEvent* e )
     else
     {
         unsigned int i = 0;
-        while ( i<frmFhl->m_ctrlItemList.count() )
+        while ( i<frmMqs->m_ctrlItemList.count() )
         {
-            if ( frmFhl->m_ctrlItemList.at ( i )->isVisible() && frmFhl->m_ctrlItemList.at ( i )->isFocusEnabled() )
+            if ( frmMqs->m_ctrlItemList.at ( i )->isVisible() && frmMqs->m_ctrlItemList.at ( i )->isFocusEnabled() )
             {
-                setFocusToItem ( frmFhl->m_ctrlItemList.at ( i ) );
+                setFocusToItem ( frmMqs->m_ctrlItemList.at ( i ) );
                 break;
             }
 
@@ -186,21 +186,21 @@ bool GCtrlForm::fwKeyPress ( GKeyEvent* e )
 
 void GCtrlForm::paintEvent ( GPainter &p )
 {
-    if ( !frmFhl->m_pItemWithFocus && hasFocus() )
+    if ( !frmMqs->m_pItemWithFocus && hasFocus() )
     {
         initFocus();
     }
 
-    if ( frmFhl->m_pixBg.isNull() )
+    if ( frmMqs->m_pixBg.isNull() )
     {
-        p.fillRect ( 0, 0, width(), height(), GBrush ( frmFhl->m_bgColor ) );
+        p.fillRect ( 0, 0, width(), height(), GBrush ( frmMqs->m_bgColor ) );
     }
     else
     {
-        p.drawPixmap ( 0, 0, frmFhl->m_pixBg );
+        p.drawPixmap ( 0, 0, frmMqs->m_pixBg );
     }
 
-    for ( GMItem* pItem = frmFhl->m_itemList.first(); pItem!=NULL; pItem = frmFhl->m_itemList.next() )
+    for ( GMItem* pItem = frmMqs->m_itemList.first(); pItem!=NULL; pItem = frmMqs->m_itemList.next() )
     {
         if ( !pItem->isVisible() )
         {
@@ -224,63 +224,63 @@ void GCtrlForm::paintEvent ( GPainter &p )
 
 void GCtrlForm::setX ( int x )
 {
-    frmFhl->m_rect.moveBy ( x-this->x(), 0 );
+    frmMqs->m_rect.moveBy ( x-this->x(), 0 );
 }
 
 void GCtrlForm::setY ( int y )
 {
-    frmFhl->m_rect.moveBy ( 0, y-this->y() );
+    frmMqs->m_rect.moveBy ( 0, y-this->y() );
 }
 
 void GCtrlForm::setZ ( int z )
 {
-    frmFhl->m_nZ = z;
+    frmMqs->m_nZ = z;
     g_ws->inSort ( this );
 }
 
 void GCtrlForm::setWidth ( int w )
 {
-    frmFhl->m_rect.setWidth ( w );
+    frmMqs->m_rect.setWidth ( w );
 }
 
 void GCtrlForm::setHeight ( int h )
 {
-    frmFhl->m_rect.setHeight ( h );
+    frmMqs->m_rect.setHeight ( h );
 }
 
 void GCtrlForm::setPosition ( int x, int y )
 {
-    frmFhl->m_rect.moveTopLeft ( GPoint ( x,y ) );
+    frmMqs->m_rect.moveTopLeft ( GPoint ( x,y ) );
 }
 
 void GCtrlForm::setSize ( int w, int h )
 {
-    frmFhl->m_rect.setSize ( GSize ( w, h ) );
+    frmMqs->m_rect.setSize ( GSize ( w, h ) );
 }
 
 void GCtrlForm::setGeometry ( int x, int y, int w, int h )
 {
-    frmFhl->m_rect.setRect ( x, y, w, h );
+    frmMqs->m_rect.setRect ( x, y, w, h );
 }
 
 void GCtrlForm::loadBackgroundPixmap ( const GString& strPic )
 {
-    frmFhl->m_pixBg.load ( strPic );
-    frmFhl->m_rect.setSize ( GSize ( frmFhl->m_pixBg.width(), frmFhl->m_pixBg.height() ) );
+    frmMqs->m_pixBg.load ( strPic );
+    frmMqs->m_rect.setSize ( GSize ( frmMqs->m_pixBg.width(), frmMqs->m_pixBg.height() ) );
 }
 
 void GCtrlForm::loadBackgroundPixmap ( const GPixmap& px )
 {
-    frmFhl->m_pixBg = px;
-    frmFhl->m_rect.setSize ( GSize ( frmFhl->m_pixBg.width(), frmFhl->m_pixBg.height() ) );
+    frmMqs->m_pixBg = px;
+    frmMqs->m_rect.setSize ( GSize ( frmMqs->m_pixBg.width(), frmMqs->m_pixBg.height() ) );
 }
 
 void GCtrlForm::appendItem ( GMItem* item )
 {
-    frmFhl->m_itemList.inSort ( item );
+    frmMqs->m_itemList.inSort ( item );
     if ( item->isCtrlItem() )
     {
-        frmFhl->m_ctrlItemList.inSort ( ( GMCtrlItem* ) item );
+        frmMqs->m_ctrlItemList.inSort ( ( GMCtrlItem* ) item );
     }
 }
 
@@ -291,12 +291,12 @@ void GCtrlForm::setFocus()
 
 void GCtrlForm::setFocusToItem ( GMCtrlItem* pItem )
 {
-    if ( frmFhl->m_pItemWithFocus )
+    if ( frmMqs->m_pItemWithFocus )
     {
-        if ( pItem != frmFhl->m_pItemWithFocus )
+        if ( pItem != frmMqs->m_pItemWithFocus )
         {
-            frmFhl->m_pItemWithFocus->emitLoseFocus();
-            frmFhl->m_pItemWithFocus->update();
+            frmMqs->m_pItemWithFocus->emitLoseFocus();
+            frmMqs->m_pItemWithFocus->update();
         }
         else
         {
@@ -304,12 +304,12 @@ void GCtrlForm::setFocusToItem ( GMCtrlItem* pItem )
         }
     }
 
-    frmFhl->m_pItemWithFocus = pItem;
+    frmMqs->m_pItemWithFocus = pItem;
 
-    if ( frmFhl->m_pItemWithFocus )
+    if ( frmMqs->m_pItemWithFocus )
     {
-        frmFhl->m_pItemWithFocus->emitGetFocus();
-        frmFhl->m_pItemWithFocus->update();
+        frmMqs->m_pItemWithFocus->emitGetFocus();
+        frmMqs->m_pItemWithFocus->update();
     }
 }
 
@@ -318,20 +318,20 @@ void GCtrlForm::changeFocus ( GMCtrlItem* pFrom, GMCtrlItem* pTo )
     pFrom->emitLoseFocus();
     pFrom->update();
 
-    frmFhl->m_pItemWithFocus = pTo;
+    frmMqs->m_pItemWithFocus = pTo;
 
-    frmFhl->m_pItemWithFocus->emitGetFocus();
-    frmFhl->m_pItemWithFocus->update();
+    frmMqs->m_pItemWithFocus->emitGetFocus();
+    frmMqs->m_pItemWithFocus->update();
 }
 
 GMCtrlItem* GCtrlForm::getFocusItem()
 {
-    return frmFhl->m_pItemWithFocus;
+    return frmMqs->m_pItemWithFocus;
 }
 
 unsigned int GCtrlForm::getMaxTabIndex()
 {
-    GMCtrlItem* pLastItem = frmFhl->m_ctrlItemList.getLast();
+    GMCtrlItem* pLastItem = frmMqs->m_ctrlItemList.getLast();
     if ( pLastItem )
     {
         return pLastItem->tabIndex();
@@ -352,20 +352,20 @@ void GCtrlForm::update ( GRect r )
 
 void GCtrlForm::update()
 {
-    g_ws->update ( frmFhl->m_rect );
+    g_ws->update ( frmMqs->m_rect );
 }
 
 void GCtrlForm::show()
 {
     setVisible ( true );
-    g_ws->update ( frmFhl->m_rect );
+    g_ws->update ( frmMqs->m_rect );
     setFocus();
 }
 
 void GCtrlForm::hide()
 {
     setVisible ( false );
-    g_ws->update ( frmFhl->m_rect );
+    g_ws->update ( frmMqs->m_rect );
     g_ws->setFocusToFrm ( NULL );
 }
 
@@ -376,15 +376,15 @@ bool GCtrlForm::hasFocus()
 
 void GCtrlForm::initFocus()
 {
-    unsigned int nCount = frmFhl->m_ctrlItemList.count();
+    unsigned int nCount = frmMqs->m_ctrlItemList.count();
     unsigned int i=0;
     while ( i<nCount )
     {
-        if ( frmFhl->m_ctrlItemList.at ( i )->isVisible() && frmFhl->m_ctrlItemList.at ( i )->isFocusEnabled() )
+        if ( frmMqs->m_ctrlItemList.at ( i )->isVisible() && frmMqs->m_ctrlItemList.at ( i )->isFocusEnabled() )
         {
-            frmFhl->m_pItemWithFocus = frmFhl->m_ctrlItemList.at ( i );
-            frmFhl->m_pItemWithFocus->update();
-            frmFhl->m_pItemWithFocus->emitGetFocus();
+            frmMqs->m_pItemWithFocus = frmMqs->m_ctrlItemList.at ( i );
+            frmMqs->m_pItemWithFocus->update();
+            frmMqs->m_pItemWithFocus->emitGetFocus();
             break;
         }
 
@@ -405,78 +405,78 @@ GCtrlView* GCtrlForm::view()
 
 void GCtrlForm::getFocus()
 {
-    if ( frmFhl->m_pItemWithFocus )
+    if ( frmMqs->m_pItemWithFocus )
     {
-        frmFhl->m_pItemWithFocus->emitGetFocus();
+        frmMqs->m_pItemWithFocus->emitGetFocus();
     }
 }
 
 void GCtrlForm::loseFocus()
 {
-    if ( frmFhl->m_pItemWithFocus )
+    if ( frmMqs->m_pItemWithFocus )
     {
-        frmFhl->m_pItemWithFocus->emitLoseFocus();
+        frmMqs->m_pItemWithFocus->emitLoseFocus();
     }
 }
 
 int GCtrlForm::x() const
 {
-    return frmFhl->m_rect.x();
+    return frmMqs->m_rect.x();
 }
 
 int GCtrlForm::y() const
 {
-    return frmFhl->m_rect.y();
+    return frmMqs->m_rect.y();
 }
 int GCtrlForm::z() const
 {
-    return frmFhl->m_nZ;
+    return frmMqs->m_nZ;
 }
 int GCtrlForm::width() const
 {
-    return frmFhl->m_rect.width();
+    return frmMqs->m_rect.width();
 }
 int GCtrlForm::height() const
 {
-    return frmFhl->m_rect.height();
+    return frmMqs->m_rect.height();
 }
 GRect GCtrlForm::rect() const
 {
-    return frmFhl->m_rect;
+    return frmMqs->m_rect;
 }
 void GCtrlForm::moveBy ( int x, int y )
 {
-    frmFhl->m_rect.moveBy ( x, y );
+    frmMqs->m_rect.moveBy ( x, y );
 }
 void GCtrlForm::setPaletteBackgroundColor ( const GColor& c )
 {
-    frmFhl->m_bgColor = c;
+    frmMqs->m_bgColor = c;
 }
 bool GCtrlForm::isVisible()
 {
-    return frmFhl->m_bIsVisible;
+    return frmMqs->m_bIsVisible;
 }
 void GCtrlForm::setVisible ( bool b )
 {
-    frmFhl->m_bIsVisible = b;
+    frmMqs->m_bIsVisible = b;
 }
 void GCtrlForm::setFocusMode ( GCtrlForm::enumFocusMode mode )
 {
-    frmFhl->m_eFocusMode = mode;
+    frmMqs->m_eFocusMode = mode;
 }
 GCtrlForm::enumFocusMode GCtrlForm::getFocusMode()
 {
-    return frmFhl->m_eFocusMode;
+    return frmMqs->m_eFocusMode;
 }
 
 bool GCtrlForm::isFocusEnabled()
 {
-    return frmFhl->m_bIsFocusEnabled;
+    return frmMqs->m_bIsFocusEnabled;
 }
 
 void GCtrlForm::setFocusEnabled ( bool b )
 {
-    frmFhl->m_bIsFocusEnabled = b;
+    frmMqs->m_bIsFocusEnabled = b;
 }
 
 bool GCtrlForm::keyPressEvent ( GKeyEvent* )
@@ -484,4 +484,4 @@ bool GCtrlForm::keyPressEvent ( GKeyEvent* )
     return false;
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

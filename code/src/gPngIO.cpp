@@ -138,11 +138,11 @@ int write_png_image ( GImageIO*  )
     return -1;
 }
 
-void zInitPngIO()
+void gInitPngIO()
 {
     defineIOHandler ( "PNG", "^.PNG\r", string(), read_png_image,
                       write_png_image );
     
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

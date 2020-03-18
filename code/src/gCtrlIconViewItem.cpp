@@ -78,4 +78,4 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
     return bRetVal;
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

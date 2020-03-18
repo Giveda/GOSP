@@ -55,4 +55,4 @@ void GMyApp::keyPressEvent ( GKeyEvent* e )
     b = !b;
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

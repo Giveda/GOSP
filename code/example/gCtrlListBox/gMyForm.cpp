@@ -127,4 +127,4 @@ void GMyForm::slotBtn1BeenClicked()
     }
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

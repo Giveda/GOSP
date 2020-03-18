@@ -41,8 +41,8 @@ void init_image_handlers()
 
     
 #ifdef CONFIG_SUPPORT_PNG
-    extern void zInitPngIO();
-    zInitPngIO();
+    extern void gInitPngIO();
+    gInitPngIO();
 #endif
 #ifdef CONFIG_SUPPORT_JPEG
     extern void zInitJpegIO();
@@ -78,7 +78,7 @@ void   defineIOHandler ( const string& format,
 }
 
 #ifdef CONFIG_ENABLE_IMAGE_SMOOTHSCALE
-class GImageSmoothScalerFles
+class GImageSmoothScalerHmq
 {
 public:
     int      cols;
@@ -96,14 +96,14 @@ public:
 GImageSmoothScaler::GImageSmoothScaler ( const int w, const int h,
         GImage &src )
 {
-    d = new GImageSmoothScalerFles;
+    d = new GImageSmoothScalerHmq;
 
     d->build ( src.width(), src.height(), w, h, src.hasAlphaBuffer() );
     this->d->src = &src;
 }
 
 void
-GImageSmoothScalerFles::build ( const int srcWidth, const int srcHeight,
+GImageSmoothScalerHmq::build ( const int srcWidth, const int srcHeight,
                                    const int dstWidth, const int dstHeight, bool hasAlphaBuffer )
 {
     cols = srcWidth;
@@ -433,4 +433,4 @@ GImageSmoothScaler::scale ( void )
 }
 #endif
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

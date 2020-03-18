@@ -26,7 +26,7 @@ class GMItem;
 class GMCtrlItem;
 class GCtrlDefaultAppStyle;
 class GKeyEvent;
-class GCtrlFormFles;
+class GCtrlFormHmq;
 
 class GCtrlForm : public GObject
 {
@@ -86,10 +86,10 @@ private:
     void initFocus();
     bool fwKeyPressEvent(GKeyEvent*);
 private:
-    GCtrlFormFles *frmFhl;
+    GCtrlFormHmq *frmMqs;
 };
 
 #endif
 
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

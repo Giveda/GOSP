@@ -46,4 +46,4 @@ int getSemVal( sem_t* sem )
     return val;
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

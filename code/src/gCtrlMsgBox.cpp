@@ -111,4 +111,4 @@ void GCtrlMsgBox::slotBtnClicked()
     }
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^

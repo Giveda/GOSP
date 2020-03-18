@@ -30,4 +30,4 @@ int main( int argc, char** argv )
     return a.exec();
 }
 
-// have a nice day ^_^
+// reborn, a nice day ^_^
