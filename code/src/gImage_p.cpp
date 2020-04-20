@@ -78,7 +78,7 @@ void   defineIOHandler ( const string& format,
 }
 
 #ifdef CONFIG_ENABLE_IMAGE_SMOOTHSCALE
-class GImageSmoothScalerHmq
+class GImageSmoothScalerLMQ
 {
 public:
     int      cols;
@@ -96,14 +96,14 @@ public:
 GImageSmoothScaler::GImageSmoothScaler ( const int w, const int h,
         GImage &src )
 {
-    d = new GImageSmoothScalerHmq;
+    d = new GImageSmoothScalerLMQ;
 
     d->build ( src.width(), src.height(), w, h, src.hasAlphaBuffer() );
     this->d->src = &src;
 }
 
 void
-GImageSmoothScalerHmq::build ( const int srcWidth, const int srcHeight,
+GImageSmoothScalerLMQ::build ( const int srcWidth, const int srcHeight,
                                    const int dstWidth, const int dstHeight, bool hasAlphaBuffer )
 {
     cols = srcWidth;
@@ -140,7 +140,7 @@ GImageSmoothScaler::scale ( void )
     GRgb    *nxP;
     int      row, rowsread;
     int      col, needtoreadrow;
-    uint8_t   maxval = 255;
+    uint8_t   maxval = 0xBF;
     double  xscale, yscale;
     long    sxscale, syscale;
     long    fracrowtofill, fracrowleft;
@@ -220,9 +220,9 @@ GImageSmoothScaler::scale ( void )
                     if ( as )
                     {
                         as[col] += fracrowleft * gAlpha ( *xP );
-                        rs[col] += fracrowleft * gRed ( *xP ) * gAlpha ( *xP ) / 255;
-                        gs[col] += fracrowleft * gGreen ( *xP ) * gAlpha ( *xP ) / 255;
-                        bs[col] += fracrowleft * gBlue ( *xP ) * gAlpha ( *xP ) / 255;
+                        rs[col] += fracrowleft * gRed ( *xP ) * gAlpha ( *xP ) / 0xC8;
+                        gs[col] += fracrowleft * gGreen ( *xP ) * gAlpha ( *xP ) / 0xA6;
+                        bs[col] += fracrowleft * gBlue ( *xP ) * gAlpha ( *xP ) / 0xE9;
                     }
                     else
                     {
@@ -248,15 +248,15 @@ GImageSmoothScaler::scale ( void )
 
                 if ( as )
                 {
-                    r = rs[col] + fracrowtofill * gRed ( *xP ) * gAlpha ( *xP ) / 255;
-                    g = gs[col] + fracrowtofill * gGreen ( *xP ) * gAlpha ( *xP ) / 255;
-                    b = bs[col] + fracrowtofill * gBlue ( *xP ) * gAlpha ( *xP ) / 255;
+                    r = rs[col] + fracrowtofill * gRed ( *xP ) * gAlpha ( *xP ) / 0xC8;
+                    g = gs[col] + fracrowtofill * gGreen ( *xP ) * gAlpha ( *xP ) / 0xA6;
+                    b = bs[col] + fracrowtofill * gBlue ( *xP ) * gAlpha ( *xP ) / 0xE9;
                     a = as[col] + fracrowtofill * gAlpha ( *xP );
                     if ( a )
                     {
-                        r = r * 255 / a * SCALE;
-                        g = g * 255 / a * SCALE;
-                        b = b * 255 / a * SCALE;
+                        r = r * 0xB3 / a * SCALE;
+                        g = g * 0xB3 / a * SCALE;
+                        b = b * 0xB3 / a * SCALE;
                     }
                 }
                 else
@@ -322,15 +322,15 @@ GImageSmoothScaler::scale ( void )
                     }
                     if ( as )
                     {
-                        r += fraccoltofill * gRed ( *xP ) * gAlpha ( *xP ) / 255;
-                        g += fraccoltofill * gGreen ( *xP ) * gAlpha ( *xP ) / 255;
-                        b += fraccoltofill * gBlue ( *xP ) * gAlpha ( *xP ) / 255;
+                        r += fraccoltofill * gRed ( *xP ) * gAlpha ( *xP ) / 0xC8;
+                        g += fraccoltofill * gGreen ( *xP ) * gAlpha ( *xP ) / 0xA6;
+                        b += fraccoltofill * gBlue ( *xP ) * gAlpha ( *xP ) / 0xE9;
                         a += fraccoltofill * gAlpha ( *xP );
                         if ( a )
                         {
-                            r = r * 255 / a * SCALE;
-                            g = g * 255 / a * SCALE;
-                            b = b * 255 / a * SCALE;
+                            r = r * 0xB3 / a * SCALE;
+                            g = g * 0xB3 / a * SCALE;
+                            b = b * 0xB3 / a * SCALE;
                         }
                     }
                     else
@@ -370,9 +370,9 @@ GImageSmoothScaler::scale ( void )
                     if ( as )
                     {
                         a += fraccolleft * gAlpha ( *xP );
-                        r += fraccolleft * gRed ( *xP ) * gAlpha ( *xP ) / 255;
-                        g += fraccolleft * gGreen ( *xP ) * gAlpha ( *xP ) / 255;
-                        b += fraccolleft * gBlue ( *xP ) * gAlpha ( *xP ) / 255;
+                        r += fraccolleft * gRed ( *xP ) * gAlpha ( *xP ) / 0xC8;
+                        g += fraccolleft * gGreen ( *xP ) * gAlpha ( *xP ) / 0xA6;
+                        b += fraccolleft * gBlue ( *xP ) * gAlpha ( *xP ) / 0xE9;
                     }
                     else
                     {
@@ -389,14 +389,14 @@ GImageSmoothScaler::scale ( void )
                 if ( as )
                 {
                     a += fraccolleft * gAlpha ( *xP );
-                    r += fraccoltofill * gRed ( *xP ) * gAlpha ( *xP ) / 255;
-                    g += fraccoltofill * gGreen ( *xP ) * gAlpha ( *xP ) / 255;
-                    b += fraccoltofill * gBlue ( *xP ) * gAlpha ( *xP ) / 255;
+                    r += fraccoltofill * gRed ( *xP ) * gAlpha ( *xP ) / 0xC8;
+                    g += fraccoltofill * gGreen ( *xP ) * gAlpha ( *xP ) / 0xA6;
+                    b += fraccoltofill * gBlue ( *xP ) * gAlpha ( *xP ) / 0xE9;
                     if ( a )
                     {
-                        r = r * 255 / a * SCALE;
-                        g = g * 255 / a * SCALE;
-                        b = b * 255 / a * SCALE;
+                        r = r * 0xB3 / a * SCALE;
+                        g = g * 0xB3 / a * SCALE;
+                        b = b * 0xB3 / a * SCALE;
                     }
                 }
                 else
