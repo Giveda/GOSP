@@ -34,4 +34,4 @@ void putEvt( GEvent* e);
 
 #endif 
 
-// reborn, a nice day ^_^
+// a nice day ^_^

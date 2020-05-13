@@ -81,4 +81,4 @@ bool GMyForm::keyPressEvent ( GKeyEvent* e )
     return bRet;
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

@@ -23,10 +23,10 @@
 #include <gGlobal.h>
 
 
-class GObjectLMQ
+class GObjectMhL
 {
 public:
-    GObjectLMQ ( GObject *p, const char* nm ) :m_parent ( p ), strName ( nm ) 
+    GObjectMhL ( GObject *p, const char* nm ) :m_parent ( p ), strName ( nm ) 
     {
         tid = pthread_self();
     }
@@ -38,7 +38,7 @@ public:
 };
 
 GObject::GObject ( GObject *p,  const char *n )
-    :m_priv ( new GObjectLMQ ( p, NULL==n?"":n ) )
+    :m_priv ( new GObjectMhL ( p, NULL==n?"":n ) )
 {
 
 }
@@ -200,7 +200,7 @@ GObject& GObject::operator= ( const GObject&  )
 }
 
 GObject::GObject ( const GObject&  )
-    :m_priv ( new GObjectLMQ ( NULL, "" ) )
+    :m_priv ( new GObjectMhL ( NULL, "" ) )
 {
 }
 
@@ -219,4 +219,4 @@ void GSlot::operator() ( const GSlot& )
     
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

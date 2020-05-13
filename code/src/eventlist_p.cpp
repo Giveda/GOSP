@@ -103,4 +103,4 @@ void putEvt( GEvent* e)
     v(semID+EVT_PRODUCER);
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

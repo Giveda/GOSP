@@ -336,4 +336,4 @@ void GCtrlDefaultAppStyle::appendProgressStyle()
 }
 
 
-// reborn, a nice day ^_^
+// a nice day ^_^

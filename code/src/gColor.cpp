@@ -39,4 +39,4 @@ GColor::GColor ( int r, int g, int b )
     m_rgb = gRgba(r, g, b, 0xFF);
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

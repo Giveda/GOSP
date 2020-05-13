@@ -242,4 +242,4 @@ void GImage::initBuf()
     }
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

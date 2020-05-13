@@ -85,4 +85,4 @@ extern GPaintDevice    *g_screen;
 #endif  
 
 
-// reborn, a nice day ^_^
+// a nice day ^_^

@@ -32,4 +32,4 @@ private:
 
 #endif 
 
-// reborn, a nice day ^_^
+// a nice day ^_^

@@ -132,4 +132,4 @@ GFont::GFont ( const GFont& src )
     
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

@@ -189,4 +189,4 @@ void GScreenOnQt::keyPressEvent ( QKeyEvent* qe )
     return ;
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

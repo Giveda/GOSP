@@ -38,4 +38,4 @@ int  deinit_freetype();
 #endif
 
 
-// reborn, a nice day ^_^
+// a nice day ^_^

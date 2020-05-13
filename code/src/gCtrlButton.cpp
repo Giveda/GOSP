@@ -19,17 +19,17 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GMButtonLMQ
+class GMButtonMhL
 {
 public:
-    GMButtonLMQ( const GString& strCaption, const GPixmap& bg, const GPixmap& focus, GCtrlForm* form, GMItem* parent ) : m_txtCaption( strCaption, form, parent, "btnCaption" ),
+    GMButtonMhL( const GString& strCaption, const GPixmap& bg, const GPixmap& focus, GCtrlForm* form, GMItem* parent ) : m_txtCaption( strCaption, form, parent, "btnCaption" ),
         m_pixBg( bg, form, parent, "btnBg" ),
         m_pixFocus( focus, form, parent, "btnFocus" )
     {
         
     }
     
-    GMButtonLMQ( GCtrlForm* form, GMItem* parent ) : m_txtCaption( form, parent, "btnCaption" ),
+    GMButtonMhL( GCtrlForm* form, GMItem* parent ) : m_txtCaption( form, parent, "btnCaption" ),
         m_pixBg( form, parent, "btnBg" ),
         m_pixFocus( form, parent, "btnFocus" )
     {}
@@ -42,7 +42,7 @@ public:
 GMButton::GMButton( GCtrlForm* form, GMItem* parent, const char* name )
     : GMCtrlItem( form, parent, name )
 {
-    btnHlo = new GMButtonLMQ( form, this);
+    btnLqH = new GMButtonMhL( form, this);
     
     GCtrlDefaultAppStyle* pAppStyle = getDefaultAppStyle();
     GCtrlItemStyle* pStyle=NULL;
@@ -51,61 +51,61 @@ GMButton::GMButton( GCtrlForm* form, GMItem* parent, const char* name )
         pAppStyle->appendButtonStyle();
     }
 
-    btnHlo->m_pixBg.setPixmap( pStyle->pixmap( btnHlo->m_pixBg.name() ) );
-    btnHlo->m_pixFocus.setPixmap( pStyle->pixmap( btnHlo->m_pixFocus.name() ) );
-    btnHlo->m_txtCaption.setFont( pStyle->font( btnHlo->m_txtCaption.name()) );
-    btnHlo->m_txtCaption.setColor( pStyle->color( btnHlo->m_txtCaption.name() ) );
-    int nW = btnHlo->m_pixFocus.width() > btnHlo->m_pixBg.width() ? btnHlo->m_pixFocus.width() : btnHlo->m_pixBg.width();
-    int nH = btnHlo->m_pixFocus.height() > btnHlo->m_pixBg.height() ? btnHlo->m_pixFocus.height() : btnHlo->m_pixBg.height();
+    btnLqH->m_pixBg.setPixmap( pStyle->pixmap( btnLqH->m_pixBg.name() ) );
+    btnLqH->m_pixFocus.setPixmap( pStyle->pixmap( btnLqH->m_pixFocus.name() ) );
+    btnLqH->m_txtCaption.setFont( pStyle->font( btnLqH->m_txtCaption.name()) );
+    btnLqH->m_txtCaption.setColor( pStyle->color( btnLqH->m_txtCaption.name() ) );
+    int nW = btnLqH->m_pixFocus.width() > btnLqH->m_pixBg.width() ? btnLqH->m_pixFocus.width() : btnLqH->m_pixBg.width();
+    int nH = btnLqH->m_pixFocus.height() > btnLqH->m_pixBg.height() ? btnLqH->m_pixFocus.height() : btnLqH->m_pixBg.height();
     setSize( nW, nH );
-    btnHlo->m_txtCaption.setSize( nW, nH );
-    btnHlo->m_txtCaption.setTextFlags( Giveda::WordBreak | Giveda::AlignCenter );
+    btnLqH->m_txtCaption.setSize( nW, nH );
+    btnLqH->m_txtCaption.setTextFlags( Giveda::WordBreak | Giveda::AlignCenter );
 }
 
 GMButton::GMButton( const GString& strCaption, const GPixmap& bg, const GPixmap& focus, GCtrlForm* form, GMItem* parent, const char* name )
     : GMCtrlItem( form, parent, name )
 {
-    btnHlo = new GMButtonLMQ(strCaption, bg, focus, form, this);
+    btnLqH = new GMButtonMhL(strCaption, bg, focus, form, this);
     
-    int nW = btnHlo->m_pixFocus.width() > btnHlo->m_pixBg.width() ? btnHlo->m_pixFocus.width() : btnHlo->m_pixBg.width();
-    int nH = btnHlo->m_pixFocus.height() > btnHlo->m_pixBg.height() ? btnHlo->m_pixFocus.height() : btnHlo->m_pixBg.height();
+    int nW = btnLqH->m_pixFocus.width() > btnLqH->m_pixBg.width() ? btnLqH->m_pixFocus.width() : btnLqH->m_pixBg.width();
+    int nH = btnLqH->m_pixFocus.height() > btnLqH->m_pixBg.height() ? btnLqH->m_pixFocus.height() : btnLqH->m_pixBg.height();
     setSize( nW, nH );
-    btnHlo->m_txtCaption.setSize( nW, nH );
-    btnHlo->m_txtCaption.setTextFlags( Giveda::WordBreak | Giveda::AlignCenter );
+    btnLqH->m_txtCaption.setSize( nW, nH );
+    btnLqH->m_txtCaption.setTextFlags( Giveda::WordBreak | Giveda::AlignCenter );
 }
 
 GMButton::~GMButton()
 {
-    delete btnHlo;
+    delete btnLqH;
 }
 
 void GMButton::setCaption ( GString strCaption )
 {
-    btnHlo->m_txtCaption.setText ( strCaption );
+    btnLqH->m_txtCaption.setText ( strCaption );
 }
 
 void GMButton::setBgPixmap ( const GPixmap& pix )
 {
-    btnHlo->m_pixBg.setPixmap ( pix );
+    btnLqH->m_pixBg.setPixmap ( pix );
 }
 
 void GMButton::setFocusPixmap ( const GPixmap& pix )
 {
-    btnHlo->m_pixFocus.setPixmap ( pix );
+    btnLqH->m_pixFocus.setPixmap ( pix );
 }
 
 void GMButton::paintEvent( GPainter& p )
 {
     if(hasFocus())
     {
-        btnHlo->m_pixFocus.draw(p);
+        btnLqH->m_pixFocus.draw(p);
     }
     else
     {
-        btnHlo->m_pixBg.draw(p);
+        btnLqH->m_pixBg.draw(p);
     }
 
-    btnHlo->m_txtCaption.draw(p);
+    btnLqH->m_txtCaption.draw(p);
 }
 
 bool GMButton::fwKeyPressEvent( GKeyEvent* e )
@@ -143,4 +143,4 @@ GCtrlButton::GCtrlButton( const GString& strCaption, const GPixmap& bg, const GP
     form->appendItem(this);
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

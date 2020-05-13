@@ -29,7 +29,7 @@
 #include <gGlobal.h>
 
 class GCtrlForm;
-class GMItemLMQ;
+class GMItemMhL;
 class GCtrlDefaultAppStyle;
 
 class GMItem : public GObject
@@ -79,13 +79,13 @@ public slots:
 protected:
     virtual void paintEvent ( GPainter& );
 private:
-    GMItemLMQ *iHlo;
+    GMItemMhL *iLqH;
 #if 0
     GPtrList<GMItem> m_listChildren;
 #endif
 };
 
-class GMCtrlItemLMQ;
+class GMCtrlItemMhL;
 
 class GMCtrlItem : public GMItem
 {
@@ -115,7 +115,7 @@ protected:
     virtual bool keyPressEvent(GKeyEvent* );
     virtual bool fwKeyPressEvent(GKeyEvent*)=0;
 private:
-    GMCtrlItemLMQ *ciHlo;
+    GMCtrlItemMhL *ciLqH;
 };
 
 class GMContainerItem : public GMCtrlItem
@@ -128,7 +128,7 @@ protected:
     GPointer<GMCtrlItem> mpFocus;
 };
 
-class GMPixmapLMQ;
+class GMPixmapMhL;
 
 class GMPixmap : public GMItem
 {
@@ -145,10 +145,10 @@ public:
 protected:
     virtual void paintEvent ( GPainter& );
 private:
-    GMPixmapLMQ *pixHlo;
+    GMPixmapMhL *pixLqH;
 };
 
-class GMImageLMQ;
+class GMImageMhL;
 
 class GMImage : public GMItem
 {
@@ -164,10 +164,10 @@ public:
 protected:
     virtual void paintEvent ( GPainter& );
 private:
-    GMImageLMQ *imgHlo;
+    GMImageMhL *imgLqH;
 };
 
-class GMTextLMQ;
+class GMTextMhL;
 
 class GMText : public GMItem
 {
@@ -185,10 +185,10 @@ public:
 protected:
     virtual void paintEvent ( GPainter& );
 protected:
-    GMTextLMQ *txtHlo;
+    GMTextMhL *txtLqH;
 };
 
-class GMScrollTextLMQ;
+class GMScrollTextMhL;
 
 class GMScrollText : public GMText
 {
@@ -210,10 +210,10 @@ private slots:
     void slotUpdate();
     
 private:
-    GMScrollTextLMQ *stHlo;
+    GMScrollTextMhL *stLqH;
 };
 
 #endif
 
 
-// reborn, a nice day ^_^
+// a nice day ^_^

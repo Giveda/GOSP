@@ -69,7 +69,7 @@ GCtrlView::~GCtrlView()
 
 void GCtrlView::appendForm ( GCtrlForm* p )
 {
-    m_frmList.inSort ( p );
+    m_frmList.append ( p );
 }
 
 void GCtrlView::removeForm ( GCtrlForm* p )
@@ -237,4 +237,4 @@ int GCtrlView::width() const
     
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

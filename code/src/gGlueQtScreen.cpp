@@ -37,4 +37,4 @@ int qt_thread_entry(int argc, char **argv)
     
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

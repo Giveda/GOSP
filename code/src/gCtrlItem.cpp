@@ -98,4 +98,4 @@ bool GCtrlScrollText::isComplex()
     return false;
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^

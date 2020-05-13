@@ -42,4 +42,4 @@ int init_freetype()
     return 0;
 }
 
-// reborn, a nice day ^_^
+// a nice day ^_^
