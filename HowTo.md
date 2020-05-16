@@ -1,6 +1,8 @@
 # 简易指导
 #### 在linux下编译   
-#请先安装依赖。本软件依赖libjpeg-dev/libpng-dev/freetype-dev/qmake等，不依赖Qt。本软件在ubuntu环境下测试通过。移植到fedora也不会有什么工作量。    
+#本软件在ubuntu 1404、qmake（Qt4版本）等环境下测试通过。如果你不能熟练使用linux和qmake，那么我建议你安装使用以上测试通过的开发环境。如果你能够熟练使用linux/qmake，那么我相信你在任何linux版本/qmake版本下都能顺利编译和运行GOSP。      
+
+#请先安装依赖。本软件依赖libjpeg-dev/libpng-dev/freetype-dev/qmake等。GOSP本身不依赖Qt，但模拟器依赖Qt4 widgets。使用模拟器可直接在ubuntu下运行GOSP。    
 sudo apt-get install libjpeg-dev libpng-dev libfreetype6-dev    
 
 #接着进入/path/to/GOSP/code目录，在此目录下能找到configure这个可执行文件。  
@@ -9,7 +11,7 @@ cd /path/to/GOSP/code
 sudo cp lib/Giveda.pc /usr/lib/pkgconfig/   #安装pkg-config包管理文件   
 export GIVEDA_DIR=/path/to/GOSP/code        #设置环境变量  
 
-#请确保此刻你的系统中存在qmake-qt4命令，如果你想使用qmake-qt5，请自行修改configure脚本中的qmake-qt4至qmake-qt5  
+#请确保此刻你的ubuntu系统中存在qmake-qt4命令，如果你想使用qmake-qt5，请自行修改configure脚本中的qmake-qt4至qmake-qt5  
 ./configure    #执行configure，选择目标设备，效果如下    
 ![Giveda](docs/images/configureResult.jpeg)
 
@@ -33,3 +35,5 @@ cd example        #进入example目录
     sudo apt-get install libjpeg-dev libpng-dev libfreetype6-dev    
 
 如果提示Project ERROR: Package Giveda not found，就将lib/Giveda.pc复制到/usr/lib/pkgconfig/下。  
+
+#本软件在ubuntu 1404、qmake（Qt4版本）等环境下测试通过。如果你不能熟练使用linux和qmake，那么我建议你安装使用以上测试通过的开发环境。如果你能够熟练使用linux/qmake，那么我相信你在任何linux版本/qmake版本下都能顺利编译和运行GOSP。      
