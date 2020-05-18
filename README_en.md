@@ -3,6 +3,7 @@
 
 # Abstract  
 QT is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too large&complex(it needs a lot RAM/ROM), so I wrote this framework, named it GOSP. On the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM.  
+  **By this product(GOSP), we pay tribute to QT's outstanding contribution to the world.**   
 Here is some applications(examples):   
 ![doc/images/](docs/images/DVB_edit_chnl_768x432.gif)
 

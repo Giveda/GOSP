@@ -4,6 +4,8 @@ for English, please refer to: https://gitee.com/giveda/GOSP/blob/master/README_e
 # 摘要  
 Qt是欧洲人创始的一个优秀的c++开发框架，API简单易用，社区庞大，资源丰富；但Qt太重量级了（需要很多的RAM和ROM，非常复杂）。为了解决这个问题，我开发了GOSP这个框架。GOSP在不依赖Qt的前提下，提供了类似Qt的API接口，仅需要几百KB的硬件资源（比Qt小的多），能运行在Qt不支持的低性能领域（对Qt形成补充），适用于嵌入式开发。    
 最容易理解的GUI框架，史上最简单，没有之一。   
+  **谨以此产品向Qt致敬，致敬Qt为世界做出的杰出贡献。**         
+
 example效果演示：   
 ![在doc/images/目录下](docs/images/DVB_edit_chnl_768x432.gif)
 
@@ -14,9 +16,10 @@ example效果演示：
 Qt是欧洲人创始的一个优秀的c++开发框架，API简单易用，社区庞大，资源丰富。2018年，Qt公司内部立项了一个将Qt移植到MCU的研发新项目，资源占用情况如下：  
 *) ROM占用情况：从6MB到13MB  
 *) RAM占用情况：从4MB到10MB  
- **综上，我非常喜欢Qt，但Qt太重量级了（需要很多的RAM和ROM），因此我开发了GOSP这个框架。GOSP在不依赖Qt的前提下，提供了类似Qt的API接口，仅需要几百KB的硬件资源（比Qt小的多），能运行在Qt不支持的低性能领域（对Qt形成补充），适用于嵌入式开发。**      
+ **综上，Qt太重量级了（需要很多的RAM和ROM）；我非常喜欢Qt，因此我开发了GOSP这个框架。GOSP在不依赖Qt的前提下，提供了类似Qt的API接口，仅需要几百KB的硬件资源（比Qt小的多），能运行在Qt不支持的低性能领域（对Qt形成补充），适用于嵌入式开发。**      
   **2019-06-03，发表v1.0，版本代号为：沉默的蓝色幽灵。**    
   **I wish it can be a member of Qt's ecosystem in the future.**    
+  **谨以此产品向Qt致敬，致敬Qt为世界做出的杰出贡献。**         
 
 参考文献：  
 http://blog.qt.io/cn/2018/08/15/qt_on_microcontrollers_mcu/  
