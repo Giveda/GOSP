@@ -23,7 +23,7 @@ http://giveda.com/
 
 # 2. Main Features
 * 100% use pictures to realize personalized GUI. (see screenshot below)   
-* provides Qt-style APIs, In the future, we can provide an IDE based on Qt creator.  
+* provides Qt-style APIs.   
 * based on Giveda signal/slot technology, and there is no coupling between modules.  
 
 
