@@ -36,4 +36,4 @@ cd example        #进入example目录
 
 如果提示Project ERROR: Package Giveda not found，就将lib/Giveda.pc复制到/usr/lib/pkgconfig/下。  
 
-#本软件在ubuntu 1404、qmake（Qt4版本）等环境下测试通过。如果你不能熟练使用linux和qmake，那么我建议你安装使用以上测试通过的开发环境。如果你能够熟练使用linux/qmake，那么我相信你在任何linux版本/qmake版本下都能顺利编译和运行GOSP。      
+  **contact: imleizhang@qq.com**   

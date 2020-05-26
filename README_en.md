@@ -2,8 +2,8 @@
 中文版本： https://gitee.com/giveda/GOSP/blob/master/README.md  
 
 # Abstract  
-QT is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too large&complex(it needs a lot RAM/ROM), so I wrote this framework, named it GOSP. On the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM.  
-  **By this product(GOSP), we pay tribute to QT's outstanding contribution to the world.**   
+Qt is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too large&complex(it needs a lot RAM/ROM), so I wrote this framework, named it GOSP. On the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM.  
+  **By this product(GOSP), we pay tribute to Qt's outstanding contribution to the world.**   
 Here is some applications(examples):   
 ![doc/images/](docs/images/DVB_edit_chnl_768x432.gif)
 
@@ -11,10 +11,10 @@ Here is some applications(examples):
 
 
 # 1. Description  
-QT is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too heavy(large, complex, and Qt needs a lot RAM/ROM), so I wrote this framework, named it GOSP.  
+Qt is an excellent C++ development framework, which provides excellent APIs. I love Qt very much, but I think that Qt is too heavy(large, complex, and Qt needs a lot RAM/ROM), so I wrote this framework, named it GOSP.  
 On the premise of respecting(not infringing) Qt's IPR(Intellectual Property Right), on the premise of not depending on Qt, this framework provides Qt-Style APIs, and it only needs a few hundred KB of ROM&RAM, so, GOSP is suitable for developing embedded software.  
   **2019-06-03, v1.0 was released, Codename is the Silent Blue Ghost.**    
-  **I hope it can form a supplement to QT, and wish it can be a member of Qt's ecosystem in the future.**    
+  **I hope it can form a supplement to Qt, and wish it can be a member of Qt's ecosystem in the future.**    
 
 Reference:  
 http://blog.qt.io/cn/2018/08/15/qt_on_microcontrollers_mcu/  
