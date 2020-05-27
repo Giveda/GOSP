@@ -57,7 +57,7 @@ If any commercial behavior or purpose is involved, we will adopt the following c
  **If you do not agree with the above agreement, do not use the software.**    
 
 ## 3-3 New Features
-  **To be determined.**   
+  **This is an open community (based on the Internet), my work is just set the ball rolling. Please join us, there are many meaningful things worth to do.**   
 
 
 # 4. How to Use
@@ -101,5 +101,5 @@ https://gitee.com/giveda/GOSP/tree/master/docs/images/DVB_mainMenu_768x432_png.g
 
 
 # 6. The End  
-  **This is a project in the process of planning. I just do something I am interested in when I am interested. If you think the software is useful, you can join in the open source collaboration model of the software in accordance with the guidance of the third chapter above to support the development of the project in the direction you expect.**   
+  **This is a project in the process of planning. I just do something I am interested in when I am interested. If you think the software is useful, you can join in the open source collaboration model to support this project in the direction you expect.**   
   **contact: lei@giveda.com**   
