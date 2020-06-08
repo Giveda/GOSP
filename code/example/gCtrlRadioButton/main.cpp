@@ -30,3 +30,4 @@ int main ( int argc, char** argv )
 }
 
 // a nice day ^_^
+// a nice day ^_^

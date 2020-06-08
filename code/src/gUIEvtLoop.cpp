@@ -324,3 +324,4 @@ void GUIEvtLoop::setViewSize(int w, int h)
 #endif
 
 // a nice day ^_^
+// a nice day ^_^

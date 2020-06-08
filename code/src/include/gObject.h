@@ -32,7 +32,7 @@
 
 using namespace std;
 
-class GObjectMhL;
+class GObjectSelf;
 class GObject;
 class GEvent;
 
@@ -248,7 +248,7 @@ signals:
     GSignal<void(void)> sigDestroyed;
 
 private:
-    GObjectMhL *m_priv;
+    GObjectSelf *m_priv;
 
 public:
     /**
@@ -347,4 +347,5 @@ int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Rece
 }
 
 #endif 
+// a nice day ^_^
 // a nice day ^_^

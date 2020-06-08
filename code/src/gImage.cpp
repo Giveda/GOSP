@@ -243,3 +243,4 @@ void GImage::initBuf()
 }
 
 // a nice day ^_^
+// a nice day ^_^

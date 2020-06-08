@@ -39,3 +39,4 @@ int  deinit_freetype();
 
 
 // a nice day ^_^
+// a nice day ^_^

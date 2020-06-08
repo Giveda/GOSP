@@ -218,3 +218,4 @@ void GMyButtonGroup::slotRadioBtn5_checkedChanged()
 }
 
 // a nice day ^_^
+// a nice day ^_^

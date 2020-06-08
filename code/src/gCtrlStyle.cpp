@@ -337,3 +337,4 @@ void GCtrlDefaultAppStyle::appendProgressStyle()
 
 
 // a nice day ^_^
+// a nice day ^_^
