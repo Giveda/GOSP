@@ -34,5 +34,4 @@ void putEvt( GEvent* e);
 
 #endif 
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

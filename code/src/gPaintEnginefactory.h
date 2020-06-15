@@ -34,5 +34,4 @@ public:
 
 #endif 
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

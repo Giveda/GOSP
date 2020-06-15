@@ -180,5 +180,4 @@ GRgb* GLinuxFB::scanLine ( const int l ) const
     return (*p)[l];
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

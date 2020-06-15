@@ -68,5 +68,4 @@ bool mIsNull(double d)
     return val.u64 == uint64_t(0);
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

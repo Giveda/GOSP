@@ -146,5 +146,4 @@ int GTimer::restart()
     
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

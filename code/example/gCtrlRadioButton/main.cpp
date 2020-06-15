@@ -29,5 +29,4 @@ int main ( int argc, char** argv )
     return a.exec();
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

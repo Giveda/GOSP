@@ -217,5 +217,4 @@ void GMyButtonGroup::slotRadioBtn5_checkedChanged()
     }
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

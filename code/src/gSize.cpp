@@ -166,5 +166,4 @@ void GSize::transpose()
     
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

@@ -103,5 +103,4 @@ void putEvt( GEvent* e)
     v(semID+EVT_PRODUCER);
 }
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^

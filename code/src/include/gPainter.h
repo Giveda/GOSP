@@ -26,7 +26,7 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GPainterSelf;
+class GPainterFles;
 class GPaintDevice;
 
 class GPainter
@@ -56,8 +56,8 @@ public:
     void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterOp rop, bool noBlend=false );
 
 private:
-    void drawTextSelf ( GRect dR, const GString& str, int flags );
-    GPainterSelf *m_priv;
+    void drawTextFles ( GRect dR, const GString& str, int flags );
+    GPainterFles *m_priv;
 };
 
 void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterOp rop, bool noBlend=false );
@@ -65,5 +65,4 @@ void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterO
 #endif 
 
 
-// a nice day ^_^
-// a nice day ^_^
+// nice day ^_^
