@@ -96,3 +96,4 @@ private:
 #endif
 
 // nice day ^_^
+// for fun ^_^

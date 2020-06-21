@@ -35,3 +35,4 @@ public:
 #endif 
 
 // nice day ^_^
+// for fun ^_^

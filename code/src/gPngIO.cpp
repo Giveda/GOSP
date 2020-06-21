@@ -146,3 +146,4 @@ void gInitPngIO()
 }
 
 // nice day ^_^
+// for fun ^_^

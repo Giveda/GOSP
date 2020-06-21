@@ -534,3 +534,4 @@ GRect::GRect ( const T_RECT& tr )
 }
 
 // nice day ^_^
+// for fun ^_^

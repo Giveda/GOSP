@@ -32,7 +32,7 @@
 
 using namespace std;
 
-class GObjectFles;
+class GObjectHmq;
 class GObject;
 class GEvent;
 
@@ -248,7 +248,7 @@ signals:
     GSignal<void(void)> sigDestroyed;
 
 private:
-    GObjectFles *m_priv;
+    GObjectHmq *m_priv;
 
 public:
     /**
@@ -348,3 +348,4 @@ int  GObject::disconnect ( GObject* sender, GSignal<void(Args...)>& signal, Rece
 
 #endif 
 // nice day ^_^
+// for fun ^_^

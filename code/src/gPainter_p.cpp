@@ -43,3 +43,4 @@ int init_freetype()
 }
 
 // nice day ^_^
+// for fun ^_^

@@ -69,3 +69,4 @@ bool mIsNull(double d)
 }
 
 // nice day ^_^
+// for fun ^_^

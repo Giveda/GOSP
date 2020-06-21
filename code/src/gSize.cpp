@@ -167,3 +167,4 @@ void GSize::transpose()
 }
 
 // nice day ^_^
+// for fun ^_^

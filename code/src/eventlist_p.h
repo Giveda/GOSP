@@ -35,3 +35,4 @@ void putEvt( GEvent* e);
 #endif 
 
 // nice day ^_^
+// for fun ^_^

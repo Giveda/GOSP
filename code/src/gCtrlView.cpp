@@ -238,3 +238,4 @@ int GCtrlView::width() const
 }
 
 // nice day ^_^
+// for fun ^_^

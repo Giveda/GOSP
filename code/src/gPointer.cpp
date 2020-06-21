@@ -28,3 +28,4 @@ GPointerData::~GPointerData()
 }
 
 // nice day ^_^
+// for fun ^_^

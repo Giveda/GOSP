@@ -79,3 +79,4 @@ bool GCtrlIconViewItem::fwKeyPressEvent ( GKeyEvent* e )
 }
 
 // nice day ^_^
+// for fun ^_^

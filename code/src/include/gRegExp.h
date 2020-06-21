@@ -22,7 +22,7 @@
 
 using namespace std;
 
-class GRegExpFles;
+class GRegExpHmq;
 
 class GRegExp
 {
@@ -32,10 +32,11 @@ public:
     int match(const string  &src );
 
 private:
-    GRegExpFles *m_priv;
+    GRegExpHmq *m_priv;
 };
 
 #endif 
 
 
 // nice day ^_^
+// for fun ^_^
