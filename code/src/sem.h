@@ -39,4 +39,3 @@ int getSemVal( sem_t* sem );
 #endif
 
 // nice day ^_^
-// for fun ^_^

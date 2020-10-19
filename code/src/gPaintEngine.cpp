@@ -104,4 +104,3 @@ void GPaintEngine::setDestination ( const GPaintDevice* d )
 }
 
 // nice day ^_^
-// for fun ^_^

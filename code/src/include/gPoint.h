@@ -48,37 +48,40 @@ public:
     GPoint ( T_OFFSET x, T_OFFSET y );
     GPoint ( const T_POINT& tp );
 
-    bool isNull() const;
-
     T_OFFSET x() const;
     T_OFFSET y() const;
+    
+    bool isNull() const;
+    
     void setX ( T_OFFSET x );
     void setY ( T_OFFSET y );
 
     T_OFFSET &rx();
     T_OFFSET &ry();
 
-    GPoint &operator+= ( const GPoint &p );
-    GPoint &operator-= ( const GPoint &p );
+    GPoint &operator+= ( const GPoint & );
+    GPoint &operator-= ( const GPoint & );
 
-    GPoint &operator*= ( float c );
-    GPoint &operator*= ( double c );
-    GPoint &operator*= ( int c );
+    GPoint &operator*= ( float  );
+    GPoint &operator*= ( int  );
+    GPoint &operator*= ( double  );
+    
+    GPoint &operator/= ( double  );
 
-    GPoint &operator/= ( double c );
-
-    friend  bool operator== ( const GPoint &, const GPoint & );
+public:
     friend  bool operator!= ( const GPoint &, const GPoint & );
     friend  const GPoint operator+ ( const GPoint &, const GPoint & );
     friend  const GPoint operator- ( const GPoint &, const GPoint & );
     friend  const GPoint operator- ( const GPoint & );
+    friend  const GPoint operator/ ( const GPoint &, double );
     friend  const GPoint operator* ( const GPoint &, float );
     friend  const GPoint operator* ( float, const GPoint & );
     friend  const GPoint operator* ( const GPoint &, double );
     friend  const GPoint operator* ( double, const GPoint & );
     friend  const GPoint operator* ( const GPoint &, int );
     friend  const GPoint operator* ( int, const GPoint & );
-    friend  const GPoint operator/ ( const GPoint &, double );
+    friend  bool operator== ( const GPoint &, const GPoint & );
+    
 private:
     T_POINT m_pointData;
 };
@@ -88,4 +91,3 @@ private:
 
 
 // nice day ^_^
-// for fun ^_^

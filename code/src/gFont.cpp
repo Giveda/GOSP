@@ -133,4 +133,3 @@ GFont::GFont ( const GFont& src )
 }
 
 // nice day ^_^
-// for fun ^_^

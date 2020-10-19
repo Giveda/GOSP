@@ -104,4 +104,3 @@ void putEvt( GEvent* e)
 }
 
 // nice day ^_^
-// for fun ^_^

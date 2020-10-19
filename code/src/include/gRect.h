@@ -52,53 +52,66 @@ public:
     GRect(const GPoint &topleft, const GSize &size);
     GRect(T_OFFSET left, T_OFFSET top, T_OFFSET width, T_OFFSET height);
     GRect(const T_RECT &tr);
-
-    bool isNull() const;
-    bool isEmpty() const;
+   
+    void setLeft(T_OFFSET pos);
+    void setTop(T_OFFSET pos);
+    void setRight(T_OFFSET pos);
+    void setBottom(T_OFFSET pos);
+    
     bool isValid() const;
     
+    GSize size() const;
+    void setSize(const GSize &s);
+    
+    T_OFFSET x() const;
     T_OFFSET left() const;
+    
     T_OFFSET top() const;
+    T_OFFSET y() const;
+    
     T_OFFSET right() const;
     T_OFFSET bottom() const;
 
-    T_OFFSET x() const;
-    T_OFFSET y() const;
-    GSize size() const;
-    T_OFFSET width() const;
-    T_OFFSET height() const;
-    void setWidth(T_OFFSET w);
-    void setHeight(T_OFFSET h);
-    void setSize(const GSize &s);
-    void translate(T_OFFSET dx, T_OFFSET dy);
-    void translate(const GPoint &p);
-    void moveBy(T_OFFSET dx, T_OFFSET dy);
-    void moveBy(const GPoint &p);
-    void moveTopLeft(const GPoint &p);
-    void setRect(T_OFFSET x, T_OFFSET y, T_OFFSET w, T_OFFSET h);
-    GRect intersect(const GRect &r) const;
     bool intersects(const GRect &r) const;
-    GPoint topLeft() const;
-    GPoint bottomLeft() const;
-    GPoint topRight() const;
-    GPoint bottomRight() const;
-    GPoint center() const;
+    GRect intersect(const GRect &r) const;
     
     void moveLeft(T_OFFSET pos);
     void moveRight ( T_OFFSET pos );
     void moveTop(T_OFFSET pos);
     void moveBottom ( T_OFFSET pos );
+    
+    bool isNull() const;
+    
+    T_OFFSET width() const;
+    void setWidth(T_OFFSET w);
+    
+    void setHeight(T_OFFSET h);
+    T_OFFSET height() const;
+    
     bool contains(const GRect &r, bool proper=false) const;
     bool contains(const GPoint &p, bool proper=false) const;
-    GRect operator&(const GRect &r) const;
-    void setLeft(T_OFFSET pos);
-    void setTop(T_OFFSET pos);
-    void setRight(T_OFFSET pos);
-    void setBottom(T_OFFSET pos);
+
+    void setRect(T_OFFSET x, T_OFFSET y, T_OFFSET w, T_OFFSET h);
+
+    GPoint topLeft() const;
+    GPoint topRight() const;
+    GPoint center() const;
+    GPoint bottomLeft() const;
+    GPoint bottomRight() const;
+
     const T_RECT toT_RECT() const;
     
+    bool isEmpty() const;
+    void translate(T_OFFSET dx, T_OFFSET dy);
+    void translate(const GPoint &p);
+    
+    void moveTopLeft(const GPoint &p);
+    void moveBy(const GPoint &p);
+    void moveBy(T_OFFSET dx, T_OFFSET dy);
+    
     friend bool operator==(const GRect &, const GRect &);
-
+    GRect operator&(const GRect &r) const;
+    
 private:
     T_RECT m_rectData;
 };
@@ -106,6 +119,4 @@ private:
 #endif // GRECT_H
 
 
-
 // nice day ^_^
-// for fun ^_^

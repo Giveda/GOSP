@@ -38,10 +38,10 @@ public:
 
 typedef vector<GPainterState>   STATE_STACK_T;
 
-class GPainterHmq
+class GPainterLMQ
 {
 public:
-    GPainterHmq ( GPaintDevice* p );
+    GPainterLMQ ( GPaintDevice* p );
     GPaintDevice *d;
     GPainterState  state;
     STATE_STACK_T  stack;
@@ -49,7 +49,7 @@ public:
     void drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y );
 };
 
-GPainterHmq::GPainterHmq ( GPaintDevice* p ) :d ( p )
+GPainterLMQ::GPainterLMQ ( GPaintDevice* p ) :d ( p )
 {
     state.brush = GBrush ( GColor ( 250, 0, 0 ) );
     state.pen = GColor ( 0, 250, 0 );
@@ -86,7 +86,7 @@ void bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect sR, RasterO
     return ;
 }
 
-inline void GPainterHmq::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y )
+inline void GPainterLMQ::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y )
 {
     int x=0;
     int h, w;
@@ -136,7 +136,7 @@ inline void GPainterHmq::drawBitmap ( FT_Bitmap* bitmap, int base_x, int base_y 
 }
 
 GPainter::GPainter()
-    :m_priv ( new GPainterHmq ( NULL ) )
+    :m_priv ( new GPainterLMQ ( NULL ) )
 {
 
 }
@@ -147,7 +147,7 @@ GPainter::~GPainter()
 }
 
 GPainter::GPainter ( GPaintDevice* p )
-    :m_priv ( new GPainterHmq ( p ) )
+    :m_priv ( new GPainterLMQ ( p ) )
 {
 
 }
@@ -235,12 +235,12 @@ void GPainter::drawText ( int dX, int dY, int dW, int dH, int flags, const GStri
     GPixmap  dev = grabWidget(m_priv->d, dR );
     m_priv->pTxtBg = &dev;
     GRect  bR(GPoint(0, 0), dR.size() );
-    drawTextHmq ( bR, str, flags );
+    drawTextLMQ ( bR, str, flags );
 
     bitBlt(m_priv->d, dR.topLeft(), m_priv->pTxtBg, bR, CopyROP, true );
 }
 
-void GPainter::drawTextHmq ( GRect dR, const GString& str, int flags )
+void GPainter::drawTextLMQ ( GRect dR, const GString& str, int flags )
 {
     FT_GlyphSlot slot;
     uint16_t result=0, part1=0, part2=0, part3=0;
@@ -390,4 +390,3 @@ void GPainter::bitBlt ( GPaintDevice* dst, GPoint dP, GPaintDevice* src, GRect s
 }
 
 // nice day ^_^
-// for fun ^_^

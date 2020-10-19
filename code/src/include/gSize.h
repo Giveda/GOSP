@@ -47,37 +47,41 @@ class  /*DLL_PUBLIC*/ GSize
 public:
     GSize();
     GSize(T_OFFSET w, T_OFFSET h);
-    virtual ~GSize() {}
+    virtual ~GSize();
     
-    bool isNull() const;
     bool isEmpty() const;
-    bool isValid() const;
     
-    T_OFFSET width() const;
-    T_OFFSET height() const;
     void setWidth(T_OFFSET w);
-    void setHeight(T_OFFSET h);
-    void transpose();
-    
-    GSize expandedTo(const GSize &) const;
-    GSize boundedTo(const GSize &) const;
-    
+    T_OFFSET width() const;
     T_OFFSET &rwidth();
+    void setHeight(T_OFFSET h);
+    T_OFFSET height() const;
     T_OFFSET &rheight();
     
+    GSize boundedTo(const GSize &) const;    
+    
     GSize &operator+=(const GSize &);
+    friend const GSize operator+(const GSize &, const GSize &);
+    
     GSize &operator-=(const GSize &);
+    friend const GSize operator-(const GSize &, const GSize &);
+    
     GSize &operator*=(double c);
+    friend const GSize operator*(const GSize &, double);
+    friend const GSize operator*(double, const GSize &);
+    
     GSize &operator/=(double c);
+    friend const GSize operator/(const GSize &, double);
+    
+    GSize expandedTo(const GSize &) const;
+    bool isNull() const;
+    void transpose();
     
     friend bool operator==(const GSize &, const GSize &);
     friend bool operator!=(const GSize &, const GSize &);
     friend bool operator>(const GSize &, const GSize &);
-    friend const GSize operator+(const GSize &, const GSize &);
-    friend const GSize operator-(const GSize &, const GSize &);
-    friend const GSize operator*(const GSize &, double);
-    friend const GSize operator*(double, const GSize &);
-    friend const GSize operator/(const GSize &, double);
+
+    bool isValid() const;
     
 private:
     T_SIZE m_data;
@@ -86,6 +90,4 @@ private:
 #endif // ZSIZE_H
 
 
-
 // nice day ^_^
-// for fun ^_^

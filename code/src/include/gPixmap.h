@@ -33,4 +33,3 @@ public:
 
 
 // nice day ^_^
-// for fun ^_^

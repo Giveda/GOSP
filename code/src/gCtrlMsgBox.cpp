@@ -112,4 +112,3 @@ void GCtrlMsgBox::slotBtnClicked()
 }
 
 // nice day ^_^
-// for fun ^_^

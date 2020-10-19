@@ -85,15 +85,15 @@ GPoint &GPoint::operator-= ( const GPoint &p )
 
 GPoint &GPoint::operator*= ( float c )
 {
-    m_pointData.x = gRound ( m_pointData.x*c );
-    m_pointData.y = gRound ( m_pointData.y*c );
+    m_pointData.x = (T_OFFSET)gRound ( m_pointData.x*c );
+    m_pointData.y = (T_OFFSET)gRound ( m_pointData.y*c );
     return *this;
 }
 
 GPoint &GPoint::operator*= ( double c )
 {
-    m_pointData.x = gRound ( m_pointData.x*c );
-    m_pointData.y = gRound ( m_pointData.y*c );
+    m_pointData.x = (T_OFFSET)gRound ( m_pointData.x*c );
+    m_pointData.y = (T_OFFSET)gRound ( m_pointData.y*c );
     return *this;
 }
 
@@ -106,8 +106,8 @@ GPoint &GPoint::operator*= ( int c )
 
 GPoint &GPoint::operator/= ( double c )
 {
-    m_pointData.x = gRound ( m_pointData.x/c );
-    m_pointData.y = gRound ( m_pointData.y/c );
+    m_pointData.x = (T_OFFSET)gRound ( m_pointData.x/c );
+    m_pointData.y = (T_OFFSET)gRound ( m_pointData.y/c );
     return *this;
 }
 
@@ -144,12 +144,12 @@ const GPoint operator- ( const GPoint &p )
 
 const GPoint operator* ( const GPoint &p, float c )
 {
-    return GPoint ( gRound ( p.m_pointData.x*c ), gRound ( p.m_pointData.y*c ) );
+    return GPoint ( (T_OFFSET)gRound ( p.m_pointData.x*c ), (T_OFFSET)gRound ( p.m_pointData.y*c ) );
 }
 
 const GPoint operator* ( const GPoint &p, double c )
 {
-    return GPoint ( gRound ( p.m_pointData.x*c ), gRound ( p.m_pointData.y*c ) );
+    return GPoint ( (T_OFFSET)gRound ( p.m_pointData.x*c ), (T_OFFSET)gRound ( p.m_pointData.y*c ) );
 }
 
 const GPoint operator* ( const GPoint &p, int c )
@@ -159,12 +159,12 @@ const GPoint operator* ( const GPoint &p, int c )
 
 const GPoint operator* ( float c, const GPoint &p )
 {
-    return GPoint ( gRound ( p.m_pointData.x*c ), gRound ( p.m_pointData.y*c ) );
+    return GPoint ( (T_OFFSET)gRound ( p.m_pointData.x*c ), (T_OFFSET)gRound ( p.m_pointData.y*c ) );
 }
 
 const GPoint operator* ( double c, const GPoint &p )
 {
-    return GPoint ( gRound ( p.m_pointData.x*c ), gRound ( p.m_pointData.y*c ) );
+    return GPoint ( (T_OFFSET)gRound ( p.m_pointData.x*c ), (T_OFFSET)gRound ( p.m_pointData.y*c ) );
 }
 
 const GPoint operator* ( int c, const GPoint &p )
@@ -174,8 +174,7 @@ const GPoint operator* ( int c, const GPoint &p )
 
 const GPoint operator/ ( const GPoint &p, double c )
 {
-    return GPoint ( gRound ( p.m_pointData.x/c ), gRound ( p.m_pointData.y/c ) );
+    return GPoint ( (T_OFFSET)gRound ( p.m_pointData.x/c ), (T_OFFSET)gRound ( p.m_pointData.y/c ) );
 }
 
 // nice day ^_^
-// for fun ^_^

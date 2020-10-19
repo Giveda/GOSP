@@ -22,9 +22,9 @@
 
 #if defined(G_ASSERT)
 #if defined(CONFIG_DEBUG_ENABLED)
-void doQuit(const char *assertion, const char *file, int line)
+void doQuit(const char *a, const char *file, int line)
 {
-    ERROR("ASSERT: [%s] at [%s, line %d]\n", assertion, file, line);
+    ERROR("ASSERT: [%s] at [%s, line %d]\n", a, file, line);
 #ifndef CONFIG_GUI_MODE_NONE
     GUIEvtLoop::quit();
 #endif
@@ -48,7 +48,7 @@ bool mIsNull(float f)
 
 int gRound(mreal d)
 {
-    return d >= mreal(0.0) ? int(d + mreal(0.5)) : int(d - int(d-1) + mreal(0.5)) + int(d-1);
+    return d >= mreal(0.0) ? int(mreal(0.5) + (mreal)d) : int(d-1) + int( (mreal)d - int(d-1) + mreal(0.5) ) ;
 }
 
 bool gIsNear0(float f)
@@ -69,4 +69,3 @@ bool mIsNull(double d)
 }
 
 // nice day ^_^
-// for fun ^_^

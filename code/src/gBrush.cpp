@@ -35,4 +35,3 @@ GBrush::~GBrush()
 }
 
 // nice day ^_^
-// for fun ^_^

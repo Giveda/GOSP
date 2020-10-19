@@ -181,4 +181,3 @@ GRgb* GLinuxFB::scanLine ( const int l ) const
 }
 
 // nice day ^_^
-// for fun ^_^

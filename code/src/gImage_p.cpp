@@ -78,7 +78,7 @@ void   defineIOHandler ( const string& format,
 }
 
 #ifdef CONFIG_ENABLE_IMAGE_SMOOTHSCALE
-class GImageSmoothScalerHmq
+class GImageSmoothScalerLMQ
 {
 public:
     int      cols;
@@ -96,14 +96,14 @@ public:
 GImageSmoothScaler::GImageSmoothScaler ( const int w, const int h,
         GImage &src )
 {
-    d = new GImageSmoothScalerHmq;
+    d = new GImageSmoothScalerLMQ;
 
     d->build ( src.width(), src.height(), w, h, src.hasAlphaBuffer() );
     this->d->src = &src;
 }
 
 void
-GImageSmoothScalerHmq::build ( const int srcWidth, const int srcHeight,
+GImageSmoothScalerLMQ::build ( const int srcWidth, const int srcHeight,
                                    const int dstWidth, const int dstHeight, bool hasAlphaBuffer )
 {
     cols = srcWidth;
@@ -434,4 +434,3 @@ GImageSmoothScaler::scale ( void )
 #endif
 
 // nice day ^_^
-// for fun ^_^

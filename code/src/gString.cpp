@@ -103,4 +103,3 @@ char* GString::utf8() const
 }
 
 // nice day ^_^
-// for fun ^_^

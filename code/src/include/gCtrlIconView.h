@@ -21,7 +21,7 @@
 #include <gConstDefine.h>
 #include <gGlobal.h>
 
-class GCtrlIconViewHmq;
+class GCtrlIconViewLMQ;
 
 class GCtrlIconView : public GMContainerItem
 {
@@ -74,11 +74,10 @@ private:
     void moveFocus( int toIndex );
 
 private:
-    GCtrlIconViewHmq *ikvMqs;
+    GCtrlIconViewLMQ *ikvHlo;
 };
 
 #endif
 
 
 // nice day ^_^
-// for fun ^_^
