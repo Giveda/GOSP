@@ -245,4 +245,4 @@ bool GPtrList< type >::remove ( const unsigned int idx )
 #endif 
 
 
-// nice day ^_^
+// have a nice day ^_^

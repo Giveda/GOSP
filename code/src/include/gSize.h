@@ -90,4 +90,4 @@ private:
 #endif // ZSIZE_H
 
 
-// nice day ^_^
+// have a nice day ^_^

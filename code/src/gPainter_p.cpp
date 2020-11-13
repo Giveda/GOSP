@@ -42,4 +42,4 @@ int init_freetype()
     return 0;
 }
 
-// nice day ^_^
+// have a nice day ^_^

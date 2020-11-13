@@ -171,4 +171,4 @@ bool GSize::isValid() const
     return m_data.w>=0 && m_data.h>=0;
 }
 
-// nice day ^_^
+// have a nice day ^_^

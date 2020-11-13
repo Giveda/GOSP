@@ -111,4 +111,4 @@ void GCtrlMsgBox::slotBtnClicked()
     }
 }
 
-// nice day ^_^
+// have a nice day ^_^

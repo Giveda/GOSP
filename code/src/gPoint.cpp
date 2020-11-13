@@ -177,4 +177,4 @@ const GPoint operator/ ( const GPoint &p, double c )
     return GPoint ( (T_OFFSET)gRound ( p.m_pointData.x/c ), (T_OFFSET)gRound ( p.m_pointData.y/c ) );
 }
 
-// nice day ^_^
+// have a nice day ^_^

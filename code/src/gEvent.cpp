@@ -186,4 +186,4 @@ bool GTimerEvent::canComposite()
     
 }
 
-// nice day ^_^
+// have a nice day ^_^

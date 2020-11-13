@@ -26,4 +26,4 @@ typedef uint32_t GRgb;
 #endif
 
 
-// nice day ^_^
+// have a nice day ^_^

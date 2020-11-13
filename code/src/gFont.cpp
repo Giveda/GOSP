@@ -132,4 +132,4 @@ GFont::GFont ( const GFont& src )
     
 }
 
-// nice day ^_^
+// have a nice day ^_^

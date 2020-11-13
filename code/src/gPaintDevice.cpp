@@ -40,4 +40,4 @@ void GPaintDevice::setAlphaBuffer ( bool  alpha )
     
 }
 
-// nice day ^_^
+// have a nice day ^_^
